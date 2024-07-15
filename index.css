@@ -1,0 +1,162 @@
+@font-face {
+    font-family: Pistilli;
+    src: url(Fonts/Pistilli.otf);
+}
+
+body {
+    background-color: #EBF1F4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-actionable-link {
+    color: #324545;
+    text-decoration: none;
+}
+.text-actionable-link:hover {
+    color: #324545;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.text-underlined-link {
+    color: #324545;
+    text-decoration: underline;
+}
+.text-underlined-link:hover {
+    color: #324545;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.introduction-block {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 50px;
+    width: 600px;
+}
+.TaylorBowl-logo {
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin-left: 22px;
+    margin-right: 10px;
+}
+.TaylorBowl-logo-image {
+    width: 250px;
+    margin-top: -22px;
+}
+.TaylorBowl-logo-text {
+    font-family: Pistilli;
+    font-size: 35px;
+    letter-spacing: -2px;
+    text-align: center;
+    margin-top: -75px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+.introduction-block-text {
+    display: block;
+    margin-left: auto;
+    margin-right: 40px;
+    margin-top: 25px;
+}
+.introduction-block-text-header {
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    background-color: #324545;
+    text-align: center;
+    letter-spacing: 0.32px;
+    align-content: center;
+    padding-bottom: 2px;
+    width: 220px;
+    height: 35px;
+    border-radius: 7px;
+    margin-bottom: 13px;
+}
+.introduction-block-text-body {
+    font-size: 14px;
+    margin-left: 5px;
+    line-height: 18px;
+}
+
+.category-links-summary {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 20px;
+    width: 600px;
+}
+.category-links-summary-title {
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    background-color: #324545;
+    text-align: center;
+    letter-spacing: 0.32px;
+    align-content: center;
+    padding-bottom: 3px;
+    width: 120px;
+    height: 55px;
+    border-radius: 7px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    margin-left: 26px;
+}
+
+.category-links-summary-links {
+    margin-top: 15px;
+    margin-left: 22px;
+    width: 405px;
+    display: block;
+}
+.category-links-summary-links-top {
+    display: flex;
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+.category-links-summary-links-bottom {
+    display: flex;
+}
+.link-separation {
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.note-to-users {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 20px;
+    width: 600px;
+}
+.note-to-users-title {
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    background-color: #324545;
+    text-align: center;
+    letter-spacing: 0.32px;
+    align-content: center;
+    padding-bottom: 3px;
+    width: 120px;
+    height: 35px;
+    border-radius: 7px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    margin-left: 26px;
+}
+.note-to-users-text {
+    font-size: 14px;
+    padding-bottom: 3px;
+    width: 405px;
+    height: 35px;
+    line-height: 18px;
+    border-radius: 7px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    margin-left: 26px;
+}
