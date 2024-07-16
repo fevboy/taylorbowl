@@ -140,7 +140,7 @@
                 <br> <br>
                 You may switch votes at any point in a bowl apart from the last minute by simply recasting a vote as if you had not voted prior.
                 <br> <br>
-                The command <span class="command-text">!showbowl</span> or its shortened form <span class="command-text">!sbowl</span> can be used at any point during the bowl to show the two options and the number of votes each currently has.
+                The command <span class="command-text">!showbowl</span> or its shortened form <span class="command-text">!sbowl</span> can be used at any point during the bowl to show the two options and the number of votes each currently has. The command <span class="command-text">/didivote</span> can be used at any point during the bowl to privately show if you have voted, and for which song.
                 <br> <br>
                 Every TaylorBowl has a "first vote". This is counted as the first chronological vote cast for either option, barring <a class="text-actionable-link" href="">Autovoters</a>. Certain TaylorBowls have a "hammer vote". This is counted as the last vote cast for the winning option when the difference in votes is 1. Neither have additional impact on the bowl, but both contribute to <a class="text-actionable-link" href="">User Score</a>.
             </div>
@@ -192,16 +192,28 @@
             class="Tiebreaker-content">
                 If at the end of Extra Time the number of votes for each option is still tied, the bowl proceeds into a 1 minute Tiebreaker. No new votes may be cast, nor can votes be changed. 
                 <br> <br>
-                Bribing using credits through the command <span class="command-text">!bribe amount</span> is the only way to change the outcome of the bowl. At the end of the Tiebreaker, the winner is decided based on the number of credits used to bribe. The probability that a given song X wins is given by the number of credits used to bribe for X divided by the total number of credits used to bribe. 
+                Bribing using credits through the command <span class="command-text">!bribe amount</span> is the only way to change the outcome of the bowl. At the end of the Tiebreaker, the winner is decided based on the number of credits used to bribe. 
                 <br> <br>
+                The probability that a given song X wins against another song Y is given by the formula: <br> 
+                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+                <p><span class="math display">
+                    $$P(X\,wins)=\frac{Credits\,bribed\,for\,X}{Total\,credits\,bribed}$$
+                </span></p>
+                The ratio of the probability that X wins against the probability that Y wins is given by the formula: <br>
+                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+                <p><span class="math display">
+                    $$P(X\,wins):P(Y\,wins)=Credits\,bribed\,for\,X:Credits\,bribed\,for\,Y$$
+                </span></p>
                 If any one song has no credits used to bribe for it, it has a 0% probability of winning. If both songs have no credits used to bribe for them, they both have a 50% probability of winning.
+                <br> <br>
+
             </div>
         
         </div>
 
         <div
         class="version-text">
-            Version 1.0.3
+            Version 1.0.4
         </div>
 
     </div>
