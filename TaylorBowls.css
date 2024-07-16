@@ -189,6 +189,9 @@ body {
     font-size: 0.81rem;
     text-align: center;
 }
+.formula {
+    overflow-x: auto;
+}
 .version-text {
     margin-top: 3rem;
     text-align: right;
