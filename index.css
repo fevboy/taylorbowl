@@ -1,11 +1,39 @@
 @font-face {
-    font-family: Pistilli;
-    src: url(Fonts/Pistilli.otf);
+    font-family: 'Segoe UI';
+    src: url('Fonts/Pistilli.eot');
+    src: url('Fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/SegoeUI.woff2') format('woff2'),
+        url('Fonts/SegoeUI.woff') format('woff'),
+        url('Fonts/SegoeUI.ttf') format('truetype'),
+        url('Fonts/SegoeUI.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pistilli';
+    src: url('Fonts/Pistilli.eot');
+    src: url('Fonts/Pistilli.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Pistilli.woff2') format('woff2'),
+        url('Fonts/Pistilli.woff') format('woff'),
+        url('Fonts/Pistilli.ttf') format('truetype'),
+        url('Fonts/Pistilli.svg#Pistilli') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
     background-color: #EBF1F4;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 98%;
+}
+* {
+    text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+    -moz-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 130%;
+
 }
 
 .text-actionable-link {
@@ -33,96 +61,107 @@ body {
     margin-right: auto;
     background-color: white;
     margin-top: 50px;
-    width: 600px;
+    width: 80%;
+    max-width: 1313px;
+    padding: 1rem 1.3rem;
 }
 .TaylorBowl-logo {
-    display: block;
-    width: 300px;
     text-align: center;
-    margin-left: 22px;
-    margin-right: 10px;
+    margin-left: 2rem;
+    margin-right: 1.3rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .TaylorBowl-logo-image {
-    width: 250px;
-    margin-top: -22px;
+    width: 80%;
 }
 .TaylorBowl-logo-text {
     font-family: Pistilli;
-    font-size: 35px;
-    letter-spacing: -2px;
+    font-size: 1.7rem;
+    letter-spacing: -0.1rem;
     text-align: center;
-    margin-top: -75px;
-    margin-bottom: 20px;
+    margin-top: -26%;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 .introduction-block-text {
-    display: block;
-    margin-left: auto;
-    margin-right: 40px;
-    margin-top: 25px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 .introduction-block-text-header {
     font-weight: 500;
-    font-size: 15px;
     color: white;
     background-color: #324545;
     text-align: center;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.05rem;
     align-content: center;
-    padding-bottom: 2px;
-    width: 220px;
-    height: 35px;
-    border-radius: 7px;
-    margin-bottom: 13px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
+    height: fit-content;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 .introduction-block-text-body {
-    font-size: 14px;
-    margin-left: 5px;
-    line-height: 18px;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    line-height: 1.2rem;
 }
 
-.category-links-summary {
+.category-section {
     display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    margin-top: 20px;
-    width: 600px;
+    margin-top: 50px;
+    width: 80%;
+    max-width: 1313px;
+    padding: 1rem 1.3rem;
+    max-width: 1313px;
 }
-.category-links-summary-title {
+.category-section-title {
     font-weight: 500;
-    font-size: 15px;
     color: white;
     background-color: #324545;
     text-align: center;
-    letter-spacing: 0.32px;
+    letter-spacing: 0.05rem;
     align-content: center;
-    padding-bottom: 3px;
-    width: 120px;
-    height: 55px;
-    border-radius: 7px;
-    margin-top: 13px;
-    margin-bottom: 13px;
-    margin-left: 26px;
+    padding: 0.3rem 3rem 0.4rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
-
-.category-links-summary-links {
-    margin-top: 15px;
-    margin-left: 22px;
-    width: 405px;
-    display: block;
+.category-section-content {
+    margin-left: 0.5rem;
 }
-.category-links-summary-links-top {
-    display: flex;
-    margin-top: 1px;
-    margin-bottom: 5px;
-}
-.category-links-summary-links-bottom {
+.category {
+    width: fit-content;
+    margin-bottom: 0.7rem;
     display: flex;
 }
-.link-separation {
-    margin-left: 13px;
-    margin-right: 13px;
+.category-title {
+    font-weight: 500;
+    color: black;
+    width: 5.5rem;
+    padding-bottom: 0.22rem;
+    align-content: center;
+    text-align: right;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right-style: solid;
+    border-right-color: #324545;
+    border-right-width: 1.7px;
+}
+.category-links {
+    height: fit-content;
+    padding-top: 0.2rem;
+    padding-bottom: 0.3rem;
+    flex: 1;
+    float: right;
+    line-height: 1.5rem;
 }
 
 .note-to-users {
@@ -130,33 +169,41 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    margin-top: 20px;
-    width: 600px;
+    margin-top: 50px;
+    width: 80%;
+    max-width: 1313px;
+    padding: 1rem 1.3rem;
 }
 .note-to-users-title {
     font-weight: 500;
-    font-size: 15px;
     color: white;
     background-color: #324545;
     text-align: center;
     letter-spacing: 0.32px;
     align-content: center;
-    padding-bottom: 3px;
-    width: 120px;
-    height: 35px;
+    padding: 0.3rem 1rem 0.4rem;
+    margin-left: 1rem;
+    width: fit-content;
+    max-width: 15%;
+    min-height: 2.2rem;
+    height: fit-content;
     border-radius: 7px;
-    margin-top: 13px;
-    margin-bottom: 13px;
-    margin-left: 26px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .note-to-users-text {
-    font-size: 14px;
     padding-bottom: 3px;
-    width: 405px;
-    height: 35px;
-    line-height: 18px;
-    border-radius: 7px;
-    margin-top: 13px;
-    margin-bottom: 13px;
-    margin-left: 26px;
+    flex: 1;
+    height: fit-content;
+    line-height: 1.2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1.3rem;
+}
+
+.version-text {
+    margin-top: 3rem;
+    text-align: right;
+    font-size: 0.8rem;
+    margin-right: 7%;
 }
