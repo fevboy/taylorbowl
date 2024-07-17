@@ -62,7 +62,8 @@ body {
     background-color: white;
     margin-top: 50px;
     width: 80%;
-    max-width: 1313px;
+    min-width: 320px;
+    max-width: 40rem;
     padding: 1rem 1.3rem;
 }
 .TaylorBowl-logo {
@@ -88,24 +89,8 @@ body {
     margin-right: 1rem;
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
-}
-.introduction-block-text-header {
-    font-weight: 500;
-    color: white;
-    background-color: #324545;
-    text-align: center;
-    letter-spacing: 0.05rem;
-    align-content: center;
-    padding-top: 0.3rem;
-    padding-bottom: 0.4rem;
-    height: fit-content;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-.introduction-block-text-body {
-    margin-left: 0.7rem;
-    margin-right: 0.7rem;
-    line-height: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
 }
 
 .category-section {
@@ -115,20 +100,22 @@ body {
     margin-right: auto;
     background-color: white;
     margin-top: 50px;
+    min-width: 320px;
+    max-width: 40rem;
     width: 80%;
-    max-width: 1313px;
     padding: 1rem 1.3rem;
-    max-width: 1313px;
 }
 .category-section-title {
     font-weight: 500;
+    font-size: 1.4rem;
     color: white;
     background-color: #324545;
     text-align: center;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.1rem;
     align-content: center;
     padding: 0.3rem 3rem 0.4rem;
     width: fit-content;
+    max-width: none;
     height: fit-content;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
@@ -144,6 +131,7 @@ body {
 }
 .category-title {
     font-weight: 500;
+    font-size: 1.4rem;
     color: black;
     width: 5.5rem;
     padding-bottom: 0.22rem;
@@ -156,6 +144,7 @@ body {
     border-right-width: 1.7px;
 }
 .category-links {
+    font-size: 1.2rem;
     height: fit-content;
     padding-top: 0.2rem;
     padding-bottom: 0.3rem;
@@ -171,17 +160,18 @@ body {
     background-color: white;
     margin-top: 50px;
     width: 80%;
-    max-width: 1313px;
+    max-width: 40rem;
     padding: 1rem 1.3rem;
 }
 .note-to-users-title {
     font-weight: 500;
+    font-size: 1.4rem;
     color: white;
     background-color: #324545;
     text-align: center;
     letter-spacing: 0.32px;
     align-content: center;
-    padding: 0.3rem 1rem 0.4rem;
+    padding: 0.5rem 1rem 0.6rem;
     margin-left: 1rem;
     width: fit-content;
     max-width: 15%;
@@ -192,10 +182,11 @@ body {
     margin-bottom: auto;
 }
 .note-to-users-text {
+    font-size: 1.2rem;
     padding-bottom: 3px;
     flex: 1;
     height: fit-content;
-    line-height: 1.2rem;
+    line-height: 1.55rem;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 1.3rem;
