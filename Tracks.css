@@ -104,9 +104,10 @@ body {
 }
 .title-line {
     margin-top: 0.2rem;
-    height: 0.7px;
+    height: 1.2px;
     color:#324545;
     background-color: #324545;
+    border: none;
 }
 .Tracks-subtitle {
     margin-left: 1%;
@@ -144,6 +145,8 @@ body {
     margin-top: 0.2rem;
     color:#324545;
     background-color: #324545;
+    height: 0.8px;
+    border: none;
 }
 .subsection-header {
     font-weight: 700;
