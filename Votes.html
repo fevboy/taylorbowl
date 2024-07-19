@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        Votes
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="Votes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <img
+            class="TaylorBowl-logo-image"
+            src="Logos/TaylorBowl Logo.svg">
+
+            <div
+            class="TaylorBowl-logo-text">
+                TAYLORBOWL WIKI
+            </div>
+
+            <img
+            class="search-button"
+            src="Logos/Search Logo.svg">
+
+        </div>
+
+        <div
+        class="Votes-title">
+            Votes
+            <hr
+            class="title-line">
+        </div>
+
+        <div
+        class="Votes-summary">
+
+                    <div
+        class="Tracks-summary-text">
+            Votes are what decides the winner and loser of a <a class="text-actionable-link" href="">TaylorBowl</a>. Each user is entitled to one vote per bowl.
+        </div>
+
+        <div
+        class="contents-list">
+            <div
+            class="contents-list-title">
+                Contents
+            </div>
+            <div>
+                1 &emsp; <a class="text-actionable-link" href=""> Mechanics <br> </a>
+            </div>
+            <div>
+                2 &emsp; <a class="text-actionable-link" href=""> Streak <br> </a>
+            </div>
+            <div>
+                3 &emsp; <a class="text-actionable-link" href=""> Special Votes <br> </a>
+            </div>
+            <div>
+                &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href=""> Autovote <br> </a>
+            </div>
+            <div>
+                &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href=""> First & Hammer Votes <br> </a>
+            </div>
+            <div>
+                4 &emsp; <a class="text-actionable-link" href=""> Influencing Votes <br> </a>
+            </div>
+        </div>
+        
+        <div
+        class="section-header">
+            Mechanics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Mechanics-content">
+            To cast a vote, typing a message with just the letter A or B counts as a vote to whichever track the letter is assigned to. Alternatively, typing a message with [A] or [B] included anywhere within it also counts as a vote. If a message contains both [A] and [B], it is counted as a vote for A.
+            <br> <br>
+            At any time during a bowl, you may use the command <a class="command-text">/didivote</a> to check if you have voted. The command is only visible to you. It will show which option you voted for. If used when there is no bowl, it will return an error message.
+            <br> <br>
+            For most of the bowl, you may switch votes by revoting. However, you may not remove a vote. In the last minute of a bowl, switching votes is disabled. If <a class="text-actionable-link" href="">Extra Time</a> is enabled, you may switch votes again, but not in the last minute of Extra Time. If the <a class="text-actionable-link" href="">Tiebreaker</a> is enabled, no voting is allowed during its length.
+            <br> <br>
+            Each vote adds to your Bowls Participated, and is worth 5 <a class="text-actionable-link" href="">User Score</a> each.        
+        </div>
+
+        <div
+        class="section-header">
+            Streak
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Streak-content">
+            When you vote, you gain 10 Credits for each bowl you vote in. This is increased by your Streak. Your streak refers to the number of bowls that you have voted for consecutively, resetting to 0 when you do not vote in a bowl. Every 7 bowls, the number of credits you receive increases by 10.
+            <br> <br>
+            If you are a Server Booster, Kintsugi, or both, you receive extra credits from voting. Server Boosters receive 1.25x of the standard, rounded up. Kintsugi receive 2x. Both of these can stack, leading to a 2.5x multiplier.
+            <br> <br>
+            Your highest streak of the Season, or Streak Record, contributes to your <a class="text-actionable-link" href="">User Score</a>. Up to 150 Streak Record, it acts as a multiplier. Above that, additional Streak Record is worth 20 User Score. 
+        </div>
+
+        <div
+        class="section-header">
+            Special Votes
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Special-Votes-content">
+            There are three special votes that may occur in bowls. These have no special impact on the bowl, apart from being considered a vote, but have other contributions.
+        </div>
+        
+        <div
+        class="subsection-header">
+            Autovote
+        </div>
+
+        <div
+        class="Autovote-content">
+            Autovote allows you to vote in bowls you are not present for based on <a class="text-actionable-link" href="">Personal Rankings</a>. Your vote is counted at the start of every bowl, but it will not be evident that you voted. You may use the command <a class="command-text">!autovote</a> to Autovote.
+            <br> <br>
+            When on Autovote, you gain an Autovote Streak, represented by a negative streak value. For each bowl you Autovote in, you spend 4 times the number of <a class="text-actionable-link" href="">credits</a> you would have otherwise gained from normally voting (i.e. a -4x multiplier). If you run out of credits, your Autovote will automatically stop. Otherwise, you will have to manually vote or use the command <a class="command-text">!autovote</a> again to stop it.
+            <br> <br>
+            If you vote in a bowl, then Autovote, your vote will be considered as an Autovote. If you Autovote, then vote in a bowl, your vote will be considered as a normal vote. If you Autovote after a bowl has begun, you will not have been considered to have voted as Autovote only begins at the start of a bowl.
+        </div>
+
+        <div
+        class="subsection-header">
+            First & Hammer Votes
+        </div>
+
+        <div
+        class="First-Hammer-Votes-content">
+            The first vote in any server for either option, barring Autovotes, is considered the first vote. Every first vote is worth 5 <a class="text-actionable-link" href="">User Score</a>.
+
+            The last vote in a bowl across all servers, if it is for the winning song, and said winning song won by a margin of 1 vote, is considered the hammer vote. Every hammer vote is worth 1 <a class="text-actionable-link" href="">User Score</a>.
+        </div>
+
+        <div
+        class="section-header">
+            Influencing Votes
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Influencing-Votes-content">
+            Using <a class="text-actionable-link" href="">Invocations</a>, you may influence the votes of others or protect yourself from being influenced. A brief summary of the relevant Invocations is as follows:
+            <br> <br>
+            <a class="text-actionable-link" href="">Falsify</a> uses 2 <a class="text-actionable-link" href="">Ephemera</a> to make a non-voter vote in a bowl using the command <a class="command-text">!falsify choice user</a>. <a class="text-actionable-link" href="">Invert</a> uses 3 Ephemera to switch the vote of two voters using the command <a class="command-text">!invert choice</a>. <a class="text-actionable-link" href="">Expel</a> uses 5 Ephemera to remove the votes of two random voters using the command <a class="command-text">!expel choice</a>.
+            <br> <br>
+            <a class="text-actionable-link" href="">Fortify</a> uses 1 Ephemera to protect a user from the above 3 Invocations for 30 minutes using the command <a class="command-text">!fortify user</a>. <a class="text-actionable-link" href="">Reinforce</a> uses 3 Ephemera to protect the invoker from the above 3 Invocations as long as they have at least 1 Ephemera on hand, but increases the <a class="text-actionable-link" href="">Disintegration</a> chance using the command <a class="command-text">!reinforce</a>.
+            <br> <br>
+            There exist <a class="text-actionable-link" href="">Evocations</a> that allows the evoker to influence votes. However, they will only be revealed upon successful usage and only in their dedicated pages such that users may avoid end game content if they wish to.
+        </div>
+
+        <div
+        class="version-text">
+            Version 1.0.1
+        </div>
+
+    </div>
+
+</body>
+
+</html>
