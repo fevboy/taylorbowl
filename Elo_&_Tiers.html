@@ -43,7 +43,7 @@
 
         <div
         class="Elo-Tiers-title">
-            Tracks
+            Elo & Tiers
             <hr
             class="title-line">
         </div>
@@ -125,7 +125,7 @@
                 <p><span>
                     $$\Delta Elo=\begin{cases}
                     \mathrm{round}(3m\max(A,B)) & \mathrm{when}\,\max(A,B)<7 \\
-                    \mathrm{round}(45m\lg(|A-B|-4)) & \mathrm{when}\,|A-B|>7 \\
+                    \mathrm{round}(45m\log_{10}(|A-B|-4)) & \mathrm{when}\,|A-B|>7 \\
                     \mathrm{round}(25m) & \mathrm{otherwise}
                     \end{cases}$$
                 </span></p>
