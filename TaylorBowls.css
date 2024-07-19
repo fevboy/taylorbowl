@@ -66,6 +66,9 @@ body {
     padding-top: auto;
     padding-bottom: auto;
 }
+.TaylorBowl-logo-image {
+    height: 2.2rem;
+}
 .TaylorBowl-logo-text {
     font-family: Pistilli;
     font-size: 1.3rem;
