@@ -93,7 +93,7 @@
         class="Mechanics-content">
             To cast a vote, typing a message with just the letter A or B counts as a vote to whichever track the letter is assigned to. Alternatively, typing a message with [A] or [B] included anywhere within it also counts as a vote. If a message contains both [A] and [B], it is counted as a vote for A.
             <br> <br>
-            At any time during a bowl, you may use the command <a class="command-text">/didivote</a> to check if you have voted. The command is only visible to you. It will show which option you voted for. If used when there is no bowl, it will return an error message.
+            At any time during a bowl, you may use the command <a class="command-text">/didivote</a> to check if you have voted. The command is only visible to you. It will show which option you voted for. If used when there is no bowl, it will show if you voted in the prior bowl.
             <br> <br>
             For most of the bowl, you may switch votes by revoting. However, you may not remove a vote. In the last minute of a bowl, switching votes is disabled. If <a class="text-actionable-link" href="">Extra Time</a> is enabled, you may switch votes again, but not in the last minute of Extra Time. If the <a class="text-actionable-link" href="">Tiebreaker</a> is enabled, no voting is allowed during its length.
             <br> <br>
@@ -112,6 +112,8 @@
             When you vote, you gain 10 Credits for each bowl you vote in. This is increased by your Streak. Your streak refers to the number of bowls that you have voted for consecutively, resetting to 0 when you do not vote in a bowl. Every 7 bowls, the number of credits you receive increases by 10.
             <br> <br>
             If you are a Server Booster, Kintsugi, or both, you receive extra credits from voting. Server Boosters receive 1.25x of the standard, rounded up. Kintsugi receive 2x. Both of these can stack, leading to a 2.5x multiplier.
+            <br> <br>
+            You may use the command <a class="command-text">!streak</a> to display your current streak, as well as how many credits you will earn from voting in the next bowl. You may use the commands <a class="command-text">/streakcurrent</a> or <a class="command-text">/streaknext</a> to see how many credits you would earn at a given streak, even if you are not at that streak. You may use the command <a class="command-text">/streakcumulative</a> to see how many credits you would earn in total from voting in a certain number of bowls, as well as how long it might take for you to reach that streak.
             <br> <br>
             Your highest streak of the Season, or Streak Record, contributes to your <a class="text-actionable-link" href="">User Score</a>. Up to 150 Streak Record, it acts as a multiplier. Above that, additional Streak Record is worth 20 User Score. 
         </div>
@@ -138,6 +140,8 @@
             Autovote allows you to vote in bowls you are not present for based on <a class="text-actionable-link" href="">Personal Rankings</a>. Your vote is counted at the start of every bowl, but it will not be evident that you voted. You may use the command <a class="command-text">!autovote</a> to Autovote.
             <br> <br>
             When on Autovote, you gain an Autovote Streak, represented by a negative streak value. For each bowl you Autovote in, you spend 4 times the number of <a class="text-actionable-link" href="">credits</a> you would have otherwise gained from normally voting (i.e. a -4x multiplier). If you run out of credits, your Autovote will automatically stop. Otherwise, you will have to manually vote or use the command <a class="command-text">!autovote</a> again to stop it.
+            <br> <br>
+            You may use the command <a class="command-text">!streak</a> to see how many credits it will cost to Autovote in the next bowl. You may use the command <a class="command-text">/autovotecost</a> to estimate the cost of Autovoting for a certain number of hours.
             <br> <br>
             If you vote in a bowl, then Autovote, your vote will be considered as an Autovote. If you Autovote, then vote in a bowl, your vote will be considered as a normal vote. If you Autovote after a bowl has begun, you will not have been considered to have voted as Autovote only begins at the start of a bowl.
         </div>
