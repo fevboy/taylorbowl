@@ -7,6 +7,11 @@
         TaylorBowls
     </title>
 
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
     <link rel="stylesheet" href="TaylorBowls.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +25,10 @@
 
         <div
         class="header">
+            
+            <img
+            class="TaylorBowl-logo-image"
+            src="Logos/TaylorBowl Logo.svg">
 
             <div
             class="TaylorBowl-logo-text">
@@ -39,7 +48,7 @@
 
         <div
         class="TaylorBowls-subtitle">
-            Not to be confused with <a class="text-actionable-link" href="">TaylorBowl (server)</a>.
+            Not to be confused with <a class="text-actionable-link" href="">TaylorBowl (server)</a>
         </div>
 
         <div
@@ -136,13 +145,11 @@
 
             <div
             class="Voting-content">
-                Every TaylorBowl has two song options, chosen from a list of matchups. (<a class="text-actionable-link" href="">Main article: Songs</a>) The song with the higher <a class="text-actionable-link" href="">elo</a> is assigned the letter A, and the song with lower elo is assigned the letter B. Sending either letter as its own message counts as a vote. Alternatively, sending any message containing [A] or [B] counts as a vote for that option, known internally as the Lydia rule. If a message contains both [A] and [B], it is counted as a vote for A. 
+                Every TaylorBowl has two song options, chosen from a list of matchups. (<a class="text-actionable-link" href="">Main article: Songs</a>) The song with the higher <a class="text-actionable-link" href="">elo</a> is assigned the letter A, and the song with lower elo is assigned the letter B. Sending either letter as its own message counts as a vote. Alternatively, sending any message containing [A] or [B] counts as a vote for that option. If a message contains both [A] and [B], it is counted as a vote for A. 
                 <br> <br>
                 You may switch votes at any point in a bowl apart from the last minute by simply recasting a vote as if you had not voted prior.
                 <br> <br>
                 The command <span class="command-text">!showbowl</span> or its shortened form <span class="command-text">!sbowl</span> can be used at any point during the bowl to show the two options and the number of votes each currently has. The command <span class="command-text">/didivote</span> can be used at any point during the bowl to privately show if you have voted, and for which song.
-                <br> <br>
-                Every TaylorBowl has a "first vote". This is counted as the first chronological vote cast for either option, barring <a class="text-actionable-link" href="">Autovoters</a>. Certain TaylorBowls have a "hammer vote". This is counted as the last vote cast for the winning option when the difference in votes is 1. Neither have additional impact on the bowl, but both contribute to <a class="text-actionable-link" href="">User Score</a>.
             </div>
 
             <div
@@ -180,7 +187,7 @@
 
             <div
             class="Extra-Time-content">
-                If at the end of the bowl's duration the number of votes for each option is tied, the bowl proceeds into Extra Time, which lasts 2 minutes. Switching votes is re-enabled, and Bribing is now possible, though the latter will have no effect unless the Tiebreaker period is started. In the last minute of extra time, switching votes is again disabled.
+                If at the end of the bowl's duration the number of votes for each option is tied, the bowl proceeds into Extra Time, which lasts 2 minutes. This is known internally as the Lydia Rule. Switching votes is re-enabled, and Bribing is now possible, though the latter will have no effect unless the Tiebreaker period is started. In the last minute of extra time, switching votes is again disabled.
             </div>
 
             <div
@@ -198,14 +205,14 @@
                 <div class="formula">
                     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
                     <p><span>
-                        $$P(X\,\mathrm{wins})=\cfrac{\mathrm{Credits\,bribed\,for}\,X}{\mathrm{Total\,credits\,bribed}}$$
+                        $$P(X\,wins)=\cfrac{Credits\,bribed\,for\,X}{Total\,credits\,bribed}$$
                     </span></p>
                 </div>
                 The ratio of the probability that X wins against the probability that Y wins is given by the formula: <br>
                 <div class="formula">
                     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
                     <p><span>
-                        $$P(X\,\mathrm{wins}):P(Y\,\mathrm{wins})=\mathrm{Credits\,bribed\,for}\,X:\mathrm{Credits\,bribed\,for}\,Y$$
+                        $$P(X\,wins):P(Y\,wins)=Credits\,bribed\,for\,X:Credits\,bribed\,for\,Y$$
                     </span></p>
                 </div>
                 If any one song has no credits used to bribe for it, it has a 0% probability of winning. If both songs have no credits used to bribe for them, they both have a 50% probability of winning.
@@ -217,7 +224,7 @@
 
         <div
         class="version-text">
-            Version 1.0.6
+            Version 1.0.7
         </div>
 
     </div>
