@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        Elo & Tiers
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="Seasons.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <img
+            class="TaylorBowl-logo-image"
+            src="Logos/TaylorBowl Logo.svg">
+
+            <div
+            class="TaylorBowl-logo-text">
+                TAYLORBOWL WIKI
+            </div>
+
+            <img
+            class="search-button"
+            src="Logos/Search Logo.svg">
+
+        </div>
+
+        <div
+        class="Seasons-title">
+            Seasons
+            <hr
+            class="title-line">
+        </div>
+
+        <div
+        class="Seasons-summary">
+
+        <div
+        class="Seasons-summary-text">
+            Seasons are a period of time in TaylorBowl. The end of one season and beginning of another, known as a season reset, marks a series of resets and typically occurs with major <a class="text-actionable-link" href="">updates</a>.
+        </div>
+
+        <div
+        class="contents-list">
+            <div
+            class="contents-list-title">
+                Contents
+            </div>
+            <div>
+                1 &emsp; <a class="text-actionable-link"> Duration <br> </a>
+            </div>
+            <div>
+                2 &emsp; <a class="text-actionable-link"> Resets <br> </a>
+            </div>
+            <div>
+                3 &emsp; <a class="text-actionable-link"> Tracks <br> </a>
+            </div>
+            <div>
+                4 &emsp; <a class="text-actionable-link"> Era 1 <br> </a>
+            </div>
+        </div>
+
+        <div
+        class="section-header">
+            Duration
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Duration-content">
+            Each season lasts 4 months. New seasons begin on the 1st of every February, June, and October. However, there is not a regular time of day in which they occur as season resets as they are a manual effort and vary in how long each takes to implement.
+        </div>
+
+        <div
+        class="section-header">
+            Resets
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="section-subheader">
+            Main article: <a class="text-actionable-link" href="">User Score</a>
+        </div>
+
+        <div
+        class="Resets-content">
+            Every season reset, users have their Bowls Participated, Bowls Started, Streak Record, First Votes, Hammer Votes, Spent Credits, Ephemera Condensed, and Lyric IQ reset to 0. This only concerns User Score. On-hand <a class="text-actionable-link" href="">credits</a>, <a class="text-actionable-link" href="">Ephemera</a>, <a class="text-actionable-link" href="">Perpetua</a>, and <a class="text-actionable-link" href="">Potentia</a> are not reset. 
+            <br> <br>
+            Because of this, the Council and Pantheon are reset, as all users now have 0 User Score. However, those in the Council and Pantheon are remembered through a message in the channel <a class="command-text">#bowl-headlines</a>.        
+        </div>
+
+        <div
+        class="section-header">
+            Tracks
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Tracks-content">
+            At the end of every Season, all tracks on the main list undergo a “soft reset” of their <a class="text-actionable-link" href="">Elo</a>. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between their Elo remain the same. 
+            <br> <br>
+            This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to <a class="text-actionable-link" href="">Criterion 1</a>. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible.
+            <br> <br>
+            The formula for their new Elo is given by:
+            
+            <div class="formula">
+                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+                <p><span>
+                    $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
+                </span></p>
+            </div>   
+            
+            If new tracks were added at 0 Elo in the previous season, their Elo are manually adjusted during the season reset based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
+            
+            <div class="formula">
+                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+                <p><span>
+                    $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
+                </span></p>
+            </div>
+
+        </div>
+
+        <div
+        class="section-header">
+            Era 1
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Era-1-content">
+            The first 9 seasons were grouped into an Era. Before the end of Era 1, user stats were all-time instead of seasonal. Thus, the results for the Council and the Pantheon for these 9 seasons were added, and were treated as if they had all occurred in the same season.
+        </div>
+
+        <div
+        class="version-text">
+            Version 1.0.1
+        </div>
+
+    </div>
+
+</body>
+
+</html>
