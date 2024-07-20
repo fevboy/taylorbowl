@@ -153,6 +153,22 @@ body {
     line-height: 1.5rem;
 }
 
+.Introduction-page-section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 50px;
+    width: 80%;
+    max-width: 40rem;
+    padding: 1rem 1.3rem;
+}
+.Introduction-page-section-content {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+
 .note-to-users {
     display: flex;
     margin-left: auto;
