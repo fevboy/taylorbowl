@@ -82,19 +82,57 @@ body {
     margin-left: 0.22rem;
     letter-spacing: -1px;
     word-spacing: 0.1rem;
-    transform: scaleY(1.3)
+    transform: scaleY(1.3);
 }
 .search-button {
     border-style: solid;
     background-color: #324545;
     border-width: 0.1rem;
     border-color: #324545;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0.25rem;
     border-radius: 0.5rem;
     margin-left: auto;
     margin-top: 0.2rem;
+}
+.search-button:hover {
+    cursor: pointer;
+}
+.search-logo {
+    width: 1.22rem;
+}
+.search-input {
+    width: 100%;
+    height: 2rem;
+    margin-top: 0.2rem;
+    padding: 0;
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    border-width: 0;
+    box-shadow:0px 0px 0px 0.1rem #324545 inset;
+    display: none;
+}
+.search-input:focus {
+    outline-width: 0;
+}
+.new-search-button {
+    border-style: solid;
+    background-color: #324545;
+    border-width: 0.1rem;
+    border-color: #324545;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.25rem;
+    padding-left: 0.13rem;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    margin-left: auto;
+    margin-top: 0.2rem;
+    display: none;
+}
+.new-search-button:hover {
+    cursor: pointer;
 }
 
 .Tracks-title {
@@ -128,7 +166,7 @@ body {
     padding-right: 1rem;
     padding-top: 0.7rem;
     padding-bottom: 1rem;
-    width: 12.6rem;
+    width: 11.8rem;
 }
 .contents-list-title {
     margin-bottom: 0.5rem;
