@@ -3,8 +3,7 @@ let searchQuery = "";
 function openSearch() {
     console.log("opened search");
 
-    document.getElementById("js-taylorbowl-logo-image").style.display = "none";
-    document.getElementById("js-taylorbowl-logo-text").style.display = "none";
+    document.getElementById("js-taylorbowl-logo").style.display = "none";
     document.getElementById("js-search-button").style.display = "none";
     document.getElementById("js-search-input").style.display = "inline";
     document.getElementById("js-new-search-button").style.display = "inline";
@@ -24,8 +23,7 @@ function processQuery() {
 function closeSearch() {
         console.log("closed search");
 
-        document.getElementById("js-taylorbowl-logo-image").style.display = "inline";
-        document.getElementById("js-taylorbowl-logo-text").style.display = "inline";
+        document.getElementById("js-taylorbowl-logo").style.display = "flex";
         document.getElementById("js-search-button").style.display = "inline";
         document.getElementById("js-search-input").style.display = "none";
         document.getElementById("js-new-search-button").style.display = "none";
