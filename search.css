@@ -101,6 +101,9 @@ body {
     padding: 0.25rem;
     border-radius: 0.5rem;
 }
+.home-button:hover {
+    cursor: pointer;
+}
 
 .search-content {
     display: flex;
