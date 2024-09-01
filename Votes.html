@@ -28,16 +28,35 @@
             
             <img
             class="TaylorBowl-logo-image"
+            id="js-taylorbowl-logo-image"
             src="Logos/TaylorBowl Logo.svg">
 
             <div
-            class="TaylorBowl-logo-text">
+            class="TaylorBowl-logo-text"
+            id="js-taylorbowl-logo-text">
                 TAYLORBOWL WIKI
             </div>
 
-            <img
+            <button
             class="search-button"
-            src="Logos/Search Logo.svg">
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
 
         </div>
 
@@ -53,7 +72,7 @@
 
                     <div
         class="Tracks-summary-text">
-            Votes are what decides the winner and loser of a <a class="text-actionable-link" href="">TaylorBowl</a>. Each user is entitled to one vote per bowl.
+            Votes are what decides the winner and loser of a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowl</a>. Each user is entitled to one vote per bowl.
         </div>
 
         <div
@@ -63,27 +82,28 @@
                 Contents
             </div>
             <div>
-                1 &emsp; <a class="text-actionable-link" href=""> Mechanics <br> </a>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Mechanics"> Mechanics <br> </a>
             </div>
             <div>
-                2 &emsp; <a class="text-actionable-link" href=""> Streak <br> </a>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak"> Streak <br> </a>
             </div>
             <div>
-                3 &emsp; <a class="text-actionable-link" href=""> Special Votes <br> </a>
+                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_votes"> Special Votes <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href=""> Autovote <br> </a>
+                &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote"> Autovote <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href=""> First & Hammer Votes <br> </a>
+                &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#First_&_Hammer_Votes"> First & Hammer Votes <br> </a>
             </div>
             <div>
-                4 &emsp; <a class="text-actionable-link" href=""> Influencing Votes <br> </a>
+                4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
             </div>
         </div>
         
         <div
-        class="section-header">
+        class="section-header"
+        id="Mechanics">
             Mechanics
             <hr
             class="section-header-line">
@@ -95,13 +115,14 @@
             <br> <br>
             At any time during a bowl, you may use the command <a class="command-text">/didivote</a> to check if you have voted. The command is only visible to you. It will show which option you voted for. If used when there is no bowl, it will show if you voted in the prior bowl.
             <br> <br>
-            For most of the bowl, you may switch votes by revoting. However, you may not remove a vote. In the last minute of a bowl, switching votes is disabled. If <a class="text-actionable-link" href="">Extra Time</a> is enabled, you may switch votes again, but not in the last minute of Extra Time. If the <a class="text-actionable-link" href="">Tiebreaker</a> is enabled, no voting is allowed during its length.
+            For most of the bowl, you may switch votes by revoting. However, you may not remove a vote. In the last minute of a bowl, switching votes is disabled. If <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Extra_Time">Extra Time</a> is enabled, you may switch votes again, but not in the last minute of Extra Time. If the <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Tiebreaker">Tiebreaker</a> is enabled, no voting is allowed during its length.
             <br> <br>
-            Each vote adds to your Bowls Participated, and is worth 5 <a class="text-actionable-link" href="">User Score</a> each.        
+            Each vote adds to your Bowls Participated, and is worth 5 <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a> each.        
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Streak">
             Streak
             <hr
             class="section-header-line">
@@ -115,11 +136,12 @@
             <br> <br>
             You may use the command <a class="command-text">!streak</a> to display your current streak, as well as how many credits you will earn from voting in the next bowl. You may use the commands <a class="command-text">/streakcurrent</a> or <a class="command-text">/streaknext</a> to see how many credits you would earn at a given streak, even if you are not at that streak. You may use the command <a class="command-text">/streakcumulative</a> to see how many credits you would earn in total from voting in a certain number of bowls, as well as how long it might take for you to reach that streak.
             <br> <br>
-            Your highest streak of the Season, or Streak Record, contributes to your <a class="text-actionable-link" href="">User Score</a>. Up to 150 Streak Record, it acts as a multiplier. Above that, additional Streak Record is worth 20 User Score. 
+            Your highest streak of the Season, or Streak Record, contributes to your <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a>. Up to 150 Streak Record, it acts as a multiplier. Above that, additional Streak Record is worth 20 User Score. 
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Special_Votes">
             Special Votes
             <hr
             class="section-header-line">
@@ -131,15 +153,16 @@
         </div>
         
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Special_Votes#Autovote">
             Autovote
         </div>
 
         <div
         class="Autovote-content">
-            Autovote allows you to vote in bowls you are not present for based on <a class="text-actionable-link" href="">Personal Rankings</a>. Your vote is counted at the start of every bowl, but it will not be evident that you voted. You may use the command <a class="command-text">!autovote</a> to Autovote.
+            Autovote allows you to vote in bowls you are not present for based on <a class="text-actionable-link" href="https://taylorbowl.wiki/Personal_Rankings">Personal Rankings</a>. Your vote is counted at the start of every bowl, but it will not be evident that you voted. You may use the command <a class="command-text">!autovote</a> to Autovote.
             <br> <br>
-            When on Autovote, you gain an Autovote Streak, represented by a negative streak value. For each bowl you Autovote in, you spend 4 times the number of <a class="text-actionable-link" href="">credits</a> you would have otherwise gained from normally voting (i.e. a -4x multiplier). If you run out of credits, your Autovote will automatically stop. Otherwise, you will have to manually vote or use the command <a class="command-text">!autovote</a> again to stop it.
+            When on Autovote, you gain an Autovote Streak, represented by a negative streak value. For each bowl you Autovote in, you spend 4 times the number of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> you would have otherwise gained from normally voting (i.e. a -4x multiplier). If you run out of credits, your Autovote will automatically stop. Otherwise, you will have to manually vote or use the command <a class="command-text">!autovote</a> again to stop it.
             <br> <br>
             You may use the command <a class="command-text">!streak</a> to see how many credits it will cost to Autovote in the next bowl. You may use the command <a class="command-text">/autovotecost</a> to estimate the cost of Autovoting for a certain number of hours.
             <br> <br>
@@ -147,41 +170,79 @@
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Special_Votes#First_&_Hammer_Votes">
             First & Hammer Votes
         </div>
 
         <div
         class="First-Hammer-Votes-content">
-            The first vote in any server for either option, barring Autovotes, is considered the first vote. Every first vote is worth 5 <a class="text-actionable-link" href="">User Score</a>.
+            The first vote in any server for either option, barring Autovotes, is considered the first vote. Every first vote is worth 5 <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a>.
 
-            The last vote in a bowl across all servers, if it is for the winning song, and said winning song won by a margin of 1 vote, is considered the hammer vote. Every hammer vote is worth 1 <a class="text-actionable-link" href="">User Score</a>.
+            The last vote in a bowl across all servers, if it is for the winning song, and said winning song won by a margin of 1 vote, is considered the hammer vote. Every hammer vote is worth 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a>.
         </div>
 
         <div
         class="section-header">
-            Influencing Votes
+            Invocations & Evocations
+            <button
+            class="show-hide"
+            id="js-toggler"
+            onclick="toggleVisibility()">
+                [show]
+            </button>
             <hr
             class="section-header-line">
         </div>
 
         <div
-        class="Influencing-Votes-content">
-            Using <a class="text-actionable-link" href="">Invocations</a>, you may influence the votes of others or protect yourself from being influenced. A brief summary of the relevant Invocations is as follows:
+        class="section-subheader">
+            Warning: This section contains endgame content. If you wish to experience the game as intended, click away.
+        </div>
+
+        <div
+        class="Invocations-and-Evocations-content"
+        id="js-toggle-content">
+            Using <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Invocations">Invocations</a>, you may influence the votes of others or protect yourself from being influenced. A brief summary of the relevant Invocations is as follows:
             <br> <br>
-            <a class="text-actionable-link" href="">Falsify</a> uses 2 <a class="text-actionable-link" href="">Ephemera</a> to make a non-voter vote in a bowl using the command <a class="command-text">!falsify choice user</a>. <a class="text-actionable-link" href="">Invert</a> uses 3 Ephemera to switch the vote of two voters using the command <a class="command-text">!invert choice</a>. <a class="text-actionable-link" href="">Expel</a> uses 5 Ephemera to remove the votes of two random voters using the command <a class="command-text">!expel choice</a>.
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Falsify">Falsify</a> uses 2 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to make a non-voter vote in a bowl using the command <a class="command-text">!falsify choice user</a>. <a class="text-actionable-link" href="https://taylorbowl.wiki/Invert">Invert</a> uses 3 Ephemera to switch the vote of two voters using the command <a class="command-text">!invert choice</a>. <a class="text-actionable-link" href="https://taylorbowl.wiki/Expel">Expel</a> uses 5 Ephemera to remove the votes of two random voters using the command <a class="command-text">!expel choice</a>.
             <br> <br>
-            <a class="text-actionable-link" href="">Fortify</a> uses 1 Ephemera to protect a user from the above 3 Invocations for 30 minutes using the command <a class="command-text">!fortify user</a>. <a class="text-actionable-link" href="">Reinforce</a> uses 3 Ephemera to protect the invoker from the above 3 Invocations as long as they have at least 1 Ephemera on hand, but increases the <a class="text-actionable-link" href="">Disintegration</a> chance using the command <a class="command-text">!reinforce</a>.
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Fortify">Fortify</a> uses 1 Ephemera to protect a user from the above 3 Invocations for 30 minutes using the command <a class="command-text">!fortify user</a>. <a class="text-actionable-link" href="https://taylorbowl.wiki/Reinforce">Reinforce</a> uses 3 Ephemera to protect the invoker from the above 3 Invocations as long as they have at least 1 Ephemera on hand, but increases the <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Disintegration">Disintegration</a> chance using the command <a class="command-text">!reinforce</a>.
             <br> <br>
-            There exist <a class="text-actionable-link" href="">Evocations</a> that allows the evoker to influence votes. However, they will only be revealed upon successful usage and only in their dedicated pages such that users may avoid end game content if they wish to.
+            There exist <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Evocations">Evocations</a> that allows the evoker to influence votes. However, they will only be revealed upon successful usage and only in their dedicated pages such that users may avoid end game content if they wish to.
         </div>
 
         <div
         class="version-text">
-            Version 1.0.1
+            Version 2.0
         </div>
 
     </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
+
+    <script>
+
+        let visible = false
+        function makeVisible() {
+            document.getElementById("js-toggle-content").style.display = "inline";
+            document.getElementById("js-toggler").innerHTML = "[hide]";
+            visible = true;
+            console.log("made visible");
+        }
+        function makeInvisible() {
+            document.getElementById("js-toggle-content").style.display = "none";
+            document.getElementById("js-toggler").innerHTML = "[show]";
+            visible = false;
+            console.log("made invisible");
+        }
+        function toggleVisibility() {
+            visible ? makeInvisible() : makeVisible();
+        }
+
+    </script>
 
 </body>
 
