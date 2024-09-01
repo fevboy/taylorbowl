@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <title>
+        Elo & Tiers
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="404.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="header">
+        
+        <img
+        class="TaylorBowl-logo-image"
+        id="js-taylorbowl-logo-image"
+        src="Logos/TaylorBowl Logo.svg">
+
+        <div
+        class="TaylorBowl-logo-text"
+        id="js-taylorbowl-logo-text">
+            TAYLORBOWL WIKI
+        </div>
+
+    </div>
+
+    <div
+    class="title">
+        Looks like this page doesn't exist.
+    </div>
+    <div
+    class="subtitle">
+        If you followed a link here, it is still a work in progress, so keep an eye out for it! <br>
+        If not, it probably isn't meant to exist. If you think it should, contact ev on Discord!
+    </div>
+    <div
+    class="text"
+    id="js-text">
+        Redirecting you to the search page
+    </div>
+
+    <script>
+
+        var text = ['Redirecting you to the search page .', 'Redirecting you to the search page . .', 'Redirecting you to the search page . . .'];
+
+        textSequence(0);
+        function textSequence(i) {
+
+            if (text.length > i) {
+                setTimeout(function() {
+                    document.getElementById("js-text").innerHTML = text[i];
+                    textSequence(++i);
+                }, 1000); // 1 second (in milliseconds)
+
+            } else if (text.length == i) { // Loop
+                textSequence(0);
+            }
+
+        }
+
+        setTimeout(redirect, 13000);
+        function redirect() {
+            window.location.href = "https://taylorbowl.wiki/search"
+        }
+
+    </script>
+
+</body>

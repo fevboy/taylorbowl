@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>
+        Search - TaylorBowl Wiki
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="search.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <img
+            class="TaylorBowl-logo-image"
+            src="Logos/TaylorBowl Logo.svg">
+
+            <div
+            class="TaylorBowl-logo-text">
+                TAYLORBOWL WIKI
+            </div>
+
+        </div>
+
+        <div
+        class="search-content">
+
+            <input 
+            class="search-input" 
+            id="js-search" 
+            placeholder="Search pages..."
+            onkeyup="match()">
+            <button
+            class="search-button"
+            onclick="match()">
+            <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+        </div>
+
+        <div
+        class="pages-content">
+
+            <button
+            class="page"
+            onclick="window.location.href=''">
+                <div
+                class="page-title">
+                    TaylorBowls
+                </div>
+                <div
+                class="page-description">
+                    TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.
+                </div>
+            </button>
+
+            <button 
+            class="page"
+            onclick="window.location.href=''">
+                <div
+                class="page-title">
+                    Tracks
+                </div>
+                <div
+                class="page-description">
+                    Tracks refer to any song that can be in a TaylorBowl. There are currently 249 such tracks.
+                </div>
+            </button>
+
+            <button 
+            class="page"
+            onclick="window.location.href=''">
+                <div
+                class="page-title">
+                    Elo
+                </div>
+                <div
+                class="page-description">
+                    All tracks in TaylorBowl are assigned an Elo value, which is a way of giving each a score.
+                </div>
+            </button>
+
+            <button 
+            class="page"
+            onclick="window.location.href=''">
+                <div
+                class="page-title">
+                    Votes
+                </div>
+                <div
+                class="page-description">
+                    Votes are what decides the winner and loser of a TaylorBowl.
+                </div>
+            </button>
+
+            <button 
+            class="page"
+            onclick="window.location.href=''">
+                <div
+                class="page-title">
+                    Seasons
+                </div>
+                <div
+                class="page-description">
+                    Seasons are a period of time in TaylorBowl that mark a series of resets at their end.
+                </div>
+            </button>
+
+        </div>
+
+    </div>
+
+<script src="search.js"></script>
+
+</body>
