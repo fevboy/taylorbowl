@@ -158,7 +158,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    margin-top: 50px;
+    margin-top: 1.3rem;
     width: 80%;
     max-width: 40rem;
     padding: 1rem 1.3rem;
@@ -169,12 +169,28 @@ body {
     text-align: center;
 }
 
+.Search-page-section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 3rem;
+    width: 80%;
+    max-width: 40rem;
+    padding: 1rem 1.3rem;
+}
+.Search-page-section-content {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+
 .note-to-users {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    margin-top: 50px;
+    margin-top: 3rem;
     width: 80%;
     max-width: 40rem;
     padding: 1rem 1.3rem;
