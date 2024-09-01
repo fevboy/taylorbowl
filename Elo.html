@@ -4,7 +4,7 @@
 <head>
     
     <title>
-        Elo
+        Elo & Tiers
     </title>
 
     <link 
@@ -28,16 +28,35 @@
             
             <img
             class="TaylorBowl-logo-image"
+            id="js-taylorbowl-logo-image"
             src="Logos/TaylorBowl Logo.svg">
 
             <div
-            class="TaylorBowl-logo-text">
+            class="TaylorBowl-logo-text"
+            id="js-taylorbowl-logo-text">
                 TAYLORBOWL WIKI
             </div>
 
-            <img
+            <button
             class="search-button"
-            src="Logos/Search Logo.svg">
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
 
         </div>
 
@@ -51,9 +70,9 @@
         <div
         class="Elo-Tiers-summary">
 
-                    <div
+        <div
         class="Elo-Tiers-summary-text">
-            All <a class="text-actionable-link" href="">tracks</a> in TaylorBowl are assigned an Elo value, which is a way of giving each a score. The value increases when a song wins a <a class="text-actionable-link" href="">TaylorBowl</a> but decreases when it loses one. Based on these Elo, tracks are separated into Tiers.
+            All <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks">tracks</a> in TaylorBowl are assigned an Elo value, which is a way of giving each a score. The value increases when a song wins a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowl</a> but decreases when it loses one. Based on these Elo, tracks are separated into Tiers.
         </div>
 
         <div
@@ -63,33 +82,34 @@
                 Contents
             </div>
             <div>
-                1 &emsp; <a class="text-actionable-link"> Elo System <br> </a>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System"> Elo System <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href=""> History <br> </a>
+                &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#History"> History <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href=""> Elo Changes <br> </a>
+                &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#Elo_Changes"> Elo Changes <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href=""> New Tracks <br> </a>
+                &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#New_Tracks"> New Tracks <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href=""> Season Resets <br> </a>
+                &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#Season_Resets"> Season Resets <br> </a>
             </div>
             <div>
-                2 &emsp; <a class="text-actionable-link"> Tier System <br> </a>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System"> Tier System <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href=""> Divisions <br> </a>
+                &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Divisions"> Divisions <br> </a>
             </div>
             <div>
-                &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href=""> Impacts <br> </a>
+                &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Impacts"> Impacts <br> </a>
             </div>
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Elo_System">
             Elo System
             <hr
             class="section-header-line">
@@ -97,23 +117,25 @@
 
         <div
         class="Elo-System-content">
-            Elo was originally assigned by <a class="text-actionable-link" href="">Bianca</a> based on external polls, but is now determined by bowls.
+            Elo was originally assigned by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bianca">Bianca</a> based on external polls, but is now determined by bowls.
 
             To find the elo of a track, the commands <span class="command-text">!elo name</span> or <span class="command-text">!elo #ranking</span> can be used.
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Elo_System#History">
             History
         </div>
 
         <div
         class="History-content">
-            When TaylorBowl first started, tracks were assigned an Elo based on a series of polls conducted in the subreddit <a class="text-actionable-link" href="">r/TaylorSwift</a> from March to August 2016. Tracks ranked higher were assigned higher Elo. The average Elo of all songs was, and still is, 2000.
+            When TaylorBowl first started, tracks were assigned an Elo based on a series of polls conducted in the subreddit <a class="text-actionable-link" href="https://www.reddit.com/r/TaylorSwift/">r/TaylorSwift</a> from March to August 2016. Tracks ranked higher were assigned higher Elo. The average Elo of all songs was, and still is, 2000.
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Elo_System#Elo_Changes">
             Elo Changes
         </div>
 
@@ -121,38 +143,30 @@
         class="Elo-Changes-content">
             When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if song A wins and gains 20 Elo, song B loses 20 Elo). This ensures the average remains the same. The Elo change is determined by the Tier of the bowl and the number of votes. For two songs receiving A and B votes, it is given by the formulae:
             <div class="formula">
-                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
                 <p><span>
-                    $$\Delta Elo=\begin{cases}
-                    \mathrm{round}(3m\max(A,B)) & \mathrm{when}\,\max(A,B)<7 \\
-                    \mathrm{round}(45m\log_{10}(|A-B|-4)) & \mathrm{when}\,|A-B|>7 \\
-                    \mathrm{round}(25m) & \mathrm{otherwise}
-                    \end{cases}$$
+                    $$\Delta \mathrm{Elo}=K\cdot(S_{A}-E_{A})$$
                 </span></p>
             </div>
-            where the multiplier m is given by:
+            where the K Value, \(K\), is given by:
             <div class="formula">
-                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+                <p><span>
+                    $$K=\begin{cases}
+                    3m\max(A,B) & \mathrm{when}\,\max(A,B)<7 \\
+                    45m\lg(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
+                    25m & \mathrm{otherwise}
+                    \end{cases}$$
+                </span></p>
+            and its multiplier, \(m\), is given by:
                 <p><span>
                     $$m=1-\cfrac{|T-5|^{2}}{83}$$
                 </span></p>
             </div>
-            Please note: This formula appears to be inaccurate by 1 Elo for certain matchups, likely due to rounding inconsistencies.
-            <br> <br>
-            Generally, the further the Tier of the bowl from 5, the smaller the change in Elo. For example, a Tier 0 bowl will have 0.699 times the change as a Tier 5. 
-            <br> <br>
-            The formulae for change in Elo are split into three cases: (1) where neither song receives more than 6 votes; (2) where the difference in votes is greater than 7; (3) for all other cases.
-            <br> <br>
-            For case (1), the greater the number of votes of the winning song, the greater the change in Elo. Obviously, if that value reaches and/or exceeds 7, the other cases will be used instead. For example, a 4-1 bowl will have an Elo change twice that of a 2-1 bowl (linear increase). 
-            <br> <br>
-            For case (2), the greater the difference in number of votes, the greater the change in Elo. For example, a bowl with a difference of 104 will have an Elo change twice that of a bowl with 14 (logarithmic increase, base 10).
-            <br> <br>
-            For case (3), no changes in votes will affect the Elo change, as long as neither of the criteria for cases (1) and (2) are met.
-
+            \(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; \(E_{A}\) is the track's current Elo.
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Elo_System#New_Tracks">
             New Tracks
         </div>
 
@@ -163,9 +177,8 @@
             <br> <br>
             For tracks added en masse, such as the 31 songs on <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they are all assigned an Elo of 0. As the lowest Elo of a normal song tends to be above 800, and the highest of newly added tracks tend to be below 400, the newly added songs do not interact with any existing ones. 
             <br> <br>
-            At the turn of the next Season, their Elo are manually adjusted based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
+            At the turn of the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons">Season</a>, their Elo are manually adjusted based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
             <div class="formula">
-                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
                 <p><span>
                     $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
                 </span></p>
@@ -177,24 +190,24 @@
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Elo_System#Season_Resets">
             Season Resets 
         </div>
 
         <div
         class="subsection-subheader">
-            Main article: <a class="text-actionable-link" href="">Season Resets</a>
+            Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons">Seasons</a>
         </div>
 
         <div
         class="Season-Resets-content">
-        At the end of every Season, all tracks undergo a “soft reset” of their Elo. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between them remain the same.
+        At the end of every Season, all tracks undergo a “soft reset” of their Elo. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between them remain the same. This is much like the process for adding new tracks to the main list.
         <br> <br>
         This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to Criterion 1. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible. 
         <br> <br>
         The formula for their new Elo is given by:     
         <div class="formula">
-            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
             <p><span>
                 $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
             </span></p>
@@ -202,7 +215,8 @@
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Tier_System">
             Tier System
             <hr
             class="section-header-line">
@@ -216,7 +230,8 @@
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Tier_System#Divisions">
             Divisions
         </div>
 
@@ -250,7 +265,7 @@
             Tier 9: 1100-1299 Elo <br>
             Tier 10: 1099 Elo and below
             <br> <br>
-            Each Tier is also assigned a colour. These are purely aesthetic but Bianca has detailed the reasons for each colour:
+            Each Tier is also assigned a colour. These are purely aesthetic but <a class="text-actionable-link" href="https://taylorbowl.wiki/Bianca">Bianca</a> has detailed the reasons for each colour:
             <br> <br>
             Tier 0: Black, from anti-default when written in text <br>
             Tier 1: Purple, based on Overwatch Grandmaster Aura <br>
@@ -266,25 +281,30 @@
         </div>
 
         <div
-        class="subsection-header">
+        class="subsection-header"
+        id="Tier_System#Impacts">
             Impacts
         </div>
 
         <div
         class="Impacts-content">
-            Tiers impact how much a bowl affects the Elo of both songs, as covered in <span class="text-actionable-link">Elo System/Elo Changes</span>.
+            Tiers impact how much a bowl affects the Elo of both songs, as covered in <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo_System#Elo_Changes">Elo System#Elo Changes</span>.
             <br> <br>
-            When forcing or queueing bowls, the further the Tier of the bowl from Tier 6, the more expensive it is. For every Tier of distance from Tier 6, the cost doubles, i.e. a Tier 1 costs double of a Tier 2, which is double of a Tier 3, etc. and a Tier 4 costs the same as a Tier 8 as they are both 2 Tiers from Tier 6. The exception is a Tier 0 bowl, which costs 4 times of what it normally would. (Main article: <span class="text-actionable-link">Forcing & Queueing</span>) 
+            When forcing or queueing bowls, the further the Tier of the bowl from Tier 6, the more expensive it is. For every Tier of distance from Tier 6, the cost doubles, i.e. a Tier 1 costs double of a Tier 2, which is double of a Tier 3, etc. and a Tier 4 costs the same as a Tier 8 as they are both 2 Tiers from Tier 6. The exception is a Tier 0 bowl, which costs 4 times of what it normally would. (Main article: <span class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing">Forcing & Queueing</span>) 
             <br> <br>
             The default length of all bowls (i.e. those from a natural start) is 11 minutes, except for Tier 0 bowls, which is 22 minutes.        
         </div>
 
         <div
         class="version-text">
-            Version 1.0.1
+            Version 2.0
         </div>
 
     </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
 
 </body>
 
