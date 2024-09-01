@@ -72,6 +72,10 @@ body {
     padding-top: auto;
     padding-bottom: auto;
 }
+.TaylorBowl-logo {
+    display: flex;
+    text-decoration: none;
+}
 .TaylorBowl-logo-image {
     height: 2.2rem;
 }
@@ -82,7 +86,14 @@ body {
     margin-left: 0.22rem;
     letter-spacing: -1px;
     word-spacing: 0.1rem;
-    transform: scaleY(1.3)
+    transform: scaleY(1.3);
+    color: black;
+}
+.back-to-home-text {
+    font-size: 1.2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
 }
 
 .search-content {
@@ -143,4 +154,10 @@ body {
     font-size: 1.5rem;
     margin-bottom: 0.6rem;
     width: 100%;
+}
+
+.version-text {
+    margin-top: 3rem;
+    text-align: right;
+    font-size: 0.8rem;
 }
