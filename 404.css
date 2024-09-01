@@ -72,8 +72,13 @@ body {
     padding-top: auto;
     padding-bottom: auto;
 }
-.TaylorBowl-logo-image {
+.TaylorBowl-logo {
+    display: flex;
+    text-decoration: none;
     margin-left: auto;
+    margin-right: auto;
+}
+.TaylorBowl-logo-image {
     height: 2.2rem;
 }
 .TaylorBowl-logo-text {
@@ -84,7 +89,7 @@ body {
     letter-spacing: -1px;
     word-spacing: 0.1rem;
     transform: scaleY(1.3);
-    margin-right: auto;
+    color: black;
 }
 
 .title {
