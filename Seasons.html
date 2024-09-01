@@ -28,16 +28,35 @@
             
             <img
             class="TaylorBowl-logo-image"
+            id="js-taylorbowl-logo-image"
             src="Logos/TaylorBowl Logo.svg">
 
             <div
-            class="TaylorBowl-logo-text">
+            class="TaylorBowl-logo-text"
+            id="js-taylorbowl-logo-text">
                 TAYLORBOWL WIKI
             </div>
 
-            <img
+            <button
             class="search-button"
-            src="Logos/Search Logo.svg">
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
 
         </div>
 
@@ -53,7 +72,7 @@
 
         <div
         class="Seasons-summary-text">
-            Seasons are a period of time in TaylorBowl. The end of one season and beginning of another, known as a season reset, marks a series of resets and typically occurs with major <a class="text-actionable-link" href="">updates</a>.
+            Seasons are a period of time in TaylorBowl. The end of one season and beginning of another, known as a season reset, marks a series of resets and typically occurs with major <a class="text-actionable-link" href="https://taylorbowl.wiki/Update_History">updates</a>.
         </div>
 
         <div
@@ -63,21 +82,22 @@
                 Contents
             </div>
             <div>
-                1 &emsp; <a class="text-actionable-link"> Duration <br> </a>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Duration"> Duration <br> </a>
             </div>
             <div>
-                2 &emsp; <a class="text-actionable-link"> Resets <br> </a>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Resets"> Resets <br> </a>
             </div>
             <div>
-                3 &emsp; <a class="text-actionable-link"> Tracks <br> </a>
+                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Tracks"> Tracks <br> </a>
             </div>
             <div>
-                4 &emsp; <a class="text-actionable-link"> Era 1 <br> </a>
+                4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Era_1"> Era 1 <br> </a>
             </div>
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Duration">
             Duration
             <hr
             class="section-header-line">
@@ -89,7 +109,8 @@
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Resets">
             Resets
             <hr
             class="section-header-line">
@@ -97,18 +118,19 @@
 
         <div
         class="section-subheader">
-            Main article: <a class="text-actionable-link" href="">User Score</a>
+            Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a>
         </div>
 
         <div
         class="Resets-content">
-            Every season reset, users have their Bowls Participated, Bowls Started, Streak Record, First Votes, Hammer Votes, Spent Credits, Ephemera Condensed, and Lyric IQ reset to 0. This only concerns User Score. On-hand <a class="text-actionable-link" href="">credits</a>, <a class="text-actionable-link" href="">Ephemera</a>, <a class="text-actionable-link" href="">Perpetua</a>, and <a class="text-actionable-link" href="">Potentia</a> are not reset. 
+            Every season reset, users have their Bowls Participated, Bowls Started, Streak Record, First Votes, Hammer Votes, Spent Credits, Ephemera Condensed, and Lyric IQ reset to 0. This only concerns User Score. On-hand <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia">Potentia</a> are not reset. 
             <br> <br>
             Because of this, the Council and Pantheon are reset, as all users now have 0 User Score. However, those in the Council and Pantheon are remembered through a message in the channel <a class="command-text">#bowl-headlines</a>.        
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Tracks">
             Tracks
             <hr
             class="section-header-line">
@@ -116,14 +138,13 @@
 
         <div
         class="Tracks-content">
-            At the end of every Season, all tracks on the main list undergo a “soft reset” of their <a class="text-actionable-link" href="">Elo</a>. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between their Elo remain the same. 
+            At the end of every Season, all tracks on the main list undergo a “soft reset” of their <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo">Elo</a>. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between their Elo remain the same. 
             <br> <br>
-            This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to <a class="text-actionable-link" href="">Criterion 1</a>. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible.
+            This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Criteria">Criterion 1</a>. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible.
             <br> <br>
             The formula for their new Elo is given by:
             
             <div class="formula">
-                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
                 <p><span>
                     $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
                 </span></p>
@@ -132,7 +153,6 @@
             If new tracks were added at 0 Elo in the previous season, their Elo are manually adjusted during the season reset based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
             
             <div class="formula">
-                <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
                 <p><span>
                     $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
                 </span></p>
@@ -141,7 +161,8 @@
         </div>
 
         <div
-        class="section-header">
+        class="section-header"
+        id="Era_1">
             Era 1
             <hr
             class="section-header-line">
@@ -149,15 +170,19 @@
 
         <div
         class="Era-1-content">
-            The first 9 seasons were grouped into an Era. Before the end of Era 1, user stats were all-time instead of seasonal. Thus, the results for the Council and the Pantheon for these 9 seasons were added, and were treated as if they had all occurred in the same season.
+            The first 9 seasons were grouped into an Era. Before the end of Era 1, user stats were all-time instead of seasonal. Thus, the results for the <a class="text-actionable-link" href="https://taylorbowl.wiki/Score#Council">Council</a> and the <a class="text-actionable-link" href="https://taylorbowl.wiki/Score#Pantheon">Pantheon</a> for these 9 seasons were added, and were treated as if they had all occurred in the same season.
         </div>
 
         <div
         class="version-text">
-            Version 1.0.1
+            Version 2.0
         </div>
 
     </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
 
 </body>
 
