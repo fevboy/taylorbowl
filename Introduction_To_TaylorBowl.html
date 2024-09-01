@@ -28,16 +28,35 @@
             
             <img
             class="TaylorBowl-logo-image"
+            id="js-taylorbowl-logo-image"
             src="Logos/TaylorBowl Logo.svg">
 
             <div
-            class="TaylorBowl-logo-text">
+            class="TaylorBowl-logo-text"
+            id="js-taylorbowl-logo-text">
                 TAYLORBOWL WIKI
             </div>
 
-            <img
+            <button
             class="search-button"
-            src="Logos/Search Logo.svg">
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
 
         </div>
 
@@ -73,7 +92,7 @@
 
         <div
         class="Playing-TaylorBowl-content">
-            A pair of <a class="text-actionable-link" href="">tracks</a> appear in a <a class="text-actionable-link" href="">TaylorBowl</a>, usually called a bowl, which is an 11 minute long round of voting. One song is assigned the letter A and the other is assigned the letter B, and <a class="text-actionable-link" href="">voting</a> is done by sending the letter of the song you prefer. At the <a class="text-actionable-link" href="">end of the bowl</a>, the songs change <a class="text-actionable-link" href="">scores</a> - the winner increases score and the loser decreases score.
+            A pair of <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks">tracks</a> appear in a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowl</a>, usually called a bowl, which is an 11 minute long round of voting. One song is assigned the letter A and the other is assigned the letter B, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">voting</a> is done by sending the letter of the song you prefer. At the end of the bowl, the songs change <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo">scores</a> - the winner increases score and the loser decreases score.
             <br> <br>
             Between bowls, there is a 2 minute cooldown intended to allow additional discussion of the bowl that has just concluded. However, discussion can still happen at any time.        
         </div>
@@ -85,21 +104,25 @@
 
         <div
         class="Other-Things-content">
-            TaylorBowl also has an economy based on <a class="text-actionable-link" href="">Credits</a>, which are earned mainly through voting in bowls. There are minigames that allow you to gain or lose credits, such as <a class="text-actionable-link" href="">Farn</a>, <a class="text-actionable-link" href="">Risk</a>, <a class="text-actionable-link" href="">Anti-Risk</a>, <a class="text-actionable-link" href="">Ballpit</a>, and <a class="text-actionable-link" href="">Yahtzee</a>.
+            TaylorBowl also has an economy based on <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>, which are earned mainly through voting in bowls. There are minigames that allow you to gain or lose credits, such as <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farn</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons">The Commons</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk">Risk</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk">Anti-Risk</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit">Ballpit</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee">Yahtzee</a>.
             <br> <br>
-            There are other currencies like <a class="text-actionable-link" href="">Ephemera</a> and <a class="text-actionable-link" href="">Perpetua</a> used to do powerful actions. There are also <a class="text-actionable-link" href="">Potentia</a>, which are purchased and can be converted to credits or Ephemera.
+            There are other currencies like <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a> used to do powerful actions. There are also <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia">Potentia</a>, which are purchased and can be converted to credits or Ephemera.
             <br> <br>
-            There are also other minigames such as <a class="text-actionable-link" href="">LyricRace</a> and <a class="text-actionable-link" href="">Combat</a> which may interact with credits, but are not fundamentally based on them. LyricRace is a timed series of questions related to Taylor Swift songs and lyrics, and Combat is a collectible card trading game using Taylor Swift songs to level up and fight with.
+            There are also other minigames such as <a class="text-actionable-link" href="https://taylorbowl.wiki/LyricRace">LyricRace</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Combat">Combat</a> which may interact with credits, but are not fundamentally based on them. LyricRace is a timed series of questions related to Taylor Swift songs and lyrics, and Combat is a collectible card trading game using Taylor Swift songs to level up and fight with.
             <br> <br>
-            Players can gain <a class="text-actionable-link" href="">User Score</a> related to participation in different aspects of TaylorBowl, such as how many bowls you have voted in or how many bowls you have started.
+            Players can gain <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a> related to participation in different aspects of TaylorBowl, such as how many bowls you have voted in or how many bowls you have started.
         </div>
 
         <div
         class="version-text">
-            Version 1.0.1
+            Version 2.0
         </div>
 
     </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
 
 </body>
 
