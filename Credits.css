@@ -223,7 +223,7 @@ body {
 .show-hide:hover {
     cursor: pointer;
 }
-.Ephemera-content {
+.Ephemera-toggled-content {
     display: none;
 }
 
