@@ -189,11 +189,11 @@
         class="Blooms-content">
             Blooms have a base chance of 1 in 4500 of occurring every second. When a Bloom occurs, all planted credits grow by a certain percentage, known as the Growth Rate.
             <br> <br>
-            The chance for a Bloom to occur can be increased. On average, one bloom occurs every 4500 seconds, or 90 minutes. Farmers can water the farm to decrease this average time between Blooms, known internally as the Growth Denominator. The Growth Denominator can be checked using the command !farm.
+            The chance for a Bloom to occur can be increased. On average, one bloom occurs every 4500 seconds, or 90 minutes. Farmers can water the farm to decrease this average time between Blooms, known internally as the Growth Denominator. The Growth Denominator can be checked using the command <span class="command-text">!farm</span>.
             <br> <br>
-            The Growth Rate is determined by a number of factors. Most significant is the current Blight Strength. As the Blight Strength increases linearly, the Growth Rate increases exponentially. If the Farm is considered “unsafe”, the Growth Rate receives a significant increase. Less significant determinants are the Growth Denominator and Blight Power. As either decrease, the Growth Rate decreases slightly. The Growth Rate can be checked using the command !farm.
+            The Growth Rate is determined by a number of factors. Most significant is the current Blight Strength. As the Blight Strength increases linearly, the Growth Rate increases exponentially. If the Farm is considered “unsafe”, the Growth Rate receives a significant increase. Less significant determinants are the Growth Denominator and Blight Power. As either decrease, the Growth Rate decreases slightly. The Growth Rate can be checked using the command <span class="command-text">!farm</span>.
             <br> <br>
-            Almost always the number of credits after a Bloom is not an integer. The actual amount returned is always rounded down to the nearest integer. The number of credits a farmer will receive from a Bloom can be checked using the command !farmer.
+            Almost always the number of credits after a Bloom is not an integer. The actual amount returned is always rounded down to the nearest integer. The number of credits a farmer will receive from a Bloom can be checked using the command <span class="command-text">!farmer</span>.
         </div>
 
         <div
@@ -206,11 +206,11 @@
         class="The-Blight-content">
             The Blight is the event that resets the Farm. Each period between two Blights is colloquially known as a Blight Cycle or Farm Cycle.
             <br> <br>
-            The Blight has a Strength and Maximum Strength. The Blight Strength starts at 0 and increases by 1 every second until it reaches its Maximum Strength, which typically is above 200 000. The chance for a Blight to happen in any given second is the Blight Strength divided by the Maximum Strength. Thus, it is guaranteed to occur by the time the Blight Strength reaches the Maximum Strength. The Blight Strength and Maximum Strength can be checked using the command !farm.
+            The Blight has a Strength and Maximum Strength. The Blight Strength starts at 0 and increases by 1 every second until it reaches its Maximum Strength, which typically is above 200 000. The chance for a Blight to happen in any given second is the Blight Strength divided by the Maximum Strength. Thus, it is guaranteed to occur by the time the Blight Strength reaches the Maximum Strength. The Blight Strength and Maximum Strength can be checked using the command <span class="command-text">!farm</span>.
             <br> <br>
             As the Blight Strength increases, the Growth Rate increases exponentially. The Farm is most profitable at high Blight Strengths. However, there is a higher chance per second for the Blight to occur at higher Strengths.
             <br> <br>
-            The Blight Power refers to the percentage of credits destroyed by the Blight, ranging from 0 to 1. By default, it is 1, but can be reduced by strengthening. The percentage of strengthened credits can be checked using the command !farm, which when subtracted from 1 gives the Blight Power.
+            The Blight Power refers to the percentage of credits destroyed by the Blight, ranging from 0 to 1. By default, it is 1, but can be reduced by strengthening. The percentage of strengthened credits can be checked using the command <span class="command-text">!farm</span>, which when subtracted from 1 gives the Blight Power.
         </div>
 
         <div
@@ -223,7 +223,7 @@
 
         <div
         class="Farmer-Actions-content">
-            A farmer can perform 5 different actions - plant, harvest, water, strengthen, and weed. Water and strengthen are mutually exclusive; a farmer may only do one or the other at any given time. The command !farmer can be used to check a farmer's current action (water, strengthen), action status (Active, Passive, none), ability to harvest and ability to weed.
+            A farmer can perform 5 different actions - plant, harvest, water, strengthen, and weed. Water and strengthen are mutually exclusive; a farmer may only do one or the other at any given time. The command <span class="command-text">!farmer</span> can be used to check a farmer's current action (water, strengthen), action status (Active, Passive, none), ability to harvest and ability to weed.
         </div>
 
         <div
@@ -234,7 +234,7 @@
 
         <div
         class="Plant-content">
-            Planting using the command !plant amount places that number of credits into the Farm. Those credits continue to belong to the farmer who planted them, and are known as planted credits. 
+            Planting using the command <span class="command-text">!plant amount</span> places that number of credits into the Farm. Those credits continue to belong to the farmer who planted them, and are known as planted credits. 
             <br> <br>
             A farmer must plant a minimum number of credits, determined by a few factors. Firstly, the amount planted must be at least 1 credit. Secondly, the amount planted must be able grow by at least 1 credit when a Bloom occurs. Thirdly, the amount planted must be at least 2.5% of the user's total credits. These are given by the formulae (with results rounded up):
             <div
@@ -251,7 +251,7 @@
 
         <div
         class="Harvest-content">
-            Farmers may harvest using the command !harvest to remove all their credits from the Farm. They are no longer considered farmers after doing so, thus the effect of any watering or strengthening performed is removed. The effects of weeding remain.
+            Farmers may harvest using the command <span class="command-text">!harvest</span> to remove all their credits from the Farm. They are no longer considered farmers after doing so, thus the effect of any watering or strengthening performed is removed. The effects of weeding remain.
             <br> <br>
             After planting, watering, or strengthening, a farmer must wait for at least 1 Bloom to occur before being able to harvest. A farmer may only harvest 1 time during a <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>.         
         </div>
@@ -264,9 +264,9 @@
 
         <div
         class="Water-content">
-            Water is considered a persistent action. Once performed, it has a lasting effect on the Farm and performing it multiplies the Blight Strength by 1.0075. After a <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Restart</a>, any farmers who used the command !water change from Active farmers to Passive farmers. The effect of their action is equivalent to 0.3x of an Active farmer. Performing a persistent action while being a Passive farmer also multiplies the Blight Strength by 1.0075.
+            Water is considered a persistent action. Once performed, it has a lasting effect on the Farm and performing it multiplies the Blight Strength by 1.0075. After a <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Restart</a>, any farmers who used the command <span class="command-text">!water</span> change from Active farmers to Passive farmers. The effect of their action is equivalent to 0.3x of an Active farmer. Performing a persistent action while being a Passive farmer also multiplies the Blight Strength by 1.0075.
             <br> <br>
-            You may use the command !water to multiply the Growth Denominator by 0.985. This effect stacks multiplicatively, thus the formula for the Growth Denominator taking into account watering is:
+            You may use the command <span class="command-text">!water</span> to multiply the Growth Denominator by 0.985. This effect stacks multiplicatively, thus the formula for the Growth Denominator taking into account watering is:
             <div
             class="formula">
                 <p><span>$$\mathrm{Growth\,denominator}=4500\cdot0.985^{n}$$</span></p>
@@ -284,7 +284,7 @@
         class="Strengthen-content">
             Strengthen is also a persistent action.
             <br> <br>
-            You may use the command !strengthen to multiply the Blight Power by a certain amount. This effect stacks, with the formula for the Blight Power taking into account strengthening is:
+            You may use the command <span class="command-text">!strengthen</span> to multiply the Blight Power by a certain amount. This effect stacks, with the formula for the Blight Power taking into account strengthening is:
             <div
             class="formula">
                 <p><span>$$\mathrm{Blight\,power}=0.96^{\sqrt{n}}$$</span></p>
@@ -307,7 +307,7 @@
         class="Weed-content">
             Weed is a one-time action. It can only be performed once per farmer per Blight Cycle, and its effects last until the end of the Blight Cycle, regardless of if the farmer still has credits in the Farm.
             <br> <br>
-            You may use the command !weed to reduce the Blight Strength. The amount reduced is proportional to the ratio of planted credits to total credits of the farmer, and reaches a maximum of 0.02 of the Blight Strength. It is given by the formula:
+            You may use the command <span class="command-text">!weed</span> to reduce the Blight Strength. The amount reduced is proportional to the ratio of planted credits to total credits of the farmer, and reaches a maximum of 0.02 of the Blight Strength. It is given by the formula:
             <div
             class="formula">
                 <p><span>$$\mathrm{Weed\,effectiveness}=0.02\cdot P\cdot\mathrm{Blight\,strength}$$</span></p>
@@ -404,7 +404,7 @@
 
         <div
         class="Growth-Rate-content">
-            The Growth Rate is based on Blight Strength, Maximum Strength, Safety, Growth Denominator, and Blight Power. The Growth Rate can be checked using the command !farm. In full detail, the formulae for the Growth Rate are:
+            The Growth Rate is based on Blight Strength, Maximum Strength, Safety, Growth Denominator, and Blight Power. The Growth Rate can be checked using the command <span class="command-text">!farm</span>. In full detail, the formulae for the Growth Rate are:
             <div
             class="formula">
                 <p><span>$$\mathrm{Growth\,rate}=\begin{cases}
@@ -415,7 +415,7 @@
             class="formula">
                 <p><span>$$\mathrm{Threshold\,percentage}<100\%$$</span></p>
             </div>
-            The Threshold Percentage can be checked using the command !farm.
+            The Threshold Percentage can be checked using the command <span class="command-text">!farm</span>.
         </div>
 
         <div
@@ -428,7 +428,7 @@
         class="Maximum-Strength-content">
             The Maximum Strength is not a fixed value. Each Blight, it can increase or decrease by up to 5% of its current value. It originally started at 500 000. Given an extremely long period of time, it is expected to decrease because an increase in 5% (multiply by 1.05) and a decrease in 5% (multiply by 0.95) is a resultant 0.25% decrease. 
             <br> <br>
-            After a Blight, the new Maximum Strength will be shown in the Blight message, or it can be checked any time using the command !farm.
+            After a Blight, the new Maximum Strength will be shown in the Blight message, or it can be checked any time using the command <span class="command-text">!farm</span>.
         </div>
 
         <div
@@ -467,7 +467,7 @@
 
             <div
             class="Exempt-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Exempt">Exempt</a> uses 6 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to harvest again using the command !exempt. This does not allow a user who has just planted, watered, or strengthened to harvest, if a Bloom has not yet occurred.  
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Exempt">Exempt</a> uses 6 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to harvest again using the command <span class="command-text">!exempt</span>. This does not allow a user who has just planted, watered, or strengthened to harvest, if a Bloom has not yet occurred.  
             </div>
 
             <div
@@ -478,7 +478,7 @@
 
             <div
             class="Attune-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Attune">Attune</a> uses 7 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to automatically harvest during the Blight Takeover using the command !attune. This harvesting occurs at a random time during the Takeover, so a user may still lose between 0% and 75% of their credits. If no Lily's Bloom occurs, the credits will not be harvested.
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Attune">Attune</a> uses 7 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to automatically harvest during the Blight Takeover using the command <span class="command-text">!attune</span>. This harvesting occurs at a random time during the Takeover, so a user may still lose between 0% and 75% of their credits. If no Lily's Bloom occurs, the credits will not be harvested.
             </div>
 
             <div
@@ -489,7 +489,7 @@
 
             <div
             class="Inhibit-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Inhibit">Inhibit</a> uses 8 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to stop the natural increase of the Blight Strength using the command !inhibit. The increase of the Blight Strength of 1 per second is stopped for half a Bloom Period. However, the Blight can still occur, and farmers performing persistent actions will still increase the Blight Strength.
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Inhibit">Inhibit</a> uses 8 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to stop the natural increase of the Blight Strength using the command <span class="command-text">!inhibit</span>. The increase of the Blight Strength of 1 per second is stopped for half a Bloom Period. However, the Blight can still occur, and farmers performing persistent actions will still increase the Blight Strength.
             </div>
 
             <div
@@ -500,7 +500,7 @@
 
             <div
             class="Flourish-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Flourish">Flourish</a> uses 9 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a Bloom occur instantly using the command !flourish. This can only be done if 0.6 times of a Bloom Period have passed since the last Bloom to prevent multiple Blooms in succession. This is not considered a normal Bloom. 
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Flourish">Flourish</a> uses 9 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a Bloom occur instantly using the command <span class="command-text">!flourish</span>. This can only be done if 0.6 times of a Bloom Period have passed since the last Bloom to prevent multiple Blooms in succession. This is not considered a normal Bloom. 
             </div>
 
             <div
@@ -511,7 +511,7 @@
 
             <div
             class="Trick-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Trick">Trick</a> uses 10 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a fake Lily's Bloom occur instantly using the command !trick. No credits grow, nor does the Blight occur after. It is a purely visual command, known internally as ev's idea.
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Trick">Trick</a> uses 10 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a fake Lily's Bloom occur instantly using the command <span class="command-text">!trick</span>. No credits grow, nor does the Blight occur after. It is a purely visual command, known internally as ev's idea.
             </div>
 
             <div
@@ -522,7 +522,7 @@
 
             <div
             class="Abandon-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Abandon">Abandon</a> uses 28 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to disallow all farmers from harvesting during a Bot Cycle using the command !abandon. The farmers are treated as if they have harvested once during the cycle, and Blooms will not re-allow harvesting. While unconfirmed, it is believed that using Exempt after Abandon will reallow the invoker of Exempt to harvest.   
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Abandon">Abandon</a> uses 28 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to disallow all farmers from harvesting during a Bot Cycle using the command <span class="command-text">!abandon</span>. The farmers are treated as if they have harvested once during the cycle, and Blooms will not re-allow harvesting. While unconfirmed, it is believed that using Exempt after Abandon will reallow the invoker of Exempt to harvest.   
             </div>
 
             <div
@@ -533,7 +533,7 @@
 
             <div
             class="Annihilate-content">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Annihilate">Annihilate</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a> to instantly summon the Blight using the command !annihilate. Lily's Bloom will not occur. The internal name for Lily's Bloom can also be found in the bot message for this command.   
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Annihilate">Annihilate</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a> to instantly summon the Blight using the command <span class="command-text">!annihilate</span>. Lily's Bloom will not occur. The internal name for Lily's Bloom can also be found in the bot message for this command.   
             </div>
 
         </div>
@@ -560,7 +560,7 @@
 
         <div
         class="version-text">
-            Version 1.2
+            Version 1.3
         </div>
 
     </div>
