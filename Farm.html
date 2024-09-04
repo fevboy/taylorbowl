@@ -435,6 +435,12 @@
         class="section-header"
         id="Invocations_&_Evocations">
             Invocations & Evocations
+            <button
+            class="show-hide"
+            id="js-toggler"
+            onclick="toggleVisibility()">
+                [show]
+            </button>
             <hr
             class="section-header-line">
         </div>
@@ -445,85 +451,91 @@
         </div>
 
         <div
-        class="Invocations-Evocations-content">
-            There are <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations">Invocations</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Evocations">Evocations</a> that affect the Farm in both beneficial and detrimental ways. While there are other Evocations that affect the Farm, they will only be added once used successfully.
-        </div>
+        class="Invocations-Evocations-all-content"
+        id="js-toggle-content">
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Exempt">
-            Exempt
-        </div>
+            <div
+            class="Invocations-Evocations-content">
+                There are <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations">Invocations</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Evocations">Evocations</a> that affect the Farm in both beneficial and detrimental ways. While there are other Evocations that affect the Farm, they will only be added once used successfully.
+            </div>
 
-        <div
-        class="Exempt-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Exempt">Exempt</a> uses 6 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to harvest again using the command !exempt. This does not allow a user who has just planted, watered, or strengthened to harvest, if a Bloom has not yet occurred.  
-        </div>
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Exempt">
+                Exempt
+            </div>
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Attune">
-            Attune
-        </div>
+            <div
+            class="Exempt-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Exempt">Exempt</a> uses 6 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to harvest again using the command !exempt. This does not allow a user who has just planted, watered, or strengthened to harvest, if a Bloom has not yet occurred.  
+            </div>
 
-        <div
-        class="Attune-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Attune">Attune</a> uses 7 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to automatically harvest during the Blight Takeover using the command !attune. This harvesting occurs at a random time during the Takeover, so a user may still lose between 0% and 75% of their credits. If no Lily's Bloom occurs, the credits will not be harvested.
-        </div>
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Attune">
+                Attune
+            </div>
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Inhibit">
-            Inhibit
-        </div>
+            <div
+            class="Attune-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Attune">Attune</a> uses 7 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to automatically harvest during the Blight Takeover using the command !attune. This harvesting occurs at a random time during the Takeover, so a user may still lose between 0% and 75% of their credits. If no Lily's Bloom occurs, the credits will not be harvested.
+            </div>
 
-        <div
-        class="Inhibit-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Inhibit">Inhibit</a> uses 8 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to stop the natural increase of the Blight Strength using the command !inhibit. The increase of the Blight Strength of 1 per second is stopped for half a Bloom Period. However, the Blight can still occur, and farmers performing persistent actions will still increase the Blight Strength.
-        </div>
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Inhibit">
+                Inhibit
+            </div>
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Flourish">
-            Flourish
-        </div>
+            <div
+            class="Inhibit-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Inhibit">Inhibit</a> uses 8 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to stop the natural increase of the Blight Strength using the command !inhibit. The increase of the Blight Strength of 1 per second is stopped for half a Bloom Period. However, the Blight can still occur, and farmers performing persistent actions will still increase the Blight Strength.
+            </div>
 
-        <div
-        class="Flourish-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Flourish">Flourish</a> uses 9 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a Bloom occur instantly using the command !flourish. This can only be done if 0.6 times of a Bloom Period have passed since the last Bloom to prevent multiple Blooms in succession. This is not considered a normal Bloom. 
-        </div>
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Flourish">
+                Flourish
+            </div>
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Trick">
-            Trick
-        </div>
+            <div
+            class="Flourish-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Flourish">Flourish</a> uses 9 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a Bloom occur instantly using the command !flourish. This can only be done if 0.6 times of a Bloom Period have passed since the last Bloom to prevent multiple Blooms in succession. This is not considered a normal Bloom. 
+            </div>
 
-        <div
-        class="Trick-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Trick">Trick</a> uses 10 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a fake Lily's Bloom occur instantly using the command !trick. No credits grow, nor does the Blight occur after. It is a purely visual command, known internally as ev's idea.
-        </div>
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Trick">
+                Trick
+            </div>
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Abandon">
-            Abandon
-        </div>
+            <div
+            class="Trick-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Trick">Trick</a> uses 10 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a user to make a fake Lily's Bloom occur instantly using the command !trick. No credits grow, nor does the Blight occur after. It is a purely visual command, known internally as ev's idea.
+            </div>
 
-        <div
-        class="Abandon-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Abandon">Abandon</a> uses 28 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to disallow all farmers from harvesting during a Bot Cycle using the command !abandon. The farmers are treated as if they have harvested once during the cycle, and Blooms will not re-allow harvesting. While unconfirmed, it is believed that using Exempt after Abandon will reallow the invoker of Exempt to harvest.   
-        </div>
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Abandon">
+                Abandon
+            </div>
 
-        <div
-        class="subsection-header"
-        id="Invocations_&_Evocations#Annihilate">
-            Annihilate
-        </div>
+            <div
+            class="Abandon-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Abandon">Abandon</a> uses 28 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to disallow all farmers from harvesting during a Bot Cycle using the command !abandon. The farmers are treated as if they have harvested once during the cycle, and Blooms will not re-allow harvesting. While unconfirmed, it is believed that using Exempt after Abandon will reallow the invoker of Exempt to harvest.   
+            </div>
 
-        <div
-        class="Annihilate-content">
-        <a class="text-actionable-link" href="https://taylorbowl.wiki/Annihilate">Annihilate</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a> to instantly summon the Blight using the command !annihilate. Lily's Bloom will not occur. The internal name for Lily's Bloom can also be found in the bot message for this command.   
+            <div
+            class="subsection-header"
+            id="Invocations_&_Evocations#Annihilate">
+                Annihilate
+            </div>
+
+            <div
+            class="Annihilate-content">
+            <a class="text-actionable-link" href="https://taylorbowl.wiki/Annihilate">Annihilate</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a> to instantly summon the Blight using the command !annihilate. Lily's Bloom will not occur. The internal name for Lily's Bloom can also be found in the bot message for this command.   
+            </div>
+
         </div>
 
         <div
@@ -548,7 +560,7 @@
 
         <div
         class="version-text">
-            Version 1.1
+            Version 1.2
         </div>
 
     </div>
@@ -556,6 +568,27 @@
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
     <script src="header.js"></script>
+
+    <script>
+
+        let visible = false
+        function makeVisible() {
+            document.getElementById("js-toggle-content").style.display = "inline";
+            document.getElementById("js-toggler").innerHTML = "[hide]";
+            visible = true;
+            console.log("made visible");
+        }
+        function makeInvisible() {
+            document.getElementById("js-toggle-content").style.display = "none";
+            document.getElementById("js-toggler").innerHTML = "[show]";
+            visible = false;
+            console.log("made invisible");
+        }
+        function toggleVisibility() {
+            visible ? makeInvisible() : makeVisible();
+        }
+
+    </script>
 
 </body>
 
