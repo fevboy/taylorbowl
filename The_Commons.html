@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        Commons
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="The_Commons.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <a
+            class="TaylorBowl-logo"
+            href="https://taylorbowl.wiki/"
+            id="js-taylorbowl-logo">
+                <img
+                class="TaylorBowl-logo-image"
+                src="Logos/TaylorBowl Logo.svg">
+
+                <div
+                class="TaylorBowl-logo-text">
+                    TAYLORBOWL WIKI
+                </div>
+            </a>
+
+            <button
+            class="search-button"
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+        </div>
+
+        <div
+        class="The-Commons-title">
+            The Commons
+            <hr
+            class="title-line">
+        </div>
+
+        <div
+        class="under-construction">
+            This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+        </div>
+
+        <div
+        class="Commons-summary">
+
+        <div
+        class="Commons-summary-text">
+            The Commons is a farm simulator minigame similar to the <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>. However, <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a> planted in the Commons are shared equally among all planters. There is a chance for a Bloom to occur and grow them, or if a <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Restart</a> occurs, all credits are lost.
+        </div>
+
+        <div
+        class="contents-list">
+            <div
+            class="contents-list-title">
+                Contents
+            </div>
+            <div>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Commons#Mechanics"> Mechanics <br> </a>
+            </div>
+            <div>
+                &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Commons#Mechanics#Blooms"> Blooms <br> </a>
+            </div>
+            <div>
+                &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Commons#Mechanics#Bot_Restarts"> Bot Restarts <br> </a>
+            </div>
+            <div>
+                &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Commons#Mechanics#Instability"> Instability <br> </a>
+            </div>
+            <div>
+                &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Commons#Mechanics#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
+            </div>
+            <div>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Commons#Strategies"> Strategies <br> </a>
+            </div>
+        </div>
+
+        <div
+        class="section-header"
+        id="Mechanics">
+            Mechanics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Mechanics-content">
+            The Commons has slightly different mechanics to the Farm.
+        </div>
+
+        <div
+        class="subsection-header"
+        id="Mechanics#Farmer_Actions">
+            Farmer Actions
+        </div>
+
+        <div
+        class="Farmer-Actions-content">
+            A farmer in the Commons is different from a farmer in the Farm. They can only plant credits using the command <span class="command-text">!commons amount</span>, and cannot <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Farmer_Actions#Harvest">harvest</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Farmer_Actions#Water">water</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Farmer_Actions#Strengthen">strengthen</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Farmer_Actions#Weed">weed</a>, or perform other actions.
+        </div>
+
+        <div
+        class="subsection-header"
+        id="Mechanics#Blooms">
+            Blooms
+        </div>
+
+        <div
+        class="Blooms-content">
+            Blooms have a base chance of 1 in 4500 of occurring every second. When a Bloom occurs, all credits in the Commons grow by a certain percentage, known as the Commons Multiplier. The command <span class="command-text">!commons</span> may be used to check the Commons Multiplier.
+            <br> <br>
+            The chance for a Bloom to occur can be increased, but not by farmers in the Commons. On average, one bloom occurs every 4500 seconds, or 90 minutes. In the regular Farm, farmers can water to decrease this average time between Blooms, known internally as the Growth Denominator. The command <span class="command-text">!commons</span> or <span class="command-text">!farm</span> may be used to check the Growth Denominator.
+            <br> <br>
+            The Commons Multiplier is determined by the number of Bloom Periods since the last Bloom. 1 Bloom Period is equivalent to the Growth Denominator in seconds. For every Bloom Period, the Multiplier smoothly increases by 15%. The command <span class="command-text">!commons</span> may be used to check the Time Since Last Bloom and the Multiplier per Bloom Period.
+            <br> <br>
+            When a Bloom occurs, all credits in the Commons are grown, then equally distributed to anyone who planted, regardless of the number of credits they planted. A farmer who planted 1000 credits and one who plants 1 credit receives the same number.        
+        </div>
+
+        <div
+        class="subsection-header"
+        id="Mechanics#Bot_Restarts">
+            Bot Restarts
+        </div>
+
+        <div
+        class="subsection-subheader">
+            Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>
+        </div>
+
+        <div
+        class="Bot-Restarts-content">
+            When the Bot Restarts, all credits in the Commons are destroyed. This is the only way for credits in the Commons to be lost without a Bloom. <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#General_Mechanics#The_Blight">The Blight</a>, which ordinarily affects the regular Farm, has no effect on the Commons.     
+        </div>
+
+        <div
+        class="subsection-header"
+        id="Mechanics#Instability">
+            Instability
+        </div>
+
+        <div
+        class="Instability-content">
+            Instability limits the maximum number of credits the Commons can distribute. If the output of the Commons after a Bloom is greater than the number required for Instability, the credits will be divided instead of multiplied.
+            <br> <br>
+            The limit for Instability is equivalent to the increase in credits in the regular Farm. For example, if there were 100 000 credits in the regular Farm, and a 5% Bloom occurred, the maximum credits the Commons can distribute is 5000.
+            <br> <br>
+            Instability was introduced in response to an event known as the Commons Incident. At the time, the Commons Multiplier was 30x the Farm's Growth Rate, and Instability did not exist. The incident involved the Commons distributing tens and hundreds of thousands of credits, multiple times. Overall, the economy grew from 7.1 million to 29.8 million credits, marking an over 4x increase. This incident also sparked a rollback of <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot">BowlBot</a>, reverting all statistics to before the Commons Incident occurred. 
+        </div>
+
+        <div
+        class="subsection-header"
+        id="Mechanics#Invocations_&_Evocations">
+            Invocations & Evocations
+            <button
+            class="show-hide"
+            id="js-toggler"
+            onclick="toggleVisibility()">
+                [show]
+            </button>
+        </div>
+
+        <div
+        class="subsection-subheader">
+            Warning: This section contains endgame content. If you wish to experience the game as intended, click away.
+        </div>
+
+        <div
+        class="Invocations-Evocations-content"
+        id="js-toggle-content">
+            There exists one <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocation">Invocation</a> that can affect the Commons. <a class="text-actionable-link" href="https://taylorbowl.wiki/Fertilize">Fertilize</a> uses 3 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to increase the Commons Multiplier per Bloom Period by 5% using the command <span class="command-text">!fertilize</span>. This effect lasts until the next Bot Cycle.
+        </div>
+
+        <div
+        class="section-header"
+        id="Strategies">
+            Strategies
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Strategies-content">
+            At its core, the Commons requires collaboration from different farmers to enable a profit for everyone. In theory, the fairest method of using the Commons is for all to plant the same number of credits. However, this method is rarely applicable, though many have tried to implement it.
+            <br> <br>
+            The Commons Alliance is an offshoot server from TaylorBowl, founded when the Commons Multiplier was based on the Growth Rate, and Instability did not exist. Members of the server planted an equal number of credits to receive an equal number in return. One benefit they enjoyed is the large number of Commons users at the time. With more planting the same amount, the impact of those who planted less would be dampened, thus aiding all. <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot">EsteBot</a> first started in this server and had commands that helped inform members of the amount to plant and the returns on their planting.
+            <br> <br>
+            The term “Commons Thieves” was coined by members of The Commons Alliance, used to refer to those who deliberately planted small numbers of credits in the Commons to enjoy a much larger profit using credits others had planted. However, these were hard to track as the Commons does not disclose the planters, and even when found, no action could be taken against them they did not break any rules.  
+            <br> <br>
+            Another general rule of thumb is to avoid planting in the Commons when a Bot Restart is imminent, or when it is around 1 Bloom Period away. Due to the random nature of Blooms, this may not always prevent a loss of credits, so it is up to the user to decide how far in advance they would like to stop planting. The command <span class="command-text">!farm</span> may be used to check the approximate time to next Restart.      
+        </div>
+
+        <div
+        class="version-text">
+            Version 1.1
+        </div>
+
+    </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
+
+    <script>
+
+        let visible = false
+        function makeVisible() {
+            document.getElementById("js-toggle-content").style.display = "inline";
+            document.getElementById("js-toggler").innerHTML = "[hide]";
+            visible = true;
+            console.log("made visible");
+        }
+        function makeInvisible() {
+            document.getElementById("js-toggle-content").style.display = "none";
+            document.getElementById("js-toggler").innerHTML = "[show]";
+            visible = false;
+            console.log("made invisible");
+        }
+        function toggleVisibility() {
+            visible ? makeInvisible() : makeVisible();
+        }
+
+    </script>
+
+</body>
+
+</html>
