@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        Ballpit
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="Ballpit.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <a
+            class="TaylorBowl-logo"
+            href="https://taylorbowl.wiki/"
+            id="js-taylorbowl-logo">
+                <img
+                class="TaylorBowl-logo-image"
+                src="Logos/TaylorBowl Logo.svg">
+
+                <div
+                class="TaylorBowl-logo-text">
+                    TAYLORBOWL WIKI
+                </div>
+            </a>
+
+            <button
+            class="search-button"
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+        </div>
+
+        <div
+        class="Ballpit-title">
+            Ballpit
+            <hr
+            class="title-line">
+        </div>
+
+        <div
+        class="under-construction">
+            This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+        </div>
+
+        <div
+        class="Ballpit-summary">
+
+        <div
+        class="Ballpit-summary-text">
+            Ballpit is a probability-based <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Obtaining#Minigames">minigame</a>. 100 balls of assorted colours are randomly arranged, and players may bet <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> on the colour of the first few balls.
+        </div>
+
+        <div
+        class="contents-list">
+            <div
+            class="contents-list-title">
+                Contents
+            </div>
+            <div>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Mechanics"> Mechanics <br> </a>
+            </div>
+            <div>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Balls"> Balls <br> </a>
+            </div>
+            <div>
+                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Statistics"> Statistics <br> </a>
+            </div>
+        </div>
+
+        <div
+        class="section-header"
+        id="Mechanics">
+            Mechanics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Mechanics-content">
+            You may play Ballpit using the command <span class="command-text">ballpit amount choices</span>. The <span class="command-text">amount</span> parameter refers to how many <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> are bet, and the <span class="command-text">choices</span> parameter refers to the colour of the balls betted on. You may bet on up to 10 balls, with each colour separated by a space.
+            <br> <br>
+            Sending the command will initiate a Ballpit, which starts a 30 second period for others to bet too. At the end of the 30 seconds, the balls are randomised and sent. In the event that a Ballpit is not sent after 30 seconds, you may use the command <span class="command-text">!restartballpit</span> to reset it.
+            <br> <br>
+            In this 30 second period, you may freely switch your bet by simply sending another command. Typically, you are not able to cancel your bet. However, there currently exists a bug allow you to do so by sending <span class="command-text">!ballpit 1</span>. 
+            <br> <br>
+            If a player's bet is correct, they are awarded <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> based on how probable the combination is. The less probable, the higher the awarded credits. If not, all credits bet are lost.            
+        </div>
+
+        <div
+        class="section-header"
+        id="Balls">
+            Balls
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Balls-content">
+            There are 50 brown balls, 14 purple balls, 10 blue balls, 9 green balls, 7 yellow balls, 4 orange balls, 3 red balls, 2 white balls, and 1 black ball.
+            <br> <br>
+            The number of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> earned if a bet is correct is always a whole number multiplier of the bet, given by the formula:
+            
+            <div
+            class="formula">
+                <p><span>$$\mathrm{returns}=\mathrm{bet}\cdot m$$</span></p>
+            </div>   
+            
+            where the multiplier, \(m\), is given by:
+            
+            <div
+            class="formula">
+                <p><span>$$m=\biggl\lfloor\cfrac{1}{p}\biggr\rfloor-1$$</span></p>
+            </div>   
+
+            where \(p\) is the probability of the combination, given by:
+            <div
+            class="formula">
+                <p><span>$$p=\prod_{i=1}^{c}\cfrac{n_{i}}{101-i}$$</span></p>
+            </div>
+            where \(c\) is the number of colours bet and \(n_{i}\) is the number of balls of the \(i\)th colour bet.
+            <br> <br>
+            You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot">EsteBot</a> command <span class="command-text">/ballpit payout</span> to calculate the returns on a given combination and the chance of betting correctly on that combination. You may use the EsteBot command <span class="command-text">/ballpit random</span> to randomly generate a combination.
+            <br> <br>
+            While certain combinations are impossible, such as having two or more black balls, you are still able to bet on them. This is an intended feature.                     
+        </div>
+
+        <div
+        class="section-header"
+        id="Statistics">
+            Statistics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Statistics-content">
+            In the long run, players are expected to lose credits to Ballpit as the expected value is slightly below 0. This is because the multiplier is always rounded down, so certain combinations will return less credits than is required to break even. The formula for expected value is given by:
+
+            <div
+            class="formula">
+                <p><span>$$E(X)=mp-(1-p)=p\biggl\lfloor\cfrac{1}{p}\biggr\rfloor-1$$</span></p>
+            </div>   
+            
+            where \(m\) is the multiplier and \(p\) is the probability of the combination. Note that \(p\biggl\lfloor\cfrac{1}{p}\biggr\rfloor\neq1\) for most bets, which is what leads to the expected value of some combinations being less than 0. For example, purple has an expected value of below 0:
+            
+            <div
+            class="formula">
+                <p><span>$$E(\mathrm{purple})=\cfrac{14}{100}\biggl\lfloor\cfrac{100}{14}\biggr\rfloor-1=-0.02$$</span></p>
+            </div>   
+            
+            Generally, if the probability of a bet, \(p\), can be expressed in the form \(\cfrac{1}{k}\) where \(k\) is an integer, it will have an expected value of 0. Otherwise, it will have an expected value slightly less than 0.
+        </div>
+
+        <div
+        class="version-text">
+            Version 1.1
+        </div>
+
+    </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
+
+    <script>
+
+        let visible = false
+        function makeVisible() {
+            document.getElementById("js-toggle-content").style.display = "inline";
+            document.getElementById("js-toggler").innerHTML = "[hide]";
+            visible = true;
+            console.log("made visible");
+        }
+        function makeInvisible() {
+            document.getElementById("js-toggle-content").style.display = "none";
+            document.getElementById("js-toggler").innerHTML = "[show]";
+            visible = false;
+            console.log("made invisible");
+        }
+        function toggleVisibility() {
+            visible ? makeInvisible() : makeVisible();
+        }
+
+    </script>
+
+</body>
+
+</html>

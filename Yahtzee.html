@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        Yahtzee
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="Yahtzee.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <a
+            class="TaylorBowl-logo"
+            href="https://taylorbowl.wiki/"
+            id="js-taylorbowl-logo">
+                <img
+                class="TaylorBowl-logo-image"
+                src="Logos/TaylorBowl Logo.svg">
+
+                <div
+                class="TaylorBowl-logo-text">
+                    TAYLORBOWL WIKI
+                </div>
+            </a>
+
+            <button
+            class="search-button"
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+        </div>
+
+        <div
+        class="Yahtzee-title">
+            Yahtzee
+            <hr
+            class="title-line">
+        </div>
+
+        <div
+        class="under-construction">
+            This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+        </div>
+
+        <div
+        class="Ballpit-summary">
+
+        <div
+        class="Ballpit-summary-text">
+            Yahtzee is a dice-based minigame. Five whole numbers from 1 to 6 are randomly generated, and certain combinations will award the player <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a>.
+        </div>
+
+        <div
+        class="contents-list">
+            <div
+            class="contents-list-title">
+                Contents
+            </div>
+            <div>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Mechanics"> Mechanics <br> </a>
+            </div>
+            <div>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Statistics"> Statistics <br> </a>
+            </div>
+            <div>
+                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Invocations_&Evocations"> Invocations & Evocations <br> </a>
+            </div>
+        </div>
+
+        <div
+        class="section-header"
+        id="Mechanics">
+            Mechanics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Mechanics-content">
+            You may use the command <span class="command-text">!yahtzee number</span> to play Yahtzee. Players have some free rolls each <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>. Every Server Booster grants 1.5 free rolls, rounded up. After all free rolls have been used, each subsequent paid roll costs 10 credits. Each player has a limited number of paid rolls per Bot Cycle. This number starts at 100, is increased by 100 for every <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera_Level">Ephemera Level</a>, and is increased by 1 for every 0.5 <a class="text-actionable-link" href="https://taylorbowl.wiki/Lyric_IQ">IQ</a>.
+            <br> <br>
+            There are four types of combinations that will award credits.
+            <br> <br>
+            1-Roll Yahtzee: All five numbers are the same. This awards 792x the number shown on all dice.
+            <br> <br>
+            4-of-a-Kind: Four of five numbers are the same. This awards 48x the number shown on the four dice.
+            <br> <br>
+            Full House: Three dice share one number, and the other two dice share another number. This awards 3x the sum of all numbers shown.
+            <br> <br>
+            Large Straight: The dice show a consecutive sequence of numbers when rearranged, i.e., they show the numbers 1 2 3 4 5 or 2 3 4 5 6 in any order. This awards 3x of the sum of all numbers shown.                 
+        </div>
+
+        <div
+        class="section-header"
+        id="Statistics">
+            Statistics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Statistics-content">
+            The expected value of a free Yahtzee is 9.0255, and the expected value of a paid Yahtzee is -0.9745, shown by:
+                
+            <div
+            class="formula">
+                <p><span>$$E(\text{1-Roll Yahtzee})=\sum_{i=1}^{6}792i\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.1389$$
+                    $$E(\text{4-of-a-Kind})=\sum_{i=1}^{6}48i\cdot\left(\cfrac{1}{6}\right)^{4}\cdot\cfrac{5}{6}\approx3.2407$$
+                    $$E(\text{Full House})=\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3(i+j)-5\sum_{k=1}^{6}\right)\cdot\cfrac{5!}{3!\cdot2!}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$
+                    $$E(\text{Large Straight})=\left(\cfrac{1}{6}\right)^{5}\cdot5!\cdot3\cdot\left(\sum_{i=1}^{5}i+\sum_{j=2}^{6}j\right)\approx1.6204$$
+                    $$\sum E(X)=9.0255$$
+                    $$\sum E(X)-10=-0.9745$$</span></p>
+            </div>                     
+        </div>
+
+        <div
+        class="section-header"
+        id="Invocations_&_Evocations">
+            Invocations & Evocations
+            <button
+            class="show-hide"
+            id="js-toggler"
+            onclick="toggleVisibility()">
+                [show]
+            </button>
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="subsection-subheader">
+            Warning: This section contains endgame content. If you wish to experience the game as intended, click away.
+        </div>
+
+        <div
+        class="Invocations-Evocations-content"
+        id="js-toggle-content">
+            There exists 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocation">Invocation</a> that affects Yahtzees. <a class="text-actionable-link" href="https://taylorbowl.wiki/Discount">Discount</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to reduce the cost of paid rolls by 1 credit, up to 6 times, until the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a> using the command <span class="command-text">!discount</span>. 
+            <br> <br>
+            Since the expected value of a free Yahtzee is 9.0255, by Discounting once, you are expected to make a small margin of profit. However, by discounting all 6 times, the expected value becomes 5.0255. This makes Yahtzee a viable method for obtaining <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a>, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
+            <div
+            class="formula">
+                <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
+            </div>    
+            where \(n\) is the number of rolls, \(c\) is the cost per roll, and \(d\) is the number of Discounts used.
+        </div>
+
+        <div
+        class="version-text">
+            Version 1.1
+        </div>
+
+    </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
+
+    <script>
+
+        let visible = false
+        function makeVisible() {
+            document.getElementById("js-toggle-content").style.display = "inline";
+            document.getElementById("js-toggler").innerHTML = "[hide]";
+            visible = true;
+            console.log("made visible");
+        }
+        function makeInvisible() {
+            document.getElementById("js-toggle-content").style.display = "none";
+            document.getElementById("js-toggler").innerHTML = "[show]";
+            visible = false;
+            console.log("made invisible");
+        }
+        function toggleVisibility() {
+            visible ? makeInvisible() : makeVisible();
+        }
+
+    </script>
+
+</body>
+
+</html>

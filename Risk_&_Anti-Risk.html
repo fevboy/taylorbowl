@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>
+        Risk & Anti-Risk
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <link rel="stylesheet" href="Risk_&_Anti-Risk.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div
+    class="all-content">
+
+        <div
+        class="header">
+            
+            <a
+            class="TaylorBowl-logo"
+            href="https://taylorbowl.wiki/"
+            id="js-taylorbowl-logo">
+                <img
+                class="TaylorBowl-logo-image"
+                src="Logos/TaylorBowl Logo.svg">
+
+                <div
+                class="TaylorBowl-logo-text">
+                    TAYLORBOWL WIKI
+                </div>
+            </a>
+
+            <button
+            class="search-button"
+            id="js-search-button"
+            onclick="openSearch()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+            <input 
+            class="search-input"
+            id="js-search-input"
+            type="search"
+            placeholder="Search pages..."
+            onkeydown="processQuery()">
+
+            <button
+            class="new-search-button"
+            id="js-new-search-button"
+            onclick="redirect()">
+                <img class="search-logo" src="Logos/Search Logo.svg">
+            </button>
+
+        </div>
+
+        <div
+        class="Risk-Anti-Risk-title">
+            Risk & Anti-Risk
+            <hr
+            class="title-line">
+        </div>
+
+        <div
+        class="under-construction">
+            This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+        </div>
+
+        <div
+        class="Commons-summary">
+
+        <div
+        class="Commons-summary-text">
+            Risk and Anti-Risk are die-based <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Obtaining#Minigames">minigames</a>. A random whole number from 1 to 20 is randomly chosen, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> are awarded or deducted based on the number.
+        </div>
+
+        <div
+        class="contents-list">
+            <div
+            class="contents-list-title">
+                Contents
+            </div>
+            <div>
+                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk#Mechanics"> Mechanics <br> </a>
+            </div>
+            <div>
+                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk#Statistics"> Statistics <br> </a>
+            </div>
+            <div>
+                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
+            </div>
+        </div>
+
+        <div
+        class="section-header"
+        id="Mechanics">
+            Mechanics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Mechanics-content">
+            You may use the command <span class="command-text">!risk multiplier number</span> to play Risk and the command <span class="command-text">!antirisk multiplier number</span> to play Anti-Risk.
+            <br> <br>
+            For Risk, if any number but 1 is chosen, the player earns that number of credits. If 1 is chosen, the player loses 209 credits. For Anti-Risk, if any number but 20 is chosen, the player loses that number of credits. If 20 is chosen, the player earns 190 credits.
+            <br> <br>
+            The <span class="command-text">multiplier</span> parameter increases all gains and losses by multiplying them. The <span class="command-text">number</span> parameter determines how many times Risk or Anti-Risk is played in a single command. You can play up to 20 Risks or Anti-Risks at once.
+            <br> <br>
+            If you do not have at least \(209\cdot\text{multiplier}\) credits, you cannot play Risk. If you do not have at least \(19\cdot\text{multiplier}\) credits, you cannot play Anti-Risk. Each player has a limited number of Risks and Anti-Risks possible each <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>. This starts at 40 rolls, and increases by 40 for every <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera_Level">Ephemera Level</a> the player has.
+            <br> <br>
+            Risks and Anti-Risks performed outside of private messages with <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot">BowlBot</a> count as playing two, but only one is performed. Thus, you can only do half as many Risks and Anti-Risks outside of private messages. If you have 1 Risk or Anti-Risk left and you play outside of private messages, it will still be performed.         
+        </div>
+
+        <div
+        class="section-header"
+        id="Statistics">
+            Statistics
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="Statistics-content">
+            In the long run, a player should not expect to gain or lose any credits from playing either Risk or Anti-Risk. This is because the expected value is 0, shown by:
+            <div
+            class="formula">
+                <p><span>$$E(\mathrm{Risk})=\cfrac{1}{20}\left(\sum_{i=2}^{20}i-209\right)=0 \\
+                E(\mathrm{Anti\text{-}Risk})=\cfrac{1}{20}\left(190-\sum_{i=1}^{19}i\right)=0$$</span></p>
+            </div>            
+            However, players are still able to gain or lose credits in the short run.               
+        </div>
+
+        <div
+        class="section-header"
+        id="Invocations_&_Evocations">
+            Invocations & Evocations
+            <button
+            class="show-hide"
+            id="js-toggler"
+            onclick="toggleVisibility()">
+                [show]
+            </button>
+            <hr
+            class="section-header-line">
+        </div>
+
+        <div
+        class="subsection-subheader">
+            Warning: This section contains endgame content. If you wish to experience the game as intended, click away.
+        </div>
+
+        <div
+        class="Invocations-Evocations-content"
+        id="js-toggle-content">
+            There exists one <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations">Invocation</a> that affects Risk and Anti-Risk. <a class="text-actionable-link" href="https://taylorbowl.wiki/Succumb">Succumb</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to allow a player to Risk and Anti-Risk up to 80 more times, limited by their original possible Risks and Anti-Risks, using the command <span class="command-text">!succumb</span>.
+        </div>
+
+        <div
+        class="version-text">
+            Version 1.1
+        </div>
+
+    </div>
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="header.js"></script>
+
+    <script>
+
+        let visible = false
+        function makeVisible() {
+            document.getElementById("js-toggle-content").style.display = "inline";
+            document.getElementById("js-toggler").innerHTML = "[hide]";
+            visible = true;
+            console.log("made visible");
+        }
+        function makeInvisible() {
+            document.getElementById("js-toggle-content").style.display = "none";
+            document.getElementById("js-toggler").innerHTML = "[show]";
+            visible = false;
+            console.log("made invisible");
+        }
+        function toggleVisibility() {
+            visible ? makeInvisible() : makeVisible();
+        }
+
+    </script>
+
+</body>
+
+</html>
