@@ -27,13 +27,14 @@ function executeLightMode() {
     document.documentElement.style.setProperty('--link-color', '#117E6A');
     document.documentElement.style.setProperty('--command-color', '#992995');
     document.getElementById("js-theme-logo").src="Logos/Theme Logo Light.svg";
+    document.getElementById("js-theme-logo").style.width = "85%";
     document.getElementById("js-search-logo").src="Logos/Search Logo Light.svg";
     localStorage.setItem('displayTheme', 'light');
     displayTheme = localStorage.getItem('displayTheme');
 }
 
 function executeDarkMode() {
-    document.documentElement.style.setProperty('--bg-color', '#0F1C0B');
+    document.documentElement.style.setProperty('--bg-color', '#181C16');
     document.documentElement.style.setProperty('--accent-color', '#FFFFFF');
     document.documentElement.style.setProperty('--visual-color', '#000000');
     document.documentElement.style.setProperty('--text-color', '#FFFFFF');
@@ -41,6 +42,7 @@ function executeDarkMode() {
     document.documentElement.style.setProperty('--link-color', '#64BAAA');
     document.documentElement.style.setProperty('--command-color', '#C859C5');
     document.getElementById("js-theme-logo").src="Logos/Theme Logo Dark.svg";
+    document.getElementById("js-theme-logo").style.width = "95%";
     document.getElementById("js-search-logo").src="Logos/Search Logo Dark.svg";
     localStorage.setItem('displayTheme', 'dark');
     console.log(localStorage.getItem('displayTheme'));
