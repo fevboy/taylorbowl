@@ -60,13 +60,17 @@ class="page-header">
     id="js-search-input"
     type="search"
     placeholder="Search pages..."
-    onkeydown="processQuery()">
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
 
     <button
     class="new-search-button"
     id="js-new-search-button"
     onclick="redirect()">
-        <img class="search-logo" src="Logos/Search Logo Dark.svg">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
     </button>
 
 </div>
@@ -146,6 +150,9 @@ class="contents-list">
     <div>
         4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
     </div>
+    <div
+    class="toggle-content"
+    id="js-toggle-contents-page">
     <div>
         &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations#Exempt"> Exempt <br> </a>
     </div>
@@ -166,6 +173,7 @@ class="contents-list">
     </div>
     <div>
         &emsp; &ensp; 4.7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations#Annihilate"> Annihilate <br> </a>
+    </div>
     </div>
     <div>
         5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Farming_Strategies"> Farming Strategies <br> </a>
@@ -374,7 +382,7 @@ id="Advanced_Mechanics#Blight_Takeover">
     class="content">
     The first stage is Immunity where no credits are destroyed. The duration of Immunity is determined by the number of Bloom Periods since the previous normal* Bloom. 1 Bloom Period is equivalent to the Growth Denominator in seconds. Immunity starts as 0 seconds and increases in integer steps by 1 second every half Bloom Period, always rounded up. This means it is at least 1 second long.
     <br>
-    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations#Flourish">Invocations_&_Evocations#Flourish</a>
+    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Invocations_&_Evocations</a>
     <br> <br>
     At the end of Immunity, the Blight destroys 25% of credits in the farm.
     <br> <br>
@@ -397,7 +405,7 @@ class="content">
     <br> <br>
     During the safe period, Lily's Bloom will always occur before a normal* Blight.
     <br>
-    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations#Annihilate">Invocations_&_Evocations#Annihilate</a>
+    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Invocations_&_Evocations</a>
     <br> <br>
     During the unsafe period, the Growth Rate increases dramatically, and reaches a maximum of 1000%. However, Lily's Bloom cannot occur.        
 </div>
@@ -566,33 +574,12 @@ class="content">
 
 <div
 class="version-text">
-    Version 1.3
+    Version Alpha 1.3
 </div>
 
 </body>
 
 <script src="experimental.js"></script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script>
-
-let visible = false
-    function makeVisible() {
-        document.getElementById("js-toggle-content").style.display = "inline";
-        document.getElementById("js-toggler").innerHTML = "[hide]";
-        visible = true;
-        console.log("made visible");
-    }
-    function makeInvisible() {
-        document.getElementById("js-toggle-content").style.display = "none";
-        document.getElementById("js-toggler").innerHTML = "[show]";
-        visible = false;
-        console.log("made invisible");
-    }
-    function toggleVisibility() {
-        visible ? makeInvisible() : makeVisible();
-    }
-
-</script>
 
 </html>
