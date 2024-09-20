@@ -200,7 +200,7 @@ button:hover {
 }
 .section-title-line {
     margin-top: 0.22rem;
-    height: 0.7px;
+    height: 1px;
     color: var(--accent-color);
     background-color: var(--accent-color);
     border: none;
