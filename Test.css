@@ -23,9 +23,8 @@
     font-display: swap;
 }
 
-/*Key colours*/
 :root {
-    --bg-color: #181C16;
+    --bg-color: #EBF1F4;
     --accent-color: #FFFFFF;
     --visual-color: #000000;
     --text-color: #FFFFFF;
@@ -99,10 +98,12 @@ button:hover {
     border-color: var(--accent-color);
     background-color: var(--accent-color);
     display: flex;
+    align-items: center;
 }
 .theme-logo {
     width: 80%;
     margin: auto;
+    vertical-align: middle;
 }
 .search-button {
     height: 2rem;
@@ -114,10 +115,12 @@ button:hover {
     border-color: var(--accent-color);
     background-color: var(--accent-color);
     display: flex;
+    align-items: center;
 }
 .search-logo {
     max-height: 86%;
-    margin: auto;
+    margin: 0;
+    vertical-align: middle;
 }
 .search-input {
     width: 100%;
