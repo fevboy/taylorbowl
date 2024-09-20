@@ -29,12 +29,13 @@ function executeLightMode() {
     document.getElementById("js-theme-logo").src="Logos/Theme Logo Light.svg";
     document.getElementById("js-theme-logo").style.width = "85%";
     document.getElementById("js-search-logo").src="Logos/Search Logo Light.svg";
+    document.getElementById("js-new-search-logo").src="Logos/Search Logo Light.svg";
     localStorage.setItem('displayTheme', 'light');
     displayTheme = localStorage.getItem('displayTheme');
 }
 
 function executeDarkMode() {
-    document.documentElement.style.setProperty('--bg-color', '#181C16');
+    document.documentElement.style.setProperty('--bg-color', '#1C1E1C');
     document.documentElement.style.setProperty('--accent-color', '#FFFFFF');
     document.documentElement.style.setProperty('--visual-color', '#000000');
     document.documentElement.style.setProperty('--text-color', '#FFFFFF');
@@ -44,6 +45,7 @@ function executeDarkMode() {
     document.getElementById("js-theme-logo").src="Logos/Theme Logo Dark.svg";
     document.getElementById("js-theme-logo").style.width = "95%";
     document.getElementById("js-search-logo").src="Logos/Search Logo Dark.svg";
+    document.getElementById("js-new-search-logo").src="Logos/Search Logo Dark.svg";
     localStorage.setItem('displayTheme', 'dark');
     console.log(localStorage.getItem('displayTheme'));
     displayTheme = localStorage.getItem('displayTheme');
@@ -59,6 +61,7 @@ function openSearch() {
     document.getElementById("js-theme-button").style.display = "none";
     document.getElementById("js-search-input").style.display = "inline";
     document.getElementById("js-new-search-button").style.display = "inline";
+    document.getElementById("js-search-input").focus();
 }
 
 function processQuery() {
@@ -92,3 +95,22 @@ function redirect() {
         window.location.href = redirectLink;
     }
 }
+
+let visible = false
+    function makeVisible() {
+        document.getElementById("js-toggle-content").style.display = "inline";
+        document.getElementById("js-toggle-contents-page").style.display = "inline";
+        document.getElementById("js-toggler").innerHTML = "[hide]";
+        visible = true;
+        console.log("made visible");
+    }
+    function makeInvisible() {
+        document.getElementById("js-toggle-content").style.display = "none";
+        document.getElementById("js-toggle-contents-page").style.display = "none";
+        document.getElementById("js-toggler").innerHTML = "[show]";
+        visible = false;
+        console.log("made invisible");
+    }
+    function toggleVisibility() {
+        visible ? makeInvisible() : makeVisible();
+    }
