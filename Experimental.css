@@ -24,13 +24,13 @@
 }
 
 :root {
-    --bg-color: #EBF1F4;
+    --bg-color: #1C1E1C;
     --accent-color: #FFFFFF;
     --visual-color: #000000;
     --text-color: #FFFFFF;
     --subtext-color: #c0c0c0;
-    --link-color: #64BAAA;
-    --command-color: #C859C5;
+    --link-color: #adeef2;
+    --command-color: #da7eff;
 }
 
 body {
@@ -274,4 +274,30 @@ button:hover {
     border-width: 0.1rem;
     font-size: 0.81rem;
     text-align: center;
+}
+
+.kooltip {
+    display: inline-block;
+    text-indent:0em;
+}
+
+.tooltiptext, .tooltiptext {
+display: none;
+    width: calc(100vw - 35px);
+    background: #fff;
+    border-radius: 6px;
+    padding: 5px 5px;
+    left: 10px;
+    border: 2px solid grey;
+    line-height: normal;
+    text-decoration: none;
+    position: absolute;
+    z-index: 1;
+
+}
+
+p {display:inline-block}
+
+.tooltip:hover + span {
+    display: block;
 }
