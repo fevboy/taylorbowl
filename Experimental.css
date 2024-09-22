@@ -66,6 +66,7 @@ button:hover {
 }
 .formula {
     overflow-x: auto;
+    text-align: center;
 }
 
 .page-header {
