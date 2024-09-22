@@ -52,8 +52,8 @@ function executeDarkMode() {
     document.documentElement.style.setProperty('--visual-color', '#000000');
     document.documentElement.style.setProperty('--text-color', '#FFFFFF');
     document.documentElement.style.setProperty('--subtext-color', '#9F9F9F');
-    document.documentElement.style.setProperty('--link-color', '#ADEEF2');
-    document.documentElement.style.setProperty('--command-color', '#DA7EFF');
+    document.documentElement.style.setProperty('--link-color', '#a5e6ea');
+    document.documentElement.style.setProperty('--command-color', '#f38aff');
     // Sets the theme and search logos to dark mode variants.
     document.getElementById("js-theme-logo").src="Logos/Theme Logo Dark.svg";
     document.getElementById("js-theme-logo").style.width = "95%";
