@@ -46,6 +46,7 @@ function executeLightMode() {
     for (var i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Light.svg";
     }
+    document.getElementById("js-mode-text").innerHTML = "Dark Mode";
     // Sets light mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'light');
     // Sets light mode as the current mode in JS.
@@ -75,6 +76,7 @@ function executeDarkMode() {
     for (var i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Dark.svg";
     }
+    document.getElementById("js-mode-text").innerHTML = "Light Mode";
     // Sets dark mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'dark');
     // Sets dark mode as the current mode in JS.
