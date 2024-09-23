@@ -236,19 +236,7 @@ function escapeMenu() {
         if (e.key == "Escape") {
             closeMenu();
         }
-    });}
-
-function samsungEscapeMenu() {
-    $(window).on("navigate", function (event, data) {
-    var direction = data.state.direction;
-    if (direction == 'back') {
-        closeMenu();
-        closeSearch();
-    }});}
-
-history.pushState(null, null, window.top.location.pathname + window.top.location.search);
-    window.addEventListener('popstate', (e) => {
-        e.preventDefault();
-        // Insert Your Logic Here, You Can Do Whatever You Want
-        history.pushState(null, null, window.top.location.pathname + window.top.location.search);
     });
+    document.body.addEventListener('backbutton', function() {
+        closeMenu();
+    })}
