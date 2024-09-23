@@ -34,10 +34,14 @@ function executeLightMode() {
     document.documentElement.style.setProperty('--link-color', '#117E6A');
     document.documentElement.style.setProperty('--command-color', '#992995');
     // Sets the theme and search logos to light mode variants.
-    document.getElementById("js-theme-logo").src="Logos/Theme Logo Light.svg";
-    document.getElementById("js-theme-logo").style.width = "85%";
-    document.getElementById("js-search-logo").src="Logos/Search Logo Light.svg";
-    document.getElementById("js-new-search-logo").src="Logos/Search Logo Light.svg";
+    document.getElementById("js-theme-logo").src = "Logos/Theme Logo Light.svg";
+    document.getElementById("js-theme-logo").style.width = "86%";
+    document.getElementById("js-search-logo").src = "Logos/Search Logo Light.svg";
+    document.getElementById("js-new-search-logo").src = "Logos/Search Logo Light.svg";
+    document.getElementById("js-menu-logo").src = "Logos/Menu Logo Light.svg";
+    document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Light.svg";
+    document.getElementById("js-menu-theme-logo").src = "Logos/Theme Logo Light.svg";
+    document.getElementById("js-menu-search-logo").src = "Logos/Search Logo Light.svg";
     var togglerImages = document.getElementsByClassName("toggler-image");
     for (var i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Light.svg";
@@ -59,10 +63,14 @@ function executeDarkMode() {
     document.documentElement.style.setProperty('--link-color', '#a5e6ea');
     document.documentElement.style.setProperty('--command-color', '#f38aff');
     // Sets the theme and search logos to dark mode variants.
-    document.getElementById("js-theme-logo").src="Logos/Theme Logo Dark.svg";
+    document.getElementById("js-theme-logo").src = "Logos/Theme Logo Dark.svg";
     document.getElementById("js-theme-logo").style.width = "95%";
-    document.getElementById("js-search-logo").src="Logos/Search Logo Dark.svg";
-    document.getElementById("js-new-search-logo").src="Logos/Search Logo Dark.svg";
+    document.getElementById("js-search-logo").src = "Logos/Search Logo Dark.svg";
+    document.getElementById("js-new-search-logo").src = "Logos/Search Logo Dark.svg";
+    document.getElementById("js-menu-logo").src = "Logos/Menu Logo Dark.svg";
+    document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Dark.svg";
+    document.getElementById("js-menu-theme-logo").src = "Logos/Theme Logo Dark.svg";
+    document.getElementById("js-menu-search-logo").src = "Logos/Search Logo Dark.svg";
     var togglerImages = document.getElementsByClassName("toggler-image");
     for (var i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Dark.svg";
@@ -73,22 +81,36 @@ function executeDarkMode() {
     displayTheme = localStorage.getItem('displayTheme');
 }
 
-// To open and close the search bar, and redirect users.
+// To add functions for the header. Opens and closes the search bar, processes search queries, and opens and closes the menu.
 
 // Function openSearch opens the search bar when the toggle search button is pressed.
 function openSearch() {
     // Hides the TaylorBowl logo.
     document.getElementById("js-taylorbowl-logo").style.display = "none";
     // Hides the toggle search button.
-    document.getElementById("js-search-button").style.display = "none";
+    document.getElementById("js-lg-open-search-button").style.display = "none";
     // Hides the theme button.
-    document.getElementById("js-theme-button").style.display = "none";
+    document.getElementById("js-lg-theme-button").style.display = "none";
     // Unhides the search bar.
-    document.getElementById("js-search-input").style.display = "inline";
+    document.getElementById("js-lg-search-input").style.display = "inline";
     // Unhides the input search button.
-    document.getElementById("js-new-search-button").style.display = "inline";
+    document.getElementById("js-lg-enter-search-button").style.display = "inline";
     // Automatically focuses the user on the search bar.
-    document.getElementById("js-search-input").focus();
+    document.getElementById("js-lg-search-input").focus();
+}
+
+// Function closeSearch closes the search bar when the search bar is unfocused or the user presses escape while there is no text.
+function closeSearch() {
+    // Unhides the TaylorBowl logo.
+    document.getElementById("js-taylorbowl-logo").style.display = "flex";
+    // Unhides the toggle search button.
+    document.getElementById("js-lg-open-search-button").style.display = "inline";
+    // Unhides the theme button.
+    document.getElementById("js-lg-theme-button").style.display = "inline";
+    // Hides the search bar.
+    document.getElementById("js-lg-search-input").style.display = "none";
+    // Hides the input search button.
+    document.getElementById("js-lg-enter-search-button").style.display = "none";
 }
 
 // Creates variable "searchQuery" that processes user inputs in the search bar.
@@ -105,20 +127,6 @@ function processQuery() {
     if (event.key === "Enter") {
         redirect();
     }
-}
-
-// Function closeSearch closes the search bar when the search bar is unfocused or the user presses escape while there is no text.
-function closeSearch() {
-    // Unhides the TaylorBowl logo.
-    document.getElementById("js-taylorbowl-logo").style.display = "flex";
-    // Unhides the toggle search button.
-    document.getElementById("js-search-button").style.display = "inline";
-    // Unhides the theme button.
-    document.getElementById("js-theme-button").style.display = "inline";
-    // Hides the search bar.
-    document.getElementById("js-search-input").style.display = "none";
-    // Hides the input search button.
-    document.getElementById("js-new-search-button").style.display = "none";
 }
     
 // Function redirect() redirects the user based on search bar input.
@@ -137,6 +145,10 @@ function redirect() {
         window.location.href = redirectLink;
     }
 }
+
+// To open and close the menu.
+
+
 
 /*
 // To hide and unhide content related to Ephemera and Perpetua.
@@ -182,9 +194,8 @@ function makeInvisible() {
 
 function toggleContent(section) {
     let sectionID = "js-toggle-content-" + section;
-    let togglerID = "js-toggler-" + section
+    let togglerID = "js-toggler-" + section;
     let sectionStatus = window.getComputedStyle(document.getElementById(togglerID)).getPropertyValue("transform");
-    console.log(sectionStatus);
     if (sectionStatus == "none") {
         showContent(sectionID, togglerID);
     }
@@ -194,13 +205,25 @@ function toggleContent(section) {
 }
 
 function hideContent(sectionID, togglerID) {
-    console.log("showing content");
     document.getElementById(sectionID).style.display = "none";
     document.getElementById(togglerID).style.transform = "none";
 }
 
 function showContent(sectionID, togglerID) {
-    console.log("showing content");
     document.getElementById(sectionID).style.display = "block";
     document.getElementById(togglerID).style.transform = "rotate(180deg)";
+}
+
+// To open and close the menu.
+
+function openMenu() {
+    // Opens the menu.
+    document.getElementById("js-page-cover").style.display = "block";
+    document.getElementById("js-menu").style.display = "block";
+}
+
+function closeMenu() {
+    // Closes the menu.
+    document.getElementById("js-page-cover").style.display = "none";
+    document.getElementById("js-menu").style.display = "none";
 }
