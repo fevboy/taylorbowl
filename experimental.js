@@ -243,4 +243,5 @@ function samsungEscapeMenu() {
     var direction = data.state.direction;
     if (direction == 'back') {
         closeMenu();
+        closeSearch();
     }});}
