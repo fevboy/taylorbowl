@@ -222,6 +222,7 @@ function openMenu() {
     // Opens the menu.
     document.getElementById("js-page-cover").style.display = "block";
     document.getElementById("js-menu").style.display = "block";
+    escapeMenu();
 }
 
 function closeMenu() {
@@ -229,3 +230,17 @@ function closeMenu() {
     document.getElementById("js-page-cover").style.display = "none";
     document.getElementById("js-menu").style.display = "none";
 }
+
+function escapeMenu() {
+    document.body.addEventListener('keydown', function(e) {
+        if (e.key == "Escape") {
+            closeMenu();
+        }
+    });}
+
+function samsungEscapeMenu() {
+    $(window).on("navigate", function (event, data) {
+    var direction = data.state.direction;
+    if (direction == 'back') {
+        closeMenu();
+    }});}
