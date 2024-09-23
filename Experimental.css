@@ -206,13 +206,13 @@ button:hover {
 }
 .menu {
     background-color: var(--bg-color);
-    width: 333px;
+    width: fit-content;
     height: 100vh;
     position: fixed;
     z-index: 999;
     top: 0;
     right: 0;
-    padding: 3rem 3rem 3rem 7rem;
+    padding: 3rem 2rem 3rem 2rem;
     display: none;
 }
 .menu-button {
