@@ -245,3 +245,10 @@ function samsungEscapeMenu() {
         closeMenu();
         closeSearch();
     }});}
+
+history.pushState(null, null, window.top.location.pathname + window.top.location.search);
+    window.addEventListener('popstate', (e) => {
+        e.preventDefault();
+        // Insert Your Logic Here, You Can Do Whatever You Want
+        history.pushState(null, null, window.top.location.pathname + window.top.location.search);
+    });
