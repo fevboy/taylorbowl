@@ -204,6 +204,7 @@ button:hover {
     top: 0;
     left: 0;
 }
+
 .menu {
     background-color: var(--bg-color);
     width: fit-content;
@@ -214,6 +215,7 @@ button:hover {
     right: 0;
     padding: 3rem 2rem 3rem 2rem;
     display: none;
+    overflow-y: scroll;
 }
 .menu-button {
     height: 2rem;
@@ -258,10 +260,14 @@ button:hover {
     margin: 1rem 0 0 0;
 }
 
+.contents-list-container {
+    height: 30rem;
+    overflow: auto;
+}
 .contents-list {
     color: var(--text-color);
     display: block;
-    margin: 1rem 0 0 0;
+    margin: 0 0 0 0;
     padding: 0;
     width: fit-content;
     float: left;
@@ -271,6 +277,14 @@ button:hover {
     margin-bottom: 0.5rem;
     font-size: 1.22rem;
     font-weight: 600;
+}
+.menu-line {
+    margin-top: 0.44rem;
+    margin-bottom: 1.3rem;
+    height: 1px;
+    color: var(--accent-color);
+    background-color: var(--accent-color);
+    border: none;
 }
 
 .page-title {
