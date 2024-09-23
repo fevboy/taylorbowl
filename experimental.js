@@ -38,6 +38,10 @@ function executeLightMode() {
     document.getElementById("js-theme-logo").style.width = "85%";
     document.getElementById("js-search-logo").src="Logos/Search Logo Light.svg";
     document.getElementById("js-new-search-logo").src="Logos/Search Logo Light.svg";
+    var togglerImages = document.getElementsByClassName("toggler-image");
+    for (var i = 0; i < togglerImages.length; i+= 1) {
+        togglerImages[i].src = "Logos/Mobile Toggler Light.svg";
+    }
     // Sets light mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'light');
     // Sets light mode as the current mode in JS.
@@ -59,6 +63,10 @@ function executeDarkMode() {
     document.getElementById("js-theme-logo").style.width = "95%";
     document.getElementById("js-search-logo").src="Logos/Search Logo Dark.svg";
     document.getElementById("js-new-search-logo").src="Logos/Search Logo Dark.svg";
+    var togglerImages = document.getElementsByClassName("toggler-image");
+    for (var i = 0; i < togglerImages.length; i+= 1) {
+        togglerImages[i].src = "Logos/Mobile Toggler Dark.svg";
+    }
     // Sets dark mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'dark');
     // Sets dark mode as the current mode in JS.
