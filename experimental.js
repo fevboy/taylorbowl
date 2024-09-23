@@ -130,6 +130,7 @@ function redirect() {
     }
 }
 
+/*
 // To hide and unhide content related to Ephemera and Perpetua.
 
 // Creates variable "visible" that stores if the toggle content is visible. Defaults to false when a page is first opened.
@@ -167,4 +168,31 @@ function makeInvisible() {
     visible = false;
     // In console, logs the text "made invisible".
     console.log("made invisible");
+*/
+
+// To hide and unhide content.
+
+function toggleContent(section) {
+    let sectionID = "js-toggle-content-" + section;
+    let togglerID = "js-toggler-" + section
+    let sectionStatus = window.getComputedStyle(document.getElementById(togglerID)).getPropertyValue("transform");
+    console.log(sectionStatus);
+    if (sectionStatus == "none") {
+        showContent(sectionID, togglerID);
+    }
+    else {
+        hideContent(sectionID, togglerID);
+    }
+}
+
+function hideContent(sectionID, togglerID) {
+    console.log("showing content");
+    document.getElementById(sectionID).style.display = "none";
+    document.getElementById(togglerID).style.transform = "none";
+}
+
+function showContent(sectionID, togglerID) {
+    console.log("showing content");
+    document.getElementById(sectionID).style.display = "block";
+    document.getElementById(togglerID).style.transform = "rotate(180deg)";
 }
