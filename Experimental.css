@@ -198,6 +198,7 @@ button:hover {
     font-family:'Times New Roman', Times, serif;
     font-size: 1.7rem;
     margin: 1.5rem 0 0 0;
+    display: flex;
 }
 .section-title-line {
     margin-top: 0.22rem;
@@ -225,6 +226,7 @@ button:hover {
 .content {
     color: var(--text-color);
     margin: 1.5rem 0 0 0;
+    display: block;
 }
 .show-hide {
     border: none;
@@ -301,4 +303,20 @@ p {display:inline-block}
 
 .tooltip:hover + span {
     display: block;
+}
+
+.toggler {
+    padding: 0 0 0 0;
+    height: 1.1rem;
+    border: none;
+    background: none;
+    margin: auto 0.7rem auto 0;
+    transform: none;
+}
+.toggler-image {
+    height: 1.1rem;
+    margin: 0 0 0 0;
+}
+.toggle-content {
+    display: none;
 }
