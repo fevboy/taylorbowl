@@ -212,7 +212,7 @@ button:hover {
     z-index: 999;
     top: 0;
     right: 0;
-    padding: 3rem;
+    padding: 3rem 3rem 3rem 7rem;
     display: none;
 }
 .menu-button {
