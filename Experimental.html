@@ -3,6 +3,10 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
         Farm
     </title>
@@ -116,7 +120,7 @@ src="Logos/Theme Logo Dark.svg">
 
 <button
 class="menu-button"
-onclick="closeMenu()">
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
 <img
 class="menu-search-logo"
 id="js-menu-search-logo"
@@ -127,8 +131,6 @@ Search Pages
 <hr
 class="menu-line">
 
-<div
-class="contents-list-container">
 <div
 class="contents-list">
     <div
@@ -218,15 +220,14 @@ class="contents-list">
         6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Glossary"> Glossary <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 6.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Actions"> List of Commands <br> </a>
+        &emsp; &ensp; 6.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Glossary#List_of_Commands"> List of Commands <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 6.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Warning_Bloom"> List of Formulae <br> </a>
+        &emsp; &ensp; 6.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Glossary#List_of_Formulae"> List of Formulae <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 6.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Blight_Takeover"> List of Terms <br> </a>
+        &emsp; &ensp; 6.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Glossary#List_of_Terms"> List of Terms <br> </a>
     </div>
-</div>
 </div>
 
 </div>
@@ -246,22 +247,24 @@ class="disclaimer">
 <div
 class="content"
 id="js-page-summary">
-The Farm is a farm simulator minigame that allows users to plant and grow <a class="text-actionable-link tooltip" href="https://taylorbowl.wiki/Credits">credits<span class="tooltiptext">Tooltip.</span></a>. There is a chance for a Bloom to occur, growing all credits in the farm by a certain percentage. However, there is another, smaller, chance for a Blight to occur, destroying all credits in the Farm. Farmers are able to perform actions to modify some aspects of the Farm.
+The Farm is a farm simulator minigame that allows users to plant and grow <span class="tooltip"><a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a></span>. There is a chance for a Bloom to occur, growing all credits in the farm by a certain percentage. However, there is another, smaller, chance for a Blight to occur, destroying all credits in the Farm. Farmers are able to perform actions to modify some aspects of the Farm.
 </div>
 
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
 id="General_Mechanics">
-    <button
-    class="toggler"
-    id="js-toggler-1"
-    onclick="toggleContent(1)">
-    <img
-    class="toggler-image"
-    src="Logos/Mobile Toggler Dark.svg">
-    </button>
-    General Mechanics
+General Mechanics
 </div>
+</button>
+
 <hr
 class="section-title-line">
 
@@ -310,19 +313,20 @@ class="content">
 
 </div>
 
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
 id="Farmer_Actions">
-    <button
-    class="toggler"
-    id="js-toggler-2"
-    onclick="toggleContent(2)">
-    <img
-    class="toggler-image"
-    src="Logos/Mobile Toggler Dark.svg">
-    </button>
-    Farmer Actions
+Farmer Actions
 </div>
+</button>
+
 <hr
 class="section-title-line">
 
@@ -430,19 +434,20 @@ class="content">
 
 </div>
 
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
 id="Advanced_Mechanics">
-    <button
-    class="toggler"
-    id="js-toggler-3"
-    onclick="toggleContent(3)">
-    <img
-    class="toggler-image"
-    src="Logos/Mobile Toggler Dark.svg">
-    </button>
-    Advanced Mechanics
+Advanced Mechanics
 </div>
+</button>
+
 <hr
 class="section-title-line">
 
@@ -465,7 +470,7 @@ id="Advanced_Mechanics#Actions">
 class="content">
     Watering and strengthening both decrease the Growth Rate to compensate for the increased profitability of the Farm. However, it is always true that watering and strengthening will still be beneficial for the expected returns.
     <br> <br>
-    Strengthening decreases the Takeover period of the Blight Takeover (see Blight Takeover for more information). 
+    Strengthening decreases the Takeover period of the Blight Takeover (see <span class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Blight_Takeover">Blight Takeover</span> for more information). 
     <br> <br>
     Neither watering nor strengthening is possible if performing the action would cause the Blight Strength to exceed the Maximum Strength, i.e. when the Blight Strength is 1/1.0075 of the Maximum Strength, or about 99.26% of Maximum Strength.
 </div>
@@ -491,7 +496,7 @@ id="Advanced_Mechanics#Blight_Takeover">
     class="content">
     The first stage is Immunity where no credits are destroyed. The duration of Immunity is determined by the number of Bloom Periods since the previous normal* Bloom. 1 Bloom Period is equivalent to the Growth Denominator in seconds. Immunity starts as 0 seconds and increases in integer steps by 1 second every half Bloom Period, always rounded up. This means it is at least 1 second long.
     <br>
-    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Invocations_&_Evocations</a>
+    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Invocations & Evocations</a>
     <br> <br>
     At the end of Immunity, the Blight destroys 25% of credits in the farm.
     <br> <br>
@@ -514,7 +519,7 @@ class="content">
     <br> <br>
     During the safe period, Lily's Bloom will always occur before a normal* Blight.
     <br>
-    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Invocations_&_Evocations</a>
+    *see <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Invocations & Evocations</a>
     <br> <br>
     During the unsafe period, the Growth Rate increases dramatically, and reaches a maximum of 1000%. However, Lily's Bloom cannot occur.        
 </div>
@@ -556,25 +561,26 @@ class="content">
 
 </div>
 
+<button
+class="toggler"
+onclick="toggleContent(4)">
+<img
+class="toggler-image"
+id="js-toggler-4"
+src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
 id="Invocations_&_Evocations">
-    <button
-    class="toggler"
-    id="js-toggler-4"
-    onclick="toggleContent(4)">
-    <img
-    class="toggler-image"
-    src="Logos/Mobile Toggler Dark.svg">
-    </button>
-    Invocations & Evocations
+Invocations & Evocations
 </div>
+</button>
+
 <hr
 class="section-title-line">
 
 <div
 class="section-subtitle">
-    Warning: This section contains endgame content. If you wish to experience the game as intended, click away.
+    Warning: This section contains endgame content. If you wish to experience the game as intended, we recommend you do not open it.
 </div>
 
 <div
@@ -665,19 +671,20 @@ id="js-toggle-content-4">
 
 </div>
 
+<button
+class="toggler"
+onclick="toggleContent(5)">
+<img
+class="toggler-image"
+id="js-toggler-5"
+src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
-id="Farming_Strategies">
-    <button
-    class="toggler"
-    id="js-toggler-5"
-    onclick="toggleContent(5)">
-    <img
-    class="toggler-image"
-    src="Logos/Mobile Toggler Dark.svg">
-    </button>
-    Farming Strategies
+id="Farm#Farming_Strategies">
+Farming Strategies
 </div>
+</button>
+
 <hr
 class="section-title-line">
 
@@ -687,7 +694,7 @@ id="js-toggle-content-5">
 
 <div
 class="subsection-subtitle">
-    (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Guide_Farming">Guide:Farming</a>)
+    (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Guide_Farming">Guide: Farming</a>)
 </div>
 
 <div
@@ -699,33 +706,30 @@ class="content">
 
 </div>
 
+<button
+class="toggler"
+onclick="toggleContent(6)">
+<img
+class="toggler-image"
+id="js-toggler-6"
+src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
-id="Farming_Strategies">
-    <button
-    class="toggler"
-    id="js-toggler-6"
-    onclick="toggleContent(6)">
-    <img
-    class="toggler-image"
-    src="Logos/Mobile Toggler Dark.svg">
-    </button>
-    Glossary
+id="Glossary">
+Glossary
 </div>
+</button>
+
 <hr
 class="section-title-line">
-
-<div
-class="section-subtitle">
-This section comprises a list of terms with no dedicated article, a list of relevant formulae, and a list of relevant commands.
-</div>
 
 <div
 class="toggle-content"
 id="js-toggle-content-6">
 
 <div
-class="subsection-title">
+class="subsection-title"
+id="List_of_Commands">
 List of Commands
 </div>
 
@@ -741,7 +745,8 @@ List of Commands
     </tr>
     <tr>
         <td><span class="command-text">!farmer user</span></td>
-        <td>Shows details about a user in relation to the Farm &#8212 Planted Credits; Current Action; Ability to Weed; Ability to Harvest; Credits to Bloom; Weed Effectiveness; Strengthened Credits; Blight Chance Before Next Cycle. <span class="command-text">user</span> is an optional parameter, omission defaults to command user.</td>
+        <td>Shows details about a user in relation to the Farm &#8212 Planted Credits; Current Action; Ability to Weed; Ability to Harvest; Credits to Bloom; Weed Effectiveness; Strengthened Credits; Blight Chance Before Next Cycle. <br>
+        <span class="command-text">user</span> is an optional parameter, defaults to command user.</td>
     </tr>
     <tr>
         <td><span class="command-text">!harvest</span></td>
@@ -749,11 +754,12 @@ List of Commands
     </tr>
     <tr>
         <td><span class="command-text">!plant amount</span></td>
-        <td>Plants credits into the Farm. <span class="command-text">amount</span> is a mandatory parameter that refers to the number of credits planted.</td>
+        <td>Plants credits into the Farm. <br>
+        <span class="command-text">amount</span> is a mandatory parameter that refers to the number of credits planted.</td>
     </tr>
     <tr>
         <td><span class="command-text">!rankfarm</span></td>
-        <td>Lists the top farmers based on number of credits planted. Can list up to 13.</td>
+        <td>Lists up to 13 of the top farmers based on number of credits planted.</td>
     </tr>
     <tr>
         <td><span class="command-text">!strengthen</span></td>
@@ -772,61 +778,12 @@ List of Commands
 
 <div
 class="content">
-    Note: There are more advanced commands not shown here. Refer to <a class="text-actionable-link" href="https://taylorbowl.wiki/Guide_Farming">Guide:Farming</a>.
+    Note: There are more advanced commands not shown here. Refer to <a class="text-actionable-link" href="https://taylorbowl.wiki/Guide_Farming">Guide: Farming</a>.
 </div>
 
 <div
-class="subsection-title">
-List of Terms
-</div>
-
-<table>
-    <thead>
-        <th>Term</th>
-        <th>Definition</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Blight Cycle</td>
-        <td>A period starting from the end of one Blight and lasting until the end of the next Blight. Also known as Farm Cycle.</td>
-    </tr>
-    <tr>
-        <td>Blight Power</td>
-        <td>The percentage of credits destroyed by the Blight.</td>
-    </tr>
-    <tr>
-        <td>Blight Strength</td>
-        <td>The number of seconds since the last Blight. The chance for a Blight to occur in any given second is 1 divided by the difference of the Maximum Strength and Blight Strength.</td>
-    </tr>
-    <tr>
-        <td>Bloom Period</td>
-        <td>A period of time equal to the Growth Denominator.</td>
-    </tr>
-    <tr>
-        <td>Farmer</td>
-        <td>A user with credits in the Farm.</td>
-    </tr>
-    <tr>
-        <td>Growth Denominator</td>
-        <td>The average time between Blooms, measured in seconds. The chance for a Bloom to occur in any given second is 1 divided by the Growth Denominator.</td>
-    </tr>
-    <tr>
-        <td>Growth Rate</td>
-        <td>The percentage by which all credits in the Farm grow by when a Bloom occurs.</td>
-    </tr>
-    <tr>
-        <td>Integer</td>
-        <td>A whole number.</td>
-    </tr>
-    <tr>
-        <td>Maximum Strength</td>
-        <td>The maximum value of the Blight Strength. The Blight is guaranteed to occur by the time the Blight Strength reaches the Maximum Strength.</td>
-    </tr>
-    </tbody>
-</table>
-
-<div
-class="subsection-title">
+class="subsection-title"
+id="List_of_Formulae">
 List of Formulae
 </div>
 
@@ -880,14 +837,70 @@ where \(D\) is the Growth Denominator, \(M\) is the Maximum Strength, \(S\) is t
 class="formula">
     <p><span>$$\mathrm{Threshold\,percentage}<100\%$$</span></p>
 </div>
-Note: There are more formulae not derived from the code. Refer to <a class="text-actionable-link" href="https://taylorbowl.wiki/Guide_Farming">Guide:Farming</a>.
+Note: There are more formulae not derived from the code. Refer to <a class="text-actionable-link" href="https://taylorbowl.wiki/Guide_Farming">Guide: Farming</a>.
 </div>
 
+<div
+class="subsection-title"
+id="List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Blight Cycle</td>
+        <td>A period starting from the end of one Blight and lasting until the end of the next Blight. Also known as Farm Cycle.</td>
+    </tr>
+    <tr>
+        <td>Blight Power</td>
+        <td>The percentage of credits destroyed by the Blight.</td>
+    </tr>
+    <tr>
+        <td>Blight Strength</td>
+        <td>The number of seconds since the last Blight. The chance for a Blight to occur in any given second is 1 divided by the difference of the Maximum Strength and Blight Strength.</td>
+    </tr>
+    <tr>
+        <td>Bloom Period</td>
+        <td>A period of time equal to the Growth Denominator.</td>
+    </tr>
+    <tr>
+        <td>Farmer</td>
+        <td>A user with credits in the Farm.</td>
+    </tr>
+    <tr>
+        <td>Growth Denominator</td>
+        <td>The average time between Blooms, measured in seconds. The chance for a Bloom to occur in any given second is 1 divided by the Growth Denominator.</td>
+    </tr>
+    <tr>
+        <td>Growth Rate</td>
+        <td>The percentage by which all credits in the Farm grow by when a Bloom occurs.</td>
+    </tr>
+    <tr>
+        <td>Integer</td>
+        <td>A whole number.</td>
+    </tr>
+    <tr>
+        <td>Maximum Strength</td>
+        <td>The maximum value of the Blight Strength. The Blight is guaranteed to occur by the time the Blight Strength reaches the Maximum Strength.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+<div 
+class="tooltip-container">
+Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.
 </div>
 
 <div
 class="version-text">
-    Version Beta 3.4
+    Version Beta 3.5
 </div>
 
 </body>
@@ -896,6 +909,22 @@ class="version-text">
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script>
+
+const tooltips = Array.from(document.querySelectorAll('.tooltip'));
+const tooltipContainer = document.querySelector('.tooltip-container');
+
+tooltips.forEach(tooltip => {
+    tooltip.addEventListener('mouseenter', (e) => {
+        tooltipContainer.classList.add('fade-in');
+        tooltipContainer.style.left = `${e.pageX}px`;
+        tooltipContainer.style.top = `${e.pageY}px`;
+    })
+    tooltip.addEventListener('mouseout', (e) => {
+        tooltipContainer.classList.remove('fade-in');
+    }
+)})
+
+
 
 </script>
 
