@@ -30,7 +30,7 @@
 :root {
     --bg-color: #1C1E1C;
     --accent-color: #FFFFFF;
-    --visual-color: #000000;
+    --visual-color: #161816;
     --text-color: #FFFFFF;
     --subtext-color: #c0c0c0;
     --link-color: #A59DF1;
@@ -421,6 +421,7 @@ th {
     font-family:'Times New Roman', Times, serif;
     font-size: 1.7rem;
     display: flex;
+    width: 100%;
 
 }
 .toggler-image {
@@ -431,27 +432,13 @@ th {
     display: none;
 }
 
-.tooltip-container {
-    width: 425px;
-    min-height: 200px;
-    padding: 15px;
-    font-size: 25px;
-    background: white;
-    box-shadow: 0 30px 90px -20px rgba(0,0,0,0.3);
-    position: absolute;
-    z-index: 100;
-    display: none;
-    opacity: 0;
+.tippy-box {
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--visual-color);
+    padding: 0.3rem;
+    border-radius: 0.5rem;
 }
-.fade-in {
-    display: block;
-    animation: fade 0.2s linear forwards;
-}
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.tippy-box .tippy-arrow::before {
+    color: var(--visual-color);
 }
