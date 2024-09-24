@@ -197,6 +197,28 @@ function hideContent(sectionID, togglerID) {
     // Makes toggler image right side up.
     document.getElementById(togglerID).style.transform = "none";
 }
+// Function toggleMenuContent() toggles visibility of a section in the contents page.
+function toggleMenuContent(section) {
+    // Variable "sectionStatus" checks the current visibility of the section.
+    let togglerID = "js-toggler-" + section;
+    let sectionStatus = window.getComputedStyle(document.getElementById(togglerID)).getPropertyValue("transform");
+    // If the section is not visible, make it visible.
+    if (sectionStatus == "none") {
+        hideMenuContent();
+    }
+    // If the section is visible, make it invisible.
+    else {
+        showMenuContent();
+    }
+}
+// Function showContent(sectionID, togglerID) changes display properties of the section and toggler image.
+function showMenuContent() {
+document.getElementById("js-toggle-contents-page").style.display = "inline";
+}
+// Fcuntion hideContent(sectionID, togglerID) changes display properties of the section and toggler image.
+function hideMenuContent() {
+document.getElementById("js-toggle-contents-page").style.display = "none";
+}
 
 // To open and close the menu.
 
