@@ -32,21 +32,25 @@ function executeLightMode() {
     document.documentElement.style.setProperty('--text-color', '#000000');
     document.documentElement.style.setProperty('--subtext-color', '#5f5f5f');
     document.documentElement.style.setProperty('--link-color', '#574FFF');
-    document.documentElement.style.setProperty('--command-color', '#AAB7BE');
-    // Sets the theme and search logos to light mode variants.
+    document.documentElement.style.setProperty('--command-color', '#B7BFC2');
+    // Sets the theme logo to light mode variant.
     document.getElementById("js-theme-logo").src = "Logos/Theme Logo Light.svg";
     document.getElementById("js-theme-logo").style.width = "86%";
+    document.getElementById("js-menu-theme-logo").src = "Logos/Theme Logo Light.svg";
+    // Sets change theme text in menu to dark mode.
+    document.getElementById("js-mode-text").innerHTML = "Dark Mode";
+    // Sets the search logo to light mode variant.
     document.getElementById("js-search-logo").src = "Logos/Search Logo Light.svg";
     document.getElementById("js-new-search-logo").src = "Logos/Search Logo Light.svg";
+    document.getElementById("js-menu-search-logo").src = "Logos/Search Logo Light.svg";
+    // Sets the menu logo to light mode variant.
     document.getElementById("js-menu-logo").src = "Logos/Menu Logo Light.svg";
     document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Light.svg";
-    document.getElementById("js-menu-theme-logo").src = "Logos/Theme Logo Light.svg";
-    document.getElementById("js-menu-search-logo").src = "Logos/Search Logo Light.svg";
+    // Sets toggler images to light mode variant.
     var togglerImages = document.getElementsByClassName("toggler-image");
     for (var i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Light.svg";
     }
-    document.getElementById("js-mode-text").innerHTML = "Dark Mode";
     // Sets light mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'light');
     // Sets light mode as the current mode in JS.
@@ -62,21 +66,25 @@ function executeDarkMode() {
     document.documentElement.style.setProperty('--text-color', '#FFFFFF');
     document.documentElement.style.setProperty('--subtext-color', '#9F9F9F');
     document.documentElement.style.setProperty('--link-color', '#A59DF1');
-    document.documentElement.style.setProperty('--command-color', '#4F524F');
-    // Sets the theme and search logos to dark mode variants.
+    document.documentElement.style.setProperty('--command-color', '#3F4240');
+    // Sets the theme logo to dark mode variant.
     document.getElementById("js-theme-logo").src = "Logos/Theme Logo Dark.svg";
     document.getElementById("js-theme-logo").style.width = "95%";
+    document.getElementById("js-menu-theme-logo").src = "Logos/Theme Logo Dark.svg";
+    // Sets change theme text in menu to light mode.
+    document.getElementById("js-mode-text").innerHTML = "Light Mode";
+    // Sets search logo to dark mode variant.
     document.getElementById("js-search-logo").src = "Logos/Search Logo Dark.svg";
     document.getElementById("js-new-search-logo").src = "Logos/Search Logo Dark.svg";
+    document.getElementById("js-menu-search-logo").src = "Logos/Search Logo Dark.svg";
+    // Sets menu logo to dark mode variant.
     document.getElementById("js-menu-logo").src = "Logos/Menu Logo Dark.svg";
     document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Dark.svg";
-    document.getElementById("js-menu-theme-logo").src = "Logos/Theme Logo Dark.svg";
-    document.getElementById("js-menu-search-logo").src = "Logos/Search Logo Dark.svg";
+    // Sets toggler images to dark mode variant.
     var togglerImages = document.getElementsByClassName("toggler-image");
     for (var i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Dark.svg";
     }
-    document.getElementById("js-mode-text").innerHTML = "Light Mode";
     // Sets dark mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'dark');
     // Sets dark mode as the current mode in JS.
@@ -101,6 +109,12 @@ function openSearch() {
     document.getElementById("js-lg-enter-search-button").style.display = "inline";
     // Automatically focuses the user on the search bar.
     document.getElementById("js-lg-search-input").focus();
+    // Adds search bar close function when escape is pressed while open.
+    document.body.addEventListener('keydown', function(e) {
+        if (e.key == "Escape") {
+            if (document.getElementById("js-lg-search-input").style.display == "inline") {
+                closeSearch();
+            }}})
 }
 
 // Function closeSearch closes the search bar when the search bar is unfocused or the user presses escape while there is no text.
@@ -151,98 +165,61 @@ function redirect() {
     }
 }
 
-// To open and close the menu.
-
-
-
-/*
-// To hide and unhide content related to Ephemera and Perpetua.
-
-// Creates variable "visible" that stores if the toggle content is visible. Defaults to false when a page is first opened.
-let visible = false
-
-// Function toggleVisibility() toggles between visible and invisible.
-function toggleVisibility() {
-    // If currently visible, makes toggle content invisible and vice versa.
-    visible ? makeInvisible() : makeVisible();
-}
-
-// Function makeVisible() sets toggle content as visible.
-function makeVisible() {
-    // Sets toggle content as visible.
-    document.getElementById("js-toggle-content").style.display = "inline";
-    // Sets toggle content in the contents page as visible.
-    document.getElementById("js-toggle-contents-page").style.display = "inline";
-    // Sets the toggler text to "[hide]" to indicate its new function of hiding toggle content when pressed.
-    document.getElementById("js-toggler").innerHTML = "[hide]";
-    // Sets "visible" to true.
-    visible = true;
-    // In console, logs the text "made visible". 
-    console.log("made visible");
-}
-
-// Function makeInvisible() sets toggle content as invisible.
-function makeInvisible() {
-    // Sets toggle content as invisible.
-    document.getElementById("js-toggle-content").style.display = "none";
-    // Sets toggle content in the contents page as invisible.
-    document.getElementById("js-toggle-contents-page").style.display = "none";
-    // Sets the toggler text to "[show]" to indicate its new function of unhiding toggle content when pressed.
-    document.getElementById("js-toggler").innerHTML = "[show]";
-    // Sets "visible" to false.
-    visible = false;
-    // In console, logs the text "made invisible".
-    console.log("made invisible");
-*/
-
 // To hide and unhide content.
 
+// Function toggleContent(section) toggles visibility of a section. Parameter "section" identifies the section to be toggled.
 function toggleContent(section) {
+    // Variables "sectionID" and "togglerID" give the IDs of the sections to be toggled and the toggler image to be modified.
     let sectionID = "js-toggle-content-" + section;
     let togglerID = "js-toggler-" + section;
+    // Variable "sectionStatus" checks the current visibility of the section.
     let sectionStatus = window.getComputedStyle(document.getElementById(togglerID)).getPropertyValue("transform");
+    // If the section is not visible, make it visible.
     if (sectionStatus == "none") {
         showContent(sectionID, togglerID);
     }
+    // If the section is visible, make it invisible.
     else {
         hideContent(sectionID, togglerID);
     }
 }
-
-function hideContent(sectionID, togglerID) {
-    document.getElementById(sectionID).style.display = "none";
-    document.getElementById(togglerID).style.transform = "none";
-}
-
+// Function showContent(sectionID, togglerID) changes display properties of the section and toggler image.
 function showContent(sectionID, togglerID) {
+    // Makes section visible.
     document.getElementById(sectionID).style.display = "block";
+    // Makes toggler image upside down.
     document.getElementById(togglerID).style.transform = "rotate(180deg)";
+}
+// Fcuntion hideContent(sectionID, togglerID) changes display properties of the section and toggler image.
+function hideContent(sectionID, togglerID) {
+    // Makes section invisible.
+    document.getElementById(sectionID).style.display = "none";
+    // Makes toggler image right side up.
+    document.getElementById(togglerID).style.transform = "none";
 }
 
 // To open and close the menu.
 
+// Function openMenu() opens the menu.
 function openMenu() {
-    // Opens the menu.
+    // Makes menu and page cover visible.
     document.getElementById("js-page-cover").style.display = "block";
     document.getElementById("js-menu").style.display = "block";
-    escapeMenu();
-}
-
-function closeMenu() {
-    // Closes the menu.
-    document.getElementById("js-page-cover").style.display = "none";
-    document.getElementById("js-menu").style.display = "none";
-}
-
-function escapeMenu() {
+    // Adds menu close function when escape is pressed while open.
     document.body.addEventListener('keydown', function(e) {
         if (e.key == "Escape") {
             if (document.getElementById("js-page-cover").style.display == "block") {
                 closeMenu();
-            }
-            else if (document.getElementById("js-lg-search-input").style.display == "inline") {
-                closeSearch();
             }}})}
+
+// Function closeMenu() closes the menu.
+function closeMenu() {
+    // Makes menu and page cover hidden.
+    document.getElementById("js-page-cover").style.display = "none";
+    document.getElementById("js-menu").style.display = "none";
+}
+
+// For tooltips.
 
 tippy("[data-tippy-content]", {
     duration: [200, 50],
