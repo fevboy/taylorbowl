@@ -218,11 +218,12 @@ button:hover {
 .menu {
     background-color: var(--bg-color);
     width: fit-content;
-    height: 100vh;
+    height: auto;
     position: fixed;
     z-index: 999;
     top: 0;
     right: 0;
+    bottom: 0;
     padding: 3rem 2rem 3rem 2rem;
     display: none;
     overflow: auto;
@@ -276,8 +277,10 @@ button:hover {
     margin: 0 0 0 0;
     padding: 0;
     width: fit-content;
+    height: 70%;
     float: left;
     line-height: 1.5rem;
+    overflow: auto;
 }
 .contents-list-title {
     margin-bottom: 0.5rem;
