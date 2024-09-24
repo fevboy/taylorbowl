@@ -243,3 +243,10 @@ function escapeMenu() {
             else if (document.getElementById("js-lg-search-input").style.display == "inline") {
                 closeSearch();
             }}})}
+
+tippy("[data-tippy-content]", {
+    duration: [200, 50],
+    delay: 500,
+    animation: 'fade',
+    arrow: true,
+});
