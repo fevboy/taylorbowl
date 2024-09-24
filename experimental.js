@@ -31,8 +31,8 @@ function executeLightMode() {
     document.documentElement.style.setProperty('--visual-color', '#FFFFFF');
     document.documentElement.style.setProperty('--text-color', '#000000');
     document.documentElement.style.setProperty('--subtext-color', '#5f5f5f');
-    document.documentElement.style.setProperty('--link-color', '#117E6A');
-    document.documentElement.style.setProperty('--command-color', '#992995');
+    document.documentElement.style.setProperty('--link-color', '#574FFF');
+    document.documentElement.style.setProperty('--command-color', '#AAB7BE');
     // Sets the theme and search logos to light mode variants.
     document.getElementById("js-theme-logo").src = "Logos/Theme Logo Light.svg";
     document.getElementById("js-theme-logo").style.width = "86%";
@@ -61,8 +61,8 @@ function executeDarkMode() {
     document.documentElement.style.setProperty('--visual-color', '#161816');
     document.documentElement.style.setProperty('--text-color', '#FFFFFF');
     document.documentElement.style.setProperty('--subtext-color', '#9F9F9F');
-    document.documentElement.style.setProperty('--link-color', '#a5e6ea');
-    document.documentElement.style.setProperty('--command-color', '#f38aff');
+    document.documentElement.style.setProperty('--link-color', '#A59DF1');
+    document.documentElement.style.setProperty('--command-color', '#4F524F');
     // Sets the theme and search logos to dark mode variants.
     document.getElementById("js-theme-logo").src = "Logos/Theme Logo Dark.svg";
     document.getElementById("js-theme-logo").style.width = "95%";
@@ -93,6 +93,8 @@ function openSearch() {
     document.getElementById("js-lg-open-search-button").style.display = "none";
     // Hides the theme button.
     document.getElementById("js-lg-theme-button").style.display = "none";
+    // Hides the menu button.
+    document.getElementById("js-open-menu-button").style.display = "none";
     // Unhides the search bar.
     document.getElementById("js-lg-search-input").style.display = "inline";
     // Unhides the input search button.
@@ -109,6 +111,7 @@ function closeSearch() {
     document.getElementById("js-lg-open-search-button").style.display = "inline";
     // Unhides the theme button.
     document.getElementById("js-lg-theme-button").style.display = "inline";
+    document.getElementById("js-open-menu-button").style.display = "inline";
     // Hides the search bar.
     document.getElementById("js-lg-search-input").style.display = "none";
     // Hides the input search button.
@@ -234,9 +237,9 @@ function closeMenu() {
 function escapeMenu() {
     document.body.addEventListener('keydown', function(e) {
         if (e.key == "Escape") {
-            closeMenu();
-        }
-    });
-    document.body.addEventListener('backbutton', function() {
-        closeMenu();
-    })}
+            if (document.getElementById("js-page-cover").style.display == "block") {
+                closeMenu();
+            }
+            else if (document.getElementById("js-lg-search-input").style.display == "inline") {
+                closeSearch();
+            }}})}
