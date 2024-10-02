@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 
 <head>
-
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
         Search - TaylorBowl Wiki
     </title>
@@ -11,214 +15,266 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="search.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="search.css">
 
 </head>
 
 <body>
 
-    <div
-    class="all-content">
+<div
+class="page-header">
 
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
+<div class="mini-header">
 
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
 
-            <button
-            class="home-button"
-            onclick = "window.location.href= 'https://taylorbowl.wiki/'">
-                <img
-                class="home-logo"
-                src="Logos/Home Logo.svg">
-            </button>
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
 
-        </div>
+    <button
+    class="lg-home-button"
+    id="js-lg-home-button"
+    onclick="window.location.href='https://taylorbowl.wiki/'">
+    <img 
+    class="home-logo" 
+    id="js-home-logo"
+    src="Logos/Home Logo Dark.svg">
+    </button>
 
-        <div
-        class="search-content">
-
-            <input 
-            class="search-input" 
-            id="js-search" 
-            placeholder="Search pages..."
-            onkeyup="match()">
-            <button
-            class="search-button"
-            onclick="match()">
-            <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-        </div>
-
-        <div
-        class="pages-content">
-
-            <button
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/TaylorBowls'">
-                <div
-                class="page-title">
-                    TaylorBowls
-                </div>
-                <div
-                class="page-description">
-                    TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Tracks'">
-                <div
-                class="page-title">
-                    Tracks
-                </div>
-                <div
-                class="page-description">
-                    Tracks refer to any song that can be in a TaylorBowl. There are currently 249 such tracks.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Elo'">
-                <div
-                class="page-title">
-                    Elo
-                </div>
-                <div
-                class="page-description">
-                    All tracks in TaylorBowl are assigned an Elo value, which is a way of giving each a score.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Votes'">
-                <div
-                class="page-title">
-                    Votes
-                </div>
-                <div
-                class="page-description">
-                    Votes are what decides the winner and loser of a TaylorBowl.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Seasons'">
-                <div
-                class="page-title">
-                    Seasons
-                </div>
-                <div
-                class="page-description">
-                    Seasons are a period of time in TaylorBowl that mark a series of resets at their end.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Credits'">
-                <div
-                class="page-title">
-                    Credits
-                </div>
-                <div
-                class="page-description">
-                    Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Farm'">
-                <div
-                class="page-title">
-                    Farm
-                </div>
-                <div
-                class="page-description">
-                    The Farm is a farm simulator minigame that allows users to plant and grow credits.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/The_Commons'">
-                <div
-                class="page-title">
-                    The Commons
-                </div>
-                <div
-                class="page-description">
-                    The Commons is a farm simulator minigame with a shared pool of credits.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Risk_&_Anti-Risk'">
-                <div
-                class="page-title">
-                    Risk & Anti-Risk
-                </div>
-                <div
-                class="page-description">
-                    Risk and Anti-Risk are die-based minigames that use credits.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Ballpit'">
-                <div
-                class="page-title">
-                    Ballpit
-                </div>
-                <div
-                class="page-description">
-                    Ballpit is a probability-based minigame that uses credits.
-                </div>
-            </button>
-
-            <button 
-            class="page"
-            onclick="window.location.href='https://taylorbowl.wiki/Yahtzee'">
-                <div
-                class="page-title">
-                    Yahtzee
-                </div>
-                <div
-                class="page-description">
-                    Yahtzee is a dice-based minigame that uses credits.
-                </div>
-            </button>
-
-        </div>
-
-        <div
-        class="version-text">
-            Version 2.1
-        </div>
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
 
     </div>
 
-<script src="search.js"></script>
+    <div
+    class="search-content">
+    <input 
+    class="search-input" 
+    id="js-search" 
+    placeholder="Search pages..."
+    onkeyup="match()">
+    <button
+    class="search-button"
+    onclick="match()">
+    <img class="search-logo" id="js-search-logo" src="Logos/Search Logo Dark.svg">
+    </button>
+    </div> 
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-home-logo"
+id="js-menu-home-logo"
+src="Logos/Home Logo Dark.svg">
+<span id="js-mode-text">Back to Home</span>
+</button>
+
+</div>
+
+<button
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/TaylorBowls'">
+    <div
+    class="page-title">
+        TaylorBowls
+    </div>
+    <div
+    class="page-description">
+        TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Tracks'">
+    <div
+    class="page-title">
+        Tracks
+    </div>
+    <div
+    class="page-description">
+        Tracks refer to any song that can be in a TaylorBowl. There are currently 249 such tracks.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Elo'">
+    <div
+    class="page-title">
+        Elo
+    </div>
+    <div
+    class="page-description">
+        All tracks in TaylorBowl are assigned an Elo value, which is a way of giving each a score.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Votes'">
+    <div
+    class="page-title">
+        Votes
+    </div>
+    <div
+    class="page-description">
+        Votes are what decides the winner and loser of a TaylorBowl.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Seasons'">
+    <div
+    class="page-title">
+        Seasons
+    </div>
+    <div
+    class="page-description">
+        Seasons are a period of time in TaylorBowl that mark a series of resets at their end.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Credits'">
+    <div
+    class="page-title">
+        Credits
+    </div>
+    <div
+    class="page-description">
+        Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Farm'">
+    <div
+    class="page-title">
+        Farm
+    </div>
+    <div
+    class="page-description">
+        The Farm is a farm simulator minigame that allows users to plant and grow credits.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/The_Commons'">
+    <div
+    class="page-title">
+        The Commons
+    </div>
+    <div
+    class="page-description">
+        The Commons is a farm simulator minigame with a shared pool of credits.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Risk_&_Anti-Risk'">
+    <div
+    class="page-title">
+        Risk & Anti-Risk
+    </div>
+    <div
+    class="page-description">
+        Risk and Anti-Risk are die-based minigames that use credits.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Ballpit'">
+    <div
+    class="page-title">
+        Ballpit
+    </div>
+    <div
+    class="page-description">
+        Ballpit is a probability-based minigame that uses credits.
+    </div>
+</button>
+
+<button 
+class="page"
+onclick="window.location.href='https://taylorbowl.wiki/Yahtzee'">
+    <div
+    class="page-title">
+        Yahtzee
+    </div>
+    <div
+    class="page-description">
+        Yahtzee is a dice-based minigame that uses credits.
+    </div>
+</button>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="searchCode.js"></script>
 
 </body>
