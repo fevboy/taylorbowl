@@ -3,8 +3,12 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
-        Elo & Tiers
+        Elo
     </title>
 
     <link 
@@ -12,303 +16,515 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="Elo.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
 
 </head>
 
 <body>
 
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
     <div
-    class="all-content">
-
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/"
-            id="js-taylorbowl-logo">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
-
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
-
-            <button
-            class="search-button"
-            id="js-search-button"
-            onclick="openSearch()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-            <input 
-            class="search-input"
-            id="js-search-input"
-            type="search"
-            placeholder="Search pages..."
-            onkeydown="processQuery()">
-
-            <button
-            class="new-search-button"
-            id="js-new-search-button"
-            onclick="redirect()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-        </div>
-
-        <div
-        class="Elo-Tiers-title">
-            Elo
-            <hr
-            class="title-line">
-        </div>
-
-        <div
-        class="Elo-Tiers-summary">
-
-        <div
-        class="Elo-Tiers-summary-text">
-            All <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks">tracks</a> in TaylorBowl are assigned an Elo value, which is a way of giving each a score. The value increases when a song wins a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowl</a> but decreases when it loses one. Based on these Elo, tracks are separated into Tiers.
-        </div>
-
-        <div
-        class="contents-list">
-            <div
-            class="contents-list-title">
-                Contents
-            </div>
-            <div>
-                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System"> Elo System <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#History"> History <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#Elo_Changes"> Elo Changes <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#New_Tracks"> New Tracks <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#Season_Resets"> Season Resets <br> </a>
-            </div>
-            <div>
-                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System"> Tier System <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Divisions"> Divisions <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Impacts"> Impacts <br> </a>
-            </div>
-        </div>
-
-        <div
-        class="section-header"
-        id="Elo_System">
-            Elo System
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Elo-System-content">
-            Elo was originally assigned by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bianca">Bianca</a> based on external polls, but is now determined by bowls.
-
-            To find the elo of a track, the commands <span class="command-text">!elo name</span> or <span class="command-text">!elo #ranking</span> can be used.
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Elo_System#History">
-            History
-        </div>
-
-        <div
-        class="History-content">
-            When TaylorBowl first started, tracks were assigned an Elo based on a series of polls conducted in the subreddit <a class="text-actionable-link" href="https://www.reddit.com/r/TaylorSwift/">r/TaylorSwift</a> from March to August 2016. Tracks ranked higher were assigned higher Elo. The average Elo of all songs was, and still is, 2000.
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Elo_System#Elo_Changes">
-            Elo Changes
-        </div>
-
-        <div
-        class="Elo-Changes-content">
-            When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if song A wins and gains 20 Elo, song B loses 20 Elo). This ensures the average remains the same. The Elo change is determined by the Tier of the bowl and the number of votes. For two songs receiving A and B votes, it is given by the formulae:
-            <div class="formula">
-                <p><span>
-                    $$\Delta \mathrm{Elo}=K\cdot(S_{A}-E_{A})$$
-                </span></p>
-            </div>
-            where the K Value, \(K\), is given by:
-            <div class="formula">
-                <p><span>
-                    $$K=\begin{cases}
-                    3m\max(A,B) & \mathrm{when}\,\max(A,B)<7 \\
-                    45m\lg(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
-                    25m & \mathrm{otherwise}
-                    \end{cases}$$
-                </span></p>
-            and its multiplier, \(m\), is given by:
-                <p><span>
-                    $$m=1-\cfrac{|T-5|^{2}}{83}$$
-                </span></p>
-            </div>
-            \(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; \(E_{A}\) is the track's current Elo.
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Elo_System#New_Tracks">
-            New Tracks
-        </div>
-
-        <div
-        class="New-Tracks-content">
-
-            When new tracks are added, there are two possible ways for their Elo to be determined.
-            <br> <br>
-            For tracks added en masse, such as the 31 songs on <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they are all assigned an Elo of 0. As the lowest Elo of a normal song tends to be above 800, and the highest of newly added tracks tend to be below 400, the newly added songs do not interact with any existing ones. 
-            <br> <br>
-            At the turn of the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons">Season</a>, their Elo are manually adjusted based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
-            <div class="formula">
-                <p><span>
-                    $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
-                </span></p>
-            </div>
-            Alternatively, new tracks may be placed directly at 2000 Elo. This often happens with smaller sets of new tracks, such as Vault Tracks or singles such as <span class="song-text">Carolina</span>.
-            <br> <br>
-            Notably, when <span class="song-text">All Too Well (10 Minute Version)</span> was added in February 2022 at 2000 Elo, it won all of its bowls for 26 days with a Win Streak of 23, before being defeated by <span class="song-text">champagne problems</span>.         
-
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Elo_System#Season_Resets">
-            Season Resets 
-        </div>
-
-        <div
-        class="subsection-subheader">
-            Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons">Seasons</a>
-        </div>
-
-        <div
-        class="Season-Resets-content">
-        At the end of every Season, all tracks undergo a “soft reset” of their Elo. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between them remain the same. This is much like the process for adding new tracks to the main list.
-        <br> <br>
-        This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to Criterion 1. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible. 
-        <br> <br>
-        The formula for their new Elo is given by:     
-        <div class="formula">
-            <p><span>
-                $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
-            </span></p>
-        </div>   
-        </div>
-
-        <div
-        class="section-header"
-        id="Tier_System">
-            Tier System
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Tier-System-content">
-            Tracks are split into 11 Tiers based on their Elo. The Tiers are numbered 0 to 10, where Tier 0 has the highest Elo tracks and Tier 10 has the lowest. As Tier 5 is in the middle, and tracks with 2000 Elo are placed there, it has the greatest number of tracks. The further from Tier 5, the less tracks there are in any given Tier.
-            <br> <br>
-            To view all tracks in a Tier, the command <span class="command-text">!tier number</span> can be used. It lists all songs in a given Tier from highest to lowest Elo.
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Tier_System#Divisions">
-            Divisions
-        </div>
-
-        <div
-        class="visual">
-
-            <img
-            class="image"
-            src="Images/Bowls/006Tier2.png">
-
-            <div
-            class="caption">
-                A screenshot of Tier 2. Note the Elo range and colour.
-            </div>
-
-        </div>
-
-        <div
-        class="Divisions-content">
-            All Tiers except 0 and 10 span 200 Elo, and these boundaries do not change even with Season Resets:
-            <br> <br>
-            Tier 0: 2900 Elo and above <br>
-            Tier 1: 2700-2899 Elo <br>
-            Tier 2: 2500-2699 Elo <br>
-            Tier 3: 2300-2499 Elo <br>
-            Tier 4: 2100-2299 Elo <br>
-            Tier 5: 1900-2099 Elo <br>
-            Tier 6: 1700-1899 Elo <br>
-            Tier 7: 1500-1699 Elo <br>
-            Tier 8: 1300-1499 Elo <br>
-            Tier 9: 1100-1299 Elo <br>
-            Tier 10: 1099 Elo and below
-            <br> <br>
-            Each Tier is also assigned a colour. These are purely aesthetic but <a class="text-actionable-link" href="https://taylorbowl.wiki/Bianca">Bianca</a> has detailed the reasons for each colour:
-            <br> <br>
-            Tier 0: Black, from anti-default when written in text <br>
-            Tier 1: Purple, based on Overwatch Grandmaster Aura <br>
-            Tier 2: Lavender, based on Overwatch Masters Aura <br>
-            Tier 3: Periwinkle, from diamond <br>
-            Tier 4: Gray, from platinum <br>
-            Tier 5: Yellow, from gold <br>
-            Tier 6: Dark Gray, from silver <br>
-            Tier 7: Orange, from bronze <br>
-            Tier 8: Maroon, as it is between bronze and wood aesthetically <br>
-            Tier 9: Brown, from wood <br>
-            Tier 10: White, from default when written in text
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Tier_System#Impacts">
-            Impacts
-        </div>
-
-        <div
-        class="Impacts-content">
-            Tiers impact how much a bowl affects the Elo of both songs, as covered in <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo_System#Elo_Changes">Elo System#Elo Changes</span>.
-            <br> <br>
-            When forcing or queueing bowls, the further the Tier of the bowl from Tier 6, the more expensive it is. For every Tier of distance from Tier 6, the cost doubles, i.e. a Tier 1 costs double of a Tier 2, which is double of a Tier 3, etc. and a Tier 4 costs the same as a Tier 8 as they are both 2 Tiers from Tier 6. The exception is a Tier 0 bowl, which costs 4 times of what it normally would. (Main article: <span class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing">Forcing & Queueing</span>) 
-            <br> <br>
-            The default length of all bowls (i.e. those from a natural start) is 11 minutes, except for Tier 0 bowls, which is 22 minutes.        
-        </div>
-
-        <div
-        class="version-text">
-            Version 2.1
-        </div>
-
+    class="contents-list-title">
+        Table of Contents
     </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System"> Elo System <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#History"> History <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#Elo_Changes"> Elo Changes <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#New_Tracks"> New Tracks <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Elo_System#Season_Resets"> Season Resets <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System"> Tier System <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Divisions"> Divisions <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Impacts"> Impacts <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary"> Elo System <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
 
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</div>
 
-    <script src="header.js"></script>
+<div
+class="page-title">
+Elo
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="content"
+id="js-page-summary">
+    All <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks" data-tippy-content="Tracks are songs in TaylorBowl.">tracks</a> in TaylorBowl are assigned an Elo value, which is a way of giving each a score. The value increases when a song wins a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">TaylorBowl</a> but decreases when it loses one. Based on these Elo, tracks are separated into Tiers.
+</div>
+
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Elo_System">
+Elo System
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+Elo was originally assigned by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bianca" data-tippy-content="Bianca is the creator and admin of TaylorBowl.">Bianca</a> based on external polls, but is now determined by bowls.
+
+To find the elo of a track, the commands <span class="command-text">!elo name</span> or <span class="command-text">!elo #rank</span> can be used.
+</div>
+
+<div
+class="subsection-title"
+id="Elo_System#History">
+    History
+</div>
+
+<div
+class="content">
+When TaylorBowl first started, tracks were assigned an Elo based on a series of polls conducted in the subreddit <a class="text-actionable-link" href="https://www.reddit.com/r/TaylorSwift/" data-tippy-content="r/TaylorSwift is the largest Taylor Swift subreddit on the social media platform Reddit.">r/TaylorSwift</a> from March to August 2016. Tracks ranked higher were assigned higher Elo. The average Elo of all songs was, and still is, 2000.
+</div>
+
+<div
+class="subsection-title"
+id="Elo_System#Elo_Changes">
+    Elo Changes
+</div>
+
+<div
+class="content">
+When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if song A wins and gains 20 Elo, song B loses 20 Elo). This ensures the average remains the same. The Elo change is determined by the Tier of the bowl and the number of votes. For two songs receiving A and B votes, it is given by the formulae:
+<div class="formula">
+    <p><span>
+        $$\Delta \mathrm{Elo}=K\cdot(S_{A}-E_{A})$$
+    </span></p>
+</div>
+where the K Value, \(K\), is given by:
+<div class="formula">
+    <p><span>
+        $$K=\begin{cases}
+        3m\max(A,B) & \mathrm{when}\,\max(A,B)<7 \\
+        45m\lg(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
+        25m & \mathrm{otherwise}
+        \end{cases}$$
+    </span></p>
+and its multiplier, \(m\), is given by:
+    <p><span>
+        $$m=1-\cfrac{|T-5|^{2}}{83}$$
+    </span></p>
+</div>
+\(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; \(E_{A}\) is the track's current Elo.
+<br> <br>
+You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/elochange</span> to calculate the change in Elo of two songs in a Bowl.
+</div>
+
+<div
+class="subsection-title"
+id="Elo_System#New_Tracks">
+    New Tracks
+</div>
+
+<div
+class="content">
+When new tracks are added, there are two possible ways for their Elo to be determined.
+<br> <br>
+For tracks added en masse, such as the 31 songs on <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they are all assigned an Elo of 0. As the lowest Elo of a normal song tends to be above 800, and the highest of newly added tracks tend to be below 400, the newly added songs do not interact with any existing ones. 
+<br> <br>
+At the turn of the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons" data-tippy-content="A Season is a four-month period in TaylorBowl. Between Seasons, resets of Elo and User Score occur.">Season</a>, their Elo are manually adjusted based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
+    </span></p>
+</div>
+Alternatively, new tracks may be placed directly at 2000 Elo. This often happens with smaller sets of new tracks, such as Vault Tracks or singles such as <span class="song-text">Carolina</span>.
+<br> <br>
+Notably, when <span class="song-text">All Too Well (10 Minute Version)</span> was added in February 2022 at 2000 Elo, it won all of its bowls for 26 days with a Win Streak of 23, before being defeated by <span class="song-text">champagne problems</span>.    
+</div>
+
+<div
+class="subsection-title"
+id="Elo_System#Season_Resets">
+    Season Resets
+</div>
+
+<div
+class="subsection-subtitle">
+    Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons">Seasons</a>
+</div>
+
+<div
+class="content">
+At the end of every Season, all tracks undergo a “soft reset” of their Elo. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between them remain the same. This is much like the process for adding new tracks to the main list.
+<br> <br>
+This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to Criterion 1. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible. 
+<br> <br>
+The formula for their new Elo is given by:     
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
+    </span></p>
+</div>
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Tier_System">
+Tier System
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+Tracks are split into 11 Tiers based on their Elo. The Tiers are numbered 0 to 10, where Tier 0 has the highest Elo tracks and Tier 10 has the lowest. As Tier 5 is in the middle, and tracks with 2000 Elo are placed there, it has the greatest number of tracks. The further from Tier 5, the less tracks there are in any given Tier.
+<br> <br>
+To view all tracks in a Tier, the command <span class="command-text">!tier number</span> can be used. It lists all songs in a given Tier from highest to lowest Elo.
+</div>
+
+<div
+class="subsection-title"
+id="Tier_System#Divisions">
+    Divisions
+</div>
+
+<div
+class="content">
+All Tiers except 0 and 10 span 200 Elo, and these boundaries do not change even with Season Resets:
+<br> <br>
+Tier 0: 2900 Elo and above <br>
+Tier 1: 2700-2899 Elo <br>
+Tier 2: 2500-2699 Elo <br>
+Tier 3: 2300-2499 Elo <br>
+Tier 4: 2100-2299 Elo <br>
+Tier 5: 1900-2099 Elo <br>
+Tier 6: 1700-1899 Elo <br>
+Tier 7: 1500-1699 Elo <br>
+Tier 8: 1300-1499 Elo <br>
+Tier 9: 1100-1299 Elo <br>
+Tier 10: 1099 Elo and below
+<br> <br>
+Each Tier is also assigned a colour. These are purely aesthetic but Bianca has detailed the reasons for each colour:
+<br> <br>
+Tier 0: Black, from anti-default when written in text <br>
+Tier 1: Purple, based on Overwatch Grandmaster Aura <br>
+Tier 2: Lavender, based on Overwatch Masters Aura <br>
+Tier 3: Periwinkle, from diamond <br>
+Tier 4: Gray, from platinum <br>
+Tier 5: Yellow, from gold <br>
+Tier 6: Dark Gray, from silver <br>
+Tier 7: Orange, from bronze <br>
+Tier 8: Maroon, as it is between bronze and wood aesthetically <br>
+Tier 9: Brown, from wood <br>
+Tier 10: White, from default when written in text
+</div>
+
+<div
+class="subsection-title"
+id="Tier_System#Impacts">
+    Impacts
+</div>
+
+<div
+class="content">
+Tiers impact how much a bowl affects the Elo of both songs, as covered in <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo_System#Elo_Changes">Elo System#Elo Changes</span>.
+<br> <br>
+When <span class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing" data-tippy-content="Forcing and queueing TaylorBowls starts a TaylorBowl with specifications such as Tier, duration, and track.">forcing or queueing</span> bowls, the further the Tier of the bowl from Tier 6, the more expensive it is. For every Tier of distance from Tier 6, the cost doubles, i.e. a Tier 1 costs double of a Tier 2, which is double of a Tier 3, etc. and a Tier 4 costs the same as a Tier 8 as they are both 2 Tiers from Tier 6. The exception is a Tier 0 bowl, which costs 4 times of what it normally would.
+<br> <br>
+The default length of all bowls (i.e. those from a natural start) is 11 minutes, except for Tier 0 bowls, which is 22 minutes.        
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">/elochange</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!elo name/#rank</span></td>
+        <td>Displays the rank, Elo, and Tier of the specified song. <br> Either <span class="command-text">track</span> or <span class="command-text">#rank</span> must be included, which refers to the track specified.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!tier number</span></td>
+        <td>Lists all tracks in a Tier from highest to lowest Elo. <br> <span class="command-text">number</span> is a mandatory parameter that refers to the desired Tier.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+<b>1.1</b> &ensp; Change in Elo due to Bowl:
+<div class="formula">
+    <p><span>
+        $$\Delta \mathrm{Elo}=K\cdot(S_{A}-E_{A})$$
+    </span></p>
+</div>
+where \(K\) is the K Value; \(S_{A}\) is the score of Track A, which is 1 if it wins and 0 if it loses; and \(E_{A}\) is the track A's current Elo.
+<br> <br>
+<b>1.2</b> &ensp; K Value:
+<div class="formula">
+    <p><span>
+        $$K=\begin{cases}
+        3m\max(A,B) & \mathrm{when}\,\max(A,B)<7 \\
+        45m\lg(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
+        25m & \mathrm{otherwise}
+        \end{cases}$$
+    </span></p>
+</div>
+where \(m\) is the multiplier.
+<br> <br>
+<b>1.3</b> &ensp; Multiplier:
+<div class="formula">
+    <p><span>
+        $$m=1-\cfrac{|T-5|^{2}}{83}$$
+    </span></p>
+</div>
+<b>2</b> &ensp; Change in Elo when added from Tier 10:
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
+    </span></p>
+</div>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Default Duration</td>
+        <td>The duration of a Bowl from a natural start.</td>
+    </tr>
+    <tr>
+        <td>Score</td>
+        <td>The score of a track in a Bowl is 1 when it wins and 0 when it loses.</td>
+    </tr>
+    <tr>
+        <td>Soft Reset</td>
+        <td>A change in Elo of all tracks that moves them closer to 2000 Elo while maintaining proportions of distances.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
 
 </body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
 
 </html>
