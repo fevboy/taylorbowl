@@ -3,7 +3,7 @@
 <head>
     
     <title>
-        Elo & Tiers
+        Page not found
     </title>
 
     <link 
@@ -74,6 +74,64 @@
         setTimeout(redirect, 13000);
         function redirect() {
             window.location.href = "https://taylorbowl.wiki/search"
+        }
+
+        // To toggle between light and dark mode.
+
+        // Creates variable "displayTheme" that stores the current mode.
+        var displayTheme;
+        // Retrieves previously set mode.
+        displayTheme = localStorage.getItem('displayTheme');
+        // If no theme has been set, defaults to dark.
+        if (displayTheme === 'light') {
+            executeLightMode();
+        } else {
+            displayTheme = 'dark';
+            executeDarkMode();
+        }
+
+        // Function toggleTheme toggles between modes.
+        function toggleTheme() {
+            // If current mode is light, switches to dark mode.
+            if (displayTheme === 'light') {
+                executeDarkMode();
+            }
+            // If current mode is dark, switches to light mode. 
+            else {
+                executeLightMode();
+            }
+        }
+
+        // Function executeLightMode switches to light mode.
+        function executeLightMode() {
+            // Sets the colour themes for background, accent, visual, and texts to light mode.
+            document.documentElement.style.setProperty('--bg-color', '#EBF1F4');
+            document.documentElement.style.setProperty('--accent-color', '#324545');
+            document.documentElement.style.setProperty('--visual-color', '#FFFFFF');
+            document.documentElement.style.setProperty('--text-color', '#000000');
+            document.documentElement.style.setProperty('--subtext-color', '#5f5f5f');
+            document.documentElement.style.setProperty('--link-color', '#574FFF');
+            document.documentElement.style.setProperty('--command-color', '#B7BFC2');
+            // Sets light mode as the current mode in local storage, for reference when switching pages.
+            localStorage.setItem('displayTheme', 'light');
+            // Sets light mode as the current mode in JS.
+            displayTheme = localStorage.getItem('displayTheme');
+        }
+
+        // Function executeDarkMode switches to dark mode.
+        function executeDarkMode() {
+            // Sets the colour themes for background, accent, visual, and texts to dark mode.
+            document.documentElement.style.setProperty('--bg-color', '#1C1E1C');
+            document.documentElement.style.setProperty('--accent-color', '#FFFFFF');
+            document.documentElement.style.setProperty('--visual-color', '#000000');
+            document.documentElement.style.setProperty('--text-color', '#FFFFFF');
+            document.documentElement.style.setProperty('--subtext-color', '#9F9F9F');
+            document.documentElement.style.setProperty('--link-color', '#A59DF1');
+            document.documentElement.style.setProperty('--command-color', '#3F4240');
+            // Sets dark mode as the current mode in local storage, for reference when switching pages.
+            localStorage.setItem('displayTheme', 'dark');
+            // Sets dark mode as the current mode in JS.
+            displayTheme = localStorage.getItem('displayTheme');
         }
 
     </script>
