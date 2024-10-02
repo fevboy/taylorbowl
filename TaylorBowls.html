@@ -3,6 +3,10 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
         TaylorBowls
     </title>
@@ -12,256 +16,430 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="TaylorBowls.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
 
 </head>
 
 <body>
 
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
     <div
-    class="all-content">
-
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/"
-            id="js-taylorbowl-logo">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
-
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
-
-            <button
-            class="search-button"
-            id="js-search-button"
-            onclick="openSearch()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-            <input 
-            class="search-input"
-            id="js-search-input"
-            type="search"
-            placeholder="Search pages..."
-            onkeydown="processQuery()">
-
-            <button
-            class="new-search-button"
-            id="js-new-search-button"
-            onclick="redirect()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-        </div>
-
-        <div
-        class="TaylorBowls-title">
-            TaylorBowls
-        </div>
-
-        <div
-        class="TaylorBowls-subtitle">
-            Not to be confused with <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowl">TaylorBowl (server)</a>
-        </div>
-
-        <div
-        class="TaylorBowls-summary">
-
-        <div
-        class="TaylorBowls-summary-text">
-        TaylorBowls are the primary <a class="text-actionable-link" href="https://taylorbowl.wiki/Minigames">minigame</a> featured in the <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowl">TaylorBowl Discord server</a>. Two Taylor Swift songs are chosen from a list of matchups and a set amount of time is given for people to <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">vote</a> for their preferred song. The song with more votes at the end of the time gains <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo">Elo</a> and the song with fewer votes loses Elo.
-        </div>
-
-        <div
-        class="contents-list">
-            <div
-            class="contents-list-title">
-                Contents
-            </div>
-            <div>
-                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics"> Mechanics <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Starting"> Starting <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Duration"> Duration <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Voting"> Voting <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Ending"> Ending <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Extra_Time"> Extra Time <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Tiebreaker">  Tiebreaker <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 1.7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Results"> Results <br> </a>
-            </div>
-        </div>
-        
-        <div
-        class="section-header"
-        id="TaylorBowls#Mechanics">
-            Mechanics
-        </div>
-
-        <div
-        class="Mechanics-summary">
-            Every TaylorBowl follows the same mechanics of starting, duration, voting, ending, extra time, tiebreaker, and results.
-        </div>
-
-        <div
-        class="Mechanics-section-content">
-
-            <div
-            class="subsection-header"
-            id="TaylorBowls#Mechanics#Starting">
-                Starting
-            </div>
-
-            <div
-            class="bowl-natural-start-visual">
-
-                <img
-                class="bowl-natural-start-image"
-                src="Images/Bowls/001BowlNaturalStart.png">
-
-                <div
-                class="bowl-natural-start-caption">
-                    A natural start of a Tier 7 TaylorBowl.
-                </div>
-
-            </div>
-
-            <div
-            class="Starting-content">
-                To start a TaylorBowl, the command <span class="command-text">!taylorbowl</span> can be used. Using this command successfully is colloquially known as a "natural start". Bowls can be forced or queued for a specific <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System">tier</a> or duration using <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a> (<a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing">Main article: Forcing & Queueing</a>). If a bowl is queued, a natural start is not possible.
-            </div>
-
-            <div
-            class="subsection-header"
-            id="TaylorBowls#Mechanics#Duration">
-                Duration
-            </div>
-
-            <div
-            class="Duration-content">
-                Each TaylorBowl lasts, by default, 11 minutes. This duration may be adjusted by forcing or queueing a bowl. Between TaylorBowls, there is a 2 minute "cooldown" where no new TaylorBowls can be started. After the cooldown is over, bowls may be started again, or the queue will continue.
-            </div>
-
-            <div
-            class="subsection-header"
-            id="TaylorBowls#Mechanics#Voting">
-                Voting
-            </div>
-
-            <div
-            class="Voting-content">
-                Every TaylorBowl has two song options, chosen from a list of matchups (<a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks">Main article: Tracks</a>). The song with the higher <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo">Elo</a> is assigned the letter A, and the song with lower elo is assigned the letter B. Sending either letter as its own message counts as a vote. Alternatively, sending any message containing [A] or [B] counts as a vote for that option. If a message contains both [A] and [B], it is counted as a vote for A. 
-                <br> <br>
-                You may switch votes at any point in a bowl apart from the last minute by simply recasting a vote as if you had not voted prior.
-                <br> <br>
-                The command <span class="command-text">!showbowl</span> or its shortened form <span class="command-text">!sbowl</span> can be used at any point during the bowl to show the two options and the number of votes each currently has. The command <span class="command-text">/didivote</span> can be used at any point during the bowl to privately show if you have voted, and for which song.
-                <br> <br>
-                Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>
-            </div>
-
-            <div
-            class="subsection-header"
-            id="TaylorBowls#Mechanics#Ending">
-                Ending
-            </div>
-
-            <div
-            class="bowl-results-visual">
-
-                <img
-                class="bowl-results-image"
-                src="Images/Bowls/002BowlEnd.png">
-
-                <div
-                class="bowl-results-caption">
-                    The summary message of a concluded Tier 8 TaylorBowl.
-                </div>
-
-            </div>
-
-            <div
-            class="Ending-content">
-                If at the end of the bowl's duration there is an option with more votes than the other, it is chosen as the winner. <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot">BowlBot</a> will then enter a "logging" period, which typically lasts between 15 and 30 seconds. This is counted as part of the bowl cooldown. 
-                <br> <br>
-                At the end of each logging period, BowlBot saves not only data of the bowl that ended, but from other areas including but not limited to <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Blooms">Blooms</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/The Blight">Blights</a>, changes in <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote">Autovoting</a> status, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Usage#Transfers">transfers</a>.
-                <br> <br>
-                At the end of the logging period, BowlBot sends a summary message of the bowl. It includes the two songs, total votes acquired by both, and voters for each side from the server the message is sent in.
-            </div>
-
-            <div
-            class="subsection-header"
-            id="Extra_Time">
-                Extra Time
-            </div>
-
-            <div
-            class="Extra-Time-content">
-                If at the end of the bowl's duration the number of votes for each option is tied, the bowl proceeds into Extra Time, which lasts 2 minutes. This is known internally as the Lydia Rule. Switching votes is re-enabled, and Bribing is now possible, though the latter will have no effect unless the Tiebreaker period is started. In the last minute of extra time, switching votes is again disabled.
-            </div>
-
-            <div
-            class="subsection-header"
-            id="Tiebreaker">
-                Tiebreaker
-            </div>
-
-            <div
-            class="Tiebreaker-content">
-                If at the end of Extra Time the number of votes for each option is still tied, the bowl proceeds into a 1 minute Tiebreaker. No new votes may be cast, nor can votes be changed. 
-                <br> <br>
-                Bribing using credits through the command <span class="command-text">!bribe amount</span> is the only way to change the outcome of the bowl. At the end of the Tiebreaker, the winner is decided based on the number of credits used to bribe. During Tiebreaker, <span class="command-text">!sbowl</span> will show the number of credits used to bribe for both options.
-                <br> <br>
-                The probability that a given song X wins against another song Y is given by the formula: <br> 
-                <div class="formula">
-                    <p><span>
-                        $$P(X\,\mathrm{wins})=\cfrac{\mathrm{Credits\,bribed\,for}\,X}{\mathrm{Total\,credits\,bribed}}$$
-                    </span></p>
-                </div>
-                The ratio of the probability that X wins against the probability that Y wins is given by the formula: <br>
-                <div class="formula">
-                    <p><span>
-                        $$P(X\,\mathrm{wins}):P(Y\,\mathrm{wins})=\mathrm{Credits\,bribed\,for}\,X:\mathrm{Credits\,bribed\,for}\,Y$$
-                    </span></p>
-                </div>
-                If any one song has no credits used to bribe for it, it has a 0% probability of winning. If both songs have no credits used to bribe for them, they both have a 50% probability of winning.
-                <br> <br>
-
-            </div>
-        
-        </div>
-
-        <div
-        class="version-text">
-            Version 2.1
-        </div>
-
+    class="contents-list-title">
+        Table of Contents
     </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics"> Mechanics <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Starting"> Starting <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Duration"> Duration <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Voting"> Voting <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Ending"> Ending <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Extra_Time"> Extra Time <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Tiebreaker"> Tiebreaker <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Results"> Results <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
 
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</div>
 
-    <script src="header.js"></script>
+<div
+class="page-title">
+TaylorBowls
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="page-subtitle">
+Not to be confused with <span class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowl">TaylorBowl (server)</span>
+</div>
+
+<div
+class="content"
+id="js-page-summary">
+    TaylorBowls are the primary minigame featured in the <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowl" data-tippy-content="The TaylorBowl Discord server is the main server for TaylorBowl.">TaylorBowl Discord server</a>. Two Taylor Swift songs are chosen from a list of matchups and a set amount of time is given for people to <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes" data-tippy-content="Votes are what decide the winner and loser of a TaylorBowl.">vote</a> for their preferred song. The song with more votes at the end of the time gains <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo" data-tippy-content="Elo is a value assigned to every track in TaylorBowl, which reflects how liked the track is.">Elo</a> and the song with fewer votes loses Elo.
+</div>
+
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Mechanics">
+Mechanics
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+    Every TaylorBowl follows the same mechanics of starting, duration, voting, ending, Extra Time, Tiebreaker, and results.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Starting">
+    Starting
+</div>
+
+<div
+class="content">
+    To start a TaylorBowl, the command <span class="command-text">!taylorbowl</span> can be used. Using this command successfully is colloquially known as a "natural start". Bowls can be <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing" data-tippy-content="Forcing and queueing TaylorBowls starts a TaylorBowl with specifications such as Tier, duration, and track.">forced or queued</a> for a specific <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System" data-tippy-content="Tiers are a way of classifying tracks based on their Elo.">Tier</a> or duration using <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a>. If a bowl is queued, a natural start is not possible.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Duration">
+    Duration
+</div>
+
+<div
+class="content">
+    Each TaylorBowl lasts, by default, 11 minutes. This duration may be adjusted by forcing or queueing a bowl. Between TaylorBowls, there is a 2 minute "cooldown" where no new TaylorBowls can be started. After the cooldown is over, bowls may be started again, or the queue will continue.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Voting">
+    Voting
+</div>
+
+<div
+class="content">
+    Every TaylorBowl has two song options, chosen from a list of <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility" data-tippy-content="Matchups are a pair of tracks that can be put in a Bowl.">matchups</a>. The song with the higher Elo is assigned the letter A, and the song with lower elo is assigned the letter B. Sending either letter as its own message counts as a vote. Alternatively, sending any message containing [A] or [B] counts as a vote for that option. If a message contains both [A] and [B], it is counted as a vote for A. 
+    <br> <br>
+    You may switch votes at any point in a bowl apart from the last minute by simply recasting a vote as if you had not voted prior.
+    <br> <br>
+    The command <span class="command-text">!showbowl</span> or its shortened form <span class="command-text">!sbowl</span> can be used at any point during the bowl to show the two options and the number of votes each currently has. The command <span class="command-text">/didivote</span> can be used at any point during the bowl to privately show if you have voted, and for which song.
+    <br> <br>
+    Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Ending">
+    Ending
+</div>
+
+<div
+class="content">
+    If at the end of the bowl's duration there is an option with more votes than the other, it is chosen as the winner. <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot" data-tippy-content="BowlBot is the main bot in TaylorBowl and all features stem from it.">BowlBot</a> will then enter a "logging" period, which typically lasts between 15 and 30 seconds. This is counted as part of the bowl cooldown. 
+    <br> <br>
+    At the end of each logging period, BowlBot saves not only data of the bowl that ended, but from other areas including but not limited to <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Blooms" data-tippy-content="Blooms are events where credits in the Farm grow.">Blooms</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/The Blight" data-tippy-content="Blights are events where credits in the Farm are destroyed.">Blights</a>, changes in currency, <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote" data-tippy-content="Autovote allows you to vote in bowls you are not present for.">Autovoting</a> status, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Usage#Transfers" data-tippy-content="Credits can be transferred from one user to another, subject to a tax.">transfers</a>.
+    <br> <br>
+    At the end of the logging period, BowlBot sends a summary message of the bowl. It includes the two songs, total votes acquired by both, and voters for each side from the server the message is sent in.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Extra_Time">
+    Extra Time
+</div>
+
+<div
+class="content">
+    If at the end of the bowl's duration the number of votes for each option is tied, the bowl proceeds into Extra Time, which lasts 2 minutes. This is known internally as the Lydia Rule. Switching votes is re-enabled, and Bribing is now possible, though the latter will have no effect unless the Tiebreaker period is started. In the last minute of extra time, switching votes is again disabled.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Duration">
+    Tiebreaker
+</div>
+
+<div
+class="content">
+    If at the end of Extra Time the number of votes for each option is still tied, the bowl proceeds into a 1 minute Tiebreaker. No new votes may be cast, nor can votes be changed. 
+    <br> <br>
+    Bribing using credits through the command <span class="command-text">!bribe amount</span> is the only way to change the outcome of the bowl. At the end of the Tiebreaker, the winner is decided based on the number of credits used to bribe. During Tiebreaker, <span class="command-text">!sbowl</span> will show the number of credits used to bribe for both options.
+    <br> <br>
+    The probability that a given song X wins against another song Y is given by the formula:
+    <div class="formula">
+    <p><span>
+        $$P(X\,\mathrm{wins})=\cfrac{\mathrm{Credits\,bribed\,for}\,X}{\mathrm{Total\,credits\,bribed}}$$
+    </span></p>
+    </div>
+    The ratio of the probability that X wins against the probability that Y wins is given by the formula:
+    <div class="formula">
+    <p><span>
+        $$P(X\,\mathrm{wins}):P(Y\,\mathrm{wins})=\mathrm{Credits\,bribed\,for}\,X:\mathrm{Credits\,bribed\,for}\,Y$$
+    </span></p>
+    </div>
+    If any one song has no credits used to bribe for it, it has a 0% probability of winning. If both songs have no credits used to bribe for them, they both have a 50% probability of winning.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Duration">
+    Results
+</div>
+
+<div
+class="content">
+    At the end of every TaylorBowl, BowlBot sends a summary message of the Bowl, which includes the number of votes for both options and the votes of each member in the server; the change in Elo of both tracks; and the TaylorBowl number and time to log. 
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!bribe amount</span></td>
+        <td>Bribes the specified number of credits for the user's choice. <br> <span class="command-text">amount</span> is a mandatory parameter that refers to the number of credits bribed.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">/didivote</span></td>
+        <td>Confirms the user's vote, if any. If used with no ongoing Bowl, confirms whether the user voted in the previous Bowl.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!sbowl</span></td>
+        <td>Shows the current TaylorBowl. <br> Alternative forms: <span class="command-text">!showbowl</span></td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!taylorbowl</span></td>
+        <td>Starts a TaylorBowl.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+<b>1.1</b> &ensp; Probability that Track \(X\) wins the Tiebreaker:
+<div
+class="formula">
+<p><span>$$P(X\,\mathrm{wins})=\cfrac{\mathrm{Credits\,bribed\,for}\,X}{\mathrm{Total\,credits\,bribed}}$$</span></p>
+</div>
+
+<b>1.2</b> &ensp; Ratio of the probability that Track \(X\) wins to that of Track \(Y\):
+<div
+class="formula">
+    <p><span>$$P(X\,\mathrm{wins}):P(Y\,\mathrm{wins})=\mathrm{Credits\,bribed\,for}\,X:\mathrm{Credits\,bribed\,for}\,Y$$</span></p>
+</div>   
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Lydia Rule</td>
+        <td>Internal name for Extra Time.</td>
+    </tr>
+    <tr>
+        <td>Natural Start</td>
+        <td>Starting a TaylorBowl without queueing it.</td>
+    </tr>
+    <tr>
+        <td>Logging</td>
+        <td>BowlBot saving information about what happened since the last Bowl ended.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
 
 </body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
 
 </html>
