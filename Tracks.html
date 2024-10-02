@@ -3,6 +3,10 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
         Tracks
     </title>
@@ -12,322 +16,524 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="Tracks.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
 
 </head>
 
 <body>
 
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
     <div
-    class="all-content">
-
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/"
-            id="js-taylorbowl-logo">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
-
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
-
-            <button
-            class="search-button"
-            id="js-search-button"
-            onclick="openSearch()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-            <input 
-            class="search-input"
-            id="js-search-input"
-            type="search"
-            placeholder="Search pages..."
-            onkeydown="processQuery()">
-
-            <button
-            class="new-search-button"
-            id="js-new-search-button"
-            onclick="redirect()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-        </div>
-
-        <div
-        class="Tracks-title">
-            Tracks
-            <hr
-            class="title-line">
-        </div>
-
-        <div
-        class="Tracks-subtitle">
-            See also: <a class="text-actionable-link" href="https://taylorbowl.wiki/List_of_all_tracks_in_TaylorBowl">List of all tracks in TaylorBowl</a>
-        </div>
-
-        <div
-        class="Tracks-summary">
-
-                    <div
-        class="Tracks-summary-text">
-            Tracks refer to any song that can be in a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowl</a>. There are currently 249 such tracks.
-        </div>
-
-        <div
-        class="contents-list">
-            <div
-            class="contents-list-title">
-                Contents
-            </div>
-            <div>
-                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Criteria"> Criteria <br> </a>
-            </div>
-            <div>
-                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility"> Matchups & Eligibility <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility#Recency"> Recency <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility#Eligibility"> Eligibility <br> </a>
-            </div>
-            <div>
-                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Attributes"> Attributes <br> </a>
-            </div>
-            <div>
-                4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Viewing"> Viewing <br> </a>
-            </div>
-            <div>
-                5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Controversy <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Ronan"> Ronan <br> </a>
-            </div>
-            <div>
-                &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Renegade"> Renegade <br> </a>
-            </div>
-        </div>
-        
-        <div
-        class="section-header"
-        id="Criteria">
-            Criteria
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Criteria-content">
-
-            Not every song by Taylor Swift is included. There are five criteria to determine what is included: 
-            <br> <br>
-            &ensp; 1. It must have been officially released. <br>
-            &ensp; 2. It must credit Taylor Swift as a main artist (i.e. not a featured artist) and as a writer or co-writer. <br>
-            &ensp; 3. It must not be an earlier iteration of a song that adheres to the above criteria (i.e. no demos). <br>
-            &ensp; 4. It must be significantly lyrically unique relative to all other tracks that adhere to the above criteria. <br>
-            &ensp; 5. It must not have, at any point, been released as a charity single.
-            <br> <br>
-            For Criterion 1, any form of official release, including store-exclusive tracks, are counted. However, internally distributed demos, demo CDs, and other forms of release not intended for public consumption do not meet the criterion.
-            <br> <br>
-            For Criterion 2, the first half refers to how tracks are named and credited. For example, Ed Sheeran's <span class="song-text">The Joker And The Queen (feat. Taylor Swift)</span> credits Swift as a featured artist, and is thus not counted. The second half refers to credits, where Swift must be credited as a writer or co-writer on a given track. This has little bearing on most tracks as Swift writes or co-writes all tracks that she sings on.
-            <br> <br>
-            For Criterion 3, this refers to demos, voice notes, and other similar pre-release versions. For example, the voice notes for <span class="song-text">Who's Afraid of Little Old Me?</span>, <span class="song-text">The Black Dog</span>, and <span class="song-text">Cassandra</span> do not meet the criterion.
-            <br> <br>
-            For Criterion 4, this often refers to remixes. For example, most of the many <span class="song-text">Anti-Hero</span> remixes do not meet the criterion, but <span class="song-text">Anti-Hero (feat. Bleachers)</span> does as it features a lyrically unique second verse.
-            <br> <br>
-            For Criterion 5, this specifically refers to <span class="song-text">Ronan</span>. This criterion was initially "It is not 'Ronan,' the 2012 charity single." as a means of respecting the song. In 2021, with the release of <span class="song-text">Ronan (Taylor's Version)</span>, this criterion was removed and <span class="song-text">Ronan</span> was re-added. However, shortly after, public opinion suggested it be removed. As a result, the criterion was updated to its current wording and <span class="song-text">Ronan</span> was removed from TaylorBowl again. (Main section: <span class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy">Tracks/Controversy)</span>
-        
-        </div>
-
-        <div
-        class="section-header"
-        id="Matchups_&_Eligibility">
-            Matchups & Eligibility
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="visual">
-
-            <img
-            class="image"
-            src="Images/Bowls/003RecentTracksCommand.png">
-
-            <div
-            class="caption">
-                An example of the 52 tracks with Recency values.
-            </div>
-
-        </div>
-
-        <div
-        class="Matchups-and-Eligibility-content">
-            Not all tracks are eligible for a matchup at all times. There are two requirements: Recency and Eligibility.
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Matchups_&_Eligibility#Recency">
-            Recency
-        </div>
-
-        <div
-        class="Recency-content">
-            After a bowl has concluded, both tracks are assigned a Recency value of 26. At the end of every subsequent TaylorBowl, this value decreases by 1 until it reaches 0, where it no longer exists. If a track has a Recency value greater than 0, it is not eligible to be in a TaylorBowl. The command <span class="command-text">!recenttracks</span> or its shortened version <span class="command-text">!recent</span> shows all 52 songs with Recency values. 
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Matchups_&_Eligibility#Eligibility">
-            Eligibility
-        </div>
-
-        <div
-        class="Eligibility-content">
-            There are 3 requirements to determine if a song is eligible to be in a matchup:
-            <br> <br>
-            1. Non-Recency: The tracks in question must not have had a recent bowl. This is currently set to 26 Bowls. <br>
-            2. Sufficient Closeness: The tracks must be within a certain amount of rating points to be considered close enough to have a bowl. This is currently set to 35 points. <br>
-            3. Mutual Closeness: The two tracks' closest neighbor by rating must be the other track. 
-            <br> <br>
-            For requirement 1, see Recency.
-            <br> <br>
-            For requirement 2 and 3, this refers to a track's Elo score (Main article: <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo">Elo</span>). If two tracks' Elo are within 35 of each other, they may be eligible for a matchup. If two tracks' nearest song by Elo are each other, they may be eligible for a matchup. Both requirement 2 and 3 must be fulfilled to be eligible.
-        </div>
-
-        <div
-        class="section-header"
-        id="Attributes">
-            Attributes
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Attributes-content">
-            Every track is assigned a Tier and an Album, and most are assigned a Track Number. 
-            <br> <br>
-            Tracks are grouped based on Elo into 11 Tiers, with Tier 0 containing the highest Elo tracks and Tier 10 containing the lowest (Main article: <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System">Tiers</span>).
-            <br> <br>
-            <div
-            class="visual">
-    
-                <img
-                class="image"
-                src="Images/Bowls/004Track19Command.png">
-    
-                <div
-                class="caption">
-                    Track 19s. Note the inclusion of both <span class="song-text">You're Losing Me</span> and <span class="song-text">Would've Could've Should've</span>.
-                </div>
-    
-            </div>
-            If a track was at any point released on a particular album, it is considered part of that album. Thus, <span class="song-text">If This Was A Movie</span> is considered a <span class="song-text">Speak Now</span> track, and <span class="song-text">Sweeter Than Fiction</span> is considered a <span class="song-text">1989</span> track. Tracks that were never released with an album, such as <span class="song-text">Christmas Tree Farm</span>, are assigned <span class="song-text">No Album</span>. Tracks released on EPs are also assigned <span class="song-text">No Album</span>, such as <span class="song-text">I Heart ?</span> and <span class="song-text">Safe & Sound</span>. 
-            <br> <br>
-            If a track is assigned any of Swift's 11 studio albums, it is also assigned a Track Number based on its position in the tracklist. For example, <span class="song-text">Clean</span> is assigned as track 13. Due to different versions of albums, there may be tracks that share the same position in the tracklist. In these cases, whenever possible these disputes are resolved such as with <span class="song-text">THE TORTURED POETS DEPARTMENT</span>'s tracks <span class="song-text">The Manuscript</span>, <span class="song-text">The Bolter</span>, <span class="song-text">The Albatross</span>, and <span class="song-text">The Black Dog</span>. All 4 were originally track 17 on their respective variants. However, with the release of <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they each received unique track numbers. However, not all conflicts are resolved. For example, <span class="song-text">You're Losing Me</span> and <span class="song-text">Would've Could've Should've</span> are both track 19 on <span class="song-text">Midnights (The Late Night Edition)</span> and <span class="song-text">Midnights (The Til Dawn Edition)</span> respectively. In these cases, both are assigned track 19.        
-        </div>
-
-        <div
-        class="section-header"
-        id="Viewing">
-            Viewing
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="visual">
-
-            <img
-            class="image"
-            src="Images/Bowls/005EloCommand.png">
-
-            <div
-            class="caption">
-                A user finding the Elo of two songs by name and ranking.
-            </div>
-
-        </div>
-
-        <div
-        class="Viewing-content">
-            Individual tracks and their Elo can be found using the command <span class="command-text">!elo</span>. You may either do <span class="command-text">!elo name</span> or <span class="command-text">!elo #position</span> to find a given track. 
-            <br> <br>
-            Multiple tracks and their Elo can be found based on Album or Track number using the commands <span class="command-text">!album name</span> and <span class="command-text">!track number</span> respectively. They are listed from highest to lowest Elo.
-            <br> <br>
-            Multiple tracks and their elo can be found based on Tier using the command <span class="command-text">!tier number</span>. They are listed from highest to lowest Elo.        
-        </div>
-    
-        <div
-        class="section-header"
-        id="Controversy">
-            Controversy
-            <hr
-            class="section-header-line">
-        </div>
-            
-        <div
-        class="section-subheader">
-            The following section is a retelling of history. The TaylorBowl Wiki and its contributors do not necessarily share the stance of any opinions presented below. 
-        </div>
-
-        <div
-        class="Controversy-content">
-            There have been a number of discussions, some of which people have felt very strongly about, over the inclusion or exclusion of certain songs.
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Controversy#Ronan">
-            Ronan
-        </div>
-
-        <div
-        class="Ronan-content">
-            At its conception in July 2020, <span class="song-text">Ronan</span> was part of TaylorBowl's tracks. Almost a year later in June 2021, the criterion “It is not 'Ronan,' the 2012 charity single.” was added and <span class="song-text">Ronan</span> was removed. Later that year, in November 2021, <span class="song-text">Red (Taylor's Version)</span> was released with <span class="song-text">Ronan (Taylor's Version)</span> as track 21. With its release, <span class="song-text">Ronan</span> was re-added to TaylorBowl's tracks when Season 6 began in February 2022, along with the removal of Criterion 5. However, after public backlash and heated discussions regularly occurring because of its inclusion, it would be removed again barely 24 hours after the Season started, and Criterion 5 was re-added with its current wording.
-            <br> <br>
-            The debate of whether <span class="song-text">Ronan</span> should be included centers around the purpose of the song. Those arguing for its exclusion cite the extremely personal nature of the song and its significance to someone other than Swift, along with the attitude of TaylorBowl participants often expressing dislike for songs as disrespectful to the song. Some go further to argue that using such a song in a ranking game diminishes its significance. 
-            <br> <br>
-            Those disagreeing cite other songs such as <span class="song-text">Soon You'll Get Better</span>, <span class="song-text">epiphany</span>, and <span class="song-text">marjorie</span> as other examples of songs with deeply personal meanings, arguing that just because a song is personal does not mean it is exempt from ranking. In response, a small portion of those arguing for <span class="song-text">Ronan</span>'s exclusion also pushed for the removal of those songs. This did not occur, likely due to the subjective nature of determining a song's personal importance.
-            <br> <br>
-            The resolution of using <span class="song-text">Ronan</span>'s original charity single status as a determiner was likely to have an objective criterion on the purpose of the song. Those supporting the move to exclude <span class="song-text">Ronan</span> using this criterion suggest that songs for “good purposes” such as charity should not be diminished by a ranking game.        
-        </div>
-
-        <div
-        class="subsection-header"
-        id="Controversy#Renegade">
-            Renegade
-        </div>
-
-        <div
-        class="Renegade-content">
-            <span class="song-text">Renegade</span> was a song released by the band Big Red Machine featuring Taylor Swift. By the Criteria, it is thus not included in TaylorBowl. However, for a short time after its release, a small number of TaylorBowl participants argued that, despite Swift being a featured artist, her performance of the majority of its vocals should qualify it for TaylorBowl. 
-            <br> <br>
-            However, it has never been added in strict adherence to the Criteria.        
-        </div>
-
-        <div
-        class="version-text">
-            Version 2.1
-        </div>
-
+    class="contents-list-title">
+        Table of Contents
     </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Criteria"> Criteria <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility"> Matchups & Eligibility <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility#Recency"> Recency <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility#Eligibility"> Eligibility <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Attributes"> Attributes <br> </a>
+    </div>
+    <div>
+        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Viewing"> Viewing <br> </a>
+    </div>
+    <div>
+        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Controversy <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Ronan"> Ronan <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Renegade"> Renegade <br> </a>
+    </div>
+    <div>
+        6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 6.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 6.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
 
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</div>
 
-    <script src="header.js"></script>
+<div
+class="page-title">
+Tracks
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="page-subtitle">
+See also: <a class="text-actionable-link">List of all tracks in TaylorBowl</a>
+</div>
+
+<div
+class="content"
+id="js-page-summary">
+    Tracks refer to any song that can be in a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">TaylorBowl</a>. There are currently 249 such tracks.
+</div>
+
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Criteria">
+Criteria
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+Not every song by Taylor Swift is included. There are five criteria to determine what is included:
+
+<ol>
+    <li>It must have been officially released.</li>
+    <li>It must credit Taylor Swift as a main artist (i.e. not a featured artist) and as a writer or co-writer.</li>
+    <li>It must not be an earlier iteration of a song that adheres to the above criteria (i.e. no demos).</li>
+    <li>It must be significantly lyrically unique relative to all other tracks that adhere to the above criteria.</li>
+    <li>It must not have, at any point, been released as a charity single.</li>
+</ol>
+
+For Criterion 1, any form of official release, including store-exclusive tracks, are counted. However, internally distributed demos, demo CDs, and other forms of release not intended for public consumption do not meet the criterion.
+<br> <br>
+For Criterion 2, the first half refers to how tracks are named and credited. For example, Ed Sheeran's <span class="song-text">The Joker And The Queen (feat. Taylor Swift)</span> credits Swift as a featured artist, and is thus not counted. The second half refers to credits, where Swift must be credited as a writer or co-writer on a given track. This has little bearing on most tracks as Swift writes or co-writes all tracks that she sings on.
+<br> <br>
+For Criterion 3, this refers to demos, voice notes, and other similar pre-release versions. For example, the voice notes for <span class="song-text">Who's Afraid of Little Old Me?</span>, <span class="song-text">The Black Dog</span>, and <span class="song-text">Cassandra</span> do not meet the criterion.
+<br> <br>
+For Criterion 4, this often refers to remixes. For example, most of the many <span class="song-text">Anti-Hero</span> remixes do not meet the criterion, but <span class="song-text">Anti-Hero (feat. Bleachers)</span> does as it features a lyrically unique second verse.
+<br> <br>
+For Criterion 5, this specifically refers to Ronan. This criterion was initially "It is not 'Ronan,' the 2012 charity single." as a means of respecting the song. In 2021, with the release of <span class="song-text">Ronan (Taylor's Version)</span>, this criterion was removed and <span class="song-text">Ronan</span> was re-added. However, shortly after, public opinion suggested it be removed. As a result, the criterion was updated to its current wording and Ronan was removed from TaylorBowl again.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Matchups_&_Eligibility">
+Matchups & Eligibility
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+A matchup is a pair of tracks that can be in a Bowl against each other. Not all tracks are eligible for a matchup at all times. There are two requirements: Recency and Eligibility.
+</div>
+
+<div
+class="subsection-title"
+id="Recency_&_Eligibility#Recency">
+    Recency
+</div>
+
+<div
+class="content">
+After a bowl has concluded, both tracks are assigned a Recency value of 26. At the end of every subsequent TaylorBowl, this value decreases by 1 until it reaches 0, where it no longer exists. If a track has a Recency value greater than 0, it is not eligible to be in a TaylorBowl. The command <span class="command-text">!recenttracks</span> or its shortened version <span class="command-text">!recent</span> shows all 52 songs with Recency values.  
+</div>
+
+<div
+class="subsection-title"
+id="Recency_&_Eligibility#Eligibility">
+    Eligibility
+</div>
+
+<div
+class="content">
+There are 3 requirements to determine if a song is eligible to be in a matchup:
+<ol> 
+<li>Non-Recency: The tracks in question must not have had a recent bowl. This is currently set to 26 Bowls.</li>
+<li>Sufficient Closeness: The tracks must be within a certain amount of rating points to be considered close enough to have a bowl. This is currently set to 35 points.</li>
+<li>Mutual Closeness: The two tracks' closest neighbor by rating must be the other track.</li>
+</ol>
+For requirement 1, see Recency.
+<br> <br>
+For requirement 2 and 3, this refers to a track's <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo" data-tippy-content="Elo is a value assigned to every track in TaylorBowl, which reflects how liked the track is.">Elo</span> score. If two tracks' Elo are within 35 of each other, they may be eligible for a matchup. If two tracks' nearest song by Elo are each other, they may be eligible for a matchup. Both requirement 2 and 3 must be fulfilled to be eligible.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Attributes">
+Attributes
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="content">
+Every track is assigned a <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System">Tier</span> and an Album, and most are assigned a Track Number. 
+<br> <br>
+Tracks are grouped based on Elo into 11 Tiers, with Tier 0 containing the highest Elo tracks and Tier 10 containing the lowest.
+<br> <br>
+If a track was at any point released on a particular album, it is considered part of that album. Thus, <span class="song-text">If This Was A Movie</span> is considered a <span class="song-text">Speak Now</span> track, and <span class="song-text">Sweeter Than Fiction</span> is considered a <span class="song-text">1989</span> track. Tracks that were never released with an album, such as <span class="song-text">Christmas Tree Farm</span>, are assigned <span class="song-text">No Album</span>. Tracks released on EPs are also assigned <span class="song-text">No Album</span>, such as <span class="song-text">I Heart ?</span> and <span class="song-text">Safe & Sound</span>. 
+<br> <br>
+If a track is assigned any of Swift's 11 studio albums, it is also assigned a Track Number based on its position in the tracklist. For example, <span class="song-text">Clean</span> is assigned as track 13. Due to different versions of albums, there may be tracks that share the same position in the tracklist. In these cases, whenever possible these disputes are resolved such as with <span class="song-text">THE TORTURED POETS DEPARTMENT</span>'s tracks <span class="song-text">The Manuscript</span>, <span class="song-text">The Bolter</span>, <span class="song-text">The Albatross</span>, and <span class="song-text">The Black Dog</span>. All 4 were originally track 17 on their respective variants. However, with the release of <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they each received unique track numbers. However, not all conflicts are resolved. For example, <span class="song-text">You're Losing Me</span> and <span class="song-text">Would've Could've Should've</span> are both track 19 on <span class="song-text">Midnights (The Late Night Edition)</span> and <span class="song-text">Midnights (The Til Dawn Edition)</span> respectively. In these cases, both are assigned track 19.   
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(4)">
+<img
+class="toggler-image"
+id="js-toggler-4"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Viewing">
+Viewing
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-4">
+
+<div
+class="content">
+Individual tracks and their Elo can be found using the command <span class="command-text">!elo</span>. You may either do <span class="command-text">!elo name</span> or <span class="command-text">!elo #rank</span> to find a given track. 
+<br> <br>
+Multiple tracks and their Elo can be found based on Album or Track number using the commands <span class="command-text">!album name</span> and <span class="command-text">!track number</span> respectively. They are listed from highest to lowest Elo.
+<br> <br>
+Multiple tracks and their Elo can be found based on Tier using the command <span class="command-text">!tier number</span>. They are listed from highest to lowest Elo.        
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(5)">
+<img
+class="toggler-image"
+id="js-toggler-5"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Controversy">
+Controversy
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-5">
+
+<div
+class="section-subtitle">
+The following section is a retelling of history. The TaylorBowl Wiki and its contributors do not necessarily share the stance of any opinions presented below. 
+</div>
+
+<div
+class="content">
+There have been a number of discussions, some of which people have felt very strongly about, over the inclusion or exclusion of certain songs.
+</div>
+
+<div
+class="subsection-title"
+id="Controversy#Ronan">
+Ronan
+</div>
+
+<div
+class="content">
+At its conception in July 2020, <span class="song-text">Ronan</span> was part of TaylorBowl's tracks. Almost a year later in June 2021, the criterion “It is not 'Ronan,' the 2012 charity single.” was added and <span class="song-text">Ronan</span> was removed. Later that year, in November 2021, <span class="song-text">Red (Taylor's Version)</span> was released with <span class="song-text">Ronan (Taylor's Version)</span> as track 21. With its release, <span class="song-text">Ronan</span> was re-added to TaylorBowl's tracks when Season 6 began in February 2022, along with the removal of Criterion 5. However, after public backlash and heated discussions regularly occurring because of its inclusion, it would be removed again barely 24 hours after the Season started, and Criterion 5 was re-added with its current wording.
+<br> <br>
+The debate of whether <span class="song-text">Ronan</span> should be included centers around the purpose of the song. Those arguing for its exclusion cite the extremely personal nature of the song and its significance to someone other than Swift, along with the attitude of TaylorBowl participants often expressing dislike for songs as disrespectful to the song. Some go further to argue that using such a song in a ranking game diminishes its significance. 
+<br> <br>
+Those disagreeing cite other songs such as <span class="song-text">Soon You'll Get Better</span>, <span class="song-text">epiphany</span>, and <span class="song-text">marjorie</span> as other examples of songs with deeply personal meanings, arguing that just because a song is personal does not mean it is exempt from ranking. In response, a small portion of those arguing for <span class="song-text">Ronan</span>'s exclusion also pushed for the removal of those songs. This did not occur, likely due to the subjective nature of determining a song's personal importance.
+<br> <br>
+The resolution of using <span class="song-text">Ronan</span>'s original charity single status as a determiner was likely to have an objective criterion on the purpose of the song. Those supporting the move to exclude <span class="song-text">Ronan</span> using this criterion suggest that songs for “good purposes” such as charity should not be diminished by a ranking game.   
+</div>
+
+<div
+class="subsection-title"
+id="Controversy#Renegade">
+Renegade
+</div>
+
+<div
+class="content">
+<span class="song-text">Renegade</span> was a song released by the band Big Red Machine featuring Taylor Swift. By the Criteria, it is thus not included in TaylorBowl. However, for a short time after its release, a small number of TaylorBowl participants argued that, despite Swift being a featured artist, her performance of the majority of its vocals should qualify it for TaylorBowl. 
+<br> <br>
+However, it has never been added in strict adherence to the Criteria.   
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(6)">
+<img
+class="toggler-image"
+id="js-toggler-6"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-6">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!album name</span></td>
+        <td>Lists all tracks in an album from highest to lowest Elo.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!elo name/#rank</span></td>
+        <td>Displays the rank, Elo, and Tier of the specified song. <br> Either <span class="command-text">track</span> or <span class="command-text">#rank</span> must be included, which refers to the track specified.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!matchups tier</span></td>
+        <td>Lists all currently possible matchups. <br> <span class="command-text">tier</span> is an optional parameter which defaults to showing all matchups. <br> Alternative forms: <span class="command-text">!allmatchups tier</span> </td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!recent</span></td>
+        <td>Lists all tracks with Recency values. <br> Alternative forms: <span class="command-text">!recenttracks</span></td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!tier number</span></td>
+        <td>Lists all tracks in a Tier from highest to lowest Elo. <br> <span class="command-text">number</span> is a mandatory parameter that refers to the desired Tier.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!track number</span></td>
+        <td>Lists all tracks of a track number from highest to lowest Elo. <br> <span class="command-text">number</span> is a mandatory parameter that refers to the desired track number.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!whatis criteria</span></td>
+        <td>Displays Criteria.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!whatis eligible</span></td>
+        <td>Displays Eligibility.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>EP</td>
+        <td>Extended Play, a musical recording that contains more tracks than a single but less than an album.</td>
+    </tr>
+    <tr>
+        <td>Tracklist</td>
+        <td>The order of songs on an album.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
 
 </body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
 
 </html>
