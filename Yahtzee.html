@@ -3,6 +3,10 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
         Yahtzee
     </title>
@@ -12,204 +16,381 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="Yahtzee.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
 
 </head>
 
 <body>
 
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
     <div
-    class="all-content">
-
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/"
-            id="js-taylorbowl-logo">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
-
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
-
-            <button
-            class="search-button"
-            id="js-search-button"
-            onclick="openSearch()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-            <input 
-            class="search-input"
-            id="js-search-input"
-            type="search"
-            placeholder="Search pages..."
-            onkeydown="processQuery()">
-
-            <button
-            class="new-search-button"
-            id="js-new-search-button"
-            onclick="redirect()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-        </div>
-
-        <div
-        class="Yahtzee-title">
-            Yahtzee
-            <hr
-            class="title-line">
-        </div>
-
-        <div
-        class="under-construction">
-            This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
-        </div>
-
-        <div
-        class="Ballpit-summary">
-
-        <div
-        class="Ballpit-summary-text">
-            Yahtzee is a dice-based minigame. Five whole numbers from 1 to 6 are randomly generated, and certain combinations will award the player <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a>.
-        </div>
-
-        <div
-        class="contents-list">
-            <div
-            class="contents-list-title">
-                Contents
-            </div>
-            <div>
-                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Mechanics"> Mechanics <br> </a>
-            </div>
-            <div>
-                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Statistics"> Statistics <br> </a>
-            </div>
-            <div>
-                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Invocations_&Evocations"> Invocations & Evocations <br> </a>
-            </div>
-        </div>
-
-        <div
-        class="section-header"
-        id="Mechanics">
-            Mechanics
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Mechanics-content">
-            You may use the command <span class="command-text">!yahtzee number</span> to play Yahtzee. Players have some free rolls each <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>. Every Server Booster grants 1.5 free rolls, rounded up. After all free rolls have been used, each subsequent paid roll costs 10 credits. Each player has a limited number of paid rolls per Bot Cycle. This number starts at 100, is increased by 100 for every <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera_Level">Ephemera Level</a>, and is increased by 1 for every 0.5 <a class="text-actionable-link" href="https://taylorbowl.wiki/Lyric_IQ">IQ</a>.
-            <br> <br>
-            There are four types of combinations that will award credits.
-            <br> <br>
-            1-Roll Yahtzee: All five numbers are the same. This awards 792x the number shown on all dice.
-            <br> <br>
-            4-of-a-Kind: Four of five numbers are the same. This awards 48x the number shown on the four dice.
-            <br> <br>
-            Full House: Three dice share one number, and the other two dice share another number. This awards 3x the sum of all numbers shown.
-            <br> <br>
-            Large Straight: The dice show a consecutive sequence of numbers when rearranged, i.e., they show the numbers 1 2 3 4 5 or 2 3 4 5 6 in any order. This awards 3x of the sum of all numbers shown.                 
-        </div>
-
-        <div
-        class="section-header"
-        id="Statistics">
-            Statistics
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Statistics-content">
-            The expected value of a free Yahtzee is 9.0255, and the expected value of a paid Yahtzee is -0.9745, shown by:
-                
-            <div
-            class="formula">
-                <p><span>$$E(\text{1-Roll Yahtzee})=\sum_{i=1}^{6}792i\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.1389$$
-                    $$E(\text{4-of-a-Kind})=\sum_{i=1}^{6}48i\cdot\left(\cfrac{1}{6}\right)^{4}\cdot\cfrac{5}{6}\approx3.2407$$
-                    $$E(\text{Full House})=\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3(3i+2j)-5\sum_{k=1}^{6}k\right)\cdot\cfrac{5!}{3!\cdot2!}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$
-                    $$E(\text{Large Straight})=\left(\sum_{i=1}^{5}i+\sum_{j=2}^{6}j\right)\cdot\left(\cfrac{1}{6}\right)^{5}\cdot5!\cdot3\approx1.6204$$
-                    $$\sum E(X)=9.0255$$
-                    $$\sum E(X)-10=-0.9745$$</span></p>
-            </div>                     
-        </div>
-
-        <div
-        class="section-header"
-        id="Invocations_&_Evocations">
-            Invocations & Evocations
-            <button
-            class="show-hide"
-            id="js-toggler"
-            onclick="toggleVisibility()">
-                [show]
-            </button>
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="subsection-subheader">
-            Warning: This section contains endgame content. If you wish to experience the game as intended, click away.
-        </div>
-
-        <div
-        class="Invocations-Evocations-content"
-        id="js-toggle-content">
-            There exists 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocation">Invocation</a> that affects Yahtzees. <a class="text-actionable-link" href="https://taylorbowl.wiki/Discount">Discount</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> to reduce the cost of paid rolls by 1 credit, up to 6 times, until the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a> using the command <span class="command-text">!discount</span>. 
-            <br> <br>
-            Since the expected value of a free Yahtzee is 9.0255, by Discounting once, you are expected to make a small margin of profit. However, by discounting all 6 times, the expected value becomes 5.0255. This makes Yahtzee a viable method for obtaining <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a>, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
-            <div
-            class="formula">
-                <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
-            </div>    
-            where \(n\) is the number of rolls, \(c\) is the cost per roll, and \(d\) is the number of Discounts used.
-        </div>
-
-        <div
-        class="version-text">
-            Version 1.1
-        </div>
-
+    class="contents-list-title">
+        Table of Contents
     </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Mechanics"> Mechanics <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Statistics"> Statistics <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
+    </div>
+    <div>
+        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
 
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</div>
 
-    <script src="header.js"></script>
+<div
+class="page-title">
+Yahtzee
+</div>
+<hr
+class="page-title-line">
 
-    <script>
+<div
+class="disclaimer">
+This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+</div>
 
-        let visible = false
-        function makeVisible() {
-            document.getElementById("js-toggle-content").style.display = "inline";
-            document.getElementById("js-toggler").innerHTML = "[hide]";
-            visible = true;
-            console.log("made visible");
-        }
-        function makeInvisible() {
-            document.getElementById("js-toggle-content").style.display = "none";
-            document.getElementById("js-toggler").innerHTML = "[show]";
-            visible = false;
-            console.log("made invisible");
-        }
-        function toggleVisibility() {
-            visible ? makeInvisible() : makeVisible();
-        }
+<div
+class="content"
+id="js-page-summary">
+Yahtzee is a dice-based minigame. Five whole numbers from 1 to 6 are randomly generated, and certain combinations will award the player <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a>.
+</div>
 
-    </script>
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Mechanics">
+Mechanics
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+You may use the command <span class="command-text">!yahtzee number</span> to play Yahtzee. Players have some free rolls each <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Cycle is a period between two Bot Restarts.">Bot Cycle</a>. Every Server Booster grants 1.5 free rolls, rounded up. After all free rolls have been used, each subsequent paid roll costs 10 credits. Each player has a limited number of paid rolls per Bot Cycle. This number starts at 100, is increased by 100 for every <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level" data-tippy-content="Ephemera Level is a user statistic that allows users to hold Ephemera or play more of certain minigames.">Ephemera Level</a>, and is increased by 1 for every 0.5 <a class="text-actionable-link" href="https://taylorbowl.wiki/Lyric_IQ" data-tippy-content="Lyric IQ is a measure of a user's activity and skill in LyricRace.">IQ</a>.
+<br> <br>
+There are four types of combinations that will award credits.
+<ol>
+    <li>1-Roll Yahtzee: All five numbers are the same. This awards 792x the number shown on all dice.</li>
+    <li>4-of-a-Kind: Four of five numbers are the same. This awards 48x the number shown on the four dice.</li>
+    <li>Full House: Three dice share one number, and the other two dice share another number. This awards 3x the sum of all numbers shown.</li>
+    <li>Large Straight: The dice show a consecutive sequence of numbers when rearranged, i.e., they show the numbers 1 2 3 4 5 or 2 3 4 5 6 in any order. This awards 3x of the sum of all numbers shown.   </li>
+</ol>
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Statistics">
+Statistics
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+The expected value of a free Yahtzee is 9.0255, and the expected value of a paid Yahtzee is -0.9745, shown by:    
+<div class="formula">
+    <p><span>$$E(\text{1-Roll Yahtzee})=\sum_{i=1}^{6}792i\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.1389$$
+        $$E(\text{4-of-a-Kind})=\sum_{i=1}^{6}48i\cdot\left(\cfrac{1}{6}\right)^{4}\cdot\cfrac{5}{6}\approx3.2407$$
+        $$E(\text{Full House})=\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3(3i+2j)-5\sum_{k=1}^{6}k\right)\cdot\cfrac{5!}{3!\cdot2!}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$
+        $$E(\text{Large Straight})=\left(\cfrac{1}{6}\right)^{5}\cdot5!\cdot3\cdot\left(\sum_{i=1}^{5}i+\sum_{j=2}^{6}j\right)\approx1.6204$$
+        $$\sum E(X)=9.0255$$
+        $$\sum E(X)-10=-0.9745$$</span></p>
+</div>    
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Invocations_&_Evocations">
+Invocations & Evocations
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="section-subtitle">
+    Warning: This section contains endgame content. If you wish to experience the game as intended, we recommend you do not open it.
+</div>
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="content">
+There is 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocation" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> that affects Yahtzees.
+<br> <br>
+<a class="text-actionable-link" href="https://taylorbowl.wiki/Discount">Discount</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to reduce the cost of paid rolls by 1 credit, up to 6 times, until the next Bot Cycle using the command <span class="command-text">!discount</span>. 
+<br> <br>
+Since the expected value of a free Yahtzee is 9.0255, by Discounting once, you are expected to make a small margin of profit. However, by discounting all 6 times, the expected value becomes 5.0255. This makes Yahtzee a viable method for obtaining credits, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
+<div class="formula">
+    <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
+</div>    
+where \(n\) is the number of rolls, \(c\) is the cost per roll, and \(d\) is the number of Discounts used.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(4)">
+<img
+class="toggler-image"
+id="js-toggler-4"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-4">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!yahtzee number</span></td>
+        <td>Executes a specified number of Yahtzees. <br> <span class="command-text">number</span> is an optional parameter that refers to the number of rolls, defaults to 1.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+
+<b>1</b> &ensp; Expected Value of paid Yahtzees:
+<div class="formula">
+    <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
+</div>
+where \(n\) is the number of rolls, \(c\) is the cost per roll, and \(d\) is the number of Discounts used.
+
+</div>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<div
+class="content">
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Free Yahtzee</td>
+        <td>Yahtzee rolls that do not require credits.</td>
+    </tr>
+    <tr>
+        <td>Paid Yahtzee</td>
+        <td>Yahtzee rolls that require credits.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
 
 </body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
 
 </html>
