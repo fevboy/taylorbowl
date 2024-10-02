@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
-        TaylorBowl Wiki
+        TaylorBowls
     </title>
 
     <link 
@@ -12,181 +14,117 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="index.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
 
 <div
-class="all-content">
+class="page-header">
 
-    <div
-    class="header">
-        
-        <a
-        class="TaylorBowl-logo"
-        href="https://taylorbowl.wiki/"
-        id="js-taylorbowl-logo">
-            <img
-            class="TaylorBowl-logo-image"
-            src="Logos/TaylorBowl Logo.svg">
+    <button
+    class="theme-button"
+    id="js-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
 
-            <div
-            class="TaylorBowl-logo-text">
-                TAYLORBOWL WIKI
-            </div>
-        </a>
+    <button
+    class="open-search-button"
+    id="js-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
 
-        <button
-        class="search-button"
-        id="js-search-button"
-        onclick="openSearch()">
-            <img class="search-logo" src="Logos/Search Logo.svg">
-        </button>
+    <input 
+    class="search-input"
+    id="js-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
 
-        <input 
-        class="search-input"
-        id="js-search-input"
-        type="search"
-        placeholder="Search pages..."
-        onkeydown="processQuery()">
+    <button
+    class="enter-search-button"
+    id="js-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
 
-        <button
-        class="new-search-button"
-        id="js-new-search-button"
-        onclick="redirect()">
-            <img class="search-logo" src="Logos/Search Logo.svg">
-        </button>
+</div>
+    
+<div
+class="introduction-block text-block">
 
-    </div>
+<div
+class="taylorbowl-logo">
+<img class="taylorbowl-logo-image" src="Logos/TaylorBowl Logo.svg">
+<div class="taylorbowl-logo-text">TAYLORBOWL WIKI</div>
+</div>
 
-    <div
-    class="welcome-text">
-        <div
-        class="welcome-title">
-            What is The TaylorBowl Wiki?
-        </div>
-        Welcome to The TaylorBowl Wiki! The official online encyclopedia for the Discord game TaylorBowl. <a class="text-underlined-link" href="https://discord.gg/taylorbowl" target="_blank"> Play now! </a>
-        <br> <br>
-        TaylorBowl is a game centered around voting for a preferred Taylor Swift song of two chosen, with additional minigames, an economy, and more.
-        <br> <br>
-        Looking for a specific page? <a class="text-underlined-link" href="https://taylorbowl.wiki/search">Search here!</a> New to TaylorBowl? <a class="text-underlined-link" href="https://taylorbowl.wiki/Introduction_To_TaylorBowl">Learn more here!</a>
-    </div>
+<div
+class="medium-block">
+<div
+clas="introduction-text">
+Welcome to The TaylorBowl Wiki! The official online encyclopedia for the Discord game TaylorBowl. <a class="text-underlined-link" href="https://discord.gg/taylorbowl">Play now!</a>
+<br> <br>
+TaylorBowl is a game centered around voting for a preferred Taylor Swift song of two chosen, with additional minigames, an economy, and more.
+</div>
 
-    <div
-    class="page-links">
-
-        <div
-        class="page-links-title">
-            Highlighted Pages
-        </div>
-
-        <div
-        class="category-title">
-            Bowls
-        </div>
-        <div
-        class="category-links">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo"> Elo</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons"> Seasons</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls"> TaylorBowls</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks"> Tracks</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes"> Votes</a>
-        </div>
-
-        <div
-        class="category-title">
-            Economy
-        </div>
-        <div
-        class="category-links">
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit"> Ballpit</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons"> The Commons</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits"> Credits</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm"> Farm</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk"> Risk & Anti-Risk</a> &#11045;
-            <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee"> Yahtzee</a> 
-        </div>
-
-        <div
-        class="category-title">
-            Users
-        </div>
-        <div
-        class="category-links">
-            coming soon!
-        </div>
-
-        <div
-        class="category-title">
-            Games
-        </div>
-        <div
-        class="category-links">
-            coming soon!
-        </div>
-
-        <div
-        class="category-title">
-            Bots
-        </div>
-        <div
-        class="category-links">
-            coming soon!
-        </div>
-
-        <div
-        class="category-title">
-            Admin
-        </div>
-        <div
-        class="category-links">
-            coming soon!
-        </div>
-
-        <div
-        class="category-title">
-            Guides
-        </div>
-        <div
-        class="category-links">
-            coming soon!
-        </div>
-
-        <div
-        class="category-title">
-            Glossary
-        </div>
-        <div
-        class="category-links">
-            coming soon!
-        </div>
-
-    </div>
-
-    <div
-    class="note-to-users">
-        <div
-        class="note-to-users-title">
-            Note to Users
-        </div>
-        <div
-        class="note-to-users-text">
-            Dear reader, many things are still in development, with more pages and features to come. Contact ev on Discord for more information.
-        </div>
-    </div>
-
-    <div
-    class="version-text">
-        Version 3.0
-    </div>
+<div
+class="small-block">
+<button class="search-button">
+<img class="search-logo" id="js-search-button" src="Logos/Search Logo Dark.svg">
+<div class="block-text">Search all pages</div>
+</button>
+<button class="new-button">
+<img class="new-logo" id="js-new-button" src="Logos/New Logo Dark.svg">
+<div class="block-text">Introduction</div>
+</button>
+</div>
 
 </div>
 
-<script src="header.js"></script>
+</div>
 
+<div
+class="noticeboard text-block">
+<div class="noticeboard-title">Noticeboard</div> <br>
+<div class="notices-and-updates">
+Notices for 2 October 2024:
+<ol>
+    <li>Most pages are still missing images. If you find any images worth using, feel free to share them by DMing ev on Discord.</li>
+    <li>We have just updated to a brand new layout, which means there may be some undetected bugs. If you find any, please DM ev on Discord to share them.</li>
+</ol>
+Updates for 2 October 2024:
+<ol>
+    <li>Added better mobile compatibility</li>
+    <li>Reformatted home page</li>
+    <li>Reformatted internal structure</li>
+    <li>Added menu</li>
+    <li>Added theme toggler</li>
+    <li>Moved contents page to menu</li>
+    <li>Allowed all content to be hidden based on section</li>
+    <li>Added tooltips</li>
+    <li>Added a Glossary section to all pages</li>
+    <li>Made more colourblind friendly; different link colour and command style</li>
+    <li>Improved page header format</li>
+</ol>
+</div>
+</div>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="indexCode.js"></script>
 </body>
 </html>
