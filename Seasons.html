@@ -3,8 +3,12 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
-        Elo & Tiers
+        Seasons
     </title>
 
     <link 
@@ -12,181 +16,374 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="Seasons.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
 
 </head>
 
 <body>
 
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
     <div
-    class="all-content">
-
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/"
-            id="js-taylorbowl-logo">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
-
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
-
-            <button
-            class="search-button"
-            id="js-search-button"
-            onclick="openSearch()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-            <input 
-            class="search-input"
-            id="js-search-input"
-            type="search"
-            placeholder="Search pages..."
-            onkeydown="processQuery()">
-
-            <button
-            class="new-search-button"
-            id="js-new-search-button"
-            onclick="redirect()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
-
-        </div>
-
-        <div
-        class="Seasons-title">
-            Seasons
-            <hr
-            class="title-line">
-        </div>
-
-        <div
-        class="Seasons-summary">
-
-        <div
-        class="Seasons-summary-text">
-            Seasons are a period of time in TaylorBowl. The end of one season and beginning of another, known as a season reset, marks a series of resets and typically occurs with major <a class="text-actionable-link" href="https://taylorbowl.wiki/Update_History">updates</a>.
-        </div>
-
-        <div
-        class="contents-list">
-            <div
-            class="contents-list-title">
-                Contents
-            </div>
-            <div>
-                1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Duration"> Duration <br> </a>
-            </div>
-            <div>
-                2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Resets"> Resets <br> </a>
-            </div>
-            <div>
-                3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Tracks"> Tracks <br> </a>
-            </div>
-            <div>
-                4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Era_1"> Era 1 <br> </a>
-            </div>
-        </div>
-
-        <div
-        class="section-header"
-        id="Duration">
-            Duration
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Duration-content">
-            Each season lasts 4 months. New seasons begin on the 1st of every February, June, and October. However, there is not a regular time of day in which they occur as season resets as they are a manual effort and vary in how long each takes to implement.
-        </div>
-
-        <div
-        class="section-header"
-        id="Resets">
-            Resets
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="section-subheader">
-            Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a>
-        </div>
-
-        <div
-        class="Resets-content">
-            Every season reset, users have their Bowls Participated, Bowls Started, Streak Record, First Votes, Hammer Votes, Spent Credits, Ephemera Condensed, and Lyric IQ reset to 0. This only concerns User Score. On-hand <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">credits</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia">Potentia</a> are not reset. 
-            <br> <br>
-            Because of this, the Council and Pantheon are reset, as all users now have 0 User Score. However, those in the Council and Pantheon are remembered through a message in the channel <a class="command-text">#bowl-headlines</a>.        
-        </div>
-
-        <div
-        class="section-header"
-        id="Tracks">
-            Tracks
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Tracks-content">
-            At the end of every Season, all tracks on the main list undergo a “soft reset” of their <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo">Elo</a>. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between their Elo remain the same. 
-            <br> <br>
-            This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Criteria">Criterion 1</a>. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible.
-            <br> <br>
-            The formula for their new Elo is given by:
-            
-            <div class="formula">
-                <p><span>
-                    $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
-                </span></p>
-            </div>   
-            
-            If new tracks were added at 0 Elo in the previous season, their Elo are manually adjusted during the season reset based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
-            
-            <div class="formula">
-                <p><span>
-                    $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
-                </span></p>
-            </div>
-
-        </div>
-
-        <div
-        class="section-header"
-        id="Era_1">
-            Era 1
-            <hr
-            class="section-header-line">
-        </div>
-
-        <div
-        class="Era-1-content">
-            The first 9 seasons were grouped into an Era. Before the end of Era 1, user stats were all-time instead of seasonal. Thus, the results for the <a class="text-actionable-link" href="https://taylorbowl.wiki/Score#Council">Council</a> and the <a class="text-actionable-link" href="https://taylorbowl.wiki/Score#Pantheon">Pantheon</a> for these 9 seasons were added, and were treated as if they had all occurred in the same season.
-        </div>
-
-        <div
-        class="version-text">
-            Version 2.1
-        </div>
-
+    class="contents-list-title">
+        Table of Contents
     </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Duration"> Duration <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Resets"> Reset <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Tracks"> Tracks <br> </a>
+    </div>
+    <div>
+        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Eras"> Eras <br> </a>
+    </div>
+    <div>
+        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
 
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</div>
 
-    <script src="header.js"></script>
+<div
+class="page-title">
+Seasons
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="content"
+id="js-page-summary">
+Seasons are a period of time in TaylorBowl. The end of one Season and beginning of another, known as a Season reset, marks a series of resets and typically occurs with major <a class="text-actionable-link" href="https://taylorbowl.wiki/Update_History" data-tippy-content="Updates are a series of changes and fixes made to BowlBot.">updates</a>.
+</div>
+
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Duration">
+Duration
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+Each Season lasts 4 months. New Seasons begin on the 1st of every February, June, and October. However, there is not a regular time of day in which they occur as Season resets as they are a manual effort and vary in how long each takes to implement.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Resets">
+Resets
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+Every Season Reset, users have their Bowls Participated, Bowls Started, Streak Record, First Votes, Hammer Votes, Spent Credits, Ephemera Condensed, and Lyric IQ reset to 0. This only concerns <a class="text-actionable-link" href="https://taylorbowl.wiki/User_Score" data-tippy-content="User Score is a measure of a user's overall activity in TaylorBowl.">User Score.</a> Current <a class="text-actionable-link" data-tippy-content="Streaks record the number of consecutive Bowls a user has voted in.">Streaks</a> are also reset. On-hand <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua" data-tippy-content="Perpetua are a rare currency used to perform Evocations.">Perpetua</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Kintsugi_&_Potentia#Potentia" data-tippy-content="Potentia are an uncommon currency used for conversions into credits or Ephemera.">Potentia</a> are not reset, as well as <a class=" text-actionable-link" href="">Personal Rankings</a>
+<br> <br>
+Because of this, the <a class="text-actionable-link" href="https://taylorbowl.wiki/User_Score#Pantheon" data-tippy-content="The Council lists the 13 users with the highest User Score."></a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/User_Score#Pantheon" data-tippy-content="The Pantheon lists the top 3 users in the 7 main domains of User Score.">Pantheon</a> are reset, as all users now have 0 User Score. However, those in the Council and Pantheon are remembered through a message in the channel <a class="command-text">#bowl-headlines</a>.  
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Tracks">
+Tracks
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="content">
+At the end of every Season, all tracks on the main list undergo a “soft reset” of their <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo" data-tippy-content="Elo is a value assigned to every track in TaylorBowl, which reflects how liked the track is.">Elo</a>. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between their Elo remain the same. 
+<br> <br>
+This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Criteria" data-tippy-content="Criteria are a set of guidelines that determine if a song can be added to TaylorBowl.">Criterion 1</a>. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible.
+<br> <br>
+The formula for their new Elo is given by:
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
+    </span></p>
+</div>   
+If new tracks were added at 0 Elo in the previous Season, their Elo are manually adjusted during the Season reset based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
+    </span></p>
+</div>
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(4)">
+<img
+class="toggler-image"
+id="js-toggler-4"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Eras">
+Eras
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-4">
+
+<div
+class="content">
+The first 9 Seasons were grouped into an Era. Before the end of Era 1, user stats were all-time instead of seasonal. Thus, the results for the Council and the Pantheon for these 9 Seasons were added, and were treated as if they had all occurred in the same Season.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(5)">
+<img
+class="toggler-image"
+id="js-toggler-5"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-5">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+<b>1</b> &ensp; Change in Elo due to Season Reset:
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
+    </span></p>
+</div>
+<b>2</b> &ensp; Change in Elo when added from Tier 10:
+<div class="formula">
+    <p><span>
+        $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
+    </span></p>
+</div>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Era</td>
+        <td>A period of 9 Seasons.</td>
+    </tr>
+    <tr>
+        <td>Season Reset</td>
+        <td>The series of resets that occur at the end of one Season.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
 
 </body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
 
 </html>
