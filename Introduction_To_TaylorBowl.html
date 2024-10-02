@@ -3,8 +3,12 @@
 
 <head>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <title>
-        TaylorBowls
+        Introduction To TaylorBowl
     </title>
 
     <link 
@@ -12,121 +16,170 @@
     href="Logos/TaylorBowl Logo.svg" 
     type="image/icon type">
 
-    <link rel="stylesheet" href="Introduction_To_TaylorBowl.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
 
 </head>
 
 <body>
 
-    <div
-    class="all-content">
+<div
+class="page-header">
 
-        <div
-        class="header">
-            
-            <a
-            class="TaylorBowl-logo"
-            href="https://taylorbowl.wiki/"
-            id="js-taylorbowl-logo">
-                <img
-                class="TaylorBowl-logo-image"
-                src="Logos/TaylorBowl Logo.svg">
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
 
-                <div
-                class="TaylorBowl-logo-text">
-                    TAYLORBOWL WIKI
-                </div>
-            </a>
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
 
-            <button
-            class="search-button"
-            id="js-search-button"
-            onclick="openSearch()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
 
-            <input 
-            class="search-input"
-            id="js-search-input"
-            type="search"
-            placeholder="Search pages..."
-            onkeydown="processQuery()">
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
 
-            <button
-            class="new-search-button"
-            id="js-new-search-button"
-            onclick="redirect()">
-                <img class="search-logo" src="Logos/Search Logo.svg">
-            </button>
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
 
-        </div>
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
 
-        <div
-        class="Introduction-To-TaylorBowl-title">
-            Introduction To TaylorBowl
-            <hr
-            class="title-line">
-        </div>
+</div>
 
-        <div
-        class="Introduction-To-TaylorBowl-summary">
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
 
-        <div
-        class="Introduction-To-TaylorBowl-summary-text">
-            This page briefly explains the most important parts of TaylorBowl. For more detailed explanations on anything below, please refer to their dedicated pages.
-        </div>
-        
-        <div
-        class="section-header">
-            What is TaylorBowl?
-        </div>
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
 
-        <div
-        class="What-is-TaylorBowl-content">
-            TaylorBowl is a game played on Discord in select servers. Its core concept is choosing two similarly liked Taylor Swift tracks, and having players vote for whichever they prefer. The songs receive a score based on the voting, and the game continues forever.
-        </div>
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
 
-        <div
-        class="section-header">
-            Playing TaylorBowl
-        </div>
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
 
-        <div
-        class="Playing-TaylorBowl-content">
-            A pair of <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks">tracks</a> appear in a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowl</a>, usually called a bowl, which is an 11 minute long round of voting. One song is assigned the letter A and the other is assigned the letter B, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">voting</a> is done by sending the letter of the song you prefer. At the end of the bowl, the songs change <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo">scores</a> - the winner increases score and the loser decreases score.
-            <br> <br>
-            Between bowls, there is a 2 minute cooldown intended to allow additional discussion of the bowl that has just concluded. However, discussion can still happen at any time.        
-        </div>
+</div>
 
-        <div
-        class="section-header">
-            Other Things
-        </div>
+<div
+class="page-title">
+Introduction To TaylorBowl
+</div>
+<hr
+class="page-title-line">
 
-        <div
-        class="Other-Things-content">
-            TaylorBowl also has an economy based on <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>, which are earned mainly through voting in bowls. There are minigames that allow you to gain or lose credits, such as <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farn</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons">The Commons</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk">Risk</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk">Anti-Risk</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit">Ballpit</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee">Yahtzee</a>.
-            <br> <br>
-            There are other currencies like <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a> used to do powerful actions. There are also <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia">Potentia</a>, which are purchased and can be converted to credits or Ephemera.
-            <br> <br>
-            There are also other minigames such as <a class="text-actionable-link" href="https://taylorbowl.wiki/LyricRace">LyricRace</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Combat">Combat</a> which may interact with credits, but are not fundamentally based on them. LyricRace is a timed series of questions related to Taylor Swift songs and lyrics, and Combat is a collectible card trading game using Taylor Swift songs to level up and fight with.
-            <br> <br>
-            Players can gain <a class="text-actionable-link" href="https://taylorbowl.wiki/Score">User Score</a> related to participation in different aspects of TaylorBowl, such as how many bowls you have voted in or how many bowls you have started.
-        </div>
+<div
+class="content"
+id="js-page-summary">
+This page briefly explains the most important parts of TaylorBowl. For more detailed explanations on anything below, please refer to their dedicated pages. <br> <br>
+</div>
 
-        <div
-        class="version-text">
-            Version 2.1
-        </div>
+<div class="section-title"> What is TaylorBowl? </div>
+<hr class="section-title-line">
+<div class="content">
+TaylorBowl is a game played on Discord in select servers. Its core concept is choosing two similarly liked Taylor Swift tracks, and having players vote for whichever they prefer. The songs receive a score based on the voting, and the game continues forever. <br> <br>
+</div>
 
-    </div>
+<div class="section-title"> Playing TaylorBowl </div>
+<hr class="section-title-line">
+<div class="content">
+A pair of <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks">tracks</a> appear in a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">TaylorBowl</a>, usually called a Bowl, which is an 11 minute long round of voting. One song is assigned the letter A and the other is assigned the letter B, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes" data-tippy-content="Votes are what decide the winner and loser of a TaylorBowl.">voting</a> is done by sending the letter of the song you prefer. At the end of the bowl, the songs change <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo" data-tippy-content="Elo is a value assigned to every track in TaylorBowl, which reflects how liked the track is.">Elo</a> score - the winner increases score and the loser decreases score.
+<br> <br>
+Between bowls, there is a 2 minute cooldown intended to allow additional discussion of the bowl that has just concluded. However, discussion can still happen at any time. <br> <br>
+</div>
 
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<div class="section-title"> Other Features </div>
+<hr class="section-title-line">
+<div class="content">
+TaylorBowl also has an economy based on <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">Credits</a>, which are earned mainly through voting in bowls. There are minigames that allow you to gain or lose credits, such as <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm" data-tippy-content="The Farm is a farm simulator minigame that allows users to plant and grow credits.">Farm</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons" data-tippy-content="The Commons is a farm simulator minigame with a shared pool of credits.">The Commons</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk" data-tippy-content="Risk is a die-based minigame that uses credits.">Risk</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk" data-tippy-content="Anti-Risk is a die-based minigame that uses credits.">Anti-Risk</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit" data-tippy-content="Ballpit is a probability-based minigame that uses credits.">Ballpit</a>, and <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a>.
+<br> <br>
+There are other currencies like <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua" data-tippy-content="Perpetua are a rare currency used to perform Evocations.">Perpetua</a> used to do powerful actions. There are also <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia" data-tippy-content="Potentia are an uncommon currency used for conversions into credits or Ephemera.">Potentia</a>, which are purchased and can be converted to credits or Ephemera.
+<br> <br>
+There are also other minigames such as <a class="text-actionable-link" href="https://taylorbowl.wiki/LyricRace">LyricRace</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Combat">Combat</a> which may interact with credits, but are not fundamentally based on them. LyricRace is a timed series of questions related to Taylor Swift songs and lyrics, and Combat is a collectible card trading game using Taylor Swift songs to level up and fight with.
+<br> <br>
+Players can gain <a class="text-actionable-link" href="https://taylorbowl.wiki/Score" data-tippy-content="User Score is a measure of a user's overall activity in TaylorBowl.">User Score</a> related to participation in different aspects of TaylorBowl, such as how many bowls you have voted in or how many bowls you have started.
+</div>
 
-    <script src="header.js"></script>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
 
 </body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
 
 </html>
