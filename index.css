@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Segoe UI';
-    src: url('Fonts/Pistilli.eot');
+    src: url('Fonts/SegoeUI.eot');
     src: url('Fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
         url('Fonts/SegoeUI.woff2') format('woff2'),
         url('Fonts/SegoeUI.woff') format('woff'),
@@ -23,177 +23,228 @@
     font-display: swap;
 }
 
-body {
-    background-color: #EBF1F4;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: justify;
+:root {
+    --bg-color: #1C1E1C;
+    --accent-color: #FFFFFF;
+    --visual-color: #161816;
+    --text-color: #FFFFFF;
+    --subtext-color: #c0c0c0;
+    --link-color: #A59DF1;
+    --command-color: #3F4240;
 }
 
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    padding: 0 0.5rem 0 0.5rem;
+    line-height: 1.5rem;
+}
+button {
+    border: none;
+    padding: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    font-size: 1.2rem;
+    padding: 0 0.5rem 0 0.5rem;
+    line-height: 1.5rem;
+    border-radius: 0.5rem;
+}
+button:hover {
+    cursor: pointer;
+}
 .text-actionable-link {
-    color: #324545;
+    color: var(--link-color);
     text-decoration: none;
 }
 .text-actionable-link:hover {
-    color: #324545;
+    color: var(--link-color);
     text-decoration: underline;
     cursor: pointer;
 }
 .text-underlined-link {
-    color: #324545;
+    color: var(--text-color);
     text-decoration: underline;
 }
 .text-underlined-link:hover {
-    color: #324545;
+    color: var(--text-color);
     text-decoration: underline;
     cursor: pointer;
 }
-.all-content {
-    max-width: 1313px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 3%;
-    padding-right: 3%;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-}
 
-.header {
+.page-header {
+    position: sticky;
+    top: 0;
+    margin-top: -8px;
+    z-index: 997;
+    background-image: linear-gradient(to bottom, var(--bg-color) 0rem, var(--bg-color) 3.8rem, #00000000 4.8rem);
+    width: 100%;
     display: flex;
-    margin-top: 0.8rem;
-    margin-bottom: 1.3rem;
-    padding-top: auto;
-    padding-bottom: auto;
+    height: 3.8rem;
+    padding: 0 0 1rem 0;
 }
-.TaylorBowl-logo {
-    display: flex;
-    text-decoration: none;
-}
-.TaylorBowl-logo-image {
-    height: 2.2rem;
-}
-.TaylorBowl-logo-text {
-    font-family: Pistilli;
-    font-size: 1.3rem;
-    margin-top: 0.4rem;
-    margin-left: 0.22rem;
-    letter-spacing: -1px;
-    word-spacing: 0.1rem;
-    transform: scaleY(1.3);
-    color: black;
-}
-.search-button {
-    border-style: solid;
-    background-color: #324545;
-    border-width: 0.1rem;
-    border-color: #324545;
-    width: 2rem;
+.theme-button {
     height: 2rem;
-    padding: 0.25rem;
-    border-radius: 0.5rem;
-    margin-left: auto;
-    margin-top: 0.2rem;
+    width: 2rem;
+    margin: auto 0.5rem auto auto;
+    border-radius: 0.4rem;
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
 }
-.search-button:hover {
-    cursor: pointer;
+.theme-logo {
+    width: 80%;
+    margin: auto;
+    vertical-align: middle;
+    display: flex;
+}
+.open-search-button {
+    height: 2rem;
+    width: 2rem;
+    margin: auto 0.5rem auto 0;
+    padding: 0;
+    border-radius: 0.4rem;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
 }
 .search-logo {
-    width: 1.22rem;
+    max-height: 86%;
+    margin: auto;
+    vertical-align: middle;
+    display: flex;
 }
 .search-input {
     width: 100%;
-    height: 2rem;
-    margin-top: 0.2rem;
-    padding: 0;
-    padding-left: 0.75rem;
-    padding-right: 0.5rem;
-    border-radius: 0.5rem 0rem 0rem 0.5rem;
-    border-width: 0;
-    box-shadow:0px 0px 0px 0.1rem #324545 inset;
+    height: 2.3rem;
+    padding: 0 0.5rem 0 0.75rem;
+    border-radius: 0.7rem 0rem 0rem 0.7rem;
+    margin: auto;
     display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-right: none;
 }
 .search-input:focus {
     outline-width: 0;
 }
-.new-search-button {
-    border-style: solid;
-    background-color: #324545;
-    border-width: 0.1rem;
-    border-color: #324545;
-    width: 2rem;
-    height: 2rem;
-    padding: 0.25rem;
-    padding-left: 0.13rem;
-    border-radius: 0rem 0.5rem 0.5rem 0rem;
-    margin-left: auto;
-    margin-top: 0.2rem;
+.enter-search-button {
+    background: none;
+    width: fit-content;
+    height: 2.3rem;
+    border-radius: 0rem 0.7rem 0.7rem 0rem;
+    margin: auto;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
     display: none;
-}
-.new-search-button:hover {
-    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--accent-color);
+    border-left: none;
 }
 
-.welcome-title {
-    background-color: #324545;
-    color: white;
+.text-block {
+    background-color: var(--visual-color);
+    padding: 0 2rem 0 2rem;
+    color: var(--text-color);
+    margin: 1rem 0 1rem 0;
+    border-radius: 1rem;
+}
+
+.introduction-block {
+    padding: 1rem 2rem 1rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto 0 auto;
+}
+.taylorbowl-logo {
+    width: fit-content;
+    display: block;
     text-align: center;
-    font-weight: bold;
-    height: 1.7rem;
-    line-height: 1.5rem;
-    padding: auto;
-    border-radius: 0.7rem;
-    margin-bottom: 0.7rem;
+    margin: 1rem auto 1.3rem auto;
 }
-.welcome-text {
-    background-color: white;
-    margin: 2rem auto 2rem;
-    padding: 0.7rem 1rem 0.7rem;
-    max-width: 85%;
+.taylorbowl-logo-image {
+    width: 10rem;
 }
-
-.page-links {
-    background-color: white;
-    margin: 2rem auto 2rem;
-    padding: 0.7rem 1rem 0.7rem;
-    max-width: 85%;
-}
-.page-links-title {
-    background-color: #324545;
-    color: white;
+.taylorbowl-logo-text {
+    font-family: Pistilli;
+    font-size: 1.5rem;
+    transform: scaleY(1.3);
+    letter-spacing: -0.6px;
+    width: 13rem;
     text-align: center;
-    font-weight: bold;
-    height: 1.7rem;
-    line-height: 1.5rem;
-    padding: auto;
-    border-radius: 0.7rem;
-    margin-bottom: 0.7rem;
+    margin-top: -2.5rem;
 }
-.category-title {
-    font-weight: bold;
-    margin-bottom: 0.4rem;
-    margin-top: 0.4rem;
+.medium-block {
+    margin-right: auto;
+}
+.small-block {
+    display: flex;
+}
+.search-logo {
+    width: 1.8rem;
+    margin: auto 0.5rem auto 0.2rem;
+}
+.new-logo {
+    width: 1.8rem;
+    margin: auto 0.5rem auto 0.2rem;
+}
+.search-button {
+    background: none;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 1px;
+    display: flex;
+    height: 2.6rem;
+    width: 100%;
+    min-width: fit-content;
+    margin: 1rem 1rem 0 0;
+}
+.new-button {
+    background: none;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 1px;
+    display: flex;
+    height: 2.6rem;
+    width: 100%;
+    min-width: fit-content;
+    margin: 1rem 0 0 0;
+}
+.block-text {
+    margin: 0.42rem 0.3rem 0 0;
+}
+@media (min-width: 740px) {
+    .introduction-block {
+        display: flex;
+    }
+    .taylorbowl-logo {
+        margin: auto 1.3rem auto auto;
+    }
+}
+@media (max-width: 513px) {
+    .small-block {
+        display: block;
+    }
 }
 
-.note-to-users {
-    background-color: white;
-    margin: 2rem auto 2rem;
-    padding: 0.7rem 1rem 0.7rem;
-    max-width: 85%;
+.noticeboard {
+    padding-top: 1rem;
+    max-width: 1300px;
+    margin: 1.3rem auto 0 auto;
 }
-.note-to-users-title {
-    background-color: #324545;
-    color: white;
+.noticeboard-title {
+    font-weight: bold;
     text-align: center;
-    font-weight: bold;
-    height: 1.7rem;
-    line-height: 1.5rem;
-    padding: auto;
-    border-radius: 0.7rem;
-    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
 }
-
-.version-text {
-    margin-top: 3rem;
-    text-align: right;
-    font-size: 0.8rem;
-    margin-right: 7%;
+.notices-and-updates {
+    padding-bottom: 1rem;
 }
