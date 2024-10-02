@@ -127,7 +127,7 @@ button:hover {
 }
 
 /* Menu button on small screen styling. */
-.lg-theme-button, .lg-open-search-button, .lg-search-input, .lg-enter-search-button, .search-logo, .theme-logo {
+.lg-theme-button, .lg-open-search-button, .lg-search-input, .lg-enter-search-button, .lg-home-button, .search-logo, .theme-logo, .home-logo {
     display: none;
 }
 .open-menu-button {
