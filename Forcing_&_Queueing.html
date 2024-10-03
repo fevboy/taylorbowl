@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>
+        Forcing & Queueing
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
+
+</head>
+
+<body>
+
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
+    <div
+    class="contents-list-title">
+        Table of Contents
+    </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Forcing"> Forcing <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Forcing#Price"> Price <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Forcing#Parameters"> Parameters <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Queueing"> Queueing <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Queueing#Minimum_Price"> Minimum Price <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Queueing#Removal"> Removal <br> </a>
+    </div>
+    <div>
+         &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
+
+</div>
+
+<div
+class="page-title">
+TaylorBowls
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="page-subtitle">
+Not to be confused with <span class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowl">TaylorBowl (server)</span>
+</div>
+
+<div
+class="content"
+id="js-page-summary">
+<a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a> can be made to start a <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility" data-tippy-content="Matchups are a pair of tracks that can be put in a Bowl.">matchup</a> in a specific <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System" data-tippy-content="Tiers are a way of classifying tracks based on their Elo.">Tier</a>, of a specific duration, or even of a specific eligible <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks" data-tippy-content="Tracks are songs in TaylorBowl.">track</a>. They can also be queued such that they automatically start when the cooldown is over.
+<br> <br>
+Each Bowl started, including by forcing and queueing, contributes 20 <a class="text-actionable-link" href="https://taylorbowl.wiki/User_Score" data-tippy-content="User Score is a measure of a user's overall activity in TaylorBowl.">User Score</a>.
+</div>
+
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Forcing">
+Forcing
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+You may force a TaylorBowl using the command <span class="command-text">!taylorbowl tier duration track</span>. You may not start or force a Bowl if you have started either of the previous two. You may check who cannot start Bowls using the command <span class="command-text">!recentstarters</span>, which also shows the number of Bowls that must elapse for the respective user to start one. This number decreases at the start of every Bowl.
+</div>
+
+<div
+class="subsection-title"
+id="Forcing#Price">
+Price
+</div>
+
+<div
+class="content">
+A series of multiplications is performed based on which parameters have been specified. The calculations start with the <a class="text-actionable-link" href="https://taylorbowl.wiki/Base_Price" data-tippy-content="The Base Price is a variable number that determines prices across TaylorBowl.">Base Price</a> which can be checked using the command <span class="command-text">!baseprice</span>.
+<br> <br>
+The price of a forced Bowl starts at \(1\cdot\text{Base Price}\) for Tier 6, and doubles for every increase or decrease in selected Tier. This is given by the formula:
+<div class="formula">
+<p><span>$$m_{\text{T}}=2^{|T-6|}$$</span></p>
+</div>
+where \(m_{T}\) is the Tier multiplier and \(T\) is the specified Tier.
+<br> <br>
+If specified, the duration of a forced Bowl increases the price exponentially. There is no change for an 11 minute Bowl from Tier 1 to 10, or a 22 minute Bowl for Tier 0, and it increases for every minute of deviation from these default durations. This is given by the formula:
+<div class="formula">
+    <p><span>$$m_{D}=1.2+\cfrac{|D-D_{0}|^{3.25}}{25}$$</span></p>
+</div>
+where \(m_{D}\) is the duration multiplier, \(D\) is the specified duration, and \(D_{0}\) is the default duration, which is given by:
+<div class="formula">
+    <p><span>$$D_{0}=\begin{cases} 22 & \text{for Tier 0} \\ 11 & \text{otherwise} \end{cases}$$</span></p>
+</div>
+If specified, the track of a forced Bowl multiplies the price by the number of matchups in its Tier. Thus, the final cost of a forced Bowl is given by the formulae:
+<div class="formula">
+    <p><span>$$\text{Cost}=\text{Base Price}\cdot m_{T} \cdot m_{D} \cdot n$$</span></p>
+</div>
+where \(m_{T}\) is the Tier muliplier, \(m_{D}\) is the duration multiplier, and \(n\) is the number of Bowls in the specified Tier. \(m_{D}\) and \(n\) are only applicable if the duration is modified or a track is forced respectively.
+<br> <br>
+You may use the command <span class="command-text">!bowlcost tier duration</span> to check the cost of a specific Bowl. Note that it cannot calculate specific tracks. You may use the command <span class="command-text">!prices</span> to see the prices for forcing an 11-minute Bowl at each Tier.
+</div>
+
+<div
+class="subsection-title"
+id="Forcing#Parameters">
+Parameters
+</div>
+
+<div
+class="content">
+If any parameter is specified, all previous ones must be specified too. If none are specified, the command attempts to start a random matchup of duration 11 minutes. If the track specified is in a different Tier than specified, the command will fail. The duration parameter has a maximum of 22 and minimum of 2. 
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Queueing">
+Queueing
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+Instead of forcing a Bowl when the cooldown has elapsed, you may instead queue a bowl using the command <span class="command-text">!queue tier duration track</span>. The parameters follow the same rules as forcing, and there is no additional cost to queueing compared to forcing. In addition, you may not queue a Bowl if you started either of the previous two, nor if you have a Bowl already queued. 
+</div>
+
+<div
+class="subsection-title"
+id="Queueing#Minimum_Price">
+Minimum Price
+</div>
+
+<div
+class="content">
+Each Bowl queued must be more expensive than the previous one. This means if Bowls are queued without stopping, the price eventually becomes too high to queue again. However, in reality, most people stop queueing by a certain price. The Bowl after the last one in queue has concluded will then be a natural start.
+<br> <br>
+If a Bowl is naturally started, the Bowl queued after it must be more than 90% of its price, instead of 100%.
+<br> <br>
+You may view the queue using the command <span class="command-text">!squeue</span>, which also shows the minimum price of the next Bowl that can be queued. You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/nextcheapestbowl</span> to determine the cheapest Bowl that can be queued, given the current minimum price. Note that it does not account for specific tracks.
+<br> <br>
+It is also possible that two Bowls of the same Tier and duration can be queued successively. This is because the Base Price may increase between the queueing, which can make the second Bowl slightly more expensive than the first. This will result in both Bowls being started given there are available matchups.
+</div>
+
+<div
+class="subsection-title"
+id="Queueing#Removal">
+Removal
+</div>
+
+<div
+class="content">
+Once queued, a Bowl cannot be removed from the queue unless a <span class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken."></span> occurs, in which case the queue is completely reset.
+<br> <br>
+If a Bowl is queued in an empty queue after the cooldown has already elapsed, the queued Bowl will not start until the end of the next cooldown. Thus, a natural Bowl can be started next. However, the minimum price to queue after the natural Bowl starts is based on the natural Bowl and not the queued Bowl.
+<br> <br>
+Multiple Bowls of the same Tier can be queued as long as there is at least one available matchup. However, if a queued Bowl attempts to start with no available matchup, it is skipped. Credits used to queue Bowls are only consumed when the Bowl starts, thus none are lost in this scenario.
+<br> <br>
+The user must have sufficient credits to start a Bowl when it is queued. If a user successfully queues a Bowl, but loses credits before it begins, the Bowl will be skipped. If a user has insufficient on-hand credits, but has credits in the <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm" data-tippy-content="The Farm is a farm simulator minigame that allows users to plant and grow credits.">Farm</a>, those will be used to supplement the on-hand credits and start the Bowl.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!baseprice</span></td>
+        <td>Displays the Base Price and its components.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!bowlcost tier duration</span></td>
+        <td>Calculates the cost of forcing or queueing a Bowl at a specified Tier and duration. <br> <span class="command-text">tier</span> is a mandatory parameter that refers to the Tier. <br> <span class="command-text">duration</span> is an optional parameter that refers to the duration, defaults to 22 for Tier 0 and 11 otherwise.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">/nextcheapestbowl</span></td>
+        <td>Calculates the cheapest possible Bowl that can be queued.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!prices</span></td>
+        <td>Displays the cost of queueing an 11-minute Bowl at each tier.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!queue tier duration track</span></td>
+        <td>Adds a queued Bowl to the current queue. <br> <span class="command-text">tier</span> is an optional parameter that refers to the Tier, omission makes the command function like <span class="command-text">!squeue</span>. <br> <span class="command-text">duration</span> is an optional parameter that refers to the duration. <br> <span class="command-text">track</span> is an optional parameter that refers to the track.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!squeue</span></td>
+        <td>Shows the current queue.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!taylorbowl tier duration track</span></td>
+        <td>Forces a Bowl. <br> <span class="command-text">tier</span> is an optional parameter that refers to the Tier, omission makes the command function like <span class="command-text">!taylorbowl</span>. <br> <span class="command-text">duration</span> is an optional parameter that refers to the duration. <br> <span class="command-text">track</span> is an optional parameter that refers to the track.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+<b>1.1</b> &ensp; Cost of forcing or queueing a Bowl:
+<div class="formula">
+<p><span>$$\text{Cost}=\text{Base Price}\cdot m_{T} \cdot m_{D} \cdot n$$</span></p>
+</div>
+where \(m_{T}\) is the Tier muliplier, \(m_{D}\) is the duration multiplier, and \(n\) is the number of Bowls in the specified Tier. \(m_{D}\) and \(n\) are only applicable if the duration is modified or a track is forced respectively.
+<br> <br>
+<b>1.2</b> &ensp; Tier multiplier:
+<div class="formula">
+    <p><span>$$m_{\text{T}}=2^{|T-6|}$$</span></p>
+    </div>
+    where \(m_{T}\) is the Tier multiplier and \(T\) is the specified Tier.
+    <br> <br>
+<b>1.3</b> &ensp; Duration multiplier:
+<div class="formula">
+    <p><span>$$m_{D}=1.2+\cfrac{|D-D_{0}|^{3.25}}{25}$$</span></p>
+</div>
+where \(m_{D}\) is the duration multiplier, \(D\) is the specified duration, and \(D_{0}\) is the default duration.
+<br> <br>
+<b>1.4</b> &ensp; Default duration:
+<div class="formula">
+    <p><span>$$D_{0}=\begin{cases} 22 & \text{for Tier 0} \\ 11 & \text{otherwise} \end{cases}$$</span></p>
+</div>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Deviation</td>
+        <td>Difference from the default.</td>
+    </tr>
+    <tr>
+        <td>Natural Start</td>
+        <td>Starting a TaylorBowl without queueing it.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
+
+</body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
+
+</html>
