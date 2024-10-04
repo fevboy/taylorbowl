@@ -352,17 +352,19 @@ id="Special_Votes#Autovote">
 
 <div
 class="content">
-    Autovote allows you to vote in bowls you are not present for based on <a class="text-actionable-link" href="https://taylorbowl.wiki/Personal_Rankings" data-tippy-content="Personal Rankings are rankings of tracks unique to each user based on their history of votes and Personal Bowls.">Personal Rankings</a>. Your vote is counted at the start of every bowl, but it will not be evident that you voted. You may use the command <span class="command-text">!autovote</span> to Autovote.
+    Autovote allows you to vote in Bowls you are not physically present for based on your <span class="text-actionable-link" href="https://taylorbowl.wiki/Personal_Rankings" data-tippy-content="Personal Rankings are rankings of tracks unique to each user based on their history of votes and Personal Bowls.">Personal Rankings</span>. Doing so consumes credits each vote based on how many consecutive Bowls you have used Autovote. You may use the command <span class="command-text">!autovote</span> to start or stop Autovoting.
     <br> <br>
-    When on Autovote, you gain an Autovote Streak, represented by a negative streak value. You can check your Autovote Streak using the command <a class="command-text">!streak</a>. For each bowl you Autovote in, you spend 4 times the number of credits you would have otherwise gained from normally voting (i.e. a -4x multiplier). If you run out of credits, your Autovote will automatically stop. Otherwise, you will have to manually vote or use the command <span class="command-text">!autovote</span> again.
+    When on Autovote, your streak becomes negative. This is just notation that describes your Autovote Streak, or how many consecutive Bowls you have Autovoted in. This value is used to determine the cost of each Autovote. It follows the same formula as for a regular streak, but the multiplier is given by \(m=-4\). If your credits go below 0, you will automatically stop Autovoting.
     <br> <br>
-    The same equations as seen in <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak#Calculations">Streak/Calculations</a> are applicable to Autovote. For Autovote, the multiplier \(m=-4\).
+    Autovotes are cast at the start of each Bowl and your Autovote Status is saved at the end of each Bowl. The last vote cast determines your Autovote Status. Autovotes are also not noticeable in Bowls as they are internally processed. However, the command <span class="command-text">!sbowl</span> includes Autovotes.
+    <br> <br>
+    If you cast a vote normally then Autovote, your vote is considered an Autovote and you will be Autovoting at the end of the Bowl. If you do not cast a vote then Autovote, you will not have voted but you will be Autovoting at the end of the Bowl. If you Autovote then cast a regular vote, your vote is considered a regular vote and you will not be Autovoting at the end of the Bowl.
+    <br> <br>
+    To ensure you are Autovoting, you must be Autovoting at the end of the Bowl. Otherwise, a Bot Restart will remove you from Autovote. 
+    <br> <br>
+    To reset your Autovote Streak to 0, you must either vote normally in a Bowl or not vote in a Bowl. Simply using <span class="command-text">!autovote</span> twice will not reset it as it is only updated at the end of every Bowl.
     <br> <br>
     You may use the command <span class="command-text">!streak</span> to see how many credits it will cost to Autovote in the next bowl. You may use the command <span class="command-text">/autovotecost</span> to estimate the cost of Autovoting for a certain number of bowls. You may use the command <span class="command-text">/autovotehours</span> to estimate how long you can Autovote for given limited credits.
-    <br> <br>
-    While you can go on Autovote at any time, your Autovote status will only update at the end of every bowl, and Autovote are only counted at the start of every bowl. The last vote you send is also the vote that is counted. The implications of these are. Thus, if you Autovote only after a bowl begins, you only start Autovote in the next bowl. If you vote, then Autovote, your vote is an Autovote and vice versa.
-    <br> <br>
-    To reset your Autovote streak, you cannot simply use the command <span class="command-text">!autovote</span> twice. You either have to not vote in a bowl, by turning off Autovote, then waiting for the next bowl to conclude, or you can normally vote in a bowl, then wait for that bowl to conclude.
 </div>
 
 <div
@@ -566,6 +568,10 @@ List of Commands
     <tr>
         <td><span class="command-text">!rankstreakrecord</span></td>
         <td>Lists up to 13 of the highest Streak Records.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!sbowl</span></td>
+        <td>Shows the current TaylorBowl. <br> Alternative forms: <span class="command-text">!showbowl</span></td>
     </tr>
     <tr>
         <td><span class="command-text">!streak user</span></td>
