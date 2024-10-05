@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>
+        Ephemera
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
+
+</head>
+
+<body>
+
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
+    <div
+    class="contents-list-title">
+        Table of Contents
+    </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics"> Mechanics <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Obtaining"> Obtaining <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Disintegration"> Disintegration <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Hypercondense"> Hypercondense <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Delegate"> Delegate <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level"> Ephemera Level <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Statistics"> Statistics <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Statistics#Probabilities"> Probabilities <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Statistics#Generation"> Generation <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Statistics#Disintegration"> Disintegration <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Statistics#Ephemera_Equilibrium"> Ephemera Equilibrium <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Statistics#Expected_Ephemera"> Expected Ephemera <br> </a>
+    </div>
+    <div>
+        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Invocations"> Invocations <br> </a>
+    </div>
+    <div>
+        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Glossary#List_of_Terms"> List of Terms <br> </a>
+    </div>
+</div>
+
+</div>
+
+<div
+class="page-title">
+Ephemera
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="page-subtitle">
+For the commands that use Ephemera, see <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocations</a>
+</div>
+
+<div
+class="content"
+id="js-page-summary">
+    Ephemera are an uncommon currency used to perform <a class="text-actionable-link" href="" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocations</a>. They do not last forever; their name is derived from the word ephemeral, which means temporary. They are sometimes referred to colloquially as “ephys”.
+</div>
+
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Mechanics">
+Mechanics
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+    Ephemera are obtained either through using <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> or a random chance from Ephemera Level or <a class="text-actionable-link" href="https://taylorbowl.wiki/Lyric_IQ" data-tippy-content="Lyric IQ is a measure of a user's activity and skill in LyricRace.">IQ</a>. While existing, they have a random chance to disappear. A user can only hold a limited number of Ephemera, dictated by their Ephemera Level.
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Obtaining">
+Obtaining
+</div>
+
+<div
+class="content">
+Each Ephemera Level grants a 0.5% chance and each IQ grants a 0.005% chance at the end of every <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowl</a> the user votes in to obtain an Ephemera, known as Spontaneous Generation. This includes <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote" data-tippy-content="Autovote allows you to vote in bowls you are not present for.">Autovotes</a>. These chances are independent, so there is a chance to obtain two Ephemera in a single Bowl.
+<br> <br>
+You may also use the command <span class="command-text">!condense</span> to convert credits into 1 Ephemera. Each user may only use <span class="command-text">!condense</span> once per Bowl, which resets at the start of a Bowl. The price is determined by a number of factors, given by:
+<div 
+class="formula">
+<p><span>$$\text{Price}=\text{max}\begin{cases} 0.00075\cdot\text{Active credits} \\ 0.015\cdot\text{Total credits} \\ 1989 \end{cases}$$</span></p>
+</div>
+This condensing limit can be superseded by the Invocation <span class="command-text">!hypercondense</span> but it has a higher cost. If a user has reached their maximum allowed Ephemera, <span class="command-text">!condense</span> will fail, and they cannot get spontaneous Ephemera.
+</div>
+
+<div
+class="subsection-title"
+id="Disintegration">
+Disintegration
+</div>
+
+<div
+class="subsection-subtitle">
+Not to be confused with Disintegrate, an <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Evocations" data-tippy-content="Evocations are extremely powerful commands only performable by using Perpetua.">Evocation</a>.
+</div>
+
+<div
+class="content">
+Every Ephemera has an independent 0.5% chance to Disintegrate at the end of every Bowl. This also means a user could lose more than one Ephemera at a time.
+<br> <br>
+If a user has used <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#Details#Reinforce" data-tippy-content="Reinforce is an Invocation that prevents a user from having their vote be influenced.">Reinforce</a>, they also have a 20% chance to have 1 Ephemera Disintegrate at the end of each Bowl. This chance is calculated as an additional chance after the standard Disintegration. Each Ephemera first has a 0.5% chance to Disintegrate. Then, if the user still has Ephemera, a single 20% chance is rolled for only one Ephemera to additionally Disintegrate. 
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Hypercondense">
+Hypercondense
+</div>
+
+<div
+class="content">
+Hypercondense is an Invocation that can be used to create more Ephemera while bypassing the usual condensing limitations of 1 per Bowl, all at a higher cost. The command <span class="command-text">!hypercondense</span> consumes all Ephemera, then creates double of what was consumed, with each new Ephemera costing 110% of the standard price.
+<br> <br>
+The cost to Hypercondense is given by the formula:
+<div class="formula">
+<p><span>$$\text{Cost}=2.2\cdot\text{Ephemera on-hand}$$</span></p>
+</div>
+Hypercondense will misfire if the resultant Ephemera would exceed the invoker's Ephemera limit, or if the invoker has insufficient credits. However, it is unclear what the effects of this specific misfire are due to the involvement of credits. 
+</div>
+
+<div
+class="subsection-title"
+id="Mechanics#Delegate">
+Delegate
+</div>
+
+<div
+class="content">
+Delegate is an Invocation that can be used to transfer Ephemera from one user to another. The command <span class="command-text">!delegate @user</span> can be used at the cost of 2 Ephemera to transfer all other Ephemera to the user specified. 
+<br> <br>
+If no user is specified, or there are no other Ephemera to delegate (i.e. the invoker only has 2 Ephemera), the command will misfire. If the Ephemera delegated would exceed the user's Ephemera limit, all excess Ephemera are lost.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Ephemera_Level">
+Ephemera Level
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+An Ephemera Level is required to hold Ephemera. Each Ephemera Level allows the user to hold two Ephemera.
+<br> <br>
+Each user starts with an Ephemera Level of 0. This can be raised by 1 using the command <span class="command-text">!exceed</span>, which consumes credits. The price starts as 0.2% of active credits, or all credits owned by active users, and increases by an additional 0.2% for every Level higher. This is given by the formula:
+<div class="formula">
+<p><span>$$\text{Price}=0.002\cdot\text{Active credits}$$</span></p>
+</div>
+Ephemera Level has a limit of 20, so users can only hold up to a maximum of 40 Ephemera at one time, and have a maximum Spontaneous Ephemera chance from Ephemera Levels of 10%.
+<br> <br>
+In the command <span class="command-text">!ephemera</span>, the description of Invocations is hidden if the command user's Ephemera Level is too low. To view any given Invocation, the user's Ephemera Level must permit them to hold as many Ephemera as is required to use the Invocation. For example, !trick requires 10 Ephemera, so a user must have Ephemera Level 5. This is given by the formula:
+<div class="formula">
+<p><span>$$\text{Minimum level}=\Biggl\lceil\cfrac{\text{Invocation cost}}{2}\Biggr\rceil$$</span></p>
+</div>
+Each additional Ephemera Level also gives a user 40 more <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk" data-tippy-content="Risk is a die-based minigame that uses credits.">Risk</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk" data-tippy-content="Anti-Risk is a die-based minigame that uses credits.">Anti-Risk</a> rolls, and 100 more Paid <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a> rolls.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Invocations">
+Invocations
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="section-subtitle">
+Main page: <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations">Invocations</a>
+</div>
+
+<div
+class="content">
+Ephemera are chiefly used to perform Invocations, which are powerful commands that can affect many aspects of TaylorBowl. Shortened descriptions are listed here, with full descriptions on their relevant pages or the Invocations page.
+<br> <br>
+<span class="command-text">!hypercondense</span>: Uses all Ephemera to condense twice as many times as Ephemera used at a higher price.
+<br> <br>
+<span class="command-text">!succumb user</span>: Uses 1 Ephemera to reduce a user's Risk and Anti-Risk counter by 80. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk">Risk & Anti-Risk</a>)
+<br> <br>
+<span class="command-text">!discount</span>: Uses 1 Ephemera to reduce the invoker's Paid Yahtzee price by 1 credit. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee">Yahtzee</a>)
+<br> <br>
+<span class="command-text">!fortify user</span>: Uses 1 Ephemera to prevent a user's vote from being influenced by Invocations for 30 minutes. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+<br> <br>
+<span class="command-text">!puppeteer choice user</span>: Uses 1 Ephemera to make a non-voting bot vote for a specified track. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+<br> <br>
+!delegate user: Uses 2 Ephemera to transfer all other Ephemera to another user. 
+<br> <br>
+<span class="command-text">!account</span>: Uses 2 Ephemera to update the Base Price once, as if a Bowl has just ended. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Base_Price">Base Price</a>)
+<br> <br>
+<span class="command-text">!kickstart user</span>: Uses 2 Ephemera to increase a user's current Streak. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak">Votes/Streak</a>) 
+<br> <br>
+<span class="command-text">!falsify choice user</span>: Uses 2 Ephemera to make a non-voter vote for a specified track in a Bowl. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>) 
+<br> <br>
+<span class="command-text">!invert</span>: Uses 3 Ephemera to switch the votes of all bots to the invoker's choice. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+<br> <br>
+<span class="command-text">!reinforce</span>: Uses 3 Ephemera to prevent the invoker's vote from being influenced by Invocations for a period of time. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+<br> <br>
+<span class="command-text">!fertilize</span>: Uses 3 Ephemera to increase the Commons Multiplier per Expected Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons">The Commons</a>)
+<br> <br>
+<span class="command-text">!decompress</span>: Uses 3 Ephemera to convert all other Ephemera into equivalent credits. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>)
+<br> <br>
+<span class="command-text">!expedite track1 track2</span>: Uses 4 Ephemera to remove the Recency value of two tracks. (Main article: Tracks)
+<br> <br>
+<span class="command-text">!expel choice</span>: Uses 5 Ephemera to remove two votes from a specified track in a Bowl. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+<br> <br>
+<span class="command-text">!enhance</span>: Uses at least 5 Ephemera to increase credits earned from Voting. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak">Streak</a>)
+<br> <br>
+<span class="command-text">!exempt user</span>: Uses 6 Ephemera to re-allow a user to harvest. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+<br> <br>
+<span class="command-text">!attune</span>: Uses 7 Ephemera to allow a user to automatically harvest upon the Warning Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+<br> <br>
+<span class="command-text">!inhibit</span>: Uses 8 Ephemera to stop the natural Blight Strength increase. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+<br> <br>
+<span class="command-text">!flourish</span>: Uses 9 Ephemera to force a Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+<br> <br>
+<span class="command-text">!trick</span>: Uses 10 Ephemera to force a fake Warning Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+<br> <br>
+<span class="command-text">!collect</span>: Uses 12 Ephemera to conduct one round of taxes. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>)
+<br> <br>
+<span class="command-text">!restart</span>: Uses 24 Ephemera to force a Bot Restart within 60 seconds. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>)
+<br> <br>
+<span class="command-text">!abandon</span>: Uses 28 Ephemera to remove all farmers' ability to harvest. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+<br> <br>
+<span class="command-text">!crystallize</span>: Uses 32 Ephemera and 16 Ephemera Levels to create a Perpetua. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a>)
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(4)">
+<img
+class="toggler-image"
+id="js-toggler-4"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Statistics">
+Statistics
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-4">
+
+<div
+class="content">
+As Spontaneous Generation and Disintegration are probabilistic, it is difficult to determine exactly how many Ephemera a user will have at a given time. However, it is possible to suggest averages.
+</div>
+
+<div
+class="subsection-title"
+id="Statistics#Probabilities">
+Probabilities
+</div>
+
+<div
+class="content">
+The probability for an Ephemera to Spontaneously Generate is given by:
+<div class="formula">
+<p><span>$$P(\text{EL generation})=0.005\cdot\text{EL} \\ P(\text{IQ generation})=0.00005\cdot\text{IQ}$$</span></p>
+</div>
+The probability for an Ephemera to Disintegrate in a given Bowl is given by:
+<div class="formula">
+<p><span>$$P(Y)=0.005$$</span></p>
+</div>
+
+</div>
+
+<div
+class="subsection-title"
+id="Statistics#Generation">
+Generation
+</div>
+
+<div
+class="content">
+Let the event an Ephemera generates be \(X\). The probability for \(X=0\), \(X=1\), and \(X=2\) is given by:
+<div class="formula">
+<p><span>$$P(X=0)=(1-0.005\cdot\text{EL})(1-0.00005\cdot\text{IQ}) \\ P(X=1)=0.005\cdot\text{EL}\cdot(1-0.00005\cdot\text{IQ})+0.00005\cdot\text{IQ}\cdot(1-0.005\cdot\text{EL}) \\ P(X=2)=0.0000005\cdot\text{EL}\cdot\text{IQ}$$</span></p>
+</div>
+The expected value of Ephemera generation is given by:
+$$E(X)=P(X=1)+2\cdot P(X=2)=0.005\cdot\text{EL}+0.00005\cdot\text{IQ}$$
+</div>
+
+<div
+class="subsection-title"
+id="Statistics#Disintegration">
+Disintegration
+</div>
+
+<div
+class="content">
+Let the event an Ephemera disintegrates be \(Y\). Since each disintegration is independent, \(Y\) can be described with a binomial distribution:
+<div class="formula">
+<p><span>$$Y\sim B(n,0.005)$$</span></p>
+</div>
+where \(n\) is the number of Ephemera on-hand.
+<br> <br>
+Thus, the probability that a certain number of Ephemera disintegrate in a given Bowl is given by:
+<div class="formula">
+<p><span>$$P(Y=r)=\binom{n}{r}\cdot 0.005^{r}\cdot 0.995^{n-r}$$</span></p>
+</div>
+where \(r\) is the number of Ephemera that disintegrate and \(n\) is the number of Ephemera on-hand.
+<br> <br>
+And the expected value of Ephemera disintegration is given by:
+<div class="formula">
+<p><span>$$E(Y)=0.005\cdot n$$</span></p>
+</div>
+The disintegration of Ephemera can be described with an exponential decay function:
+<div class="formula">
+<p><span>$$N(t)=N_{0}\cdot 0.995^{t}$$</span></p>
+</div>
+where \(N(t)\) is a function of \(t\) for number of Ephemera on-hand, \(N_{0}\) is the original number of Ephemera on-hand, and \(t\) is the number of Bowls that have elapsed. Note that this formula assumes no new Ephemera generate. 
+<br> <br>
+Assuming no new Ephemera generate, the probability of having at least a certain number of Ephemera after a certain number of Bowls is given by the formula:
+<div class="formula">
+<p><span>$$f(k,t)=\sum_{i=k}^{N_{0}} \cfrac{N_{0}!}{i!(N_{0}-i)!}\cdot 0.995^{ki}\cdot\left( 1-0.995^{k} \right)^{N_{0}-i}$$</span></p>
+</div>
+where \(k\) is the ending number of Ephemera, \(t\) is the number of Bowls that have elapsed, and \(N_{0}\) is the original number of Ephemera.
+</div>
+
+<div
+class="subsection-title"
+id="Statistics#Ephemera_Equilibrium">
+Ephemera Equilibrium
+</div>
+
+<div
+class="content">
+Equilibrium Ephemera refers to the number of Ephemera a user will have on-hand, given they vote in every bowl for a sufficiently long time.
+<br> <br>
+This value is reached when there is an equal probability for an Ephemera to Generate as there is for it to Disintegrate. When there are less Ephemera than Equilibrium, the probability for Generation is higher than that of Disintegration, and vice versa. Thus, equating the probabilities:
+<div class="formula">
+<p><span>$$0.005\cdot\text{EL}+0.00005\cdot\text{IQ}=0.005\cdot n_{eq}$$</span></p>
+</div>
+which simplifies to:
+<div class="formula">
+<p><span>$$n_{eq}=\text{EL}+0.01\cdot\text{IQ}$$</span></p>
+</div>
+where \(n_{eq}\) is your Ephemera Equilibrium.
+<br> <br>
+The value given will likely not be an integer. However, it is not too significant as your Ephemera on-hand will naturally fluctuate. 
+<br> <br>
+The average number of Bowls needed to reach your Ephemera Equilibrium can also be calculated. The average number of Bowls required to gain 1 Ephemera is given by the formula:
+<div class="formula">
+<p><span>$$t=\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot{N_{0}}}$$</span></p>
+</div>
+where \(t\) is the number of Bowls required and \(N_{0}\) is original number of Ephemera.
+<br> <br>
+In other words, to go from \(N_{0}\) to \(N_{0}+1\) Ephemera, \(t\) Bowls are required. Thus, the number of Bowls required to go from 0 to your Ephemera Equilibrium is given by taking the summation from 0 to your Ephemera Equilibrium of the above:
+<div class="formula">
+    <p><span>$$t_{\text{total}}=\sum_{i=0}^{N_{eq}}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
+</div>
+where \(N_{eq}\) is your Ephemera Equilibrium.
+<br> <br>
+This can be generalised to start from and end on any number of Ephemera as such:
+<div class="formula">
+    <p><span>$$t_{\text{total}}=\sum_{i=N_{0}}^{N}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
+</div>
+where \(N_{0}\) is your original Ephemera on-hand and \(N\) is your desired Ephemera on-hand.
+<br> <br>
+You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/ephemeraequilibrium</span> to determine your Ephemera Equilibrium, and the average number of Bowls required to reach a number of Ephemera below or equal to your Equilibrium.
+</div>
+
+<div
+class="subsection-title"
+id="Statistics#Expected_Ephemera">
+Expected Ephemera
+</div>
+
+<div
+class="content">
+Expected Ephemera refers to the average number of Ephemera a user will Spontaneously receive given a certain number of Bowls voted in consecutively.
+<br> <br>
+The formula derived earlier for the number of Bowls required to go from one number of Ephemera to another can be repurposed for this calculation, but to solve it is extremely difficult:
+<div class="formula">
+    <p><span>$$t=\sum_{i=N_{0}}^{N}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
+</div>
+where \(t\) is the number of Bowls you can vote in consecutively and \(N\) is the number of Ephemera that you will end with.
+<br> <br>
+The summation function cannot be simplified to solve for \(N\). It is far easier to solve it algorithmically, or by trial and error. Simply use <span class="command-text">/ephemeraequilibrium</span> multiple times, modifying your desired number of Ephemera, and finding the largest value below the number of Bowls you wish to use.
+<br> <br>
+You may use the EsteBot command <span class="command-text">/ephemeraexpected</span> to estimate the average number of Ephemera that will Spontaneously Generate. However, it does not take into account Disintegration, and is thus more accurate when the number of Ephemera is small.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(6)">
+<img
+class="toggler-image"
+id="js-toggler-6"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-6">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!condense</span></td>
+        <td>Creates an Ephemera using credits.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!delegate</span></td>
+        <td>Transfers Ephemera to another user.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!ephemera</span></td>
+        <td>Displays information about Ephemera, including current price to condense for a user and descriptions of Invocations when buttons are pressed.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">/ephemeraequilibrium</span></td>
+        <td>Calculates your Ephemera Equilibrium and the average number of Bowls to go from one number of Ephemera to another.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">/ephemeraexpected</span></td>
+        <td>Estimates the number of Ephemera that will Spontaneously Generate in a given number of Bowls.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!ephemeralevel</span></td>
+        <td>Displays information about your Ephemera Level and cost to exceed again.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!exceed</span></td>
+        <td>Increases your Ephemera Level by 1.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!hypercondense</span></td>
+        <td>Doubles your Ephemera on-hand for a higher cost than condensing.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+<b>1.1</b> &ensp; Price of condensing:
+<div class="formula">
+<p><span>$$\text{Price}=\text{max}\begin{cases} 0.00075\cdot\text{Active credits} \\ 0.015\cdot\text{Total credits} \\ 1989 \end{cases}$$</span></p>
+</div>
+<b>1.2</b> Price of Hypercondensing:
+<div class="formula">
+<p><span>$$\text{Cost}=2.2\cdot\text{Ephemera on-hand}$$</span></p>
+</div>
+<b>2</b> &ensp; Price of exceeding:
+<div class="formula">
+<p><span>$$\text{Price}=0.002\cdot\text{Active credits}$$</span></p>
+</div>
+<b>3</b> &ensp; Minimum EL to see an Invocation:
+<div class="formula">
+<p><span>$$\text{Minimum level}=\Biggl\lceil\cfrac{\text{Invocation cost}}{2}\Biggr\rceil$$</span></p>
+</div>
+<b>4.1</b> &ensp; Probabilities for Ephemera Generation:
+<div class="formula">
+<p><span>$$P(X=0)=(1-0.005\cdot\text{EL})(1-0.00005\cdot\text{IQ}) \\ P(X=1)=0.005\cdot\text{EL}\cdot(1-0.00005\cdot\text{IQ})+0.00005\cdot\text{IQ}\cdot(1-0.005\cdot\text{EL}) \\ P(X=2)=0.0000005\cdot\text{EL}\cdot\text{IQ}$$</span></p>
+</div>
+<b>4.2</b> &ensp; Expected value for Ephemera Generation:
+<div class="formula">
+<p><span>$$E(X)=0.005\cdot\text{EL}+0.00005\cdot\text{IQ}$$</span></p>
+</div>
+<b>5.1</b> &ensp; Disintegration distribution:
+<div class="formula">
+<p><span>$$Y\sim B(n,0.005)$$</span></p>
+</div>
+<b>5.2</b> &ensp; Probability for Ephemera disintegration:
+<div class="formula">
+<p><span>$$P(Y=r)=\binom{n}{r}\cdot 0.005^{r}\cdot 0.995^{n-r}$$</span></p>
+</div>
+<b>5.3</b> &ensp; Expected value for Ephemera disintegration:
+<div class="formula">
+<p><span>$$E(Y)=0.005\cdot n$$</span></p>
+</div>
+<b>5.4</b> &ensp; Ephemera disintegration over time:
+<div class="formula">
+<p><span>$$N(t)=N_{0}\cdot 0.995^{t}$$</span></p>
+</div>
+<b>5.5</b> &ensp; Probability of having at least a certain number of Ephemera after a certain number of Bowls:
+<div class="formula">
+<p><span>$$f(k,t)=\sum_{i=k}^{N_{0}} \cfrac{N_{0}!}{i!(N_{0}-i)!}\cdot 0.995^{ki}\cdot\left( 1-0.995^{k} \right)^{N_{0}-i}$$</span></p>
+</div>
+<b>6.1</b> &ensp; Ephemera Equilibrium:
+<div class="formula">
+<p><span>$$n_{eq}=\text{EL}+0.01\cdot\text{IQ}$$</span></p>
+</div>
+<b>6.2</b> &ensp; Average number of Bowls to reach Ephemera Equilibrium from 0:
+<div class="formula">
+<p><span>$$t_{\text{total}}=\sum_{i=0}^{N_{eq}}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
+</div>
+<b>6.3</b> &ensp; Average number of Bowls to go from a certain number of Ephemera to another:
+<div class="formula">
+<p><span>$$t_{\text{total}}=\sum_{i=N_{0}}^{N}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
+</div>
+
+</div>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Binomial distribution</td>
+        <td>A distribution with multiple repeated trials that have two outcomes, where each trial is independent and has equal probabilities of success and failure.</td>
+    </tr>
+    <tr>
+        <td>Disintegration</td>
+        <td>The random disappearance of Ephemera at the end of a Bowl.</td>
+    </tr>
+    <tr>
+        <td>Ephemera Equilibrium</td>
+        <td>The average number of Ephemera on-hand given sufficient consecutive votes.</td>
+    </tr>
+    <tr>
+        <td>Ephy</td>
+        <td>Colloquial name for Ephemera.</td>
+    </tr>
+    <tr>
+        <td>Independent (events)</td>
+        <td>Events that do not affect the result of each other.</td>
+    </tr>
+    <tr>
+        <td>Spontaneous Generation</td>
+        <td>The random appearance of Ephemera after voting in a Bowl.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
+
+</body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
+
+</html>
