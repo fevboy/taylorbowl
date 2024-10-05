@@ -12,7 +12,7 @@ match();
 function match() {
     const matchParameter = document.getElementById('js-search').value;
     console.log(pageTitle.length);
-    for (var i = 0; i < pageTitle.length; i++) {
+    for (let i = 0; i < pageTitle.length; i++) {
         console.log(i);
         const matchTitle = pageTitle[i].innerHTML.replace(/[() ]/g,'').toUpperCase();
         const matchDescription = pageDescription[i].innerHTML.replace(/[() ]/g,'').toUpperCase();
@@ -31,7 +31,7 @@ function match() {
 // To toggle between light and dark mode.
 
 // Creates variable "displayTheme" that stores the current mode.
-var displayTheme;
+let displayTheme;
 // Retrieves previously set mode.
 displayTheme = localStorage.getItem('displayTheme');
 // If no theme has been set, defaults to dark.
@@ -77,11 +77,6 @@ function executeLightMode() {
     // Sets the menu logo to light mode variant.
     document.getElementById("js-menu-logo").src = "Logos/Menu Logo Light.svg";
     document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Light.svg";
-    // Sets toggler images to light mode variant.
-    var togglerImages = document.getElementsByClassName("toggler-image");
-    for (var i = 0; i < togglerImages.length; i+= 1) {
-        togglerImages[i].src = "Logos/Mobile Toggler Light.svg";
-    }
     // Sets light mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'light');
     // Sets light mode as the current mode in JS.
@@ -112,10 +107,6 @@ function executeDarkMode() {
     document.getElementById("js-menu-logo").src = "Logos/Menu Logo Dark.svg";
     document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Dark.svg";
     // Sets toggler images to dark mode variant.
-    var togglerImages = document.getElementsByClassName("toggler-image");
-    for (var i = 0; i < togglerImages.length; i+= 1) {
-        togglerImages[i].src = "Logos/Mobile Toggler Dark.svg";
-    }
     // Sets dark mode as the current mode in local storage, for reference when switching pages.
     localStorage.setItem('displayTheme', 'dark');
     // Sets dark mode as the current mode in JS.
