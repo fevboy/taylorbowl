@@ -538,11 +538,11 @@ Equilibrium Ephemera refers to the number of Ephemera a user will have on-hand, 
 <br> <br>
 This value is reached when there is an equal probability for an Ephemera to Generate as there is for it to Disintegrate. When there are less Ephemera than Equilibrium, the probability for Generation is higher than that of Disintegration, and vice versa. Thus, equating the probabilities:
 <div class="formula">
-<p><span>$$0.005\cdot\text{EL}+0.00005\cdot\text{IQ}=0.005\cdot n_{eq}$$</span></p>
+<p><span>$$0.005\cdot\text{EL}+0.00005\cdot\text{IQ}=0.005\cdot N_{eq}$$</span></p>
 </div>
 which simplifies to:
 <div class="formula">
-<p><span>$$n_{eq}=\text{EL}+0.01\cdot\text{IQ}$$</span></p>
+<p><span>$$N_{eq}=\text{EL}+0.01\cdot\text{IQ}$$</span></p>
 </div>
 where \(n_{eq}\) is your Ephemera Equilibrium.
 <br> <br>
@@ -688,42 +688,61 @@ class="content">
 <div class="formula">
 <p><span>$$P(X=0)=(1-0.005\cdot\text{EL})(1-0.00005\cdot\text{IQ}) \\ P(X=1)=0.005\cdot\text{EL}\cdot(1-0.00005\cdot\text{IQ})+0.00005\cdot\text{IQ}\cdot(1-0.005\cdot\text{EL}) \\ P(X=2)=0.0000005\cdot\text{EL}\cdot\text{IQ}$$</span></p>
 </div>
+where \(X\) is the event an Ephemera generates.
+<br> <br>
 <b>4.2</b> &ensp; Expected value for Ephemera Generation:
 <div class="formula">
 <p><span>$$E(X)=0.005\cdot\text{EL}+0.00005\cdot\text{IQ}$$</span></p>
 </div>
+where \(X\) is the event an Ephemera generates.
+<br> <br>
 <b>5.1</b> &ensp; Disintegration distribution:
 <div class="formula">
 <p><span>$$Y\sim B(n,0.005)$$</span></p>
 </div>
+where \(Y\) is the event an Ephemera disintegrates and \(n\) is the number of Ephemera on-hand.
+<br> <br>
 <b>5.2</b> &ensp; Probability for Ephemera disintegration:
 <div class="formula">
 <p><span>$$P(Y=r)=\binom{n}{r}\cdot 0.005^{r}\cdot 0.995^{n-r}$$</span></p>
 </div>
+where \(Y\) is the event an Ephemera disintegrates, \(r\) is the number of Ephemera that disintegrate, and \(n\) is the number of Ephemera on-hand.
+<br> <br>
 <b>5.3</b> &ensp; Expected value for Ephemera disintegration:
 <div class="formula">
 <p><span>$$E(Y)=0.005\cdot n$$</span></p>
 </div>
+where \(Y\) is the event an Ephemera disintegrates and \(n\) is the number of Ephemera on-hand.
+<br> <br>
 <b>5.4</b> &ensp; Ephemera disintegration over time:
 <div class="formula">
 <p><span>$$N(t)=N_{0}\cdot 0.995^{t}$$</span></p>
 </div>
+where \(N(t)\) is the number of Ephemera at the end, \(N_{0}\) is the starting number of Ephemera, and \(t\) is the number of Bowls.
+<br> <br>
 <b>5.5</b> &ensp; Probability of having at least a certain number of Ephemera after a certain number of Bowls:
 <div class="formula">
 <p><span>$$f(k,t)=\sum_{i=k}^{N_{0}} \cfrac{N_{0}!}{i!(N_{0}-i)!}\cdot 0.995^{ki}\cdot\left( 1-0.995^{k} \right)^{N_{0}-i}$$</span></p>
 </div>
+where \(f(k,t)\) is the probability, \(k\) is the desired number of Ephemera, \(t\) is the number of Bowls, and \(N_{0}\) is the starting number of Ephemera.
+<br> <br>
 <b>6.1</b> &ensp; Ephemera Equilibrium:
 <div class="formula">
-<p><span>$$n_{eq}=\text{EL}+0.01\cdot\text{IQ}$$</span></p>
+<p><span>$$N_{eq}=\text{EL}+0.01\cdot\text{IQ}$$</span></p>
 </div>
+where \(N_{eq}\) is the Ephemera Equilibrium.
+<br> <br>
 <b>6.2</b> &ensp; Average number of Bowls to reach Ephemera Equilibrium from 0:
 <div class="formula">
 <p><span>$$t_{\text{total}}=\sum_{i=0}^{N_{eq}}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
 </div>
+where \(t_{total}\) is the number of Bowls and \(N_{eq}\) is the Ephemera Equilibrium.
+<br> <br>
 <b>6.3</b> &ensp; Average number of Bowls to go from a certain number of Ephemera to another:
 <div class="formula">
 <p><span>$$t_{\text{total}}=\sum_{i=N_{0}}^{N}\cfrac{1}{0.005\cdot\text{EL}+0.00005\cdot\text{IQ}-0.005\cdot i}$$</span></p>
 </div>
+where \(t_{total}\) is the number of Bowls, \(N_{0}\) is the starting Ephemera on-hand, and \(N\) is the desired number of Ephemera.
 
 </div>
 
