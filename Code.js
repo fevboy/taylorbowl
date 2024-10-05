@@ -49,8 +49,8 @@ function executeLightMode() {
     document.getElementById("js-menu-logo").src = "Logos/Menu Logo Light.svg";
     document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Light.svg";
     // Sets toggler images to light mode variant.
-    var togglerImages = document.getElementsByClassName("toggler-image");
-    for (var i = 0; i < togglerImages.length; i+= 1) {
+    let togglerImages = document.getElementsByClassName("toggler-image");
+    for (let i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Light.svg";
     }
     // Sets light mode as the current mode in local storage, for reference when switching pages.
@@ -83,8 +83,8 @@ function executeDarkMode() {
     document.getElementById("js-menu-logo").src = "Logos/Menu Logo Dark.svg";
     document.getElementById("js-close-menu-logo").src = "Logos/Menu Logo Dark.svg";
     // Sets toggler images to dark mode variant.
-    var togglerImages = document.getElementsByClassName("toggler-image");
-    for (var i = 0; i < togglerImages.length; i+= 1) {
+    let togglerImages = document.getElementsByClassName("toggler-image");
+    for (let i = 0; i < togglerImages.length; i+= 1) {
         togglerImages[i].src = "Logos/Mobile Toggler Dark.svg";
     }
     // Sets dark mode as the current mode in local storage, for reference when switching pages.
