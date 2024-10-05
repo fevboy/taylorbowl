@@ -1,3 +1,5 @@
+"use strict";
+
 // To toggle between light and dark mode.
 
 // Creates variable "displayTheme" that stores the current mode.
@@ -62,7 +64,7 @@ function executeDarkMode() {
     // Sets the colour themes for background, accent, visual, and texts to dark mode.
     document.documentElement.style.setProperty('--bg-color', '#1C1E1C');
     document.documentElement.style.setProperty('--accent-color', '#FFFFFF');
-    document.documentElement.style.setProperty('--visual-color', '#000000');
+    document.documentElement.style.setProperty('--visual-color', '#111211');
     document.documentElement.style.setProperty('--text-color', '#FFFFFF');
     document.documentElement.style.setProperty('--subtext-color', '#9F9F9F');
     document.documentElement.style.setProperty('--link-color', '#A59DF1');
