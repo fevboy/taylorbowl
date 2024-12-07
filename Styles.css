@@ -394,31 +394,61 @@ ol {
 
 .visual {
     width: 24rem;
+    display: block;
     max-width: 100%;
-    float: right;
-    margin-top: 0.5rem;
-    margin-left: 5%;
-    margin-bottom: 2rem;
+    margin: 1.3rem auto 1.3rem auto;
 }
-.image {
+.visual-image {
     width: 100%;
     border-style: solid;
-    border-width: 0.8rem;
-    border-color: var();
+    border-width: 0.5rem;
+    border-color: var(--visual-color);
     box-sizing: border-box;
     display: inline-block;
 }
-.caption {
+.visual-caption {
     width: 100%;
-    background-color: white;
+    background-color: var(--visual-color);
     margin-top: -0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
     border-style: solid;
     box-sizing: border-box;
-    border-color: white;
+    border-color: var(--visual-color);
     border-width: 0.1rem;
-    font-size: 0.81rem;
     text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+@media (min-width: 666px) {
+    .visual {
+        width: 24rem;
+        max-width: 100%;
+        float: right;
+        margin-top: 0.5rem;
+        margin-left: 5%;
+        margin-bottom: 1.3rem;
+    }
+    .visual-image {
+        width: 100%;
+        border-style: solid;
+        border-width: 0.5rem;
+        border-color: var(--visual-color);
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    .visual-caption {
+        width: 100%;
+        background-color: var(--visual-color);
+        margin-top: -0.5rem;
+        padding: 0 0.5rem 0.5rem 0.5rem;
+        border-style: solid;
+        box-sizing: border-box;
+        border-color: var(--visual-color);
+        border-width: 0.1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
 }
 
 .toggler {
