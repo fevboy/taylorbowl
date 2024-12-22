@@ -147,10 +147,7 @@ class="contents-list">
         &emsp; &ensp; 1.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Disintegration"> Disintegration <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Hypercondense"> Hypercondense <br> </a>
-    </div>
-    <div>
-        &emsp; &ensp; 1.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Delegate"> Delegate <br> </a>
+        &emsp; &ensp; 1.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Delegate"> Delegate <br> </a>
     </div>
     <div>
         2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level"> Ephemera Level <br> </a>
@@ -247,12 +244,22 @@ Obtaining
 class="content">
 Each Ephemera Level grants a 0.5% chance and each IQ grants a 0.005% chance at the end of every <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowl</a> the user votes in to obtain an Ephemera, known as Spontaneous Generation. This includes <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote" data-tippy-content="Autovote allows you to vote in bowls you are not present for.">Autovotes</a>. These chances are independent, so there is a chance to obtain two Ephemera in a single Bowl.
 <br> <br>
-You may also use the command <span class="command-text">!condense</span> to convert credits into 1 Ephemera. Each user may only use <span class="command-text">!condense</span> once per Bowl, which resets at the start of a Bowl. The price is determined by a number of factors, given by:
+You may also use the command <span class="command-text">!condense</span> to convert credits into 1 Ephemera. The starting price is determined by a number of factors, given by the formula:
 <div 
 class="formula">
-<p><span>$$\text{Price}=\text{max}\begin{cases} 0.00075\cdot\text{Active credits} \\ 0.015\cdot\text{Total credits} \\ 1989 \end{cases}$$</span></p>
+<p><span>$$\text{Base price}=\text{max}\begin{cases} 0.0007\cdot\text{Active credits} \\ 0.015\cdot\text{Total credits} \\ 1989 \end{cases}$$</span></p>
 </div>
-This condensing limit can be superseded by the Invocation <span class="command-text">!hypercondense</span> but it has a higher cost. If a user has reached their maximum allowed Ephemera, <span class="command-text">!condense</span> will fail, and they cannot get spontaneous Ephemera.
+If more than 1 condense is performed in the same Bowl, the price will increase by 5% multiplicatively for each previous condense, given by the formula:
+<div class="formula">
+<p><span>$$\text{Price}=\text{Base price}\cdot 1.05^{n}$$</span></p>
+</div>
+where \(n\) is the number of previous condenses in the same Bowl.
+<br> <br>
+The total price to condense multiple Ephemera in the same Bowl is given by the formula:
+<div class="formula">
+<p><span>$$\text{Total price}=\text{Base price}\cdot\sum_{i=1}^{n} 1.05^{i-1}=20\cdot\text{Base price}\cdot\left(1.05^{n}-1\right)$$</span></p>
+</div>
+You may also obtain Ephemera through <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Dojo" data-tippy-content="The Dojo is a collectible card trading game using Taylor Swift songs to level up and fight with.">The Dojo</a>. Upon defeating an Album, you have a 3% chance to obtain an Ephemera. If the Album is defeated at levels that are a multiple of 7 (e.g. 7, 14, 21), the chance is 100%.
 </div>
 
 <div
@@ -275,32 +282,15 @@ If a user has used <a class="text-actionable-link" href="https://taylorbowl.wiki
 
 <div
 class="subsection-title"
-id="Mechanics#Hypercondense">
-Hypercondense
-</div>
-
-<div
-class="content">
-Hypercondense is an Invocation that can be used to create more Ephemera while bypassing the usual condensing limitations of 1 per Bowl, all at a higher cost. The command <span class="command-text">!hypercondense</span> consumes all Ephemera, then creates double of what was consumed, with each new Ephemera costing 110% of the standard price.
-<br> <br>
-The cost to Hypercondense is given by the formula:
-<div class="formula">
-<p><span>$$\text{Cost}=2.2\cdot\text{Ephemera on-hand}$$</span></p>
-</div>
-Hypercondense will misfire if the resultant Ephemera would exceed the invoker's Ephemera limit, or if the invoker has insufficient credits. However, it is unclear what the effects of this specific misfire are due to the involvement of credits. 
-</div>
-
-<div
-class="subsection-title"
 id="Mechanics#Delegate">
 Delegate
 </div>
 
 <div
 class="content">
-Delegate is an Invocation that can be used to transfer Ephemera from one user to another. The command <span class="command-text">!delegate @user</span> can be used at the cost of 2 Ephemera to transfer all other Ephemera to the user specified. 
+Delegate is used to transfer Ephemera from one user to another. The command <span class="command-text">!delegate user</span> consumes 2 Ephemera to transfer all other Ephemera to the target. If the Ephemera delegated would exceed the target's Ephemera limit, all excess Ephemera are lost.
 <br> <br>
-If no user is specified, or there are no other Ephemera to delegate (i.e. the invoker only has 2 Ephemera), the command will misfire. If the Ephemera delegated would exceed the user's Ephemera limit, all excess Ephemera are lost.
+Delegate will fail if no target is specified. Delegate will misfire if the invoker only has 2 Ephemera. 
 </div>
 
 </div>
@@ -375,54 +365,76 @@ Main page: <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocat
 class="content">
 Ephemera are chiefly used to perform Invocations, which are powerful commands that can affect many aspects of TaylorBowl. Shortened descriptions are listed here, with full descriptions on their relevant pages or the Invocations page.
 <br> <br>
-<span class="command-text">!hypercondense</span>: Uses all Ephemera to condense twice as many times as Ephemera used at a higher price.
+
+<span class="command-text">!decompress</span>: Uses 1 Ephemera to convert 1 other Ephemera into a percentage of equivalent credits. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Invocations_&_Evocations">Credits</a>)
 <br> <br>
-<span class="command-text">!succumb user</span>: Uses 1 Ephemera to reduce a user's Risk and Anti-Risk counter by 80. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk">Risk & Anti-Risk</a>)
+
+<span class="command-text">!succumb user</span>: Uses 1 Ephemera to reduce a user's Risk and Anti-Risk counter by 80. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Risk_&_Anti-Risk#Invocations_&_Evocations">Risk & Anti-Risk</a>)
 <br> <br>
-<span class="command-text">!discount</span>: Uses 1 Ephemera to reduce the invoker's Paid Yahtzee price by 1 credit. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee">Yahtzee</a>)
+
+<span class="command-text">!discount</span>: Uses up to 8 Ephemera to reduce the invoker's Paid Yahtzee price by an equivalent number of credits. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Invocations_&_Evocations">Yahtzee</a>)
 <br> <br>
-<span class="command-text">!fortify user</span>: Uses 1 Ephemera to prevent a user's vote from being influenced by Invocations for 30 minutes. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+
+<span class="command-text">!fortify user</span>: Uses 1 Ephemera to prevent a user's vote from being influenced by Invocations for 30 minutes. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes</a>)
 <br> <br>
-<span class="command-text">!puppeteer choice user</span>: Uses 1 Ephemera to make a non-voting bot vote for a specified track. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+
+<span class="command-text">!puppeteer choice user</span>: Uses 1 Ephemera to make a non-voting bot vote for a specified track. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes</a>)
 <br> <br>
-<span class="command-text">!ward</span>: Uses 1 Ephemera to increase the Maximum Strength of the Blight by 120. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Maximum_Strength">Farm</a>)
+
+<span class="command-text">!ward</span>: Uses 1 Ephemera to increase the Maximum Strength of the Blight by 120. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Invocations_&_Evocations">Farm</a>)
 <br> <br>
+
 <span class="command-text">!delegate user</span>: Uses 2 Ephemera to transfer all other Ephemera to another user. 
 <br> <br>
-<span class="command-text">!kickstart user</span>: Uses 2 Ephemera to increase a user's current Streak. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak">Votes/Streak</a>) 
+
+<span class="command-text">!kickstart user</span>: Uses 2 Ephemera to increase a user's current Streak. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes/Streak</a>) 
 <br> <br>
-<span class="command-text">!falsify choice user</span>: Uses 2 Ephemera to make a non-voter vote for a specified track in a Bowl. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>) 
+
+<span class="command-text">!falsify choice user</span>: Uses 2 Ephemera to make a non-voter vote for a specified track in a Bowl. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes</a>) 
 <br> <br>
-<span class="command-text">!invert</span>: Uses 3 Ephemera to switch the votes of all bots to the invoker's choice. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+
+<span class="command-text">!inhibit</span>: Uses 2 Ephemera to stop the natural Blight Strength increase. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Farm</a>)
 <br> <br>
-<span class="command-text">!reinforce</span>: Uses 3 Ephemera to prevent the invoker's vote from being influenced by Invocations for a period of time. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+
+<span class="command-text">!invert</span>: Uses 3 Ephemera to switch the votes of all bots to the invoker's choice. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes</a>)
 <br> <br>
-<span class="command-text">!fertilize</span>: Uses 3 Ephemera to increase the Commons Multiplier per Expected Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons">The Commons</a>)
+
+<span class="command-text">!reinforce</span>: Uses 3 Ephemera to prevent the invoker's vote from being influenced by Invocations for a period of time. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes</a>)
 <br> <br>
-<span class="command-text">!decompress</span>: Uses 3 Ephemera to convert all other Ephemera into equivalent credits. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>)
+
+<span class="command-text">!fertilize</span>: Uses 3 Ephemera to increase the Commons Multiplier per Expected Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Invocations_&_Evocations">The Commons</a>)
 <br> <br>
-<span class="command-text">!expedite track1 track2</span>: Uses 4 Ephemera to remove the Recency value of two tracks. (Main article: Tracks)
+
+<span class="command-text">!expedite track1 track2</span>: Uses 4 Ephemera to remove the Recency value of two tracks. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Invocations_&_Evocations">Tracks</a>)
 <br> <br>
-<span class="command-text">!expel choice</span>: Uses 5 Ephemera to remove two votes from a specified track in a Bowl. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes">Votes</a>)
+
+<span class="command-text">!expel choice</span>: Uses 5 Ephemera to remove two votes from a specified track in a Bowl. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Votes</a>)
 <br> <br>
-<span class="command-text">!enhance</span>: Uses at least 5 Ephemera to increase credits earned from Voting. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak">Streak</a>)
+
+<span class="command-text">!enhance</span>: Uses at least 5 Ephemera to increase credits earned from Voting. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations">Streak</a>)
 <br> <br>
-<span class="command-text">!exempt user</span>: Uses 6 Ephemera to re-allow a user to harvest. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+
+<span class="command-text">!exempt user</span>: Uses 6 Ephemera to re-allow a user to harvest. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Farm</a>)
 <br> <br>
-<span class="command-text">!attune</span>: Uses 7 Ephemera to allow a user to automatically harvest upon the Warning Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+
+<span class="command-text">!attune</span>: Uses 7 Ephemera to allow a user to automatically harvest upon the Warning Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Farm</a>)
 <br> <br>
-<span class="command-text">!inhibit</span>: Uses 8 Ephemera to stop the natural Blight Strength increase. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+
+<span class="command-text">!flourish</span>: Uses 9 Ephemera to force a Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Farm</a>)
 <br> <br>
-<span class="command-text">!flourish</span>: Uses 9 Ephemera to force a Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+
+<span class="command-text">!trick</span>: Uses 10 Ephemera to force a fake Warning Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Farm</a>)
 <br> <br>
-<span class="command-text">!trick</span>: Uses 10 Ephemera to force a fake Warning Bloom. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
+
+<span class="command-text">!collect</span>: Uses 12 Ephemera to conduct one round of taxes. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Invocations_&_Evocations">Credits</a>)
 <br> <br>
-<span class="command-text">!collect</span>: Uses 12 Ephemera to conduct one round of taxes. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits">Credits</a>)
+
+<span class="command-text">!restart</span>: Uses 18 Ephemera to force a Bot Restart within 60 seconds. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle#Invocations_&_Evocations">Bot Cycle</a>)
 <br> <br>
-<span class="command-text">!restart</span>: Uses 24 Ephemera to force a Bot Restart within 60 seconds. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle">Bot Cycle</a>)
+
+<span class="command-text">!abandon</span>: Uses 24 Ephemera to remove all farmers' ability to harvest. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Invocations_&_Evocations">Farm</a>)
 <br> <br>
-<span class="command-text">!abandon</span>: Uses 28 Ephemera to remove all farmers' ability to harvest. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm">Farm</a>)
-<br> <br>
+
 <span class="command-text">!crystallize</span>: Uses 32 Ephemera and 16 Ephemera Levels to create a Perpetua. (Main article: <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua">Perpetua</a>)
 </div>
 
@@ -468,7 +480,7 @@ The probability for an Ephemera to Spontaneously Generate is given by:
 </div>
 The probability for an Ephemera to Disintegrate in a given Bowl is given by:
 <div class="formula">
-<p><span>$$P(Y)=0.005$$</span></p>
+<p><span>$$P(\text{Disintegrates})=0.005$$</span></p>
 </div>
 
 </div>
