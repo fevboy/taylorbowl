@@ -155,30 +155,32 @@ class="contents-list">
     <div>
         4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Mechanics"> Invocations & Evocations <br> </a>
     </div>
-    <div
-    class="toggle-content"
-    id="js-toggle-contents-page">
     <div>
-        &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Puppeteer"> Puppeteer <br> </a>
+        &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Fortify"> Fortify <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Fortify"> Fortify <br> </a>
+        &emsp; &ensp; 4.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Puppeteer"> Puppeteer <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Falsify"> Falsify <br> </a>
+        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Kickstart"> Kickstart <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Invert"> Invert <br> </a>
+        &emsp; &ensp; 4.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Falsify"> Falsify <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Reinforce"> Reinforce <br> </a>
+        &emsp; &ensp; 4.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Invert"> Invert <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Expel"> Expel <br> </a>
+        &emsp; &ensp; 4.6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Reinforce"> Reinforce <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Convert"> Convert <br> </a>
+        &emsp; &ensp; 4.7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Expel"> Expel <br> </a>
     </div>
+    <div>
+        &emsp; &ensp; 4.8 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Expel"> Enhance <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.9 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Convert"> Convert <br> </a>
     </div>
     <div>
         5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Glossary"> Glossary <br> </a>
@@ -410,20 +412,7 @@ id="js-toggle-content-4">
 
 <div
 class="content">
-There are <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands performed using Ephemera.">Invocations</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Evocations" data-tippy-content="Evocations are extremely powerful commands performed using Perpetua.">Evocations</a> that can influence users' votes or protect them from being influenced.
-</div>
-
-<div
-class="subsection-title"
-id="Invocations_&_Evocations#Puppeteer">
-Puppeteer
-</div>
-
-<div
-class="content">
-Puppeteer is an Invocation used to make a non-voting bot vote in a Bowl. The command !puppeteer choice user consumes 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to make one of two special bots vote for the specified choice. These bots are known as “mother” and “father'; these names are used in the user parameter.
-<br> <br>
-Puppeteer will misfire if the specified bot has already voted in the current Bowl.
+There are <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands performed using Ephemera.">Invocations</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Evocations" data-tippy-content="Evocations are extremely powerful commands performed using Perpetua.">Evocations</a> that can influence users' votes or protect them from being influenced, or to .
 </div>
 
 <div
@@ -434,15 +423,41 @@ Fortify
 
 <div
 class="content">
-Fortify is an Invocation used to protect a user from having their vote be influenced. The command <span class="command-text">!fortify user</span> consumes 1 Ephemera to prevents the target from being Falsified or Expelled for 30 minutes.
+Fortify is used to protect a user from having their <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes" data-tippy-content="Votes are what decide the winner and loser of a TaylorBowl.">vote</a> be influenced. The command <span class="command-text">!fortify user</span> consumes 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to prevents the target from being Falsified or Expelled for 30 minutes, or until the next Bot Restart, whichever occurs sooner. If Fortify is used on an already-Fortified user, it resets the timer to 30 minutes. It will not extend the user's Fortification by 30 minutes. Fortify will not cause attempted Falsifys or Expels to misfire, instead causing them to fail and consume no Ephemera. 
 <br> <br>
-If Fortify is used on an already-Fortified user, it resets the timer to 30 minutes. It will not extend the user's Fortification by 30 minutes.
+To maximise the effects of Fortify, it is recommended to Fortify near the end of a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowl</a> and confirm you have voted for your preferred track using the command <span class="command-text">/didivote</span>. This may allow Fortify to last an additional Bowl given the right circumstances.
 <br> <br>
-Fortify will not cause an attempted Falsify or Expel to misfire. They will instead fail. 
+Fortify will misfire if the target is an inactive user. Fortify will misfire if used on a puppet.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Puppeteer">
+Puppeteer
+</div>
+
+<div
+class="content">
+Puppeteer is used to make a non-voting bot vote in a Bowl. The command <span class="command-text">!puppeteer choice user</span> consumes 1 Ephemera to make one of two special bots vote for the specified choice. These bots are known as "mother" and "father"; these names are used in the user parameter. Example: <span class="command-text">!puppeteer b mother</span>
 <br> <br>
-To maximise the effects of Fortify, it is recommended to Fortify near the end of a Bowl and confirm you have voted for your preferred track. This may allow Fortify to last an additional Bowl given the right circumstances.
+Puppeteer will misfire if the specified puppet has already voted in the current Bowl.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Kickstart">
+Kickstart
+</div>
+
+<div
+class="content">
+Kickstart is used to increase a user's <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Streak" data-tippy-content="Streaks record the number of consecutive Bowls a user has voted in.">Streak</a>. The command <span class="command-text">!kickstart user</span> consumes 2 Ephemera to increase the target's current Streak by 5% of the target or invoker's Streak Record, whichever is lower. The increase is always rounded down. The effect of Kickstart is limited to a maximum of 12. The formula for the increase in Streak granted by Kickstart is given by:
+<div class="formula">
+<p><span>$$\text{Increase}=\text{max}\begin{cases} 0.05\cdot\text{Invoker's Streak Record} \\ 0.05\cdot\text{Target's Streak Record} \\ 12 \end{cases}$$</span></p>
+</div>
+Kickstart will misfire if used when either the target or invoker has a Streak Record of 19 or less. Kickstart will misfire if its success would increase the target's current Streak past their Streak Record.
 <br> <br>
-Fortify will misfire if used on an inactive user.
+You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/kickstart</span> to determine your Streak increase from Kickstart based on your Streak Record.
 </div>
 
 <div
@@ -453,7 +468,9 @@ Falsify
 
 <div
 class="content">
-Falsify is an Invocation used to make a non-voter vote in a Bowl. The command <span class="command-text">!falsify choice user</span> consumes 2 Ephemera to make the target vote for the specified choice.
+Falsify is used to make a non-voter vote in a Bowl. The command <span class="command-text">!falsify choice user</span> consumes 2 Ephemera to make the target vote for the specified choice.
+<br> <br>
+Falsify will misfire if the target has already voted in the current Bowl.
 </div>
 
 <div
@@ -464,9 +481,9 @@ Invert
 
 <div
 class="content">
-Invert is an Invocation used to make all voting bots vote for a track in a Bowl. The command <span class="command-text">!invert choice</span> consumes 3 Ephemera to make “mother” and “father” vote for the specified choice, if they have already voted.
+Invert is used to make all voting puppets <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes" data-tippy-content="Votes are what decide the winner and loser of a TaylorBowl.">vote</a> for a track in a <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowl</a>. The command <span class="command-text">!invert choice</span> consumes 3 Ephemera to make "mother" and "father" vote for the specified choice, if they have already voted.
 <br> <br>
-Invert will misfire if used during the last minute of a Bowl. Invert will misfire if neither “mother” nor “father” are already voting.
+Invert will misfire if used during the last minute of a Bowl. Invert will misfire if neither "mother" nor "father" are already voting.
 </div>
 
 <div
@@ -477,7 +494,7 @@ Reinforce
 
 <div
 class="content">
-Reinforce is an Invocation used to protect the invoker from having their vote be influenced. The command <span class="command-text">!reinforce</span> consumes 3 Ephemera to prevent the user from being Falsified or Expelled if they have Ephemera on hand. If a user is Reinforced, they also have a 20% chance to have 1 Ephemera <a class="text-actionable-link" href="">Disintegrate</a> at the end of each Bowl. Reinforce will expire once the invoker has no more Ephemera on hand.
+Reinforce is used to protect the invoker from having their vote be influenced. The command <span class="command-text">!reinforce</span> consumes 3 Ephemera to prevent the user from being Falsified or Expelled if they have Ephemera on hand. If a user is Reinforced, they also have an additional 20% chance to have 1 Ephemera <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Disintegration" data-tippy-content="Ephemera Disintegration is the random chance for Ephemera to disappear at the end of a TaylorBowl."></a> at the end of each Bowl. This chance is separate from the regular Disintegration. The effects of Reinforce will end once the invoker has no more Ephemera on hand.
 <br> <br>
 Reinforce will misfire if a user only has 3 Ephemera on hand.
 </div>
@@ -490,9 +507,23 @@ Expel
 
 <div
 class="content">
-Expel is an Invocation used to remove votes from a track in a Bowl. The command <span class="command-text">!expel choice</span> removes two random votes for the specified choice.
+Expel is used to remove votes from a track in a Bowl. The command <span class="command-text">!expel choice</span> removes two random votes for the specified choice. Expel cannot target users who are Fortified or Reinforced. If the user targeted was using <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote" data-tippy-content="Autovote allows you to vote in bowls you are not present for.">Autovote</a>, Expel removes them from Autovote.
 <br> <br>
-Expel will misfire if there are no users to be Expelled.
+Expel will misfire if there are no users to be Expelled. Expel will have reduced effectiveness if there is only 1 user to be Expelled as it will only remove their vote but still consume 5 Ephemera.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Enhance">
+Enhance
+</div>
+
+<div
+class="content">
+Enhance is used to increase the invoker's <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> earned from voting. The command <span class="command-text">!enhance</span> consumes at least 5 Ephemera to increase credits earned from voting by 12.5% for every Ephemera on hand during a given bowl. The number of Ephemera consumed starts at 5, but increases by 1 for every Ephemera Level the invoker has above 5, given by the formula:
+<div class="formula">
+<p><span>$$\text{Cost}=\text{max}\begin{cases} 5 \\ \text{Ephemera Level} \end{cases}$$</span></p>
+</div>
 </div>
 
 <div
