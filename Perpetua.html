@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>
+        Perpetua
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
+
+</head>
+
+<body>
+
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
+    <div
+    class="contents-list-title">
+        Table of Contents
+    </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Mechanics"> Mechanics <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Evocations"> Evocations <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Perpetua#Glossary#List_of_Commands"> List of Terms <br> </a>
+    </div>
+</div>
+
+</div>
+
+<div
+class="page-title">
+Perpetua
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="disclaimer">
+This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+</div>
+
+<div
+class="content"
+id="js-page-summary">
+Perpetua are a rare currency used to perform Evocations. They are a permanent currency; their name is derived from the word perpetual. They are the rarest and most difficult to obtain currency, and are sometimes referred to colloquially as “perps”.
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Mechanics">
+Mechanics
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+Perpetua are only obtained through using the <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> Crystallize. 
+<br> <br>
+The command <span class="command-text">!crystallize</span> consumes 32 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to reduce the invoker's <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level" data-tippy-content="Ephemera Level is a user statistic that allows users to hold Ephemera or play more of certain minigames.">Ephemera Level</a> by 16 and to create a Perpetua.
+<br> <br>
+There is no limit to the number of Perpetua a user can hold, but the sheer difficulty of obtaining them makes this a non-issue. To date, the record for most Perpetua Crystallized is held by Ivi, at four Perpetua.
+<br> <br>
+As the cost of Ephemera Levels and Ephemera constantly fluctuate, there is no fixed number of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> required to create a Perpetua. However, it is possible to estimate such a cost based on Active Credits:
+<div class="formula">
+<p><span>$$\text{Exceed cost}=0.002\cdot\text{Active credits}\cdot\sum_{i=1}^{16}i=0.272\cdot\text{Active credits} \\
+\text{Ephemera cost}=32\cdot 0.0007\cdot\text{Active credits}=0.0224\cdot\text{Active credits} \\
+\text{Total cost}=0.272\cdot\text{Active credits}+0.0224\cdot\text{Active credits}=0.2944\cdot\text{Active credits}$$</span></p>
+</div>
+It is also possible to calculate the cost of a Perpetua in <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia" data-tippy-content="Potentia are an uncommon currency used for conversions into credits or Ephemera.">Potentia</a> as the value of Potentia are also tied to the number of Active Credits and they have a 1-to-1 conversion with Ephemera:
+<div class="formula">
+<p><span>$$\text{Number of Potentia}=\cfrac{0.272\cdot\text{Active credits}}{0.0005\cdot\text{Active credits}}+32=576$$</span></p>
+</div>
+And since each Potentia requires $1 USD to purchase, it follows that the value of a single Perpetua is $576 USD.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Evocations">
+Evocations
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+Perpetua are chiefly used to perform Evocations, which are extremely powerful commands that can affect many aspects of <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">TaylorBowl</a>.
+<br> <br>
+In the command <span class="command-text">!perpetua</span>, the description of Evocations is hidden if the command user has no Perpetua. Holding at least 1 Perpetua will reveal all Evocations. However, the number of Perpetua required to execute Collapse is still hidden, though it has 3 digits, so is between 100 and 999.
+<br> <br>
+Due to the difficulty involved in obtaining Perpetua, only the Evocations that have been successfully used will be described below. Note that some Evocations are not coded into BowlBot yet &ndash; these are Pariah, Martyr, and Collapse. However, given that no user has yet attained more than 4 Perpetua, there is little need at the present moment to do so.
+<br> <br>
+Masquerade is used to [redacted]. The command <span class="command-text">!masquerade</span> consumes 1 Perpetua to [redacted].
+<br> <br>
+Disintegrate is used to instantly gain <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a>. The command <span class="command-text">!disintegrate</span> consumes 1 Perpetua to grant the evoker 32 Ephemera, also destroying all other Ephemera in existence. This ignores the evoker's Ephemera limit. 
+<br> <br>
+Forget is used to [redacted]. The command <span class="command-text">!forget</span> consumes 1 Perpetua to [redacted].
+<br> <br>
+Delay is used to [redacted]. The command <span class="command-text">!delay</span> consumes 1 Perpetua to [redacted].
+<br> <br>
+Reap is used to [redacted]. The command <span class="command-text">!reap</span> consumes 1 Perpetua to [redacted].
+<br> <br>
+Annihilate is used to instantly force <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#General_Mechanics#The_Blight" data-tippy-content="Blights are events where credits in the Farm are destroyed.">The Blight</a>. The command <span class="command-text">!annihilate</span> consumes 1 Perpetua to cause the Blight to occur immediately with no <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Warning_Bloom" data-tippy-content="">Warning Bloom</a>, even if the Threshold is below 100%. The true name for the Warning Bloom can be found within the text for Annihilate in the command <span class="command-text">!perpetua</span>.
+<br> <br>
+Submerge is used to [redacted]. The command <span class="command-text">!submerge</span> consumes 1 Perpetua to [redacted].
+<br> <br>
+Decimate is used to [redacted]. The command <span class="command-text">!decimate</span> consumes 1 Perpetua to [redacted].
+<br> <br>
+Listen is used to allow the evoker to monitor Ephemera and Perpetua activities. The command <span class="command-text">!listen</span> will result in <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot" data-tippy-content="BowlBot is the main bot in TaylorBowl and all features stem from it.">BowlBot</a> sending a direct message to the evoker each time a user uses an <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> or Evocation until the end of the <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons" data-tippy-content="A Season is a four-month period in TaylorBowl. Between Seasons, resets of Elo and User Score occur.">Season</a>.
+<br> <br>
+Turn is used to [redacted]. The command <span class="command-text">!turn</span> consumes 2 Perpetua to [redacted].
+<br> <br>
+Convert is used to switch all votes in a Bowl. The command <span class="command-text">!convert</span> consumers 3 Perpetua causes all voters in a given <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowl</a> to <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes" data-tippy-content="Votes are what decide the winner and loser of a TaylorBowl.">vote</a> for the <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks" data-tippy-content="Tracks are songs in TaylorBowl. ">track</a> the evoker has voted for. The effects of Convert ignore <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Fortify">Fortify</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Reinforce">Reinforce</a>.
+<br> <br>
+Pariah is used to [redacted]. The command <span class="command-text">!pariah</span> consumes 13 Perpetua to [redacted].
+<br> <br>
+Martyr is used to [redacted]. The command <span class="command-text">!martyr</span> consumes 13 Perpetua to [redacted].
+<br> <br>
+Collapse is used to [redacted]. The command <span class="command-text">!collapse</span> consumes [unknown] Perpetua to [redacted]. 
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!annihilate</span></td>
+        <td>Immediately forces The Blight with no Warning Bloom.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!collapse</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!convert</span></td>
+        <td>Switches all voters in a Bowl to the evoker's choice.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!crystallize</span></td>
+        <td>Creates a Perpetua and reduces the invoker's Ephemera Level by 16.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!decimate</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!delay</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!disintegrate</span></td>
+        <td>Grants the evoker 32 Ephemera and destroys all other Ephemera in existence.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!forget</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!listen</span></td>
+        <td>Allows the evoker to know all uses of Invocations and Evocations for the Season.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!martyr</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!masquerade</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!pariah</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!perpetua</span></td>
+        <td>Displays information about Perpetua and Evocations.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!reap</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!submerge</span></td>
+        <td>[redacted]</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!turn</span></td>
+        <td>[redacted]</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Formulae">
+List of Formulae
+</div>
+
+<div
+class="content">
+
+<b>1</b> &ensp; Value of 1 Perpetua:
+<div class="formula">
+<p><span>$$1 \text{ Perpetua}\approx 0.2944\cdot\text{Active credits}\approx 576 \text{ Potentia}$$</span></p>
+</div>
+
+</div>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<div
+class="content">
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Ephemera Limit</td>
+        <td>The maximum number of Ephemera a user can hold based on their Ephemera Level.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
+
+</body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
+
+</html>

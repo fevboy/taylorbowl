@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>
+        Kintsugi & Potentia
+    </title>
+
+    <link 
+    rel="icon" 
+    href="Logos/TaylorBowl Logo.svg" 
+    type="image/icon type">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Styles.css">
+
+</head>
+
+<body>
+
+<div
+class="page-header">
+
+    <a
+    class="taylorbowl-logo"
+    id="js-taylorbowl-logo"
+    href="https://taylorbowl.wiki/">
+    <img
+    src="Logos/TaylorBowl Logo.svg"
+    class="taylorbowl-logo-image">
+    <span
+    class="taylorbowl-logo-text">
+        TAYLORBOWL WIKI
+    </span>
+    </a>
+
+    <button
+    class="lg-theme-button"
+    id="js-lg-theme-button"
+    onclick="toggleTheme()">
+    <img
+    class="theme-logo"
+    id="js-theme-logo"
+    src="Logos/Theme Logo Dark.svg">
+    </button>
+
+    <button
+    class="lg-open-search-button"
+    id="js-lg-open-search-button"
+    onclick="openSearch()">
+    <img 
+    class="search-logo" 
+    id="js-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <input 
+    class="lg-search-input"
+    id="js-lg-search-input"
+    type="search"
+    placeholder="Search pages..."
+    onkeydown="processQuery()"
+    onfocusout="closeSearch()">
+
+    <button
+    class="lg-enter-search-button"
+    id="js-lg-enter-search-button"
+    onmousedown="redirect()">
+    <img 
+    class="search-logo" 
+    id="js-new-search-logo"
+    src="Logos/Search Logo Dark.svg">
+    </button>
+
+    <button
+    class="open-menu-button"
+    id="js-open-menu-button"
+    onclick="openMenu()">
+    <img
+    class="menu-logo"
+    id="js-menu-logo"
+    src="Logos/Menu Logo Dark.svg">
+    </button>
+
+</div>
+
+<div 
+class="page-cover" 
+id="js-page-cover"
+onclick="closeMenu()"></div>
+<div
+class="menu"
+id="js-menu">
+
+<button
+class="menu-button"
+id="js-close-menu-button"
+onclick="closeMenu()">
+<img
+class="close-menu-logo"
+id="js-close-menu-logo"
+src="Logos/Close Menu Logo Dark.svg">
+Close Menu
+</button>
+
+<button
+class="menu-button"
+onclick="toggleTheme()">
+<img
+class="menu-theme-logo"
+id="js-menu-theme-logo"
+src="Logos/Theme Logo Dark.svg">
+<span id="js-mode-text">Light Mode</span>
+</button>
+
+<button
+class="menu-button"
+onclick="window.location.href = `https://taylorbowl.wiki/search`">
+<img
+class="menu-search-logo"
+id="js-menu-search-logo"
+src="Logos/Search Logo Dark.svg">
+Search Pages
+</button>
+
+<hr
+class="menu-line">
+
+<div
+class="contents-list">
+    <div
+    class="contents-list-title">
+        Table of Contents
+    </div>
+    <div>
+        1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Kintsugi_&_Potentia#Kintsugi"> Kintsugi <br> </a>
+    </div>
+    <div>
+        2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Kintsugi_&_Potentia#Potentia"> Potentia <br> </a>
+    </div>
+    <div>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Kintsugi_&_Potentiay"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Kintsugi_&_Potentia#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Kintsugi_&_Potentia#Glossary#List_of_Commands"> List of Terms <br> </a>
+    </div>
+</div>
+
+</div>
+
+<div
+class="page-title">
+Kintsugi & Potentia
+</div>
+<hr
+class="page-title-line">
+
+<div
+class="disclaimer">
+This page is under construction. We are currently looking for images to add to it. Please DM ev on Discord if you have any images that may be worthwhile. Thank you!
+</div>
+
+<div
+class="content"
+id="js-page-summary">
+Kintsugi and Potentia are aspects of TaylorBowl that involve real money. They are bought using United States Dollars (USD). Both Kintsugi and Potentia can be obtained through Bianca's Kofi, accessible using the command <span class="command-text">!kofi</span>. 
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(1)">
+<img
+class="toggler-image"
+id="js-toggler-1"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Kintsugi">
+Kintsugi
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-1">
+
+<div
+class="content">
+Kintsugi is a subscription that gives subscribed users, also known as Kintsugi, benefits. Subscription renews monthly for $3 USD.
+</div>
+
+<div
+class="subsection-title"
+id="Kintsugi#Benefits">
+Benefits
+</div>
+
+<div
+class="content">
+Kintsugi receive a 2x multiplier to <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> obtained from voting in <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a>. This multiplier can stack multiplicatively with the 1.25x Server Booster multiplier for a maximum of 2.5x.
+<br> <br>
+Kintsugi receive 2 Potentia on the 1st of every month, which are granted using the admin-only command <span class="command-text">!kintsugi</span>. They are distributed in the Kintsugi channel.
+<br> <br>
+Kintsugi gain access to a special pale gold role with a symbol in the <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowl" data-tippy-content="The TaylorBowl Discord server is the main server for TaylorBowl."></a>. In the user menu, they are displayed above Server Boosters but below the <a class="text-actionable-link" href="https://taylorbowl.wiki/User_Score#Tiers_&_Titles#Council" data-tippy-content="The Council lists the 13 users with the highest User Score."></a>. This role also grants Kintsugi access to a Kintsugi channel. 
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(2)">
+<img
+class="toggler-image"
+id="js-toggler-2"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Potentia">
+Potentia
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-2">
+
+<div
+class="content">
+Potentia are an uncommon currency that can be converted into <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> or <a class="text-actionable-link" href="https://taylorbowl.wiki/" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a>. They are a permanent currency but only exist to be converted. They represent a potential increase in credits or Ephemera; their name is derived from the word potential. They are sometimes referred to colloquially as “potes”.
+</div>
+
+<div
+class="subsection-title"
+id="Obtaining">
+Obtaining
+</div>
+
+<div
+class="content">
+Potentia are obtained through purchasing using real-life currency. Each Potentia is bought using $1 USD through Bianca's Kofi page, which can be accessed using the command <span class="command-text">!kofi</span>.
+<br> <br>
+Kintsugi also receive 2 Potentia on the 1st of every month.
+</div>
+
+<div
+class="subsection-title"
+id="Usage">
+Usage
+</div>
+
+<div
+class="content">
+Each Potentia can be converted into credits worth 0.05% of Active Credits using the command <span class="command-text">!summon number</span>. Omission of the parameter number shows the number of Potentia of the command user, their total value in credits, and their individual value in credits.
+<br> <br>
+Each Potentia can also be converted into 1 Ephemera using the command <span class="command-text">!transfigure number</span>. Omission of the parameter number shows the number of Potentia of the command user. Transfigured Ephemera can exceed the user's Ephemera limit by 2, given by the formula:
+<div class="formula">
+<p><span>$$\text{Possible transfigures}=2\cdot\text{Ephemera Level}-\text{Ephemera on-hand}+2$$</span></p>
+</div>
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(3)">
+<img
+class="toggler-image"
+id="js-toggler-3"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
+id="Glossary">
+Glossary
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Commands">
+List of Commands
+</div>
+
+<table>
+    <thead>
+        <th>Command</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span class="command-text">!kintsugi<span></td>
+        <td>Admin-only. Grants 2 Potentia to all Kintsugi.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!kofi<span></td>
+        <td>Provides a link to Bianca's Kofi page.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!summon number<span></td>
+        <td>Converts a specified number of Potentia into credits. <br> <span class="command-text">number</span> is an optional parameter that refers to the number of Potentia converted, if omitted shows the command user's number of Potentia and the value of Potentia.</td>
+    </tr>
+    <tr>
+        <td><span class="command-text">!transfigure number<span></td>
+        <td>Converts a specified number of Potentia into Ephemera. <br> <span class="command-text">number</span> is an optional parameter that refers to the number of Potentia converted, if omitted shows the command user's number of Potentia and the possible number of conversions.</td>
+    </tr>
+    </tbody>
+</table>
+
+<div
+class="subsection-title"
+id="Glossary#List_of_Terms">
+List of Terms
+</div>
+
+<div
+class="content">
+
+<table>
+    <thead>
+        <th>Term</th>
+        <th>Definition</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Ephemera Limit</td>
+        <td>The maximum number of Ephemera a user can hold based on their Ephemera Level.</td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+
+<div
+class="version-text">
+    Version 3.0
+</div>
+
+</body>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="Code.js"></script>
+
+</html>
