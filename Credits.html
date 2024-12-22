@@ -198,16 +198,25 @@ class="contents-list">
         &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Prices#Exceeding"> Exceeding <br> </a>
     </div>
     <div>
-        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary"> Glossary <br> </a>
+        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary#List_of_Commands"> List of Commands <br> </a>
+        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Invocations_&_Evocations#Decompress"> Decompress <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Invocations_&_Evocations#Collect"> Collect <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 5.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary#List_of_Terms"> List of Terms <br> </a>
+        6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 6.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 6.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 6.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Glossary#List_of_Terms"> List of Terms <br> </a>
     </div>
 </div>
 
@@ -215,7 +224,7 @@ class="contents-list">
 
 <div
 class="page-title">
-Tracks
+Credits
 </div>
 <hr
 class="page-title-line">
@@ -302,6 +311,8 @@ There are 7 minigames that can give you credits, 6 of which involve a risk.
 <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee">Yahtzee</a> is a dice-based minigame. Five 6-sided dice are rolled, and each roll costs 10 credits. Depending on the combination of numbers shown, the user has a chance of earning credits. Every Bot Cycle, all users get a number of free Yahtzee rolls that do not cost credits.
 <br> <br>
 <a class="text-actionable-link" href="https://taylorbowl.wiki/LyricRace">LyricRace</a> is a race-style minigame. No credits are required to play. A set of 13 prompts related to Taylor Swift's songs and albums are given, and the user is asked to answer correctly as fast as possible. Depending on how long the user took to answer all 13 questions, they will receive credits at the end of the race.
+<br> <br>
+Due to these minigames, it is possible for a user to obtain negative credits. For example, starting with \(100\) credits, a user could play Ballpit with all \(100\) of them. Since Ballpit only deducts credits after a Ballpit is completed, the user may lose \(50\) credits to Risk in the meantime. When the Ballpit is completed, if the user does not win, they will end up with \(-50\) credits. While a user has negative credits, they are unable to do anything that requires credits, and any new credits will simply go towards removing their negative credits.
 </div>
 
 <div
@@ -654,9 +665,39 @@ id="js-toggle-content-5">
 
 <div
 class="content">
-There is 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="">Invocation</a> that directly affects credits.
+There are 2 <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocations</a> that affect credits.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Decompress">
+Decompress
+</div>
+
+<div
+class="content">
+Decompress is used to convert Ephemera into <a class="text-actionable-link" href="https://taylorbowl.wiki/" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a>. The command <span class="command-text">!decompress</span> consumes 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to convert 1 other Ephemera into a percentage of its equivalent value in credits. This requires the invoker have at least 2 Ephemera on hand. At <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level" data-tippy-content="Ephemera Level is a user statistic that allows users to hold Ephemera or play more of certain minigames.">Ephemera Level</a> 0, the percentage is 15%, and it increases by 3% additively for every additional Ephemera Level. The equivalent value is determined by the base price for the invoker to <a class="text-actionable-link" href="https://taylorbowl.wiki/Mechanics#Obtaining" data-tippy-content="Condensing converts credits into Ephemera.">condense</a>. This ignores the increase in condense price due to condensing multiple times in a given Bowl. Using this Invocation successfully has a 1% chance to decrease the invoker's Ephemera Level by 1. 
 <br> <br>
-Decompress uses 3 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="">Ephemera</a> to convert all other Ephemera on-hand into credits using the command <span class="command-text">!decompress</span>. Each Ephemera Decompressed is turned into their equivalent worth in credits. Each Ephemera on-hand when Decompress is invoked contributes to an additive 4% chance that the invoker loses 1 Ephemera Level. Decompress will misfire if the invoker only has 3 Ephemera on-hand.
+The cost to condense is given by the formula:
+<div class="formula">
+<p><span>$$\text{Base price}=\text{max}\begin{cases} 0.0007\cdot\text{Active credits} \\ 0.015\cdot\text{Total credits} \\ 1989 \end{cases}$$</span></p>
+</div>
+The number of credits returned from Decompress is given by the formula:
+<div class="formula">
+<p><span>$$\text{Returns}=\text{Base price}\cdot\left(0.15+0.03\cdot\text{Number of Ephemera Levels}\right)$$</span></p>
+</div>
+Decompress will misfire if the invoker only has 1 Ephemera on hand.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Collect">
+Collect
+</div>
+
+<div
+class="content">
+Collect is used to collect <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes" data-tippy-content="Taxes are periodic removals of credits from users.">taxes</a>. The command <span class="command-text">!collect</span> consumes 12 Ephemera to collect one round of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes#Wealth_Tax" data-tippy-content="The Wealth Tax is a type of tax that removes credits based on users’ total credits.">Wealth Tax</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes#Inactivity_Decay" data-tippy-content="Inactivity Decay is a tax that removes credits from inactive users.">Inactivity Decay</a>. The invoker will also be subject to taxes if applicable. This is in addition to the regular taxation every 50 <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a>, and will not negate them.
 </div>
 
 </div>
