@@ -147,6 +147,9 @@ class="contents-list">
         3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
     </div>
     <div>
+        &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Invocations_&_Evocations#Discount"> List of Commands <br> </a>
+    </div>
+    <div>
         4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee#Glossary"> Glossary <br> </a>
     </div>
     <div>
@@ -282,10 +285,21 @@ id="js-toggle-content-3">
 <div
 class="content">
 There is 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocation" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> that affects Yahtzees.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Discount">
+Discount
+</div>
+
+<div
+class="content">
+Discount is used to reduce the invoker's Paid <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a> cost. The command <span class="command-text">!discount</span> consumes up to 8 Ephemera to reduce the cost of each Paid Yahtzee by the same number of credits, i.e. invoking Discount with 5 Ephemera decreases the cost of each Paid Yahtzee by 5 credits. If the invoker has 8 or less Ephemera, all will be consumed with no exceptions. If the invoker has 9 or more Ephemera, 8 will be consumed and the excess will remain on-hand. The effect of Discount is reset by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restarts</a>. Discount can only be used once per <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Cycle is a period between two Bot Restarts.">Bot Cycle</a>.
 <br> <br>
-<a class="text-actionable-link" href="https://taylorbowl.wiki/Discount">Discount</a> uses 1 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to reduce the cost of paid rolls by 1 credit, up to 6 times, until the next Bot Cycle using the command <span class="command-text">!discount</span>. 
+Discount will misfire if the invoker has already used Discount during the Bot Cycle, consuming Ephemera as if it had been successfully used, i.e. all Ephemera on-hand or 8, whichever is lesser.
 <br> <br>
-Since the expected value of a free Yahtzee is 9.0255, by Discounting once, you are expected to make a small margin of profit. However, by discounting all 6 times, the expected value becomes 5.0255. This makes Yahtzee a viable method for obtaining credits, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
+Since the expected value of a free Yahtzee is 9.0255, by Discounting once, you are expected to make a small margin of profit. However, by discounting using the maximum of 8 Ephemera, the expected value becomes 7.0255. This makes Yahtzee a viable method for obtaining credits, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
 <div class="formula">
     <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
 </div>    
