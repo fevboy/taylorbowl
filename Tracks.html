@@ -156,22 +156,28 @@ class="contents-list">
         4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Viewing"> Viewing <br> </a>
     </div>
     <div>
-        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Controversy <br> </a>
+        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Invocations_&_Evocations"> Invocations & Evocations <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Ronan"> Ronan <br> </a>
+        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Invocations_&_Evocations#Expedite"> Expedite <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Renegade"> Renegade <br> </a>
+        6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Controversy <br> </a>
     </div>
     <div>
-        6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Glossary <br> </a>
+        &emsp; &ensp; 6.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Ronan"> Ronan <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 6.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Glossary#List_of_Commands"> List of Commands <br> </a>
+        &emsp; &ensp; 6.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy#Renegade"> Renegade <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 6.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Glossary#List_of_Terms"> List of Terms <br> </a>
+        7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Controversy"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 7.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 7.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Glossary#List_of_Terms"> List of Terms <br> </a>
     </div>
 </div>
 
@@ -389,6 +395,47 @@ id="js-toggler-5"
 src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
+id="Invocations_&_Evocations">
+Invocations & Evocations
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-5">
+
+<div
+class="content">
+There is one <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocation" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> that can affect tracks.
+</div>
+
+<div
+class="subsection-title"
+id="Invocations_&_Evocations#Expedite">
+Expedite
+</div>
+
+<div
+class="content">
+Expedite is used to remove the Recency restriction on 2 tracks. The command <span class="command-text">!expedite track1, track2</span> consumes 4 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to reduce the specified tracks' Recency value to 0.
+<br> <br>
+Expedite is expected to misfire if used on tracks with no Recency value, though this has not been tested. If used on 1 track with a Recency value and 1 track without, Expedite is expected to partially work, removing the Recency restriction for the track with a Recency value and having no effect on the track without. 
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(6)">
+<img
+class="toggler-image"
+id="js-toggler-6"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
 id="Controversy">
 Controversy
 </div>
@@ -399,7 +446,7 @@ class="section-title-line">
 
 <div
 class="toggle-content"
-id="js-toggle-content-5">
+id="js-toggle-content-6">
 
 <div
 class="section-subtitle">
