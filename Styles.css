@@ -318,6 +318,7 @@ button:hover {
     font-size: 1.7rem;
     line-height: 1.8rem;
     margin: 0 0 0 0;
+    text-align: left;
     display: flex;
 }
 .section-title-line {
