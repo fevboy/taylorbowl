@@ -348,7 +348,7 @@ id="Low_Cost#Discount">
 
 <div
 class="content">
-Discount is used to reduce the invoker's Paid <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a> cost. The command <span class="command-text">!discount</span> consumes up to 8 Ephemera to reduce the cost of each Paid Yahtzee by the same number of credits, i.e. invoking Discount with 5 Ephemera decreases the cost of each Paid Yahtzee by 5 credits. If the invoker has 8 or less Ephemera, all will be consumed with no exceptions. If the invoker has 9 or more Ephemera, 8 will be consumed and the excess will remain on-hand. The effect of Discount is reset by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restarts</a>. Discount can only be used once per <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Cycle is a period between two Bot Restarts.">Bot Cycle</a>.
+Discount is used to reduce the invoker's Paid <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a> cost. The command <span class="command-text">!discount</span> consumes up to 8 Ephemera to reduce the cost of each Paid Yahtzee by the same number of credits, i.e. invoking Discount with 5 Ephemera decreases the cost of each Paid Yahtzee by 5 credits. If the invoker has 8 or less Ephemera, all will be consumed. If the invoker has 9 or more Ephemera, 8 will be consumed and the excess will remain on-hand. The effect of Discount is reset by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restarts</a>. Discount can only be used once per <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Cycle is a period between two Bot Restarts.">Bot Cycle</a>.
 <br> <br>
 Discount will misfire if the invoker has already used Discount during the Bot Cycle, consuming Ephemera as if it had been successfully used, i.e. all Ephemera on-hand or 8, whichever is lesser.
 </div>
@@ -497,7 +497,7 @@ id="Medium_Cost#Reinforce">
 
 <div
 class="content">
-Reinforce is used to protect the invoker from having their vote be influenced. The command <span class="command-text">!reinforce</span> consumes 3 Ephemera to prevent the user from being Falsified or Expelled if they have Ephemera on hand. If a user is Reinforced, they also have an additional 20% chance to have 1 Ephemera <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Disintegration" data-tippy-content="Ephemera Disintegration is the random chance for Ephemera to disappear at the end of a TaylorBowl."></a> at the end of each Bowl. This chance is separate from the regular Disintegration. The effects of Reinforce will end once the invoker has no more Ephemera on hand.
+Reinforce is used to protect the invoker from having their vote be influenced. The command <span class="command-text">!reinforce</span> consumes 3 Ephemera to prevent the user from being Falsified or Expelled if they have Ephemera on hand. If a user is Reinforced, they also have an additional 20% chance to have 1 Ephemera <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Mechanics#Disintegration" data-tippy-content="Ephemera Disintegration is the random chance for Ephemera to disappear at the end of a TaylorBowl."></a> at the end of each Bowl. This chance is separate from the regular Disintegration. The effect of Reinforce is removed once the invoker has no more Ephemera on hand.
 <br> <br>
 Reinforce will misfire if a user only has 3 Ephemera on hand.
 </div>
@@ -547,7 +547,7 @@ id="Medium_Cost#Enhance">
 
 <div
 class="content">
-Enhance is used to increase the invoker's <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> earned from voting. The command <span class="command-text">!enhance</span> consumes at least 5 Ephemera to increase credits earned from voting by 12.5% for every Ephemera on hand during a given bowl. The number of Ephemera consumed starts at 5, but increases by 1 for every Ephemera Level the invoker has above 5, given by the formula:
+Enhance is used to increase the invoker's <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> earned from voting. The command <span class="command-text">!enhance</span> consumes at least 5 Ephemera to increase credits earned from voting by 12.5% for every Ephemera on hand during a given bowl. The number of Ephemera consumed starts at 5, but increases by 1 for every Ephemera Level the invoker has above 5. The effect of Enhance is removed by <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes" data-tippy-content="Taxations are the periodic event involving the collection of Wealth Tax and Inactivity Decay.">Taxations</a>, though it is currently unknown whether Taxations resulting from the use of Collect have the same effect. The cost to invoke Enhance is given by the formula:
 <div class="formula">
 <p><span>$$\text{Cost}=\text{max}\begin{cases} 5 \\ \text{Ephemera Level} \end{cases}$$</span></p>
 </div>
@@ -574,7 +574,7 @@ id="Medium_Cost#Attune">
 
 <div
 class="content">
-Attune is used to help the invoker harvest during the <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Blight_Takeover" data-tippy-content="The Blight Takeover refers to the gradual destruction of credits in the Farm due to the Blight.">Blight Takeover</a>. The command <span class="command-text">!attune</span> consumes 7 Ephemera to automatically harvest for a user at a random point during the Takeover period of the Blight Takeover. Users are still guaranteed to lose at least 25% and up to 75% of their planted credits using Attune. Every 2 Ephemera on hand will make the automatic harvesting occur 1 second earlier than what it would otherwise be.
+Attune is used to help the invoker harvest during the <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Blight_Takeover" data-tippy-content="The Blight Takeover refers to the gradual destruction of credits in the Farm due to the Blight.">Blight Takeover</a>. The command <span class="command-text">!attune</span> consumes 7 Ephemera to automatically harvest for a user at a random point during the Takeover period of the Blight Takeover. Users are still guaranteed to lose at least 25% and up to 75% of their planted credits using Attune. Every 2 Ephemera on hand will make the automatic harvesting occur 1 second earlier than what it would otherwise be. The effect of Attune is removed by Bot Restarts.
 <br> <br>
 Attune will not take effect if there is no <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Warning_Bloom" data-tippy-content="The Warning Bloom is a visually distinct Bloom that marks the start of the Blight Takeover.">Warning Bloom</a>. Attune will only take effect if the user has at least 1 Ephemera on hand when the Warning Bloom occurs. 
 </div>
@@ -589,7 +589,7 @@ id="Medium_Cost#Flourish">
 class="content">
 Flourish is used to force a Bloom. The command <span class="command-text">!flourish</span> consumes 9 Ephemera to cause a Bloom to occur instantly if at least 0.6 Bloom Periods have passed since the previous Bloom. Blooms caused by Flourish are not considered “normal”.
 <br> <br>
-Flourish will misfire if 0.6 Bloom Periods have no passed since the previous Bloom. Flourish will misfire if the Farm is unsafe. Flourish will misfire if becoming an Active Farmer is not possible. Flourish will misfire if used during the Blight Takeover.
+Flourish will misfire if 0.6 Bloom Periods have not yet passed since the previous Bloom. Flourish will misfire if the Farm is unsafe. Flourish will misfire if becoming an Active Farmer is not possible. Flourish will misfire if used during the Blight Takeover.
 <br> <br>
 You may use the EsteBot command <span class="command-text">/flourish</span> to determine the necessary time required since the previous Bloom for Flourish to be possible.
 </div>
@@ -897,6 +897,10 @@ List of Terms
     <tr>
         <td>Streak Record</td>
         <td>A user's highest Streak in a Season.</td>
+    </tr>
+    <tr>
+        <td>Taxation</td>
+        <td>The periodic event involving the collection of Wealth Tax and Inactivity Decay.</td>
     </tr>
     </tbody>
 </table>
