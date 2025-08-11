@@ -245,27 +245,35 @@ id="Elo_System#Elo_Changes">
 
 <div
 class="content">
-When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if song A wins and gains 20 Elo, song B loses 20 Elo). This ensures the average remains the same. The Elo change is determined by the Tier of the bowl and the number of votes. For two songs receiving A and B votes, it is given by the formulae:
+When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if track A wins and gains 20 Elo, track B loses 20 Elo). This ensures the average remains the same. The Elo change is determined by the Tier of the bowl and the number of votes. For two tracks receiving A and B votes, it is given by the formulae:
 <div class="formula">
     <p><span>
-        $$\Delta \mathrm{Elo}=K\cdot(S_{A}-E_{A})$$
+        $$\Delta \text{Elo}=K\cdot(S_{A}-E_{A})$$
     </span></p>
 </div>
 where the K Value, \(K\), is given by:
 <div class="formula">
     <p><span>
         $$K=\begin{cases}
-        3m\max(A,B) & \mathrm{when}\,\max(A,B)<7 \\
+        3m\max(A,B) & \text{when}\,\max(A,B)<7 \\
         45m\log_{10}(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
-        25m & \mathrm{otherwise}
+        25m & \text{otherwise}
         \end{cases}$$
     </span></p>
+</div>
 and its multiplier, \(m\), is given by:
+<div class="formula">
     <p><span>
         $$m=1-\cfrac{|T-5|^{2}}{83}$$
     </span></p>
 </div>
-\(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; \(E_{A}\) is the track's current Elo.
+where \(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; and \(E_{A}\) is the track's current expected score, given by:
+<div class="formula">
+    <p><span>
+        $$E_{A}=\cfrac{1}{1+10^\cfrac{{R_{B}-R_{A}}}{400}}$$
+    </span></p>
+</div>
+where \(R_{A}\) and \(R_{B}\) are the Elo ratings of track A and B respectively.
 <br> <br>
 You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/elochange</span> to calculate the change in Elo of two songs in a Bowl.
 </div>
@@ -473,7 +481,15 @@ class="content">
 </div>
 where \(K\) is the K Value; \(S_{A}\) is the score of Track A, which is 1 if it wins and 0 if it loses; and \(E_{A}\) is the track A's current Elo.
 <br> <br>
-<b>1.2</b> &ensp; K Value:
+<b>1.2</b> &ensp; Expected Score of a track:
+<div class="formula">
+    <p><span>
+        $$E_{A}=\cfrac{1}{1+10^\cfrac{{R_{B}-R_{A}}}{400}}$$
+    </span></p>
+</div>
+where \(R_{A}\) and \(R_{B}\) are the Elo ratings of track A and B respectively.
+<br> <br>
+<b>1.3</b> &ensp; K Value:
 <div class="formula">
     <p><span>
         $$K=\begin{cases}
@@ -485,13 +501,13 @@ where \(K\) is the K Value; \(S_{A}\) is the score of Track A, which is 1 if it 
 </div>
 where \(m\) is the multiplier.
 <br> <br>
-<b>1.3</b> &ensp; Multiplier:
+<b>1.4</b> &ensp; Multiplier:
 <div class="formula">
     <p><span>
         $$m=1-\cfrac{|T-5|^{2}}{83}$$
     </span></p>
 </div>
-<b>2</b> &ensp; Change in Elo when added from Tier 10:
+<b>2</b> &ensp; Change in Elo of a new track added from Tier 10:
 <div class="formula">
     <p><span>
         $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
@@ -531,7 +547,7 @@ List of Terms
 
 <div
 class="version-text">
-    Version 3.0
+Updated for BowlBot Version 16.2.2
 </div>
 
 </body>
