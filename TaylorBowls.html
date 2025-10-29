@@ -271,21 +271,7 @@ class="content">
     <br> <br>
     If the number of votes is tied, Extra Time happens which lasts 2 minutes. This is known internally as the 'Lydia Rule'. Switching votes is re-enabled for the first minute and disabled for the last minute. Bribing is enabled but will not have any effect unless Tiebreaker happens.
     <br> <br>
-    If at the end of Extra Time the number of votes is still tied, the Tiebreaker happens. Votes cannot be cast or changed and the only way to influence the outcome is through bribing. The command <span class="command-text">!tiebreak amount</span> or its shorter alternative <span class="command-text">!bribe amount</span> bribes the specified number of Credits for the track you voted for. This means users who did not vote in a Bowl cannot bribe. At the end of the Tiebreaker, the winner of the Bowl is decided based on the number of Credits used to bribe.
-    <br> <br>
-    The probability that a given song X wins against another song Y is given by the formula:
-    <div class="formula">
-    <p><span>
-        $$P(X\,\mathrm{wins})=\cfrac{\mathrm{Credits\,bribed\,for}\,X}{\mathrm{Total\,credits\,bribed}}$$
-    </span></p>
-    </div>
-    The ratio of the probability that X wins against the probability that Y wins is given by the formula:
-    <div class="formula">
-    <p><span>
-        $$P(X\,\mathrm{wins}):P(Y\,\mathrm{wins})=\mathrm{Credits\,bribed\,for}\,X:\mathrm{Credits\,bribed\,for}\,Y$$
-    </span></p>
-    </div>
-    If any one song has no credits used to bribe for it, it has a 0% probability of winning. If both songs have no credits used to bribe for them, they both have a 50% probability of winning.
+    If at the end of Extra Time the number of votes is still tied, the Tiebreaker happens. Votes cannot be cast or changed and the only way to influence the outcome is through bribing. The command <span class="command-text">!tiebreak amount</span> or its shorter alternative <span class="command-text">!bribe amount</span> bribes the specified number of Credits for the track you voted for. This means users who did not vote in a Bowl cannot bribe. At the end of the Tiebreaker, the winner of the Bowl is decided based on the number of Credits used to bribe. If one track has twice the number of bribed Credits than the other, it is twice as likely to win the Bowl, or a 2 in 3 chance. This holds true for all ratios of bribed Credits. If any one song has no credits used to bribe for it, it has a 0% probability of winning. If both songs have no credits used to bribe for them, they both have a 50% probability of winning.
     <br> <br>
     At the end of every TaylorBowl, BowlBot sends a summary message of the Bowl, which includes the number of votes for both options and the votes of each member in the server; the change in Elo of both tracks; and the TaylorBowl number and time to log.
 </div>
@@ -355,16 +341,16 @@ List of Formulae
 
 <div
 class="content">
-<b>1.1</b> &ensp; Probability that Track \(X\) wins the Tiebreaker:
+<b>1.1</b> &ensp; Probability that Track \(A\) wins the Tiebreaker:
 <div
 class="formula">
-<p><span>$$P(X\,\mathrm{wins})=\cfrac{\mathrm{Credits\,bribed\,for}\,X}{\mathrm{Total\,credits\,bribed}}$$</span></p>
+<p><span>$$P(A\text{ wins})=\cfrac{\text{Credits bribed for }A}{\text{Total credits bribed}}$$</span></p>
 </div>
 
-<b>1.2</b> &ensp; Ratio of the probability that Track \(X\) wins to that of Track \(Y\):
+<b>1.2</b> &ensp; Ratio of the probability that Track \(A\) wins to that of Track \(B\):
 <div
 class="formula">
-    <p><span>$$P(X\,\mathrm{wins}):P(Y\,\mathrm{wins})=\mathrm{Credits\,bribed\,for}\,X:\mathrm{Credits\,bribed\,for}\,Y$$</span></p>
+    <p><span>$$P(A\text{ wins}):P(B\text{ wins})=\text{Credits bribed for } A:\text{Credits bribed for } B$$</span></p>
 </div>   
 
 <div
@@ -385,7 +371,7 @@ List of Terms
     </tr>
     <tr>
         <td>Natural Start</td>
-        <td>Starting a TaylorBowl without queueing it.</td>
+        <td>Starting a TaylorBowl without forcing or queueing it.</td>
     </tr>
     <tr>
         <td>Logging</td>
@@ -400,7 +386,7 @@ List of Terms
 
 <div
 class="version-text">
-Updated for BowlBot Version 16.2.2
+Updated for BowlBot Version 17.2.0
 </div>
 
 </body>
