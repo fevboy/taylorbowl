@@ -329,6 +329,12 @@ button:hover {
     border-radius: 0.5rem;
     padding: 0;
 }
+.version-text {
+    margin-top: 2.2rem;
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--subtext-color);
+}
 
 .page {
     background-color: var(--visual-color);
