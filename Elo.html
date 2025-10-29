@@ -162,16 +162,28 @@ class="contents-list">
         &emsp; &ensp; 2.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System#Impacts"> Impacts <br> </a>
     </div>
     <div>
-        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary"> Elo System <br> </a>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Calculations"> Glossary <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Commands"> List of Commands <br> </a>
+        &emsp; &ensp; 3.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Calculations#Elo_Change"> Elo Change <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+        &emsp; &ensp; 3.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Calculations#New_Tracks"> New Tracks <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 3.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Terms"> List of Terms <br> </a>
+        &emsp; &ensp; 3.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Calculations#Season_Resets"> Season Resets <br> </a>
+    </div>
+    <div>
+        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary"> Glossary <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Commands"> List of Commands <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Glossary#List_of_Terms"> List of Terms <br> </a>
     </div>
 </div>
 
@@ -245,35 +257,9 @@ id="Elo_System#Elo_Changes">
 
 <div
 class="content">
-When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if track A wins and gains 20 Elo, track B loses 20 Elo). This ensures the average remains the same. The Elo change is determined by the Tier of the bowl and the number of votes. For two tracks receiving A and B votes, it is given by the formulae:
-<div class="formula">
-    <p><span>
-        $$\Delta \text{Elo}=K\cdot(S_{A}-E_{A})$$
-    </span></p>
-</div>
-where the K Value, \(K\), is given by:
-<div class="formula">
-    <p><span>
-        $$K=\begin{cases}
-        3m\max(A,B) & \text{when}\,\max(A,B)<7 \\
-        45m\log_{10}(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
-        25m & \text{otherwise}
-        \end{cases}$$
-    </span></p>
-</div>
-and its multiplier, \(m\), is given by:
-<div class="formula">
-    <p><span>
-        $$m=1-\cfrac{|T-5|^{2}}{83}$$
-    </span></p>
-</div>
-where \(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; and \(E_{A}\) is the track's current expected score, given by:
-<div class="formula">
-    <p><span>
-        $$E_{A}=\cfrac{1}{1+10^\cfrac{{R_{B}-R_{A}}}{400}}$$
-    </span></p>
-</div>
-where \(R_{A}\) and \(R_{B}\) are the Elo ratings of track A and B respectively.
+When a bowl ends, the amount of Elo gained by the winning song is the same as that lost by the losing song (i.e. if track A wins and gains 20 Elo, track B loses 20 Elo). This ensures the average remains the same. Elo change is determined by the number of votes, the Tier of the Bowl, and the difference in Elo between both tracks.
+<br> <br>
+The following statements assume the other two factors remain the same. For the number of votes, generally speaking, the larger the difference in votes between the two tracks, the larger the Elo change. For the Tier of the Bowl, Tiers closer to Tier 5 will have a greater Elo change than those further from Tier 5, e.g. Tier 6 will have a greater Elo change than Tier 0. For the difference in Elo between both tracks, if a track with higher Elo wins, the Elo change will be lesser. Conversely, if a track with lower Elo wins, the Elo change will be greater.
 <br> <br>
 You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/elochange</span> to calculate the change in Elo of two songs in a Bowl.
 </div>
@@ -286,17 +272,7 @@ id="Elo_System#New_Tracks">
 
 <div
 class="content">
-When new tracks are added, there are two possible ways for their Elo to be determined.
-<br> <br>
-For tracks added en masse, such as the 31 songs on <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they are all assigned an Elo of 0. As the lowest Elo of a normal song tends to be above 800, and the highest of newly added tracks tend to be below 400, the newly added songs do not interact with any existing ones. 
-<br> <br>
-At the turn of the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons" data-tippy-content="A Season is a four-month period in TaylorBowl. Between Seasons, resets of Elo and User Score occur.">Season</a>, their Elo are manually adjusted based on the final results from their time spent separate from the other tracks by simply adding 2000. The formula for their new Elo is given by:
-<div class="formula">
-    <p><span>
-        $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
-    </span></p>
-</div>
-Alternatively, new tracks may be placed directly at 2000 Elo. This often happens with smaller sets of new tracks, such as Vault Tracks or singles such as <span class="song-text">Carolina</span>.
+When new tracks are added, there are two possible ways for their Elo to be determined. For tracks added en masse, such as the 31 songs on <span class="song-text">THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY</span>, they are all assigned an Elo of 0. As the lowest Elo of a normal song tends to be above 800, and the highest of newly added tracks tend to be below 400, the newly added songs do not interact with any existing ones. At the turn of the next <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons" data-tippy-content="A Season is a four-month period in TaylorBowl. Between Seasons, resets of Elo and User Score occur.">Season</a>, their Elo are manually adjusted based on the final results from their time spent separate from the other tracks by simply adding 2000. Alternatively, new tracks may be placed directly at 2000 Elo. This often happens with smaller sets of new tracks, such as Vault Tracks or singles such as <span class="song-text">Carolina</span>. 
 <br> <br>
 Notably, when <span class="song-text">All Too Well (10 Minute Version)</span> was added in February 2022 at 2000 Elo, it won all of its bowls for 26 days with a Win Streak of 23, before being defeated by <span class="song-text">champagne problems</span>.    
 </div>
@@ -314,16 +290,9 @@ class="subsection-subtitle">
 
 <div
 class="content">
-At the end of every Season, all tracks undergo a “soft reset” of their Elo. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between them remain the same. This is much like the process for adding new tracks to the main list.
+At the end of every Season, all tracks undergo a “soft reset” of their Elo. The #1 track is placed at 2900 Elo, or the minimum for Tier 0, and all other tracks adjust such that the proportion of distances between them remain the same. For example, a track at the midpoint between the #1 track and 2000 Elo before the reset will still be at the midpoint after the reset.
 <br> <br>
-This is done so that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to Criterion 1. Thus, by pushing tracks closer together regularly, matchups of these tracks are still possible. 
-<br> <br>
-The formula for their new Elo is given by:     
-<div class="formula">
-    <p><span>
-        $$\mathrm{New\,Elo}=2000+\cfrac{900\cdot(\mathrm{Original\,Elo}-2000)}{\mathrm{Highest\,Original\,Elo}-2000}$$
-    </span></p>
-</div>
+This regular soft reset ensures that matchups remain possible. As tracks win and lose bowls, those with very high or very low Elo tend to be too far from other tracks for matchups due to the Sufficient Closeness Eligibility requirement. If left unchecked, eventually there may no longer be any valid matchups.
 </div>
 
 </div>
@@ -410,7 +379,7 @@ id="Tier_System#Impacts">
 class="content">
 Tiers impact how much a bowl affects the Elo of both songs, as covered in <span class="text-actionable-link" href="https://taylorbowl.wiki/Elo_System#Elo_Changes">Elo System#Elo Changes</span>.
 <br> <br>
-When <span class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing" data-tippy-content="Forcing and queueing TaylorBowls starts a TaylorBowl with specifications such as Tier, duration, and track.">forcing or queueing</span> bowls, the further the Tier of the bowl from Tier 6, the more expensive it is. For every Tier of distance from Tier 6, the cost doubles, i.e. a Tier 1 costs double of a Tier 2, which is double of a Tier 3, etc. and a Tier 4 costs the same as a Tier 8 as they are both 2 Tiers from Tier 6. The exception is a Tier 0 bowl, which costs 4 times of what it normally would.
+When <span class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing" data-tippy-content="Forcing and queueing TaylorBowls starts a TaylorBowl with specifications such as Tier, duration, and track.">forcing or queueing</span> Bowls, the further the Tier of the bowl from Tier 6, the more expensive it is. For every Tier of distance from Tier 6, the cost doubles, e.g. a Tier 1 costs double of a Tier 2, which is double of a Tier 3, and a Tier 4 costs the same as a Tier 8 as they are both 2 Tiers away from Tier 6. The exception is a Tier 0 Bowl, which costs 4 times of what it normally would, or 8 times of a Tier 1 Bowl.
 <br> <br>
 The default length of all bowls (i.e. those from a natural start) is 11 minutes, except for Tier 0 bowls, which is 22 minutes.        
 </div>
@@ -426,6 +395,113 @@ id="js-toggler-3"
 src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
+id="Calculations">
+Calculations
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-3">
+
+<div
+class="content">
+
+<div
+class="subsection-title"
+id="Calculations#Elo_Change">
+Elo Change
+</div>
+
+<div
+class="content">
+The formulae to calculate Elo changes as a result of a TaylorBowl are different based on the number of votes. For two tracks receiving A and B votes, it is given by the formulae:
+<div class="formula">
+    <p><span>
+        $$\Delta \text{Elo}=K\cdot(S_{A}-E_{A})$$
+    </span></p>
+</div>
+where the K Value, \(K\), is given by:
+<div class="formula">
+    <p><span>
+        $$K=\begin{cases}
+        3m\max(A,B) & \text{when}\,\max(A,B)<7 \\
+        45m\log_{10}(|A-B|-4) & \mathrm{when}\,|A-B|>7 \\
+        25m & \text{otherwise}
+        \end{cases}$$
+    </span></p>
+</div>
+and its multiplier, \(m\), is given by:
+<div class="formula">
+    <p><span>
+        $$m=1-\cfrac{|T-5|^{2}}{83}$$
+    </span></p>
+</div>
+where \(S_{A}\) is the score of a track, which is 1 if it wins and 0 if it loses; and \(E_{A}\) is the track's current expected score, given by:
+<div class="formula">
+    <p><span>
+        $$E_{A}=\cfrac{1}{1+10^\cfrac{{R_{B}-R_{A}}}{400}}$$
+    </span></p>
+</div>
+where \(R_{A}\) and \(R_{B}\) are the Elo ratings of track A and B respectively.
+<br> <br>
+The Elo change of tracks is directly proportional with both the K Value (\K\) and the difference in score and expected score of the tracks \(S_{A}-E_{A}\).
+<br> <br>
+Taking the multiplier \(m\) as a constant which effectively compares results of TaylorBowls within the same Tier: When the highest number of votes for either track is less than 7, the K Value scales linearly with said highest number of votes. When the difference in votes between both tracks is less than 7 and the highest number of votes for either track is greater or equal to 7, the K Value is a constant. When the difference in votes between both tracks is greater than 7 (and by trivial extension the highest number of votes for either track is greater than 7), the K Value scales logarithmically with the difference in votes between both tracks minus a constant. This prevents extreme cases where tracks may change Elo drastically.
+<br> <br>
+The K Value is directly proportional with the multiplier \(m\), which is inversely related with the distance from Tier 5 of the Tier, \(|T-5|\) where \(T\) is the Tier. Thus, the multiplier is at its largest when the Tier is 5, and reduces the further from Tier 5 the Tier is. This implies that TaylorBowls with similar results will result in smaller Elo changes if they occur further from Tier 5 and vice versa. This is likely implemented to prevent tracks in Tiers 0, 1, 9, and 10 from having too large of an Elo difference between each other to allow for TaylorBowls.
+<br> <br>
+The expected score of a track \(E_{A}\) is determined by the Elo of itself and the track it faces in a Bowl. The track with a higher Elo will have a higher expected score, and it is related with the difference in Elo. The expected scores of two tracks in a Bowl have a sum of 1. In TaylorBowl, due to the Sufficient Closeness Eligibility requiement, the largest and smallest possible expected scores are ! and ! respectively. If the tracks have the same Elo, both will have an expected score of 0.5.
+</div>
+
+<div
+class="subsection-title"
+id="Calculations#New_Tracks">
+New Tracks
+</div>
+
+<div
+class="content">
+When tracks are added from Tier 10, the formula for their new Elo is given by:
+<div class="formula">
+    <p><span>
+        $$\text{New Elo}=2000+\text{Original Elo}$$
+    </span></p>
+</div>
+</div>
+
+<div
+class="subsection-title"
+id="Calculations#Season_Resets">
+Season Resets
+</div>
+
+<div
+class="content">
+During Season Resets, all tracks undergo a "soft reset" of their scores where the #1 track in terms of Elo is placed at 2900 Elo and all other tracks are adjusted to maintain the proportion of distances between each other. The formula for their new Elo is given by:     
+<div class="formula">
+    <p><span>
+        $$\text{New Elo}=2000+\cfrac{900\cdot(\text{Original Elo}-2000)}{\text{Highest Original Elo}-2000}$$
+    </span></p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(4)">
+<img
+class="toggler-image"
+id="js-toggler-4"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
 id="Glossary">
 Glossary
 </div>
@@ -436,7 +512,7 @@ class="section-title-line">
 
 <div
 class="toggle-content"
-id="js-toggle-content-3">
+id="js-toggle-content-4">
 
 <div
 class="subsection-title"
@@ -473,7 +549,7 @@ List of Formulae
 
 <div
 class="content">
-<b>1.1</b> &ensp; Change in Elo due to Bowl:
+<b>1.1</b> &ensp; Change in Elo of track A due to a Bowl:
 <div class="formula">
     <p><span>
         $$\Delta \mathrm{Elo}=K\cdot(S_{A}-E_{A})$$
@@ -507,10 +583,18 @@ where \(m\) is the multiplier.
         $$m=1-\cfrac{|T-5|^{2}}{83}$$
     </span></p>
 </div>
-<b>2</b> &ensp; Change in Elo of a new track added from Tier 10:
+
+<b>2</b> &ensp; New Elo of a new track added from Tier 10 during a Season Reset:
 <div class="formula">
     <p><span>
         $$\mathrm{New\,Elo}=2000+\mathrm{Original\,Elo}$$
+    </span></p>
+</div>
+
+<b>3</b> &ensp; New Elo of a track after a Season Reset:
+<div class="formula">
+    <p><span>
+        $$\text{New Elo}=2000+\cfrac{900\cdot(\text{Original Elo}-2000)}{\text{Highest Original Elo}-2000}$$
     </span></p>
 </div>
 
@@ -547,7 +631,7 @@ List of Terms
 
 <div
 class="version-text">
-Updated for BowlBot Version 16.2.2
+Updated for BowlBot Version 17.2.0
 </div>
 
 </body>
