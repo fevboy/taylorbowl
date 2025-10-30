@@ -65,11 +65,11 @@ button:hover {
     cursor: pointer;
 }
 .text-underlined-link {
-    color: var(--text-color);
+    color: var(--link-color);
     text-decoration: underline;
 }
 .text-underlined-link:hover {
-    color: var(--text-color);
+    color: var(--link-color);
     text-decoration: underline;
     cursor: pointer;
 }
