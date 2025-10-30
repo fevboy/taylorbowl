@@ -250,7 +250,7 @@ Credits form the basis of the TaylorBowl economy. They are the most accessible a
 <br> <br>
 Credits are widely used, with some notable functions being transferring to other users, <a class="text-actionable-link" href="https://taylorbowl.wiki/Forcing_&_Queueing">Forcing & Queueing</a> TaylorBowls, <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls#Mechanics#Tiebreaker">Bribing</a> in TaylorBowls, using <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Special_Votes#Autovote" data-tippy-content="Autovote allows you to vote in bowls you are not present for.">Autovote</a>, creating <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera">Ephemera</a>, increasing your <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level" data-tippy-content="">Ephemera Level</a>, or used in <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Dojo" data-tippy-content="">The Dojo</a>.
 <br> <br>
-Credits are taxed to encourage users to actively spend them. There are three taxes: Wealth Tax, Inactivity Decay, and Transfer Tax. Wealth Tax applies to users with over 10 000 credits and increases its percentage value with the number of credits. Inactivity Decay applies to inactive users, which refers to users either no longer in any TaylorBowl-enabled servers, or who have not voted in a TaylorBowl during the current season. Both the aforementioned taxes apply every 50 Bowls by default. Transfer Tax applies when credits are transferred between users, which taxes at most 2.5% of the transferred amount.
+Credits are taxed to encourage users to actively spend them. There are three taxes: Wealth Tax, Inactivity Decay, and Transfer Tax. Wealth Tax applies to users with over 10 000 credits and increases its percentage value with the number of credits. Inactivity Decay applies to inactive users, which refers to users either no longer in any TaylorBowl-enabled servers, or who have not voted in a TaylorBowl during the current season. Both the aforementioned taxes apply every 25 Bowls by default. Transfer Tax applies when credits are transferred between users, which taxes at most 2.5% of the transferred amount.
 </div>
 
 
@@ -509,7 +509,7 @@ id="Taxes#Wealth_Tax">
 
 <div
 class="content">
-Wealth Tax is applied to all users with 10 000 credits and above. By default, it is applied every 50 <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowls</a>, removing a certain percentage of users total credits, or their on-hand and planted credits added together. The percentage taxed increases linearly based on the number of credits you have, by 0.5% every 100 000 credits, and reaching a maximum of 50%. This means the amount taxed increases quadratically, that is, if your credits increases by \(n\) times, your Wealth Tax increases by \(n^{2}\) times.
+Wealth Tax is applied to all users with 10 000 credits and above. By default, it is applied every 25 <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls">TaylorBowls</a>, removing a certain percentage of users total credits, or their on-hand and planted credits added together. The percentage taxed increases linearly based on the number of credits you have, by 0.5% every 100 000 credits, and reaching a maximum of 50%. This means the amount taxed increases quadratically, that is, if your credits increases by \(n\) times, your Wealth Tax increases by \(n^{2}\) times.
 <br> <br>
 
 You may use the command <span class="command-text">!owed</span> to see the number of credits you owe due to wealth tax, and the command <span class="command-text">!taxes</span> to see the total number of credits the server owes due to wealth tax, the last taxation, and the next taxation.
@@ -542,7 +542,7 @@ id="Taxes#Inactivity_Decay">
 
 <div
 class="content">
-Inactivity Decay is applied to inactive users, which refers to users who are either no longer in any TaylorBowl-enabled servers, or who have not voted in a TaylorBowl during the current season. Like Wealth Tax, it is applied every 50 bowls. The tax is 0.25% of a user's total credits or 1 credit, whichever is greater.
+Inactivity Decay is applied to inactive users, which refers to users who are either no longer in any TaylorBowl-enabled servers, or who have not voted in a TaylorBowl during the current season. Like Wealth Tax, it is applied every 25 bowls. The tax is 0.25% of a user's total credits or 1 credit, whichever is greater.
 </div>
 
 </div>
@@ -682,7 +682,7 @@ Collect
 
 <div
 class="content">
-Collect is used to collect <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes" data-tippy-content="Taxes are periodic removals of credits from users.">taxes</a>. The command <span class="command-text">!collect</span> consumes 12 Ephemera to collect one round of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes#Wealth_Tax" data-tippy-content="The Wealth Tax is a type of tax that removes credits based on users' total credits.">Wealth Tax</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes#Inactivity_Decay" data-tippy-content="Inactivity Decay is a tax that removes credits from inactive users.">Inactivity Decay</a>. The invoker will also be subject to taxes if applicable. This is in addition to the regular taxation every 50 <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a>, and will not negate them.
+Collect is used to collect <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes" data-tippy-content="Taxes are periodic removals of credits from users.">taxes</a>. The command <span class="command-text">!collect</span> consumes 12 Ephemera to collect one round of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes#Wealth_Tax" data-tippy-content="The Wealth Tax is a type of tax that removes credits based on users' total credits.">Wealth Tax</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits#Taxes#Inactivity_Decay" data-tippy-content="Inactivity Decay is a tax that removes credits from inactive users.">Inactivity Decay</a>. The invoker will also be subject to taxes if applicable. This is in addition to the regular taxation every 25 <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a>, and will not negate them.
 </div>
 
 </div>
