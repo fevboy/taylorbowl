@@ -181,9 +181,7 @@ class="page-title-line">
 <div
 class="content"
 id="js-page-summary">
-<a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a> can be made to start a <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility" data-tippy-content="Matchups are a pair of tracks that can be put in a Bowl.">matchup</a> in a specific <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System" data-tippy-content="Tiers are a way of classifying tracks based on their Elo.">Tier</a>, of a specific duration, or even of a specific eligible <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks" data-tippy-content="Tracks are songs in TaylorBowl.">track</a>. They can also be queued such that they automatically start when the cooldown is over.
-<br> <br>
-Each Bowl started, including by forcing and queueing, contributes 20 <a class="text-actionable-link" href="https://taylorbowl.wiki/User_Score" data-tippy-content="User Score is a measure of a user's overall activity in TaylorBowl.">User Score</a>.
+<a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowls</a> can be made to start a <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks#Matchups_&_Eligibility" data-tippy-content="Matchups are a pair of tracks that can be put in a Bowl.">matchup</a> in a specific <a class="text-actionable-link" href="https://taylorbowl.wiki/Elo#Tier_System" data-tippy-content="Tiers are a way of classifying tracks based on their Elo.">Tier</a>, of a specific duration, or even of a specific eligible <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks" data-tippy-content="Tracks are songs in TaylorBowl.">track</a>. The command <span class="command-text">!taylorbowl tier length track</span> can be used to do so, e.g. <span class="command-text">!taylorbowl 6 8 Never Grow Up</span>. If you wish to force Bowl just of a specific Tier, you may omit the length and track parameters, e.g. <span class="command-text">!taylorbowl 6</span>. However, if you wish to specify duration, the prior parameter must be specified, e.g. <span class="command-text">!taylorbowl 6 8</span>. Bowls can also be queued using the command <span class="command-text">!queue tier duration track</span> which adds the Bowl to the Queue. Queued Bowls automatically start after the previous one is over, and happen in the order in which they were queued.
 </div>
 
 
@@ -210,7 +208,7 @@ id="js-toggle-content-1">
 
 <div
 class="content">
-You may force a TaylorBowl using the command <span class="command-text">!taylorbowl tier duration track</span>. You may not start or force a Bowl if you have started either of the previous two. You may check who cannot start Bowls using the command <span class="command-text">!recentstarters</span>, which also shows the number of Bowls that must elapse for the respective user to start one. This number decreases at the start of every Bowl.
+Users can force a TaylorBowl using the command <span class="command-text">!taylorbowl tier duration track</span>. The same Bowl Start Cooldown applies to forcing and queueing, where users may not start or force a Bowl if they started either of the previous two. You can check who cannot start Bowls using the command <span class="command-text">!recentstarters</span>, which also shows the number of Bowls that must elapse for the respective user to start one. This number decreases at the start of every Bowl.
 </div>
 
 <div
@@ -221,29 +219,11 @@ Price
 
 <div
 class="content">
-A series of multiplications is performed based on which parameters have been specified. The calculations start with the <a class="text-actionable-link" href="https://taylorbowl.wiki/Base_Price" data-tippy-content="The Base Price is a variable number that determines prices across TaylorBowl.">Base Price</a> which can be checked using the command <span class="command-text">!baseprice</span>.
+The price of forcing a Bowl depends on its Tier, duration, and whether there is a specified track. 
 <br> <br>
-The price of a forced Bowl starts at \(1\cdot\text{Base Price}\) for Tier 6, and doubles for every increase or decrease in selected Tier. This is given by the formula:
-<div class="formula">
-<p><span>$$m_{\text{T}}=2^{|T-6|}$$</span></p>
-</div>
-where \(m_{T}\) is the Tier multiplier and \(T\) is the specified Tier.
+The cheapest Bowl is a Tier 6, 11 minute Bowl, which costs the Base Price. For every increase or decrease in Tier from Tier 6, the price doubles, i.e. a Tier 5 or 7 Bowl costs twice that of a Tier 6, a Tier 4 or 8 Bowl costs four times that of a Tier 6, and so on. The exception is Tier 0 Bowls which cost an addition four times of what this rule suggests, or 8 times that of a Tier 1 Bowl. The price of a Bowl similarly increases for every increase or decrease in duration from 11 minutes. See the Calculations section for the formula. Finally, if a track is specified, the cost of the Bowl is multiplied by the number of matchups in that Tier. This means specifying a track in a Tier with 1 matchup will cost the same as not specifying. All three of these stack multiplicatively.
 <br> <br>
-If specified, the duration of a forced Bowl increases the price exponentially. There is no change for an 11 minute Bowl from Tier 1 to 10, or a 22 minute Bowl for Tier 0, and it increases for every minute of deviation from these default durations. This is given by the formula:
-<div class="formula">
-    <p><span>$$m_{D}=1.2+\cfrac{|D-D_{0}|^{3.25}}{25}$$</span></p>
-</div>
-where \(m_{D}\) is the duration multiplier, \(D\) is the specified duration, and \(D_{0}\) is the default duration, which is given by:
-<div class="formula">
-    <p><span>$$D_{0}=\begin{cases} 22 & \text{for Tier 0} \\ 11 & \text{otherwise} \end{cases}$$</span></p>
-</div>
-If specified, the track of a forced Bowl multiplies the price by the number of matchups in its Tier. Thus, the final cost of a forced Bowl is given by the formulae:
-<div class="formula">
-    <p><span>$$\text{Cost}=\text{Base Price}\cdot m_{T} \cdot m_{D} \cdot n$$</span></p>
-</div>
-where \(m_{T}\) is the Tier muliplier, \(m_{D}\) is the duration multiplier, and \(n\) is the number of Bowls in the specified Tier. \(m_{D}\) and \(n\) are only applicable if the duration is modified or a track is forced respectively.
-<br> <br>
-You may use the command <span class="command-text">!bowlcost tier duration</span> to check the cost of a specific Bowl. Note that it cannot calculate specific tracks. You may use the command <span class="command-text">!prices</span> to see the prices for forcing an 11-minute Bowl at each Tier.
+You may use the command <span class="command-text">!bowlcost tier duration</span> to check the cost of a specific Bowl. Note that it cannot calculate the price for forcing specific tracks. You may use the command <span class="command-text">!prices</span> to see the prices for forcing an Bowl at its default duration at each Tier.
 </div>
 
 <div
@@ -254,7 +234,7 @@ Parameters
 
 <div
 class="content">
-If any parameter is specified, all previous ones must be specified too. If none are specified, the command attempts to start a random matchup of duration 11 minutes. If the track specified is in a different Tier than specified, the command will fail. The duration parameter has a maximum of 22 and minimum of 2. 
+If any parameter is specified, all previous ones must be specified too. For example, <span class="command-text">!taylorbowl 8 6 Stay Beautiful</span> and <span class="command-text">!queue 6 10</span> are valid commands, while <span class="command-text">!taylorbowl 3 this is me trying</span> and <span class="command-text">!queue You Are In Love</span> are not. Forced Bowls can only be between 2 and 22 minutes long. If the track specified is in a different Tier than specified, the command will fail. 
 </div>
 
 </div>
@@ -293,13 +273,11 @@ Minimum Price
 
 <div
 class="content">
-Each Bowl queued must be more expensive than the previous one. This means if Bowls are queued without stopping, the price eventually becomes too high to queue again. However, in reality, most people stop queueing by a certain price. The Bowl after the last one in queue has concluded will then be a natural start.
-<br> <br>
-If a Bowl is naturally started, the Bowl queued after it must be more than 90% of its price, instead of 100%.
-<br> <br>
-You may view the queue using the command <span class="command-text">!squeue</span>, which also shows the minimum price of the next Bowl that can be queued. You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/nextcheapestbowl</span> to determine the cheapest Bowl that can be queued, given the current minimum price. Note that it does not account for specific tracks.
+Each Bowl queued must be more expensive than the previous one. This means if Bowls are queued without stopping, the price eventually becomes too high to queue again. However, in reality, most people stop queueing by a certain price. The Bowl after the last one in queue has concluded will then be a natural start. If a Bowl is naturally started, the Bowl queued after it must be more than 90% of its price, instead of 100%.
 <br> <br>
 It is also possible that two Bowls of the same Tier and duration can be queued successively. This is because the Base Price may increase between the queueing, which can make the second Bowl slightly more expensive than the first. This will result in both Bowls being started given there are available matchups.
+<br> <br>
+You may view the queue using the command <span class="command-text">!squeue</span>, which also shows the minimum price of the next Bowl that can be queued. You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">!whatsnext</span> to find the next Bowl in a pre-determined order of price. This may be inaccurate sometimes because of the aforementioned changes in Base Price, allowing users to queue identical Bowls back to back. Alternatively, you may use the EsteBot command <span class="command-text">/nextcheapestbowl</span> to determine the cheapest Bowl that can be queued, given the current minimum price and current Base Price. Note that neither of these account for specifying tracks.
 </div>
 
 <div
@@ -310,7 +288,7 @@ Removal
 
 <div
 class="content">
-Once queued, a Bowl cannot be removed from the queue unless a <span class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken."></span> occurs, in which case the queue is completely reset.
+Once queued, a Bowl cannot be removed from the queue unless a <span class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restart</span> occurs, in which case the queue is completely reset.
 <br> <br>
 If a Bowl is queued in an empty queue after the cooldown has already elapsed, the queued Bowl will not start until the end of the next cooldown. Thus, a natural Bowl can be started next. However, the minimum price to queue after the natural Bowl starts is based on the natural Bowl and not the queued Bowl.
 <br> <br>
@@ -397,7 +375,7 @@ class="content">
 <div class="formula">
 <p><span>$$\text{Cost}=\text{Base Price}\cdot m_{T} \cdot m_{D} \cdot n$$</span></p>
 </div>
-where \(m_{T}\) is the Tier muliplier, \(m_{D}\) is the duration multiplier, and \(n\) is the number of Bowls in the specified Tier. \(m_{D}\) and \(n\) are only applicable if the duration is modified or a track is forced respectively.
+where \(m_{T}\) is the Tier muliplier, \(m_{D}\) is the duration multiplier, and \(n\) is the number of Bowls in the specified Tier. \(m_{D}\) and \(n\) are only applicable if the duration is modified or a track is forced respectively, otherwise they are equal to 1.
 <br> <br>
 <b>1.2</b> &ensp; Tier multiplier:
 <div class="formula">
@@ -445,7 +423,7 @@ List of Terms
 
 <div
 class="version-text">
-    Version 3.0
+Updated for BowlBot Version 17.2.0
 </div>
 
 </body>
