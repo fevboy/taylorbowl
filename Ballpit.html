@@ -144,7 +144,7 @@ class="contents-list">
         2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Balls"> Balls <br> </a>
     </div>
     <div>
-        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Statistics"> Statistics <br> </a>
+        3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Calculations"> Calculations <br> </a>
     </div>
     <div>
         4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit#Glossary"> Glossary <br> </a>
@@ -174,7 +174,9 @@ This page is under construction. We are currently looking for images to add to i
 <div
 class="content"
 id="js-page-summary">
-Ballpit is a probability-based minigame. 100 balls of assorted colours are randomly arranged, and players may bet <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> on the colour of the first few balls.
+Ballpit is a probability-based minigame. 100 balls of assorted colours are randomly arranged, and players may bet <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> on the colour of the first few balls using the command <span class="command-text">!ballpit amount choices</span>. For example, <span class="command-text">!ballpit 100 brown</span> bets 100 credits on the first ball being brown, and <span class="command-text">!ballpit 250 purple blue green</span> bets 250 credits on the first two balls being purple, blue, and green, in that order. 
+<br> <br>
+Depending on the how rare a combination is, players may earn more credits from their bet, with rarer combinations returning more credits. For example, winning the bet <span class="command-text">!ballpit 100 brown</span> awards 100 credits, while winning the bet <span class="command-text">!ballpit 100 black</span> awards 9900 credits. The returns are mostly fair; players are not expected to make profit or losses in the long run.
 </div>
 
 
@@ -201,13 +203,12 @@ id="js-toggle-content-1">
 
 <div
 class="content">
-You may play Ballpit using the command <span class="command-text">ballpit amount choices</span>. The <span class="command-text">amount</span> parameter refers to how many credits are bet, and the <span class="command-text">choices</span> parameter refers to the colour of the balls betted on. You may bet on up to 10 balls, with each colour separated by a space.
+Users may play Ballpit using the command <span class="command-text">ballpit amount choices</span>. The <span class="command-text">amount</span> parameter refers to how many credits are bet, and the <span class="command-text">choices</span> parameter refers to the colour of the balls betted on. Users may bet on up to 10 balls, with each colour separated by a space. For example, <span class="command-text">!ballpit 100 brown</span> bets 100 credits on the first ball being brown, and <span class="command-text">!ballpit 250 purple blue green</span> bets 250 credits on the first two balls being purple, blue, and green, in that order. Sending the command will start a Ballpit, which starts a 30 second period for others to bet too. At the end of the 30 seconds, the balls are randomised and sent. If a player's bet is correct, they are awarded credits based on how probable the combination is. The less probable, the higher the awarded credits. If not, all credits bet are lost.
 <br> <br>
-Sending the command will initiate a Ballpit, which starts a 30 second period for others to bet too. At the end of the 30 seconds, the balls are randomised and sent. In the event that a Ballpit is not sent after 30 seconds, you may use the command <span class="command-text">!restartballpit</span> to reset it.
+During the 30 second period, users may freely switch their bet by resending the <span class="command-text">!ballpit</span> command. However, users are not able to cancel their bet, andt he next best option that minimises losses is to send <span class="command-text">!ballpit 1 brown</span>. 
 <br> <br>
-In this 30 second period, you may freely switch your bet by simply sending another command. Once sent, you are not able to cancel your bet. The next best option that minimises losses is to send <span class="command-text">!ballpit 1 brown</span>. 
-<br> <br>
-If a player's bet is correct, they are awarded credits based on how probable the combination is. The less probable, the higher the awarded credits. If not, all credits bet are lost.     
+If Ballpit breaks and a the result is not sent after 30 seconds, users may use the command <span class="command-text">!restartballpit</span> to reset it.
+  
 </div>
 
 </div>
@@ -235,24 +236,7 @@ id="js-toggle-content-2">
 
 <div
 class="content">
-There are 50 brown balls, 14 purple balls, 10 blue balls, 9 green balls, 7 yellow balls, 4 orange balls, 3 red balls, 2 white balls, and 1 black ball.
-<br> <br>
-The number of credits earned if a bet is correct is always a whole number multiplier of the bet, given by the formula:
-<div
-class="formula">
-    <p><span>$$\text{returns}=\text{bet}\cdot m$$</span></p>
-</div>   
-where the multiplier, \(m\), is given by:
-<div
-class="formula">
-    <p><span>$$m=\biggl\lfloor\cfrac{1}{p}\biggr\rfloor-1$$</span></p>
-</div>   
-where \(p\) is the probability of the combination, given by:
-<div
-class="formula">
-    <p><span>$$p=\prod_{i=1}^{c}\cfrac{n_{i}}{101-i}$$</span></p>
-</div>
-where \(c\) is the number of colours bet and \(n_{i}\) is the number of balls of the \(i\)th colour bet.
+There are 50 brown balls, 14 purple balls, 10 blue balls, 9 green balls, 7 yellow balls, 4 orange balls, 3 red balls, 2 white balls, and 1 black ball. For betting on a single ball, the multiplier is 1× for brown, 6× for purple, 9× for blue, 10× for green, 13× for yellow, 24× for orange, 32× for red, 49× for white, and 99× for black. These are more or less the average number of Ballpits needed for the first ball to be the respective colour. Similarly, for bets of more than 1 ball, the multiplier increases based on how rare the combination is. 
 <br> <br>
 You may use the <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> command <span class="command-text">/ballpit payout</span> to calculate the returns on a given combination and the chance of betting correctly on that combination. You may use the EsteBot command <span class="command-text">/ballpit random</span> to randomly generate a combination.
 <br> <br>
@@ -270,8 +254,8 @@ id="js-toggler-3"
 src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
-id="Statistics">
-Statistics
+id="Calculations">
+Calculations
 </div>
 </button>
 
@@ -284,6 +268,23 @@ id="js-toggle-content-3">
 
 <div
 class="content">
+The number of credits earned if a bet is correct is always a whole number multiplier of the bet, given by the formula:
+<div
+class="formula">
+    <p><span>$$\text{returns}=\text{bet}\cdot m$$</span></p>
+</div>   
+where the multiplier, \(m\), is given by:
+<div
+class="formula">
+    <p><span>$$m=\biggl\lfloor\cfrac{1}{p}\biggr\rfloor-1$$</span></p>
+</div>   
+where \(p\) is the probability of the combination, given by:
+<div
+class="formula">
+    <p><span>$$p=\prod_{i=1}^{c}\cfrac{n_{i}}{101-i}$$</span></p>
+</div>
+where \(c\) is the number of colours bet and \(n_{i}\) is the number of balls of the \(i\)th colour bet.
+<br> <br>
 In the long run, players are expected to lose credits to Ballpit as the expected value is slightly below 0. This is because the multiplier is always rounded down, so certain combinations will return less credits than is required to break even. The formula for expected value is given by:
 <div
 class="formula">
@@ -387,7 +388,7 @@ class="formula">
 
 <div
 class="version-text">
-    Version 3.0
+    Updated for BowlBot Version 17.2.0
 </div>
 
 </body>
