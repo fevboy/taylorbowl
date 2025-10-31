@@ -67,6 +67,15 @@ button:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+.text-superscript-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.text-superscript-link:hover {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+}
 .command-text {
     color: var(--text-color);
     background-color: var(--command-color);
@@ -223,7 +232,7 @@ button:hover {
     top: 0;
     right: 0;
     bottom: 0;
-    padding: 3rem 2rem 3rem 2rem;
+    padding: 2.2rem 2rem 3rem 2rem;
     display: none;
     overflow: auto;
 }
@@ -388,6 +397,7 @@ td {
 th {
     padding: 0.5rem;
     font-weight: 600;
+    text-align: left;
 }
 ol {
     margin-right: 2rem;
