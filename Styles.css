@@ -223,6 +223,42 @@ button:hover {
     left: 0;
 }
 
+.page-cover-advertisement {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+}
+.advertisement {
+    background-color: var(--visual-color);
+    width: 50%;
+    max-width: 360px;
+    height: fit-content;
+    display: none;
+    z-index: 999;
+    padding: 0.5rem 0.8rem 0.5rem;
+    position: fixed;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1rem 1.3rem var(--visual-color);
+}
+.advertisement-text {
+    color: var(--text-color);
+    text-align: justify;
+}
+.escape-text {
+    margin-top: 0.22rem;
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--subtext-color);
+}
+
 .menu {
     background-color: var(--bg-color);
     width: fit-content;
@@ -249,7 +285,6 @@ button:hover {
     color: var(--text-color);
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.7rem;
-
 }
 .close-menu-logo {
     max-height: 100%;
