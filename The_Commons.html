@@ -241,11 +241,7 @@ id="Mechanics#Blooms">
 
 <div
 class="content">
-Blooms have a base chance of 1 in 4500 of occurring every second. When a Bloom occurs, all credits in the Commons grow by a certain percentage, known as the Commons Multiplier. The command <span class="command-text">!commons</span> may be used to check the Commons Multiplier.
-<br> <br>
-The chance for a Bloom to occur can be increased, but not by farmers in the Commons. On average, one bloom occurs every 4500 seconds, or 90 minutes. In the regular Farm, farmers can water to decrease this average time between Blooms, known internally as the Growth Denominator. The command <span class="command-text">!commons</span> or <span class="command-text">!farm</span> may be used to check the Growth Denominator.
-<br> <br>
-The Commons Multiplier is determined by the number of Bloom Periods since the last Bloom. 1 Bloom Period is equivalent to the Growth Denominator in seconds. For every Bloom Period, the Multiplier smoothly increases by 15%. The command <span class="command-text">!commons</span> may be used to check the Time Since Last Bloom and the Multiplier per Bloom Period.
+Blooms have a base chance of 1 in 4500 of occurring every second. When a Bloom occurs, all credits in the Commons grow by a certain percentage, known as the Commons Multiplier. The command <span class="command-text">!commons</span> may be used to check the Commons Multiplier. The chance for a Bloom to occur can be increased, but not by farmers in the Commons. On average, one bloom occurs every 4500 seconds, or 90 minutes. In the regular Farm, farmers can water to decrease this average time between Blooms, known internally as the Growth Denominator. The command <span class="command-text">!commons</span> or <span class="command-text">!farm</span> may be used to check the Growth Denominator. The Commons Multiplier is determined by the number of Bloom Periods since the last Bloom. 1 Bloom Period is equivalent to the Growth Denominator in seconds. For every Bloom Period, the Multiplier smoothly increases by 15%. The command <span class="command-text">!commons</span> may be used to check the Time Since Last Bloom and the Multiplier per Bloom Period.
 <br> <br>
 When a Bloom occurs, all credits in the Commons are grown, then equally distributed to anyone who planted, regardless of the number of credits they planted. A farmer who planted 1000 credits and one who plants 1 credit receives the same number.       
 </div>
@@ -276,7 +272,7 @@ id="Mechanics#Instability">
 class="content">
 Instability limits the maximum number of credits the Commons can distribute. If the output of the Commons after a Bloom is greater than the number required for Instability, the credits will be divided instead of multiplied.
 <br> <br>
-The limit for Instability is equivalent to twice the increase in credits in the regular Farm. For example, if there were 100 000 credits in the regular Farm, and a 5% Bloom occurred, the maximum credits the Commons can distribute is 5000. This is given by:
+The limit for Instability is equivalent to twice the increase in credits in the regular Farm. For example, if there were 100 000 credits in the regular Farm, and a 5% Bloom occurred, the maximum credits the Commons can distribute is 10 000. This is given by the formula:
 <div class="formula">
     <p><span>$$\text{Instability threshold}=2\cdot\text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
 </div>
@@ -301,11 +297,6 @@ Invocations & Evocations
 
 <hr
 class="section-title-line">
-
-<div
-class="section-subtitle">
-    Warning: This section contains endgame content. If you wish to experience the game as intended, we recommend you do not open it.
-</div>
 
 <div
 class="toggle-content"
@@ -351,7 +342,6 @@ id="js-toggle-content-3">
 
 <div
 class="content">
-
 At its core, the Commons requires collaboration from different farmers to enable a profit for everyone. In theory, the fairest method of using the Commons is for all to plant the same number of credits. However, this method is rarely applicable, though many have tried to implement it.
 <br> <br>
 The Commons Alliance is an offshoot server from TaylorBowl, founded when the Commons Multiplier was based on the Growth Rate, and Instability did not exist. Members of the server planted an equal number of credits to receive an equal number in return. One benefit they enjoyed is the large number of Commons users at the time. With more planting the same amount, the impact of those who planted less would be dampened, thus aiding all. <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#EsteBot" data-tippy-content="EsteBot is a supporting bot for TaylorBowl developed to help users.">EsteBot</a> first started in this server and had commands that helped inform members of the amount to plant and the returns on their planting.
@@ -417,7 +407,7 @@ List of Formulae
 class="content">
 <b>1</b> &ensp; Instability Threshold:
 <div class="formula">
-    <p><span>$$\text{Instability threshold}=\text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
+    <p><span>$$\text{Instability threshold}=2 \cdot \text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
 </div>
 
 <div
@@ -457,7 +447,7 @@ List of Terms
 
 <div
 class="version-text">
-    Version 3.0
+Updated for BowlBot Version 17.2.0
 </div>
 
 </body>
