@@ -251,6 +251,7 @@ button:hover {
 .advertisement-text {
     color: var(--text-color);
     text-align: justify;
+    display: inherit;
 }
 .escape-text {
     margin-top: 0.22rem;
@@ -529,3 +530,4 @@ ol {
 .tippy-box .tippy-arrow::before {
     color: var(--visual-color);
 }
+
