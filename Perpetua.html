@@ -174,7 +174,9 @@ This page is under construction. We are currently looking for images to add to i
 <div
 class="content"
 id="js-page-summary">
-Perpetua are a rare currency used to perform Evocations. They are a permanent currency; their name is derived from the word perpetual. They are the rarest and most difficult to obtain currency, and are sometimes referred to colloquially as “perps”.
+Perpetua are a rare currency used to perform Evocations. They are a permanent currency; their name is derived from the word perpetual. They are the rarest and most difficult to obtain currency, and are sometimes called “perps”.
+<br> <br>
+Creating Perpetua consumes Ephemera Levels, making them an even more exclusive currency than Ephemera. For more information on the Evocations they can perform, refer to the sections below.
 </div>
 
 <button
@@ -200,23 +202,17 @@ id="js-toggle-content-1">
 
 <div
 class="content">
-Perpetua are only obtained through using the <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> Crystallize. 
+Perpetua are only obtained through using the command <span class="command-text">!crystallize</span> This reduces the user's <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level" data-tippy-content="Ephemera Level is a user statistic that allows users to hold Ephemera or play more of certain minigames.">Ephemera Level</a> by 16 and creates one Perpetua. Users can hold at most 13 Perpetua each. If 89 Perpetua exist at once, the Collapse event will be triggered, setting all users' credits, Ephemera, Ephemera Levels, Perpetua, and Pieces to 0. This does not affect Potentia.
 <br> <br>
-The command <span class="command-text">!crystallize</span> consumes 32 <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a> to reduce the invoker's <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera#Ephemera_Level" data-tippy-content="Ephemera Level is a user statistic that allows users to hold Ephemera or play more of certain minigames.">Ephemera Level</a> by 16 and to create a Perpetua.
-<br> <br>
-There is no limit to the number of Perpetua a user can hold, but the sheer difficulty of obtaining them makes this a non-issue. To date, the record for most Perpetua Crystallized is shared by Ivi and malene, at four Perpetua.
-<br> <br>
-As the cost of Ephemera Levels and Ephemera constantly fluctuate, there is no fixed number of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> required to create a Perpetua. However, it is possible to estimate such a cost based on Active Credits:
+As the cost of Ephemera Levels constantly fluctuates, there is no fixed number of <a class="text-actionable-link" href="https://taylorbowl.wiki/Credits" data-tippy-content="Credits form the basis of the TaylorBowl economy. They are the most accessible and commonly used currency.">credits</a> required to create a Perpetua. However, it is possible to estimate such a cost based on Active Credits:
 <div class="formula">
-<p><span>$$\text{Exceed cost}=0.002\cdot\text{Active credits}\cdot\sum_{i=1}^{16}i=0.272\cdot\text{Active credits} \\
-\text{Ephemera cost}=32\cdot 0.0007\cdot\text{Active credits}=0.0224\cdot\text{Active credits} \\
-\text{Total cost}=0.272\cdot\text{Active credits}+0.0224\cdot\text{Active credits}=0.2944\cdot\text{Active credits}$$</span></p>
+<p><span>$$\text{Cost}=0.002\cdot\text{Active credits}\cdot\sum_{i=1}^{16}i=0.272\cdot\text{Active credits}$$</span></p>
 </div>
-It is also possible to calculate the cost of a Perpetua in <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia" data-tippy-content="Potentia are an uncommon currency used for conversions into credits or Ephemera.">Potentia</a> as the value of Potentia are also tied to the number of Active Credits and they have a 1-to-1 conversion with Ephemera:
+It is also possible to calculate the cost of a Perpetua in <a class="text-actionable-link" href="https://taylorbowl.wiki/Potentia" data-tippy-content="Potentia are an uncommon currency used for conversions into credits or Ephemera.">Potentia</a> as the value of Potentia are also tied to the number of Active Credits:
 <div class="formula">
-<p><span>$$\text{Number of Potentia}=\cfrac{0.272\cdot\text{Active credits}}{0.0005\cdot\text{Active credits}}+32=576$$</span></p>
+<p><span>$$\text{Number of Potentia}=\cfrac{0.272\cdot\text{Active credits}}{0.0005\cdot\text{Active credits}}=544$$</span></p>
 </div>
-And since each Potentia requires $1 USD to purchase, it follows that the value of a single Perpetua is $576 USD.
+And since each Potentia requires $1 USD to purchase, it follows that the value of a single Perpetua is $544 USD.
 </div>
 
 </div>
@@ -244,39 +240,107 @@ id="js-toggle-content-2">
 
 <div
 class="content">
-Perpetua are chiefly used to perform Evocations, which are extremely powerful commands that can affect many aspects of <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">TaylorBowl</a>.
-<br> <br>
-In the command <span class="command-text">!perpetua</span>, the description of Evocations is hidden if the command user has no Perpetua. Holding at least 1 Perpetua will reveal all Evocations. However, the number of Perpetua required to execute Collapse is still hidden, though it has 3 digits, so is between 100 and 999.
-<br> <br>
-Due to the difficulty involved in obtaining Perpetua, only the Evocations that have been successfully used will be described below. Note that some Evocations are not coded into BowlBot yet &ndash; these are Pariah, Martyr, and Collapse. However, given that no user has yet attained more than 4 Perpetua, there is little need at the present moment to do so.
-<br> <br>
-Masquerade is used to [redacted]. The command <span class="command-text">!masquerade</span> consumes 1 Perpetua to [redacted].
-<br> <br>
-Disintegrate is used to instantly gain <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a>. The command <span class="command-text">!disintegrate</span> consumes 1 Perpetua to grant the evoker 32 Ephemera, also destroying all other Ephemera in existence. This ignores the evoker's Ephemera limit. 
-<br> <br>
-Forget is used to [redacted]. The command <span class="command-text">!forget</span> consumes 1 Perpetua to [redacted].
-<br> <br>
-Delay is used to [redacted]. The command <span class="command-text">!delay</span> consumes 1 Perpetua to [redacted].
-<br> <br>
-Reap is used to [redacted]. The command <span class="command-text">!reap</span> consumes 1 Perpetua to [redacted].
-<br> <br>
+The main use of Perpetua is to perform Evocations, which are extremely powerful commands that can affect many aspects of <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">TaylorBowl</a>. In the command <span class="command-text">!perpetua</span>, the description of Evocations is hidden if the command user has no Perpetua. Holding at least 1 Perpetua will reveal all Evocations.
+
+<div
+class="subsection-title"
+id="Evocations#Disintegrate">
+Disintegrate
+</div>
+
+<div
+class="content">
+Disintegrate is used to instantly gain <a class="text-actionable-link" href="https://taylorbowl.wiki/Ephemera" data-tippy-content="Ephemera are an uncommon currency used to perform Invocations.">Ephemera</a>. The command <span class="command-text">!disintegrate</span> consumes 1 Perpetua to grant the evoker 32 Ephemera, while also destroying all other Ephemera in existence. This ignores the evoker's Ephemera limit. 
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Forget">
+Forget
+</div>
+
+<div
+class="content">
+Forget is used to remove all votes from a Bowl. The command <span class="command-text">!forget</span> consumes 1 Perpetua to remove all votes for both tracks in the current Bowl. The effects of Forget ignore <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Fortify">Fortify</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Reinforce">Reinforce</a>.
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Annihilate">
+Annihilate
+</div>
+
+<div
+class="content">
 Annihilate is used to instantly force <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#General_Mechanics#The_Blight" data-tippy-content="Blights are events where credits in the Farm are destroyed.">The Blight</a>. The command <span class="command-text">!annihilate</span> consumes 1 Perpetua to cause the Blight to occur immediately with no <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#Advanced_Mechanics#Warning_Bloom" data-tippy-content="">Warning Bloom</a>, even if the Threshold is below 100%. The true name for the Warning Bloom can be found within the text for Annihilate in the command <span class="command-text">!perpetua</span>.
-<br> <br>
-Submerge is used to [redacted]. The command <span class="command-text">!submerge</span> consumes 1 Perpetua to [redacted].
-<br> <br>
-Decimate is used to [redacted]. The command <span class="command-text">!decimate</span> consumes 1 Perpetua to [redacted].
-<br> <br>
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Submerge">
+Submerge
+</div>
+
+<div
+class="content">
+Submerge is used to reduce all Ephemera Levels. The command <span class="command-text">!submerge</span> consumes 1 Perpetua to reduce the Ephemera Level of all users by 1. This cannot reduce a user's Ephemera Level below 0.
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Listen">
+Listen
+</div>
+
+<div
+class="content">
 Listen is used to allow the evoker to monitor Ephemera and Perpetua activities. The command <span class="command-text">!listen</span> will result in <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot" data-tippy-content="BowlBot is the main bot in TaylorBowl and all features stem from it.">BowlBot</a> sending a direct message to the evoker each time a user uses an <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations" data-tippy-content="Invocations are powerful commands only performable by using Ephemera.">Invocation</a> or Evocation until the end of the <a class="text-actionable-link" href="https://taylorbowl.wiki/Seasons" data-tippy-content="A Season is a four-month period in TaylorBowl. Between Seasons, resets of Elo and User Score occur.">Season</a>.
-<br> <br>
-Turn is used to [redacted]. The command <span class="command-text">!turn</span> consumes 2 Perpetua to [redacted].
-<br> <br>
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Turn">
+Turn
+</div>
+
+<div
+class="content">
+Turn is used to remove all votes for one track in a Bowl. The command <span class="command-text">!turn</span> consumes 2 Perpetua to remove all voters from the track option the evoker has not voted in. It is unknown what will happen if the evoker has not yet voted. The effects of Turn ignore <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Fortify">Fortify</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Reinforce">Reinforce</a>.
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Convert">
+Convert
+</div>
+
+<div
+class="content">
 Convert is used to switch all votes in a Bowl. The command <span class="command-text">!convert</span> consumers 3 Perpetua causes all voters in a given <a class="text-actionable-link" href="https://taylorbowl.wiki/TaylorBowls" data-tippy-content="TaylorBowls are the primary minigame featured in the TaylorBowl Discord server.">Bowl</a> to <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes" data-tippy-content="Votes are what decide the winner and loser of a TaylorBowl.">vote</a> for the <a class="text-actionable-link" href="https://taylorbowl.wiki/Tracks" data-tippy-content="Tracks are songs in TaylorBowl. ">track</a> the evoker has voted for. The effects of Convert ignore <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Fortify">Fortify</a> and <a class="text-actionable-link" href="https://taylorbowl.wiki/Votes#Invocations_&_Evocations#Reinforce">Reinforce</a>.
-<br> <br>
-Pariah is used to [redacted]. The command <span class="command-text">!pariah</span> consumes 13 Perpetua to [redacted].
-<br> <br>
-Martyr is used to [redacted]. The command <span class="command-text">!martyr</span> consumes 13 Perpetua to [redacted].
-<br> <br>
-Collapse is used to [redacted]. The command <span class="command-text">!collapse</span> consumes [unknown] Perpetua to [redacted]. 
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Pariah">
+Pariah
+</div>
+
+<div
+class="content">
+Pariah is used to Disintegrate other Perpetua. The command <span class="command-text">!pariah</span> consumes 13 Perpetua to cause up to 13 other Perpetua to Disintegrate, yielding half the regular amount of Ephemera to the owners of said Perpetua.
+</div>
+
+<div
+class="subsection-title"
+id="Evocations#Martyr">
+Martyr
+</div>
+
+<div
+class="content">
+Martyr is used to distribute Perpetua. The command <span class="command-text">!martyr</span> consumes 13 Perpetua to cause 13 Perpetua to be distributed to random holders of Perpetua. If there are no other holders of Perpetua, the Evocation misfires.
+</div>
+
 </div>
 
 </div>
@@ -425,7 +489,7 @@ class="content">
 
 <div
 class="version-text">
-    Version 3.0
+Updated for BowlBot Version 17.2.0
 </div>
 
 </body>
