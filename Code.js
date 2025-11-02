@@ -276,3 +276,27 @@ function closeAdvertisement() {
     document.getElementById("js-page-cover-advertisement").style.display = "none";
     document.getElementById("js-advertisement").style.display = "none";
 }
+
+// For Kofi.
+window.onload = function() {
+    let newSession = sessionStorage.getItem("status")
+    if (newSession != "true") {
+        setTimeout(openKofi, 1500)
+        this.sessionStorage.setItem("status", "true")
+    }
+}
+
+function openKofi() {
+    document.getElementById("js-page-cover-kofi").style.display = "block";
+    document.getElementById("js-kofi").style.display = "block";
+    document.body.addEventListener('keydown', function(e) {
+        if (e.key == "Escape") {
+            if (document.getElementById("js-page-cover-kofi").style.display == "block") {
+                closeAdvertisement();
+            }}})
+}
+
+function closeKofi() {
+    document.getElementById("js-page-cover-kofi").style.display = "none";
+    document.getElementById("js-kofi").style.display = "none";
+}
