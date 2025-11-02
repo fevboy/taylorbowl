@@ -90,15 +90,15 @@ class="page-header">
 </div>
 
 <div 
-class="page-cover-kofi" 
-id="js-page-cover-kofi"
-onclick="closeKofi()"></div>
+class="page-cover-advertisement" 
+id="js-page-cover-advertisement"
+onclick="closeAdvertisement()"></div>
 
 <div
-class="kofi"
-id="js-kofi">
+class="advertisement"
+id="js-advertisement">
 <div
-class="kofi-text">
+class="advertisement-text">
 Enjoying the Wiki? This Wiki is created and funded solely by one person. If you find it helpful, feel free to support me via my <a class="text-actionable-link" href="https://ko-fi.com/evinine">Kofi</a>!
 </div>
 <div
@@ -288,11 +288,9 @@ id="Mechanics#Instability">
 
 <div
 class="content">
-Instability limits the maximum number of credits the Commons can distribute. If the output of the Commons after a Bloom is greater than the number required for Instability, the credits will be divided instead of multiplied.
-<br> <br>
-The limit for Instability is equivalent to twice the increase in credits in the regular Farm. For example, if there were 100 000 credits in the regular Farm, and a 5% Bloom occurred, the maximum credits the Commons can distribute is 10 000. This is given by the formula:
+Instability limits the maximum number of credits the Commons can distribute. If the output of the Commons <b>after a Bloom</b> is greater than a number known as the Instability Threshold, the credits will be divided instead of multiplied. Below the Instability Threshold, the Commons functions normally. The Instability Threshold is equal to four times the increase in credits in the regular Farm. For example, if there were 100 000 credits in the regular Farm, and a 5% Bloom occurred, the maximum credits the Commons can distribute for that Bloom is 20 000. This is given by the formula:
 <div class="formula">
-    <p><span>$$\text{Instability threshold}=2\cdot\text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
+    <p><span>$$\text{Instability threshold}=4\cdot\text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
 </div>
 Instability was introduced in response to an event known as the Commons Incident. At the time, the Commons Multiplier was 30x the Farm's Growth Rate, and Instability did not exist. The incident involved the Commons distributing tens and hundreds of thousands of credits, multiple times. Overall, the economy grew from 7.1 million to 29.8 million credits, marking an over 4x increase. This incident also sparked a rollback of <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot" data-tippy-content="BowlBot is the main bot in TaylorBowl and all features stem from it.">BowlBot</a>, reverting all statistics to before the Commons Incident occurred. 
 </div>
@@ -425,7 +423,7 @@ List of Formulae
 class="content">
 <b>1</b> &ensp; Instability Threshold:
 <div class="formula">
-    <p><span>$$\text{Instability threshold}=2 \cdot \text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
+    <p><span>$$\text{Instability threshold}=4 \cdot \text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
 </div>
 
 <div
@@ -476,5 +474,3 @@ Updated for BowlBot Version 17.2.0
 <script src="Code.js"></script>
 
 </html>
-
-
