@@ -180,16 +180,19 @@ class="contents-list">
         3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Strategies"> Strategies <br> </a>
     </div>
     <div>
-        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary"> Glossary <br> </a>
+        4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Calculations"> Calculations <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary#List_of_Commands"> List of Commands <br> </a>
+        5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary"> Glossary <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+        &emsp; &ensp; 5.1 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary#List_of_Commands"> List of Commands <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary#List_of_Terms"> List of Terms <br> </a>
+        &emsp; &ensp; 5.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary#List_of_Formulae"> List of Formulae <br> </a>
+    </div>
+    <div>
+        &emsp; &ensp; 5.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/The_Commons#Glossary#List_of_Terms"> List of Terms <br> </a>
     </div>
 </div>
 
@@ -288,10 +291,8 @@ id="Mechanics#Instability">
 
 <div
 class="content">
-Instability limits the maximum number of credits the Commons can distribute. If the output of the Commons <b>after a Bloom</b> is greater than a number known as the Instability Threshold, the credits will be divided instead of multiplied. Below the Instability Threshold, the Commons functions normally. The Instability Threshold is equal to four times the increase in credits in the regular Farm. For example, if there were 100 000 credits in the regular Farm, and a 5% Bloom occurred, the maximum credits the Commons can distribute for that Bloom is 20 000. This is given by the formula:
-<div class="formula">
-    <p><span>$$\text{Instability threshold}=4\cdot\text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
-</div>
+Instability limits the maximum number of credits the Commons can grow by. This maximum number of credits is known as the Instability Threshold, and is equal to 4 times the increase in credits in the regular Farm. For example, if there were 100 000 credits in the Farm and a 5% Bloom occurred, the Commons can only grow by 20 000 credits. When the Commons would grow by more than the Instability Threshold, it instead divides the credits inside it. The details of this division are currently unknown.
+<br> <br>
 Instability was introduced in response to an event known as the Commons Incident. At the time, the Commons Multiplier was 30x the Farm's Growth Rate, and Instability did not exist. The incident involved the Commons distributing tens and hundreds of thousands of credits, multiple times. Overall, the economy grew from 7.1 million to 29.8 million credits, marking an over 4x increase. This incident also sparked a rollback of <a class="text-actionable-link" href="https://taylorbowl.wiki/Bots#BowlBot" data-tippy-content="BowlBot is the main bot in TaylorBowl and all features stem from it.">BowlBot</a>, reverting all statistics to before the Commons Incident occurred. 
 </div>
 
@@ -365,6 +366,8 @@ The Commons Alliance is an offshoot server from TaylorBowl, founded when the Com
 The term “Commons Thieves” was coined by members of The Commons Alliance, used to refer to those who deliberately planted small numbers of credits in the Commons to enjoy a much larger profit using credits others had planted. However, these were hard to track as the Commons does not disclose the planters, and even when found, no action could be taken against them as they did not break any rules.  
 <br> <br>
 Another general rule of thumb is to avoid planting in the Commons when a <span class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restart</span> is imminent, or when it is around 1 Bloom Period away. Due to the random nature of Blooms, this may not always prevent a loss of credits, so it is up to the user to decide how far in advance they would like to stop planting. The command <span class="command-text">!farm</span> may be used to check the approximate time to next Restart.  
+<br> <br>
+If a Bloom has not occurred for longer than expected, and the Instability Percentage is increasing to worrying levels, it may be worthwhile planting credits into the Farm. This will increase the Instability Threshold and reduce the likelihood of Instability dividing credits. However, this also risks losing those credits if a Blight occurs and users are not able to harvest their invested credits in time. Depending on how many credits were in the Commons and how many credits were additionally planted in the Farm, this may lead to reduced gains or even losses. Another use of planting in both the Farm and the Commons is when users intend to use Flourish. Since the Commons often has a higher growth multiplier than the Farm, if there are no other users in the Commons, users could plant into both and use Flourish almost immediately. This will lead to increased gains. It is important to be cautious of Instability and Commons Thieves while doing so.
 </div>
 
 </div>
@@ -378,6 +381,46 @@ id="js-toggler-4"
 src="Logos/Mobile Toggler Dark.svg">
 <div
 class="section-title"
+id="Calculations">
+Calculations
+</div>
+</button>
+
+<hr
+class="section-title-line">
+
+<div
+class="toggle-content"
+id="js-toggle-content-4">
+
+<div
+class="content">
+The Instability Threshold is given by the formula:
+<div class="formula">
+    <p><span>$$\text{Instability threshold}=4\cdot\text{Total planted credits}\cdot\text{Growth rate}$$</span></p>
+</div>
+and the number of credits The Commons grows by is given by the formula:
+<div class="formula">
+<p><span>$$\text{Credits grown by}=\text{Total Commons credits}\cdot\text{Commons Multiplier}$$</span></p>
+</div>
+so the criteria for The Commons to grow regularly is given by:
+<div class="formula">
+<p><span>$$\text{Credits grown by}<\text{Instability Threshold}$$</span></p>
+</div>
+However, it is important to note that due to the Growth Rate and Commons Multiplier constantly changing, the possible planting or harvesting of credits from The Farm, and the possible planting of credits into The Commons, any calculations will likely be inaccurate unless a Bloom occurs very shortly after doing them. Users are advised to be cautious and play it safer when planting in The Commons.
+</div>
+
+</div>
+
+<button
+class="toggler"
+onclick="toggleContent(5)">
+<img
+class="toggler-image"
+id="js-toggler-5"
+src="Logos/Mobile Toggler Dark.svg">
+<div
+class="section-title"
 id="Glossary">
 Glossary
 </div>
@@ -388,7 +431,7 @@ class="section-title-line">
 
 <div
 class="toggle-content"
-id="js-toggle-content-4">
+id="js-toggle-content-5">
 
 <div
 class="subsection-title"
