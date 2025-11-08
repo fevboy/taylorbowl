@@ -90,15 +90,15 @@ class="page-header">
 </div>
 
 <div 
-class="page-cover-kofi" 
-id="js-page-cover-kofi"
-onclick="closeKofi()"></div>
+class="page-cover-advertisement" 
+id="js-page-cover-advertisement"
+onclick="closeAdvertisement()"></div>
 
 <div
-class="kofi"
-id="js-kofi">
+class="advertisement"
+id="js-advertisement">
 <div
-class="kofi-text">
+class="advertisement-text">
 Enjoying the Wiki? This Wiki is created and funded solely by one person. If you find it helpful, feel free to support me via my <a class="text-actionable-link" href="https://ko-fi.com/evinine">Kofi</a>!
 </div>
 <div
@@ -265,7 +265,7 @@ The expected value of a free Yahtzee is 9.0255, and the expected value of a paid
 <div class="formula">
     <p><span>$$E(\text{1-Roll Yahtzee})=\sum_{i=1}^{6}792i\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.1389$$
         $$E(\text{4-of-a-Kind})=\sum_{i=1}^{6}48i\cdot\left(\cfrac{1}{6}\right)^{4}\cdot\cfrac{5}{6}\approx3.2407$$
-        $$E(\text{Full House})=\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3(3i+2j)-5\sum_{k=1}^{6}k\right)\cdot\cfrac{5!}{3!\cdot2!}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$
+        $$E(\text{Full House})=3\left(\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3i+2j\right)-5\sum_{k=1}^{6}k\right)\cdot\cfrac{5!}{3!\cdot2!}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$
         $$E(\text{Large Straight})=\left(\cfrac{1}{6}\right)^{5}\cdot5!\cdot3\cdot\left(\sum_{i=1}^{5}i+\sum_{j=2}^{6}j\right)\approx1.6204$$
         $$\sum E(X)=9.0255$$
         $$\sum E(X)-10=-0.9745$$</span></p>
@@ -421,5 +421,3 @@ Updated for BowlBot Version 17.2.0
 <script src="Code.js"></script>
 
 </html>
-
-
