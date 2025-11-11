@@ -229,10 +229,12 @@ Users may use the command <span class="command-text">!yahtzee number</span> to p
 <br> <br>
 There are four types of combinations that will award credits.
 <ol>
-    <li>1-Roll Yahtzee: All five numbers are the same. This awards 792x the number shown on all dice.</li>
-    <li>4-of-a-Kind: Four of five numbers are the same. This awards 48x the number shown on the four dice.</li>
+    <li>1-Roll Yahtzee: All five numbers are the same. This awards 1989x the number shown on all dice.</li>
+    <li>4-of-a-Kind: Four of five numbers are the same. This awards 89x the number shown on the four dice.</li>
+    <li>Large Straight: The dice show a consecutive sequence of numbers when rearranged. This awards 4x of the sum of all numbers shown.</li>
     <li>Full House: Three dice share one number, and the other two dice share another number. This awards 3x the sum of all numbers shown.</li>
-    <li>Large Straight: The dice show a consecutive sequence of numbers when rearranged, i.e., they show the numbers 1 2 3 4 5 or 2 3 4 5 6 in any order. This awards 3x of the sum of all numbers shown.   </li>
+    <li>3-of-a-Kind: Three of five numbers are the same. This awards 1x the number shown on the 3 dice.</li>
+    <li>Small Straight: Four of the five dice show a consecutive sequence when rearranged. This awards 1x the sum of the numbers in the sequence.</li>
 </ol>
 </div>
 
@@ -261,15 +263,37 @@ id="js-toggle-content-2">
 
 <div
 class="content">
-The expected value of a free Yahtzee is 9.0255, and the expected value of a paid Yahtzee is -0.9745, shown by:    
+The expected value of a free Yahtzee is around 17.835 credits. The following calculations and explanations show the expected value of all the ways to get returns:
+<br> <br>
+1-Roll Yahtzees can occur for any of the six numbers. There is 1 way to arrange 5 identical numbers.
 <div class="formula">
-    <p><span>$$E(\text{1-Roll Yahtzee})=\sum_{i=1}^{6}792i\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.1389$$
-        $$E(\text{4-of-a-Kind})=\sum_{i=1}^{6}48i\cdot\left(\cfrac{1}{6}\right)^{4}\cdot\cfrac{5}{6}\approx3.2407$$
-        $$E(\text{Full House})=3\left(\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3i+2j\right)-5\sum_{k=1}^{6}k\right)\cdot\cfrac{5!}{3!\cdot2!}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$
-        $$E(\text{Large Straight})=\left(\cfrac{1}{6}\right)^{5}\cdot5!\cdot3\cdot\left(\sum_{i=1}^{5}i+\sum_{j=2}^{6}j\right)\approx1.6204$$
-        $$\sum E(X)=9.0255$$
-        $$\sum E(X)-10=-0.9745$$</span></p>
-</div>    
+<p><span>$$E(\text{1-Roll Yahtzee})=\sum_{i=1}^{6}1989i\cdot\left(\cfrac{1}{6}\right)^{5}\approx5.3715$$</span></p>
+</div>
+Four-of-a-Kinds can occur for any of the six numbers. There are 5 options for the last die as it cannot be a repeated number. There are 5 ways to position the non-repeated number among the five dice.
+<div class="formula">
+<p><span>$$E(\text{4-of-a-Kind})=\sum_{i=1}^{6}89i\cdot5\cdot5\cdot\left(\cfrac{1}{6}\right)^{5}\approx6.0089$$</span></p>
+</div>
+Large Straights have only two possible options, namely 12345 and 23456. There are \(5!\) ways to arrange the five distinct numbers.
+<div class="formula">
+<p><span>$$E(\text{Large Straight})=3\cdot\left(\sum_{i=1}^{5}i+\sum_{j=2}^{6}j\right)\cdot5!\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.1605$$</span></p>
+</div>
+Full Houses have 30 possible options as there are \(6^2\) pairs of numbers that can be made from the 6 numbers and 6 of those pairs have a repeated number. There are \(^{5}\text{C}_{2}\) ways to position the two numbers among the five dice.
+<div class="formula">
+<p><span>$$E(\text{Full House})=3\left(\sum_{i=1}^{6}\sum_{j=1}^{6}\left(3i+2j\right)-5\sum_{k=1}^{6}k\right)\cdot^{5}\text{C}_{2}\cdot\left(\cfrac{1}{6}\right)^{5}\approx2.0255$$</span></p>
+</div>
+3-of-a-Kinds can occur for any of the six numbers. There are 5 and 4 options for the fourth and fifth dice as neither can be a repeated number. There are \(^{5}\text{C}_{2}\) ways to position the two non-repeated numbers among the five dice.
+<div class="formula">
+<p><span>$$E(\text{3-of-a-Kind})=\sum_{i=1}^{6}\cdot5\cdot4\cdot^{5}\text{C}_{2}\cdot\left(\cfrac{1}{6}\right)^{5}\approx0.5401$$</span></p>
+</div>
+Small Straights have only three possible options, namely 1234, 2345, and 3456. For 1234 and 3456, the last number has 5 options, four of which are duplicates of numbers in the sequence. There are \(^{5}\text{C}_{2}\) ways to position the two repeated numbers among the five dice and \(3!\) ways to arrange the three distinct numbers. The last option that is not a duplicate has \(5!\) ways to arrange the five distinct numbers. For 2345, the last number has 4 options, all of which are duplicates. Again, there are \(^{5}\text{C}_{2}\) ways to position the two repeated numbers among the five dice and \(3!\) ways to arrange the three distinct numbers.
+<div class="formula">
+<p><span>$$E(\text{Small Straight})=\left(\left(\sum_{i=1}^{4}i+\sum_{j=3}^{6}j\right)\left(4\cdot^{5}\text{C}_{2}\cdot3!+5!\right)+\sum_{k=2}^{5}k\cdot\left(4\cdot^{5}\text{C}_{2}\cdot3!\right)\right)\cdot\left(\cfrac{1}{6}\right)^{5}\approx1.7284$$</span></p>
+</div>
+Thus, the expected value of a free Yahtzee is given by the sum of these expected values, and the expected value of a paid Yahtzee is 22 less than that:
+<div class="formula">
+<p><span>$$E(\text{Free Yahtzee})=\sum E(\text{Winning Combinations})\approx17.8349 \\ E(\text{Paid Yahtzee})=E(\text{Free Yahtzee})-22\approx-4.1649$$</span></p>
+</div>
+Note that the expected value of 1-Roll Yahtzees are very high despite their rarity, worth just over 30% of the total expected value. This implies that not getting any 1-Roll Yahtzees, which is a reasonable situation, will significantly decrease your returns.
 </div>
 
 </div>
@@ -308,13 +332,13 @@ Discount
 
 <div
 class="content">
-Discount is used to reduce the invoker's Paid <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a> cost. The command <span class="command-text">!discount</span> consumes up to 8 Ephemera to reduce the cost of each Paid Yahtzee by the same number of credits, i.e. invoking Discount with 5 Ephemera decreases the cost of each Paid Yahtzee by 5 credits. If the invoker has 8 or less Ephemera, all will be consumed with no exceptions. If the invoker has 9 or more Ephemera, 8 will be consumed and the excess will remain on-hand. The effect of Discount is reset by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restarts</a>. Discount can only be used once per <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Cycle is a period between two Bot Restarts.">Bot Cycle</a>.
+Discount is used to reduce the invoker's Paid <a class="text-actionable-link" href="https://taylorbowl.wiki/Yahtzee" data-tippy-content="Yahtzee is a dice-based minigame that uses credits.">Yahtzee</a> cost. The command <span class="command-text">!discount</span> consumes up to 13 Ephemera to reduce the cost of each Paid Yahtzee by the same number of credits, i.e. invoking Discount with 5 Ephemera decreases the cost of each Paid Yahtzee by 5 credits. If the invoker has 13 or less Ephemera, all will be consumed. If the invoker has 14 or more Ephemera, 13 will be consumed and the excess will remain on-hand. The effect of Discount is reset by <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Restart resets certain actions, or fixes BowlBot when broken.">Bot Restarts</a>. Discount can only be used once per <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="A Bot Cycle is a period between two Bot Restarts.">Bot Cycle</a>.
 <br> <br>
-Discount will misfire if the invoker has already used Discount during the Bot Cycle, consuming Ephemera as if it had been successfully used, i.e. all Ephemera on-hand or 8, whichever is lesser.
+Discount will misfire if the invoker has already used Discount during the Bot Cycle, consuming Ephemera as if it had been successfully used, i.e. all Ephemera on-hand or 13, whichever is lesser.
 <br> <br>
-Since the expected value of a free Yahtzee is 9.0255, by Discounting once, you are expected to make a small margin of profit. However, by discounting using the maximum of 8 Ephemera, the expected value becomes 7.0255. This makes Yahtzee a viable method for obtaining credits, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
+Since the expected value of a free Yahtzee is 17.8349, Discounting using 5 Ephemera will give positive returns on average. However, by discounting using the maximum of 13 Ephemera, the expected value becomes 8.8349. This makes Yahtzee a viable method for obtaining credits, given a user has sufficient Ephemera and a large enough number of paid rolls. The total expected returns on Yahtzees is given by:
 <div class="formula">
-    <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
+<p><span>$$\text{returns}=n(17.8349-c)=n(d-4.1649)$$</span></p>
 </div>    
 where \(n\) is the number of rolls, \(c\) is the cost per roll, and \(d\) is the number of Discounts used.
 </div>
@@ -372,7 +396,7 @@ class="content">
 
 <b>1</b> &ensp; Expected Value of paid Yahtzees:
 <div class="formula">
-    <p><span>$$\text{returns}=n(9.0255-c)=n(d-0.9745)$$</span></p>
+    <p><span>$$\text{returns}=n(17.8349-c)=n(d-4.1649)$$</span></p>
 </div>
 where \(n\) is the number of rolls, \(c\) is the cost per roll, and \(d\) is the number of Discounts used.
 
@@ -410,7 +434,7 @@ class="content">
 
 <div
 class="version-text">
-Updated for BowlBot Version 17.2.0
+Updated for BowlBot Version 17.2.5
 </div>
 
 </body>
