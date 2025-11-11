@@ -90,15 +90,15 @@ class="page-header">
 </div>
 
 <div 
-class="page-cover-kofi" 
-id="js-page-cover-kofi"
-onclick="closeKofi()"></div>
+class="page-cover-advertisement" 
+id="js-page-cover-advertisement"
+onclick="closeAdvertisement()"></div>
 
 <div
-class="kofi"
-id="js-kofi">
+class="advertisement"
+id="js-advertisement">
 <div
-class="kofi-text">
+class="advertisement-text">
 Enjoying the Wiki? This Wiki is created and funded solely by one person. If you find it helpful, feel free to support me via my <a class="text-actionable-link" href="https://ko-fi.com/evinine">Kofi</a>!
 </div>
 <div
@@ -235,19 +235,16 @@ class="contents-list">
         &emsp; &ensp; 4.2 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Delay"> Delay <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Restart"> Restart <br> </a>
+        &emsp; &ensp; 4.3 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Terraform"> Terraform <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Terraform"> Terraform <br> </a>
+        &emsp; &ensp; 4.4 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Abandon"> Abandon <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Abandon"> Abandon <br> </a>
+        &emsp; &ensp; 4.5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Reap"> Reap <br> </a>
     </div>
     <div>
-        &emsp; &ensp; 4.6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Reap"> Reap <br> </a>
-    </div>
-    <div>
-        &emsp; &ensp; 4.7 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Decimate"> Decimate <br> </a>
+        &emsp; &ensp; 4.6 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#High_Cost#Decimate"> Decimate <br> </a>
     </div>
     <div>
         5 &emsp; <a class="text-actionable-link" href="https://taylorbowl.wiki/Invocations#Glossary"> Glossary <br> </a>
@@ -693,17 +690,6 @@ Delay is used to make all Farmers weed the <a class="text-actionable-link" href=
 
 <div
 class="subsection-title"
-id="High_Cost#Restart">
-    Restart
-</div>
-
-<div
-class="content">
-Restart is used to force a <a class="text-actionable-link" href="https://taylorbowl.wiki/Bot_Cycle" data-tippy-content="">Bot Restart</a>. The command <span class="command-text">!restart</span> consumes 18 Ephemera to force a Bot Restart within 60 seconds of usage. BowlBot logs everything that has happened, similar to at the end of a Bowl, to prevent abuse of this command. This preverts the reversal of <a class="text-actionable-link" href="https://taylorbowl.wiki/Farm#General_Mechanics#The_Blight" data-tippy-content="Blights are events where credits in the Farm are destroyed.">Blights</a>, <a class="text-actionable-link" href="https://taylorbowl.wiki/Ballpit" data-tippy-content="Ballpit is a probability-based minigame that uses credits.">Ballpit</a> losses, etc.
-</div>
-
-<div
-class="subsection-title"
 id="High_Cost#Terraform">
     Terraform
 </div>
@@ -922,10 +908,6 @@ List of Commands
         <td>Protects the command user from being Falsified or Expelled while they have Ephemera.</td>
     </tr>
     <tr>
-        <td><span class="command-text">!restart</span></td>
-        <td>Forces a Bot Restart within 60 seconds.</td>
-    </tr>
-    <tr>
         <td><span class="command-text">!succumb user</span></td>
         <td>Reduces a user's Risk and Anti-Risk counters by 80. <br> <span class="command-text">user</span> is an optional parameter that refers to the user whose counters are reduced, defaults to command user.</td>
     </tr>
@@ -1028,7 +1010,7 @@ List of Terms
 
 <div
 class="version-text">
-Updated for BowlBot Version 17.2.0
+Updated for BowlBot Version 17.2.5
 </div>
 
 </body>
@@ -1039,6 +1021,4 @@ Updated for BowlBot Version 17.2.0
 <script src="Code.js"></script>
 
 </html>
-
-
 
