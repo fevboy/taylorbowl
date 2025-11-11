@@ -248,3 +248,23 @@ button:hover {
 .notices-and-updates {
     padding-bottom: 1rem;
 }
+
+table {
+    border-collapse: collapse;
+    color: var(--text-color)
+}
+td:first-child {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    border-right-style: solid;
+    border-width: 1px;
+    font-weight: 500;
+}
+td:last-child {
+    padding-left: 1rem;
+}
+
+.current-version-text {
+    padding-top: 0.5rem
+}
