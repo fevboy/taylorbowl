@@ -90,15 +90,15 @@ class="page-header">
 </div>
 
 <div 
-class="page-cover-kofi" 
-id="js-page-cover-kofi"
-onclick="closeKofi()"></div>
+class="page-cover-advertisement" 
+id="js-page-cover-advertisement"
+onclick="closeAdvertisement()"></div>
 
 <div
-class="kofi"
-id="js-kofi">
+class="advertisement"
+id="js-advertisement">
 <div
-class="kofi-text">
+class="advertisement-text">
 Enjoying the Wiki? This Wiki is created and funded solely by one person. If you find it helpful, feel free to support me via my <a class="text-actionable-link" href="https://ko-fi.com/evinine">Kofi</a>!
 </div>
 <div
@@ -291,7 +291,7 @@ Minimum Price
 
 <div
 class="content">
-Each Bowl queued must be more expensive than the previous one. This means if Bowls are queued without stopping, the price eventually becomes too high to queue again. However, in reality, most people stop queueing by a certain price. The Bowl after the last one in queue has concluded will then be a natural start. If a Bowl is naturally started, the Bowl queued after it must be more than 90% of its price, instead of 100%.
+Queueing a Bowl updates the minimum price of forcing or queueing another Bowl immediately after it. This minimum price is the cost of the Bowl that was queued. However, forcing a Bowl will not update this minimum price, even though the price of that forced Bowl must be above the minimum price. It is unknown if this is intended behaviour. If many Bowls are queued in a row, the price will continue to increase until no one is willing to queue or force another Bowl. The next Bowl will then be a natural start, which also updates the minimum price, but to 90% of its equivalent price if it was forced or queued instead of 100%.
 <br> <br>
 It is also possible that two Bowls of the same Tier and duration can be queued successively. This is because the Base Price may increase between the queueing, which can make the second Bowl slightly more expensive than the first. This will result in both Bowls being started given there are available matchups.
 <br> <br>
@@ -441,7 +441,7 @@ List of Terms
 
 <div
 class="version-text">
-Updated for BowlBot Version 17.2.0
+Updated for BowlBot Version 17.2.5
 </div>
 
 </body>
@@ -452,5 +452,3 @@ Updated for BowlBot Version 17.2.0
 <script src="Code.js"></script>
 
 </html>
-
-
