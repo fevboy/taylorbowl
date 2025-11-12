@@ -89,8 +89,6 @@ class="page-header">
 
 </div>
 
-</div>
-
 <div 
 class="page-cover-kofi" 
 id="js-page-cover-kofi"
@@ -108,11 +106,12 @@ class="escape-text">
 Click anywhere or press Escape to close.
 </div>
 </div>
-    
+
 <div 
 class="page-cover" 
 id="js-page-cover"
 onclick="closeMenu()"></div>
+
 <div
 class="menu"
 id="js-menu">
@@ -223,9 +222,9 @@ id="js-toggle-content-1">
 
 <div
 class="content">
-Users may play Ballpit using the command <span class="command-text">ballpit amount choices</span>. The <span class="command-text">amount</span> parameter refers to how many credits are bet, and the <span class="command-text">choices</span> parameter refers to the colour of the balls betted on. Users may bet on up to 10 balls, with each colour separated by a space. For example, <span class="command-text">!ballpit 100 brown</span> bets 100 credits on the first ball being brown, and <span class="command-text">!ballpit 250 purple blue green</span> bets 250 credits on the first two balls being purple, blue, and green, in that order. Sending the command will start a Ballpit, which starts a 30 second period for others to bet too. At the end of the 30 seconds, the balls are randomised and sent. If a player's bet is correct, they are awarded credits based on how probable the combination is. The less probable, the higher the awarded credits. If not, all credits bet are lost.
+Users may play Ballpit using the command <span class="command-text">ballpit amount choices</span>. The <span class="command-text">amount</span> parameter refers to how many credits are bet, and the <span class="command-text">choices</span> parameter refers to the colour of the balls betted on. Users may bet on up to 10 balls, with each colour separated by a space. For example, <span class="command-text">!ballpit 100 brown</span> bets 100 credits on the first ball being brown, and <span class="command-text">!ballpit 250 purple blue green</span> bets 250 credits on the first two balls being purple, blue, and green, in that order. Sending the command will start a Ballpit, which starts a 30 second period for others to bet too. 
 <br> <br>
-During the 30 second period, users may freely switch their bet by resending the <span class="command-text">!ballpit</span> command. However, users are not able to cancel their bet, andt he next best option that minimises losses is to send <span class="command-text">!ballpit 1 brown</span>. 
+During the 30 second period, users may freely switch their bet by resending the <span class="command-text">!ballpit</span> command. However, users are not able to cancel their bet, and the next best option that minimises losses is to send <span class="command-text">!ballpit 1 brown</span>. At the end of the 30 seconds, the balls are randomised and sent. If a user's bet is correct, they are awarded credits based on how probable the combination is. The less probable, the higher the awarded credits. If not, all credits bet are lost. If the user has loses credits through other methods during a Ballpit, resulting in them having less credits than their bet, the bet is cancelled. For example, a user who bets 100 credits and goes down to 50 before the Ballpit ends will always end with 50 credits, whether or not they won or lost the Ballpit. This is to prevent having negative credits.
 <br> <br>
 If Ballpit breaks and a the result is not sent after 30 seconds, users may use the command <span class="command-text">!restartballpit</span> to reset it.
   
@@ -419,6 +418,3 @@ class="version-text">
 <script src="Code.js"></script>
 
 </html>
-
-
-
