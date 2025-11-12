@@ -263,7 +263,7 @@ id="js-toggle-content-2">
 
 <div
 class="content">
-The expected value of a free Yahtzee is around 17.835 credits. The following calculations and explanations show the expected value of all the ways to get returns:
+The expected value of a free Yahtzee is around 17.8349 credits. The following calculations and explanations show the expected value of all the ways to get returns. The notation \(^{n}\text{C}_{r}\) is the binomial coefficient, or the number of combinations that can be formed by drawing \(r\) elements from a set with \(n\) elements.
 <br> <br>
 1-Roll Yahtzees can occur for any of the six numbers. There is 1 way to arrange 5 identical numbers.
 <div class="formula">
@@ -293,6 +293,8 @@ Thus, the expected value of a free Yahtzee is given by the sum of these expected
 <div class="formula">
 <p><span>$$E(\text{Free Yahtzee})=\sum E(\text{Winning Combinations})\approx17.8349 \\ E(\text{Paid Yahtzee})=E(\text{Free Yahtzee})-22\approx-4.1651$$</span></p>
 </div>
+Many thanks to Brent who corroborated this data through a spreadsheet. Given that the resulting value from these two different methods are identical up to at least 10 significant figures, the result is very likely accurate. <a class="text-underlined-link" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSu8uia7MNye_TJtLHZgUT6i-8-EuJoXG_69aW6whwrNqXlLE2W1Y7BNgLc_fCe5izyTzu701LXdNDE/pubhtml" target="_blank">View the spreadsheet here!</a>
+<br> <br>
 Note that the expected value of 1-Roll Yahtzees are very high despite their rarity, worth just over 30% of the total expected value. This implies that not getting any 1-Roll Yahtzees, which is a reasonable situation, will significantly decrease your returns. Similarly, getting slightly more 1-Roll Yahtzees than average will significantly increase your returns.
 </div>
 
@@ -445,4 +447,3 @@ Updated for BowlBot Version 17.2.5
 <script src="Code.js"></script>
 
 </html>
-
