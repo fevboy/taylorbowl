@@ -283,7 +283,7 @@ Full Houses have 30 possible options as there are \(6^2\) pairs of numbers that 
 </div>
 3-of-a-Kinds can occur for any of the six numbers. There are 5 and 4 options for the fourth and fifth dice as neither can be a repeated number. There are \(^{5}\text{C}_{2}\) ways to position the two non-repeated numbers among the five dice.
 <div class="formula">
-<p><span>$$E(\text{3-of-a-Kind})=\sum_{i=1}^{6}\cdot5\cdot4\cdot^{5}\text{C}_{2}\cdot\left(\cfrac{1}{6}\right)^{5}\approx0.5401$$</span></p>
+<p><span>$$E(\text{3-of-a-Kind})=\sum_{i=1}^{6}i\cdot5\cdot4\cdot^{5}\text{C}_{2}\cdot\left(\cfrac{1}{6}\right)^{5}\approx0.5401$$</span></p>
 </div>
 Small Straights have only three possible options, namely 1234, 2345, and 3456. For 1234 and 3456, the last number has 5 options, four of which are duplicates of numbers in the sequence. There are \(^{5}\text{C}_{2}\) ways to position the two repeated numbers among the five dice and \(3!\) ways to arrange the three distinct numbers. The last option that is not a duplicate has \(5!\) ways to arrange the five distinct numbers. For 2345, the last number has 4 options, all of which are duplicates. Again, there are \(^{5}\text{C}_{2}\) ways to position the two repeated numbers among the five dice and \(3!\) ways to arrange the three distinct numbers.
 <div class="formula">
@@ -447,3 +447,4 @@ Updated for BowlBot Version 17.2.5
 <script src="Code.js"></script>
 
 </html>
+
